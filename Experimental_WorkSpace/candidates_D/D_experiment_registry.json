@@ -4704,7 +4704,7 @@
       "id": "D_AUTO_R3_D_STABLE_COST_04_SERIOUS_S20260708_20260709_142825",
       "name": "R3_D_StableCost_04_Serious",
       "path": "automation_runs\\D_AUTO_R3_D_STABLE_COST_04_SERIOUS_S20260708_20260709_142825",
-      "status": "running",
+      "status": "promote_to_candidate_pool",
       "hypothesis": "D: stabilize weekly holdings and add cash when score gaps are weak to reduce cost drag and turnover.",
       "feature_version": "d_market_v1",
       "label_version": "open_t_plus_5_over_open_t_plus_1",
@@ -4765,9 +4765,92 @@
         }
       },
       "artifacts": {
-        "run_dir": "automation_runs\\D_AUTO_R3_D_STABLE_COST_04_SERIOUS_S20260708_20260709_142825"
+        "run_dir": "automation_runs\\D_AUTO_R3_D_STABLE_COST_04_SERIOUS_S20260708_20260709_142825",
+        "metrics_v2": "automation_runs\\D_AUTO_R3_D_STABLE_COST_04_SERIOUS_S20260708_20260709_142825\\metrics_v2.json",
+        "weekly_backtest": "automation_runs\\D_AUTO_R3_D_STABLE_COST_04_SERIOUS_S20260708_20260709_142825\\weekly_backtest.csv",
+        "champion_gate_decision": "automation_runs\\D_AUTO_R3_D_STABLE_COST_04_SERIOUS_S20260708_20260709_142825\\champion_gate_decision.json",
+        "report": "automation_runs\\D_AUTO_R3_D_STABLE_COST_04_SERIOUS_S20260708_20260709_142825\\RUN_REPORT.md"
       },
-      "registry_updated_at": "2026-07-09T06:28:25Z"
+      "registry_updated_at": "2026-07-09T06:31:39Z",
+      "metrics": {
+        "official_proxy_final_score": 0.021984020040296426,
+        "official_baseline_score": 0.012528499297343995,
+        "weekly_cumulative_return_net": 1.2603563896653003,
+        "mean_weekly_return_net": 0.018356022734559812,
+        "max_drawdown_abs": 0.2452574311402489,
+        "CVaR_95_loss_abs": 0.14023209078358922
+      },
+      "decision": "PROMOTE_TO_CANDIDATE_POOL",
+      "failure_reason": "candidate_pool: improved_cost_or_turnover_but_return_not_champion_ready"
+    },
+    {
+      "id": "D_AUTO_R3_D_STABLE_COST_04_SERIOUS_S20260709_20260709_143139",
+      "name": "R3_D_StableCost_04_Serious",
+      "path": "automation_runs\\D_AUTO_R3_D_STABLE_COST_04_SERIOUS_S20260709_20260709_143139",
+      "status": "running",
+      "hypothesis": "D: stabilize weekly holdings and add cash when score gaps are weak to reduce cost drag and turnover.",
+      "feature_version": "d_market_v1",
+      "label_version": "open_t_plus_5_over_open_t_plus_1",
+      "training_dates": "2022-01-04..2024-12-25 purged research train",
+      "validation_dates": "2025-01-03..2026-01-05 research validation/backtest",
+      "seed": 20260709,
+      "hyperparameters": "automation_runs\\D_AUTO_R3_D_STABLE_COST_04_SERIOUS_S20260709_20260709_143139\\generated_config.json",
+      "data_path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_D\\data_snapshots\\c0_train_plus_baostock_future_20260703.csv",
+      "data_hash": "78759d892c95eb8ba547c2df9a8fca5a",
+      "split_metadata": {
+        "split_version": "research_2022_train_2025_validation_t5_purged_v1",
+        "data_path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_D\\data_snapshots\\c0_train_plus_baostock_future_20260703.csv",
+        "data_md5": "78759d892c95eb8ba547c2df9a8fca5a",
+        "date_column": "日期",
+        "stock_column": "股票代码",
+        "open_column": "开盘",
+        "label": "open(T+5) / open(T+1) - 1",
+        "sell_offset": 5,
+        "research_train": {
+          "sample_start": "2022-01-04",
+          "sample_end": "2024-12-25",
+          "sample_count": 722,
+          "max_label_end_before_validation_start": "2025-01-02"
+        },
+        "research_validation": {
+          "sample_start": "2025-01-03",
+          "sample_end": "2026-01-05",
+          "sample_count": 243
+        },
+        "production_refit": {
+          "raw_data_end": "2026-07-03",
+          "train_sample_end": "2026-06-26",
+          "feature_end_for_inference": "2026-07-03"
+        },
+        "trading_dates": {
+          "first": "2021-01-04",
+          "last": "2026-07-03",
+          "count": 1331,
+          "research_train_tail": [
+            "2024-12-19",
+            "2024-12-20",
+            "2024-12-23",
+            "2024-12-24",
+            "2024-12-25"
+          ],
+          "research_validation_head": [
+            "2025-01-03",
+            "2025-01-06",
+            "2025-01-07",
+            "2025-01-08",
+            "2025-01-09"
+          ]
+        },
+        "purge_checks": {
+          "train_label_end_before_validation_start": true,
+          "date_level_split": true,
+          "purge_trading_days": 5
+        }
+      },
+      "artifacts": {
+        "run_dir": "automation_runs\\D_AUTO_R3_D_STABLE_COST_04_SERIOUS_S20260709_20260709_143139"
+      },
+      "registry_updated_at": "2026-07-09T06:31:39Z"
     }
   ]
 }
