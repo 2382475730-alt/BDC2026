@@ -1,0 +1,8 @@
+{
+  "mode": "c_legacy_last_two_months",
+  "val_start": "2026-01-19",
+  "val_end": "2026-03-19",
+  "train_sample_count": 1158,
+  "val_sample_count": 33,
+  "train_label_end_before_val_start": true
+}

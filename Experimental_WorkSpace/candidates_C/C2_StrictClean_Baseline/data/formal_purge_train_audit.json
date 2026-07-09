@@ -1,0 +1,29 @@
+{
+  "candidate_id": "C302",
+  "purpose": "strict formal purge clean retrain from C4 logic",
+  "source_candidate": "C4_recent_weighted_train",
+  "formal_eval_window": {
+    "start": "2026-03-23",
+    "end": "2026-06-26"
+  },
+  "label_horizon_trading_days": 5,
+  "purge_cutoff": "2026-03-13",
+  "train_filter": "date <= 2026-03-13",
+  "original_train": {
+    "rows": 367152,
+    "min_date": "2021-01-04",
+    "max_date": "2026-03-19",
+    "unique_dates": 1260
+  },
+  "filtered_train": {
+    "rows": 365952,
+    "min_date": "2021-01-04",
+    "max_date": "2026-03-13",
+    "unique_dates": 1256
+  },
+  "test_data_min_date": "2026-03-20",
+  "test_data_max_date": "2026-03-26",
+  "raw_overlap_with_formal": false,
+  "label_overlap_with_formal": false,
+  "proof": "With 5-trading-day open_t1/open_t5 labels, samples dated 2026-03-13 use opens from 2026-03-16..2026-03-20 at latest, before formal eval starts on 2026-03-23."
+}

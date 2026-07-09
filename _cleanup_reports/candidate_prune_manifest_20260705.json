@@ -1,0 +1,1223 @@
+﻿{
+    "created_at":  "2026-07-05T18:34:44",
+    "workspace":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU",
+    "candidates_base":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates",
+    "keep_count":  29,
+    "redundant_count":  295,
+    "missing_keep":  [
+
+                     ],
+    "keep":  [
+                 "C4_recent_weighted_train",
+                 "C69_c4_robust_1_2_12_15_17_w0515501515",
+                 "C77_c4_regime_raw_volume5_gate_c69_else_c4",
+                 "C301_c252_formal_clean_projection_c77_only",
+                 "C302_formal_purge_clean_c4_cutoff_20260313",
+                 "C303_clean_c4_repro_baseline",
+                 "C304_clean_long_exp_decay_h252",
+                 "C305_clean_long_exp_decay_h126",
+                 "C306_clean_mid_202301",
+                 "C307_clean_midshort_202401",
+                 "C308_clean_recent_202503",
+                 "C309_clean_long_regime_similarity",
+                 "C310_clean_long_hybrid_decay_regime",
+                 "C311_clean_seed_retrain_from_c309_s101",
+                 "C312_clean_seed_retrain_from_c310_s202",
+                 "C313_clean_seed_retrain_from_c306_s303",
+                 "C314_clean_seed_retrain_from_c308_s404",
+                 "C320_clean_static_long_mid_short",
+                 "C321_clean_decay_weighted_ensemble",
+                 "C322_clean_regime_expert_ensemble",
+                 "C323_clean_disagreement_risk_ensemble",
+                 "C324_clean_best4_checkpoint_blend_proxy",
+                 "C325_clean_weight_perturbation_325",
+                 "C326_clean_weight_perturbation_326",
+                 "C327_clean_weight_perturbation_327",
+                 "C328_clean_weight_perturbation_328",
+                 "C329_clean_weight_perturbation_329",
+                 "C330_formal_clean_best_research_champion",
+                 "C331_production_retrain_from_c330_structure"
+             ],
+    "removed":  [
+                    {
+                        "name":  "C0_formal_reproduce",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C0_formal_reproduce"
+                    },
+                    {
+                        "name":  "C10_c4_cap035_stability",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C10_c4_cap035_stability"
+                    },
+                    {
+                        "name":  "C100_anchor_c77_c92_c88_cap90",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C100_anchor_c77_c92_c88_cap90"
+                    },
+                    {
+                        "name":  "C101_anchor_c77_c92_simple_half",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C101_anchor_c77_c92_simple_half"
+                    },
+                    {
+                        "name":  "C102_anchor_c77_c92_conservative",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C102_anchor_c77_c92_conservative"
+                    },
+                    {
+                        "name":  "C103_anchor_c77_c92_dwm_eta2",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C103_anchor_c77_c92_dwm_eta2"
+                    },
+                    {
+                        "name":  "C104_anchor_c77_c92_c91_c93_balanced",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C104_anchor_c77_c92_c91_c93_balanced"
+                    },
+                    {
+                        "name":  "C105_anchor_c77_c90_c92",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C105_anchor_c77_c90_c92"
+                    },
+                    {
+                        "name":  "C106_anchor_c77_c84_c92_high_mean_conservative",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C106_anchor_c77_c84_c92_high_mean_conservative"
+                    },
+                    {
+                        "name":  "C107_anchor_c77_c92_c94_conservative",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C107_anchor_c77_c92_c94_conservative"
+                    },
+                    {
+                        "name":  "C108_anchor_micro_best_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C108_anchor_micro_best_mean"
+                    },
+                    {
+                        "name":  "C109_anchor_micro_best_formal",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C109_anchor_micro_best_formal"
+                    },
+                    {
+                        "name":  "C11_tiered_recent_weighted_train",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C11_tiered_recent_weighted_train"
+                    },
+                    {
+                        "name":  "C110_anchor_cap95_drawdown_guard",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C110_anchor_cap95_drawdown_guard"
+                    },
+                    {
+                        "name":  "C111_anchor_max40_high_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C111_anchor_max40_high_mean"
+                    },
+                    {
+                        "name":  "C112_anchor_max40_best_worst20",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C112_anchor_max40_best_worst20"
+                    },
+                    {
+                        "name":  "C113_anchor_dwm_best_pair",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C113_anchor_dwm_best_pair"
+                    },
+                    {
+                        "name":  "C114_anchor_micro_formal_balanced",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C114_anchor_micro_formal_balanced"
+                    },
+                    {
+                        "name":  "C115_anchor_micro_less_concentrated",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C115_anchor_micro_less_concentrated"
+                    },
+                    {
+                        "name":  "C116_anchor_robust_score_best",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C116_anchor_robust_score_best"
+                    },
+                    {
+                        "name":  "C117_anchor_all_window_beat_c77",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C117_anchor_all_window_beat_c77"
+                    },
+                    {
+                        "name":  "C118_anchor_max_min_window_edge",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C118_anchor_max_min_window_edge"
+                    },
+                    {
+                        "name":  "C119_anchor_loo_robust",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C119_anchor_loo_robust"
+                    },
+                    {
+                        "name":  "C120_anchor_nano_best_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C120_anchor_nano_best_mean"
+                    },
+                    {
+                        "name":  "C121_anchor_nano_best_robust",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C121_anchor_nano_best_robust"
+                    },
+                    {
+                        "name":  "C122_anchor_random_best_overall",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C122_anchor_random_best_overall"
+                    },
+                    {
+                        "name":  "C123_anchor_random_best_three_expert",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C123_anchor_random_best_three_expert"
+                    },
+                    {
+                        "name":  "C124_anchor_random_best_recent",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C124_anchor_random_best_recent"
+                    },
+                    {
+                        "name":  "C125_anchor_c122_refine_best_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C125_anchor_c122_refine_best_mean"
+                    },
+                    {
+                        "name":  "C126_anchor_c122_refine_best_max45",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C126_anchor_c122_refine_best_max45"
+                    },
+                    {
+                        "name":  "C127_anchor_c122_refine_cap975_guard",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C127_anchor_c122_refine_cap975_guard"
+                    },
+                    {
+                        "name":  "C128_anchor_c125_refine_best_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C128_anchor_c125_refine_best_mean"
+                    },
+                    {
+                        "name":  "C129_anchor_c125_refine_best_max45_recent",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C129_anchor_c125_refine_best_max45_recent"
+                    },
+                    {
+                        "name":  "C13_c4_top3_equal_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C13_c4_top3_equal_mean"
+                    },
+                    {
+                        "name":  "C130_anchor_c125_refine_cap975_guard",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C130_anchor_c125_refine_cap975_guard"
+                    },
+                    {
+                        "name":  "C131_anchor_c128_refine_best_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C131_anchor_c128_refine_best_mean"
+                    },
+                    {
+                        "name":  "C132_anchor_c128_refine_best_max45",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C132_anchor_c128_refine_best_max45"
+                    },
+                    {
+                        "name":  "C133_anchor_frontier_best_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C133_anchor_frontier_best_mean"
+                    },
+                    {
+                        "name":  "C134_anchor_frontier_best_max45",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C134_anchor_frontier_best_max45"
+                    },
+                    {
+                        "name":  "C135_anchor_frontier_best_stable_score",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C135_anchor_frontier_best_stable_score"
+                    },
+                    {
+                        "name":  "C136_anchor_frontier_best_q1_guard",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C136_anchor_frontier_best_q1_guard"
+                    },
+                    {
+                        "name":  "C137_anchor_frontier_best_min_window",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C137_anchor_frontier_best_min_window"
+                    },
+                    {
+                        "name":  "C138_anchor_frontier_best_worst20",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C138_anchor_frontier_best_worst20"
+                    },
+                    {
+                        "name":  "C139_anchor_frontier_best_drawdown",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C139_anchor_frontier_best_drawdown"
+                    },
+                    {
+                        "name":  "C14_c4_top2_equal_balanced",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C14_c4_top2_equal_balanced"
+                    },
+                    {
+                        "name":  "C140_anchor_frontier_best_formal",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C140_anchor_frontier_best_formal"
+                    },
+                    {
+                        "name":  "C141_anchor_frontier_best_recent_weighted",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C141_anchor_frontier_best_recent_weighted"
+                    },
+                    {
+                        "name":  "C142_anchor_frontier_best_low_cap",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C142_anchor_frontier_best_low_cap"
+                    },
+                    {
+                        "name":  "C143_anchor_frontier_best_sidecar",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C143_anchor_frontier_best_sidecar"
+                    },
+                    {
+                        "name":  "C144_anchor_frontier_best_max4625",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C144_anchor_frontier_best_max4625"
+                    },
+                    {
+                        "name":  "C145_anchor_frontier_best_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C145_anchor_frontier_best_mean"
+                    },
+                    {
+                        "name":  "C146_anchor_frontier_best_max45",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C146_anchor_frontier_best_max45"
+                    },
+                    {
+                        "name":  "C147_anchor_frontier_best_stable_score",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C147_anchor_frontier_best_stable_score"
+                    },
+                    {
+                        "name":  "C148_anchor_frontier_best_q1_guard",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C148_anchor_frontier_best_q1_guard"
+                    },
+                    {
+                        "name":  "C149_anchor_frontier_best_min_window",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C149_anchor_frontier_best_min_window"
+                    },
+                    {
+                        "name":  "C15_c4_top2_rank2_heavy",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C15_c4_top2_rank2_heavy"
+                    },
+                    {
+                        "name":  "C150_anchor_frontier_best_worst20",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C150_anchor_frontier_best_worst20"
+                    },
+                    {
+                        "name":  "C151_anchor_frontier_best_drawdown",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C151_anchor_frontier_best_drawdown"
+                    },
+                    {
+                        "name":  "C152_anchor_frontier_best_formal",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C152_anchor_frontier_best_formal"
+                    },
+                    {
+                        "name":  "C153_anchor_frontier_best_recent_weighted",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C153_anchor_frontier_best_recent_weighted"
+                    },
+                    {
+                        "name":  "C154_anchor_frontier_best_low_cap",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C154_anchor_frontier_best_low_cap"
+                    },
+                    {
+                        "name":  "C155_anchor_frontier_best_sidecar",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C155_anchor_frontier_best_sidecar"
+                    },
+                    {
+                        "name":  "C156_anchor_frontier_best_max4625",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C156_anchor_frontier_best_max4625"
+                    },
+                    {
+                        "name":  "C157_anchor_c85_tradeoff_best_champion_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C157_anchor_c85_tradeoff_best_champion_mean"
+                    },
+                    {
+                        "name":  "C158_anchor_c85_tradeoff_best_max45_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C158_anchor_c85_tradeoff_best_max45_champion"
+                    },
+                    {
+                        "name":  "C159_anchor_c85_tradeoff_best_high_c85_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C159_anchor_c85_tradeoff_best_high_c85_champion"
+                    },
+                    {
+                        "name":  "C16_c4_top3_rank2_dominant_hit",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C16_c4_top3_rank2_dominant_hit"
+                    },
+                    {
+                        "name":  "C160_anchor_c85_tradeoff_best_risk_adjusted",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C160_anchor_c85_tradeoff_best_risk_adjusted"
+                    },
+                    {
+                        "name":  "C161_anchor_c85_tradeoff_best_drawdown_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C161_anchor_c85_tradeoff_best_drawdown_champion"
+                    },
+                    {
+                        "name":  "C162_anchor_c85_tradeoff_best_min_window_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C162_anchor_c85_tradeoff_best_min_window_champion"
+                    },
+                    {
+                        "name":  "C163_anchor_c85_tradeoff_best_attack_observation",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C163_anchor_c85_tradeoff_best_attack_observation"
+                    },
+                    {
+                        "name":  "C164_anchor_c85_tradeoff_best_lowcap_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C164_anchor_c85_tradeoff_best_lowcap_champion"
+                    },
+                    {
+                        "name":  "C165_anchor_c85_dwm_best_champion_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C165_anchor_c85_dwm_best_champion_mean"
+                    },
+                    {
+                        "name":  "C166_anchor_c85_dwm_best_max45_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C166_anchor_c85_dwm_best_max45_champion"
+                    },
+                    {
+                        "name":  "C167_anchor_c85_dwm_best_risk_adjusted",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C167_anchor_c85_dwm_best_risk_adjusted"
+                    },
+                    {
+                        "name":  "C168_anchor_c85_dwm_best_drawdown_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C168_anchor_c85_dwm_best_drawdown_champion"
+                    },
+                    {
+                        "name":  "C169_anchor_c85_dwm_best_attack_observation",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C169_anchor_c85_dwm_best_attack_observation"
+                    },
+                    {
+                        "name":  "C17_c4_rank2_only_aggressive",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C17_c4_rank2_only_aggressive"
+                    },
+                    {
+                        "name":  "C170_anchor_c157_refine_best_champion_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C170_anchor_c157_refine_best_champion_mean"
+                    },
+                    {
+                        "name":  "C171_anchor_c157_refine_best_max45_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C171_anchor_c157_refine_best_max45_champion"
+                    },
+                    {
+                        "name":  "C172_anchor_c157_refine_best_balanced",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C172_anchor_c157_refine_best_balanced"
+                    },
+                    {
+                        "name":  "C173_anchor_c157_refine_best_min_window",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C173_anchor_c157_refine_best_min_window"
+                    },
+                    {
+                        "name":  "C174_anchor_c157_refine_best_formal",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C174_anchor_c157_refine_best_formal"
+                    },
+                    {
+                        "name":  "C175_anchor_c170_refine_best_champion_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C175_anchor_c170_refine_best_champion_mean"
+                    },
+                    {
+                        "name":  "C176_anchor_c170_refine_best_max45_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C176_anchor_c170_refine_best_max45_champion"
+                    },
+                    {
+                        "name":  "C177_anchor_c170_refine_best_balanced",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C177_anchor_c170_refine_best_balanced"
+                    },
+                    {
+                        "name":  "C178_anchor_c170_refine_best_min_window",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C178_anchor_c170_refine_best_min_window"
+                    },
+                    {
+                        "name":  "C179_anchor_c175_refine_best_champion_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C179_anchor_c175_refine_best_champion_mean"
+                    },
+                    {
+                        "name":  "C18_c4_top2_rank2_95",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C18_c4_top2_rank2_95"
+                    },
+                    {
+                        "name":  "C180_anchor_c175_refine_best_max45_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C180_anchor_c175_refine_best_max45_champion"
+                    },
+                    {
+                        "name":  "C181_anchor_c175_refine_best_balanced",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C181_anchor_c175_refine_best_balanced"
+                    },
+                    {
+                        "name":  "C182_candidate_blend_best_champion_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C182_candidate_blend_best_champion_mean"
+                    },
+                    {
+                        "name":  "C183_candidate_blend_best_attack_observation",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C183_candidate_blend_best_attack_observation"
+                    },
+                    {
+                        "name":  "C184_candidate_blend_best_max45_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C184_candidate_blend_best_max45_champion"
+                    },
+                    {
+                        "name":  "C185_candidate_blend_best_drawdown_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C185_candidate_blend_best_drawdown_champion"
+                    },
+                    {
+                        "name":  "C186_dynamic_candidate_blend_best_champion_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C186_dynamic_candidate_blend_best_champion_mean"
+                    },
+                    {
+                        "name":  "C187_dynamic_candidate_blend_best_attack_observation",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C187_dynamic_candidate_blend_best_attack_observation"
+                    },
+                    {
+                        "name":  "C188_dynamic_candidate_blend_best_drawdown_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C188_dynamic_candidate_blend_best_drawdown_champion"
+                    },
+                    {
+                        "name":  "C189_dynamic_candidate_blend_best_worst20_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C189_dynamic_candidate_blend_best_worst20_champion"
+                    },
+                    {
+                        "name":  "C19_c4_rank2_95_rank3_05",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C19_c4_rank2_95_rank3_05"
+                    },
+                    {
+                        "name":  "C190_dynamic_candidate_blend_best_max45_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C190_dynamic_candidate_blend_best_max45_champion"
+                    },
+                    {
+                        "name":  "C191_dynamic_candidate_blend_best_balanced_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C191_dynamic_candidate_blend_best_balanced_champion"
+                    },
+                    {
+                        "name":  "C192_c186_local_dynamic_best_champion_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C192_c186_local_dynamic_best_champion_mean"
+                    },
+                    {
+                        "name":  "C193_c186_local_dynamic_best_attack_observation",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C193_c186_local_dynamic_best_attack_observation"
+                    },
+                    {
+                        "name":  "C194_c186_local_dynamic_best_min_window_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C194_c186_local_dynamic_best_min_window_champion"
+                    },
+                    {
+                        "name":  "C195_c186_local_dynamic_best_worst20_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C195_c186_local_dynamic_best_worst20_champion"
+                    },
+                    {
+                        "name":  "C196_c186_local_dynamic_best_drawdown_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C196_c186_local_dynamic_best_drawdown_champion"
+                    },
+                    {
+                        "name":  "C197_c186_local_dynamic_best_balanced_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C197_c186_local_dynamic_best_balanced_champion"
+                    },
+                    {
+                        "name":  "C198_c192_fine_dynamic_best_champion_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C198_c192_fine_dynamic_best_champion_mean"
+                    },
+                    {
+                        "name":  "C199_c192_fine_dynamic_best_attack_observation",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C199_c192_fine_dynamic_best_attack_observation"
+                    },
+                    {
+                        "name":  "C2_append_new_train_baseline",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C2_append_new_train_baseline"
+                    },
+                    {
+                        "name":  "C20_c4_rank2_95_rank5_05",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C20_c4_rank2_95_rank5_05"
+                    },
+                    {
+                        "name":  "C200_c192_fine_dynamic_best_min_window_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C200_c192_fine_dynamic_best_min_window_champion"
+                    },
+                    {
+                        "name":  "C201_c192_fine_dynamic_best_worst20_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C201_c192_fine_dynamic_best_worst20_champion"
+                    },
+                    {
+                        "name":  "C202_c192_fine_dynamic_best_drawdown_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C202_c192_fine_dynamic_best_drawdown_champion"
+                    },
+                    {
+                        "name":  "C203_c192_fine_dynamic_best_balanced_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C203_c192_fine_dynamic_best_balanced_champion"
+                    },
+                    {
+                        "name":  "C204_c192_fine_dynamic_best_risk_adjusted_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C204_c192_fine_dynamic_best_risk_adjusted_champion"
+                    },
+                    {
+                        "name":  "C205_c198_frontier_blend_best_champion_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C205_c198_frontier_blend_best_champion_mean"
+                    },
+                    {
+                        "name":  "C206_c198_frontier_blend_best_attack_observation",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C206_c198_frontier_blend_best_attack_observation"
+                    },
+                    {
+                        "name":  "C207_c198_frontier_blend_best_min_window_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C207_c198_frontier_blend_best_min_window_champion"
+                    },
+                    {
+                        "name":  "C208_c198_frontier_blend_best_worst20_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C208_c198_frontier_blend_best_worst20_champion"
+                    },
+                    {
+                        "name":  "C209_c198_frontier_blend_best_drawdown_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C209_c198_frontier_blend_best_drawdown_champion"
+                    },
+                    {
+                        "name":  "C21_c4_rank2_90_rank4_05_rank5_05",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C21_c4_rank2_90_rank4_05_rank5_05"
+                    },
+                    {
+                        "name":  "C210_c198_frontier_blend_best_balanced_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C210_c198_frontier_blend_best_balanced_champion"
+                    },
+                    {
+                        "name":  "C211_rolling_candidate_blend_best_champion_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C211_rolling_candidate_blend_best_champion_mean"
+                    },
+                    {
+                        "name":  "C212_rolling_candidate_blend_best_attack_observation",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C212_rolling_candidate_blend_best_attack_observation"
+                    },
+                    {
+                        "name":  "C213_rolling_candidate_blend_best_min_window_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C213_rolling_candidate_blend_best_min_window_champion"
+                    },
+                    {
+                        "name":  "C214_rolling_candidate_blend_best_worst20_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C214_rolling_candidate_blend_best_worst20_champion"
+                    },
+                    {
+                        "name":  "C215_rolling_candidate_blend_best_drawdown_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C215_rolling_candidate_blend_best_drawdown_champion"
+                    },
+                    {
+                        "name":  "C216_rolling_candidate_blend_best_balanced_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C216_rolling_candidate_blend_best_balanced_champion"
+                    },
+                    {
+                        "name":  "C217_rank_weight_calibration_best_attack_observation",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C217_rank_weight_calibration_best_attack_observation"
+                    },
+                    {
+                        "name":  "C218_broad_random_blend_best_champion_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C218_broad_random_blend_best_champion_mean"
+                    },
+                    {
+                        "name":  "C219_broad_random_blend_best_attack_observation",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C219_broad_random_blend_best_attack_observation"
+                    },
+                    {
+                        "name":  "C22_c4_valid5_rank2_80_floor05",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C22_c4_valid5_rank2_80_floor05"
+                    },
+                    {
+                        "name":  "C220_broad_random_blend_best_min_window_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C220_broad_random_blend_best_min_window_champion"
+                    },
+                    {
+                        "name":  "C221_broad_random_blend_best_worst20_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C221_broad_random_blend_best_worst20_champion"
+                    },
+                    {
+                        "name":  "C222_broad_random_blend_best_drawdown_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C222_broad_random_blend_best_drawdown_champion"
+                    },
+                    {
+                        "name":  "C223_broad_random_blend_best_balanced_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C223_broad_random_blend_best_balanced_champion"
+                    },
+                    {
+                        "name":  "C224_c218_local_blend_best_champion_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C224_c218_local_blend_best_champion_mean"
+                    },
+                    {
+                        "name":  "C225_c218_local_blend_best_attack_observation",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C225_c218_local_blend_best_attack_observation"
+                    },
+                    {
+                        "name":  "C226_c218_local_blend_best_min_window_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C226_c218_local_blend_best_min_window_champion"
+                    },
+                    {
+                        "name":  "C227_c218_local_blend_best_worst20_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C227_c218_local_blend_best_worst20_champion"
+                    },
+                    {
+                        "name":  "C228_c218_local_blend_best_drawdown_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C228_c218_local_blend_best_drawdown_champion"
+                    },
+                    {
+                        "name":  "C229_c218_local_blend_best_balanced_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C229_c218_local_blend_best_balanced_champion"
+                    },
+                    {
+                        "name":  "C23_c4_valid5_rank2_75_rank5_10",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C23_c4_valid5_rank2_75_rank5_10"
+                    },
+                    {
+                        "name":  "C230_c224_micro_blend_best_champion_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C230_c224_micro_blend_best_champion_mean"
+                    },
+                    {
+                        "name":  "C231_c224_micro_blend_best_attack_observation",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C231_c224_micro_blend_best_attack_observation"
+                    },
+                    {
+                        "name":  "C232_c224_micro_blend_best_worst20_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C232_c224_micro_blend_best_worst20_champion"
+                    },
+                    {
+                        "name":  "C233_c224_micro_blend_best_drawdown_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C233_c224_micro_blend_best_drawdown_champion"
+                    },
+                    {
+                        "name":  "C234_c224_micro_blend_best_balanced_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C234_c224_micro_blend_best_balanced_champion"
+                    },
+                    {
+                        "name":  "C235_deep_random_blend_best_champion_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C235_deep_random_blend_best_champion_mean"
+                    },
+                    {
+                        "name":  "C236_deep_random_blend_best_attack_observation",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C236_deep_random_blend_best_attack_observation"
+                    },
+                    {
+                        "name":  "C237_deep_random_blend_best_buffered_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C237_deep_random_blend_best_buffered_champion"
+                    },
+                    {
+                        "name":  "C238_deep_random_blend_best_worst20_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C238_deep_random_blend_best_worst20_champion"
+                    },
+                    {
+                        "name":  "C239_deep_random_blend_best_drawdown_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C239_deep_random_blend_best_drawdown_champion"
+                    },
+                    {
+                        "name":  "C24_c4_valid5_cap050_rank2_rank3",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C24_c4_valid5_cap050_rank2_rank3"
+                    },
+                    {
+                        "name":  "C240_deep_random_blend_best_balanced_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C240_deep_random_blend_best_balanced_champion"
+                    },
+                    {
+                        "name":  "C241_c235_local_deep_best_champion_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C241_c235_local_deep_best_champion_mean"
+                    },
+                    {
+                        "name":  "C242_c235_local_deep_best_attack_observation",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C242_c235_local_deep_best_attack_observation"
+                    },
+                    {
+                        "name":  "C243_c235_local_deep_best_buffered_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C243_c235_local_deep_best_buffered_champion"
+                    },
+                    {
+                        "name":  "C244_c235_local_deep_best_worst20_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C244_c235_local_deep_best_worst20_champion"
+                    },
+                    {
+                        "name":  "C245_c235_local_deep_best_drawdown_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C245_c235_local_deep_best_drawdown_champion"
+                    },
+                    {
+                        "name":  "C246_c235_local_deep_best_balanced_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C246_c235_local_deep_best_balanced_champion"
+                    },
+                    {
+                        "name":  "C247_c241_extend_deep_best_champion_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C247_c241_extend_deep_best_champion_mean"
+                    },
+                    {
+                        "name":  "C248_c241_extend_deep_best_attack_observation",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C248_c241_extend_deep_best_attack_observation"
+                    },
+                    {
+                        "name":  "C249_c241_extend_deep_best_worst20_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C249_c241_extend_deep_best_worst20_champion"
+                    },
+                    {
+                        "name":  "C25_c4_skip_rank1_rank2_anchor_23456",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C25_c4_skip_rank1_rank2_anchor_23456"
+                    },
+                    {
+                        "name":  "C250_c241_extend_deep_best_drawdown_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C250_c241_extend_deep_best_drawdown_champion"
+                    },
+                    {
+                        "name":  "C251_c241_extend_deep_best_balanced_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C251_c241_extend_deep_best_balanced_champion"
+                    },
+                    {
+                        "name":  "C252_c247_boundary_deep_best_champion_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C252_c247_boundary_deep_best_champion_mean"
+                    },
+                    {
+                        "name":  "C253_c247_boundary_deep_best_attack_observation",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C253_c247_boundary_deep_best_attack_observation"
+                    },
+                    {
+                        "name":  "C254_c247_boundary_deep_best_worst20_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C254_c247_boundary_deep_best_worst20_champion"
+                    },
+                    {
+                        "name":  "C255_c247_boundary_deep_best_drawdown_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C255_c247_boundary_deep_best_drawdown_champion"
+                    },
+                    {
+                        "name":  "C256_c247_boundary_deep_best_balanced_champion",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C256_c247_boundary_deep_best_balanced_champion"
+                    },
+                    {
+                        "name":  "C257_c252_risk_C100_a05",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C257_c252_risk_C100_a05"
+                    },
+                    {
+                        "name":  "C258_c252_risk_C100_a10",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C258_c252_risk_C100_a10"
+                    },
+                    {
+                        "name":  "C259_c252_risk_C100_a15",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C259_c252_risk_C100_a15"
+                    },
+                    {
+                        "name":  "C26_c4_skip_rank1_rank2_anchor_25678",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C26_c4_skip_rank1_rank2_anchor_25678"
+                    },
+                    {
+                        "name":  "C260_c252_risk_C160_a05",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C260_c252_risk_C160_a05"
+                    },
+                    {
+                        "name":  "C261_c252_risk_C160_a10",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C261_c252_risk_C160_a10"
+                    },
+                    {
+                        "name":  "C262_c252_risk_C160_a15",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C262_c252_risk_C160_a15"
+                    },
+                    {
+                        "name":  "C263_c252_risk_C221_a05",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C263_c252_risk_C221_a05"
+                    },
+                    {
+                        "name":  "C264_c252_risk_C221_a10",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C264_c252_risk_C221_a10"
+                    },
+                    {
+                        "name":  "C265_c252_risk_C221_a15",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C265_c252_risk_C221_a15"
+                    },
+                    {
+                        "name":  "C266_c252_risk_C222_a05",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C266_c252_risk_C222_a05"
+                    },
+                    {
+                        "name":  "C267_c252_risk_C222_a10",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C267_c252_risk_C222_a10"
+                    },
+                    {
+                        "name":  "C268_c252_risk_C222_a15",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C268_c252_risk_C222_a15"
+                    },
+                    {
+                        "name":  "C269_c252_risk_C161_a05",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C269_c252_risk_C161_a05"
+                    },
+                    {
+                        "name":  "C27_c4_skip_rank1_rank2_anchor_23567",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C27_c4_skip_rank1_rank2_anchor_23567"
+                    },
+                    {
+                        "name":  "C270_c252_risk_C161_a10",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C270_c252_risk_C161_a10"
+                    },
+                    {
+                        "name":  "C271_c252_risk_C161_a15",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C271_c252_risk_C161_a15"
+                    },
+                    {
+                        "name":  "C272_c252_risk_C165_a05",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C272_c252_risk_C165_a05"
+                    },
+                    {
+                        "name":  "C273_c252_risk_C165_a10",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C273_c252_risk_C165_a10"
+                    },
+                    {
+                        "name":  "C274_c252_risk_C165_a15",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C274_c252_risk_C165_a15"
+                    },
+                    {
+                        "name":  "C275_c252_risk_C166_a05",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C275_c252_risk_C166_a05"
+                    },
+                    {
+                        "name":  "C276_c252_risk_C166_a10",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C276_c252_risk_C166_a10"
+                    },
+                    {
+                        "name":  "C277_c252_risk_C166_a15",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C277_c252_risk_C166_a15"
+                    },
+                    {
+                        "name":  "C278_c252_risk_C167_a05",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C278_c252_risk_C167_a05"
+                    },
+                    {
+                        "name":  "C279_c252_risk_C167_a10",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C279_c252_risk_C167_a10"
+                    },
+                    {
+                        "name":  "C28_c4_skip_rank1_rank2_anchor_24567",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C28_c4_skip_rank1_rank2_anchor_24567"
+                    },
+                    {
+                        "name":  "C280_c252_risk_C167_a15",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C280_c252_risk_C167_a15"
+                    },
+                    {
+                        "name":  "C281_c252_formal_C140_a05",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C281_c252_formal_C140_a05"
+                    },
+                    {
+                        "name":  "C282_c252_formal_C140_a10",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C282_c252_formal_C140_a10"
+                    },
+                    {
+                        "name":  "C283_c252_formal_C109_a05",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C283_c252_formal_C109_a05"
+                    },
+                    {
+                        "name":  "C284_c252_formal_C109_a10",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C284_c252_formal_C109_a10"
+                    },
+                    {
+                        "name":  "C285_c252_formal_C114_a05",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C285_c252_formal_C114_a05"
+                    },
+                    {
+                        "name":  "C286_c252_formal_C114_a10",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C286_c252_formal_C114_a10"
+                    },
+                    {
+                        "name":  "C287_c252_formal_C124_a05",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C287_c252_formal_C124_a05"
+                    },
+                    {
+                        "name":  "C288_c252_formal_C124_a10",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C288_c252_formal_C124_a10"
+                    },
+                    {
+                        "name":  "C289_c252_formal_C141_a05",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C289_c252_formal_C141_a05"
+                    },
+                    {
+                        "name":  "C29_c4_rank2_anchor_tail_26789",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C29_c4_rank2_anchor_tail_26789"
+                    },
+                    {
+                        "name":  "C290_c252_formal_C141_a10",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C290_c252_formal_C141_a10"
+                    },
+                    {
+                        "name":  "C291_c252_formal_C174_a05",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C291_c252_formal_C174_a05"
+                    },
+                    {
+                        "name":  "C292_c252_formal_C174_a10",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C292_c252_formal_C174_a10"
+                    },
+                    {
+                        "name":  "C293_guard_C221_C140_10_10",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C293_guard_C221_C140_10_10"
+                    },
+                    {
+                        "name":  "C294_guard_C100_C140_10_10",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C294_guard_C100_C140_10_10"
+                    },
+                    {
+                        "name":  "C295_guard_C160_C174_10_10",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C295_guard_C160_C174_10_10"
+                    },
+                    {
+                        "name":  "C296_guard_C221_C140_15_10",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C296_guard_C221_C140_15_10"
+                    },
+                    {
+                        "name":  "C297_guard_C100_C109_15_10",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C297_guard_C100_C109_15_10"
+                    },
+                    {
+                        "name":  "C298_guard_C160_C114_15_10",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C298_guard_C160_C114_15_10"
+                    },
+                    {
+                        "name":  "C299_guard_C221_C222_C140",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C299_guard_C221_C222_C140"
+                    },
+                    {
+                        "name":  "C30_c4_rank2_anchor_tail_278910",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C30_c4_rank2_anchor_tail_278910"
+                    },
+                    {
+                        "name":  "C300_guard_C100_C160_C141",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C300_guard_C100_C160_C141"
+                    },
+                    {
+                        "name":  "C31_c4_rank2_anchor_tail_25789",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C31_c4_rank2_anchor_tail_25789"
+                    },
+                    {
+                        "name":  "C32_c4_rank2_anchor_tail_25689",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C32_c4_rank2_anchor_tail_25689"
+                    },
+                    {
+                        "name":  "C33_c4_rank2_anchor_tail_25679",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C33_c4_rank2_anchor_tail_25679"
+                    },
+                    {
+                        "name":  "C34_c4_rank2_anchor_even_246810",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C34_c4_rank2_anchor_even_246810"
+                    },
+                    {
+                        "name":  "C35_c4_rank2_rank3_tail_23578",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C35_c4_rank2_rank3_tail_23578"
+                    },
+                    {
+                        "name":  "C36_c4_rank2_rank3_tail_23678",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C36_c4_rank2_rank3_tail_23678"
+                    },
+                    {
+                        "name":  "C37_c4_rank2_rank3_tail_23568",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C37_c4_rank2_rank3_tail_23568"
+                    },
+                    {
+                        "name":  "C38_c4_rank2_rank3_tail_23579",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C38_c4_rank2_rank3_tail_23579"
+                    },
+                    {
+                        "name":  "C39_c4_rank2_rank3_tail_23569",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C39_c4_rank2_rank3_tail_23569"
+                    },
+                    {
+                        "name":  "C40_c4_tailstable_25689_bonus6",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C40_c4_tailstable_25689_bonus6"
+                    },
+                    {
+                        "name":  "C41_c4_tailstable_256910",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C41_c4_tailstable_256910"
+                    },
+                    {
+                        "name":  "C42_c4_rank2_rank3_tail_235910",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C42_c4_rank2_rank3_tail_235910"
+                    },
+                    {
+                        "name":  "C43_c4_rank2_deep_tail_211121314",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C43_c4_rank2_deep_tail_211121314"
+                    },
+                    {
+                        "name":  "C44_c4_rank2_deep_tail_215161718",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C44_c4_rank2_deep_tail_215161718"
+                    },
+                    {
+                        "name":  "C45_c4_rank2_deep_tail_219202122",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C45_c4_rank2_deep_tail_219202122"
+                    },
+                    {
+                        "name":  "C46_c4_rank2_deep_tail_223242526",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C46_c4_rank2_deep_tail_223242526"
+                    },
+                    {
+                        "name":  "C47_c4_rank2_deepmix_29121315",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C47_c4_rank2_deepmix_29121315"
+                    },
+                    {
+                        "name":  "C48_c4_rank2_deepmix_29121315_bonus12",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C48_c4_rank2_deepmix_29121315_bonus12"
+                    },
+                    {
+                        "name":  "C49_c4_rank2_deepmix_2591215_bonus12",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C49_c4_rank2_deepmix_2591215_bonus12"
+                    },
+                    {
+                        "name":  "C5_time_decay_weighted_train",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C5_time_decay_weighted_train"
+                    },
+                    {
+                        "name":  "C50_c4_rank2_deepmix_26121315_bonus12",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C50_c4_rank2_deepmix_26121315_bonus12"
+                    },
+                    {
+                        "name":  "C51_c4_rank2_deepmix_2691215_bonus12",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C51_c4_rank2_deepmix_2691215_bonus12"
+                    },
+                    {
+                        "name":  "C52_c4_rank2_deepmix_2561215_bonus12",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C52_c4_rank2_deepmix_2561215_bonus12"
+                    },
+                    {
+                        "name":  "C53_c4_balanced_1_2_12_13_15",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C53_c4_balanced_1_2_12_13_15"
+                    },
+                    {
+                        "name":  "C54_c4_balanced_1_2_6_9_12",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C54_c4_balanced_1_2_6_9_12"
+                    },
+                    {
+                        "name":  "C55_c4_balanced_1_2_5_9_12",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C55_c4_balanced_1_2_5_9_12"
+                    },
+                    {
+                        "name":  "C56_c4_balanced_1_2_12_13_15_w3030",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C56_c4_balanced_1_2_12_13_15_w3030"
+                    },
+                    {
+                        "name":  "C57_c4_balanced_1_2_12_15_17",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C57_c4_balanced_1_2_12_15_17"
+                    },
+                    {
+                        "name":  "C58_c4_balanced_1_2_12_15_16",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C58_c4_balanced_1_2_12_15_16"
+                    },
+                    {
+                        "name":  "C59_c4_balanced_1_2_12_15_18",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C59_c4_balanced_1_2_12_15_18"
+                    },
+                    {
+                        "name":  "C6_return_guided_time_decay_train",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C6_return_guided_time_decay_train"
+                    },
+                    {
+                        "name":  "C60_c4_balanced_1_2_12_13_17",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C60_c4_balanced_1_2_12_13_17"
+                    },
+                    {
+                        "name":  "C61_c4_balanced_1_2_12_15_17_w1545251005",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C61_c4_balanced_1_2_12_15_17_w1545251005"
+                    },
+                    {
+                        "name":  "C62_c4_balanced_1_2_12_15_17_w1550201005",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C62_c4_balanced_1_2_12_15_17_w1550201005"
+                    },
+                    {
+                        "name":  "C63_c4_balanced_1_2_12_15_17_w1545201010",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C63_c4_balanced_1_2_12_15_17_w1545201010"
+                    },
+                    {
+                        "name":  "C64_c4_balanced_1_2_12_15_17_w1050201010",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C64_c4_balanced_1_2_12_15_17_w1050201010"
+                    },
+                    {
+                        "name":  "C65_c4_robust_1_2_12_15_17_w0535201525",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C65_c4_robust_1_2_12_15_17_w0535201525"
+                    },
+                    {
+                        "name":  "C66_c4_robust_1_2_12_15_17_w1030251025",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C66_c4_robust_1_2_12_15_17_w1030251025"
+                    },
+                    {
+                        "name":  "C67_c4_robust_1_2_12_15_17_w0510451030",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C67_c4_robust_1_2_12_15_17_w0510451030"
+                    },
+                    {
+                        "name":  "C68_c4_robust_1_2_12_15_17_w0510401530",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C68_c4_robust_1_2_12_15_17_w0510401530"
+                    },
+                    {
+                        "name":  "C7_recent_regime_weighted_train",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C7_recent_regime_weighted_train"
+                    },
+                    {
+                        "name":  "C70_c4_robust_1_2_12_15_17_w0510551515",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C70_c4_robust_1_2_12_15_17_w0510551515"
+                    },
+                    {
+                        "name":  "C71_c4_robust_1_2_12_15_17_w1025401015",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C71_c4_robust_1_2_12_15_17_w1025401015"
+                    },
+                    {
+                        "name":  "C72_c4_robust_1_2_12_15_17_w1525351015",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C72_c4_robust_1_2_12_15_17_w1525351015"
+                    },
+                    {
+                        "name":  "C73_c4_robust_9_12_13_15_17_w0545051530",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C73_c4_robust_9_12_13_15_17_w0545051530"
+                    },
+                    {
+                        "name":  "C74_c4_robust_1_2_12_13_17_w1515551005",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C74_c4_robust_1_2_12_13_17_w1515551005"
+                    },
+                    {
+                        "name":  "C75_c4_regime_volume_gate_c69_else_c4",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C75_c4_regime_volume_gate_c69_else_c4"
+                    },
+                    {
+                        "name":  "C76_c4_regime_volume_two_stage_c69_c67_else_c4",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C76_c4_regime_volume_two_stage_c69_c67_else_c4"
+                    },
+                    {
+                        "name":  "C78_c4_regime_raw_volume5_two_stage_c69_c67_else_c4",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C78_c4_regime_raw_volume5_two_stage_c69_c67_else_c4"
+                    },
+                    {
+                        "name":  "C79_long_mid_rank_ensemble",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C79_long_mid_rank_ensemble"
+                    },
+                    {
+                        "name":  "C8_recent_topk_loss_train",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C8_recent_topk_loss_train"
+                    },
+                    {
+                        "name":  "C80_long_mid_short_rank_ensemble",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C80_long_mid_short_rank_ensemble"
+                    },
+                    {
+                        "name":  "C81_long_mid_short_consensus",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C81_long_mid_short_consensus"
+                    },
+                    {
+                        "name":  "C82_dynamic_disagreement_weight",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C82_dynamic_disagreement_weight"
+                    },
+                    {
+                        "name":  "C83_best_stability_pack",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C83_best_stability_pack"
+                    },
+                    {
+                        "name":  "C84_final_ensemble_candidate",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C84_final_ensemble_candidate"
+                    },
+                    {
+                        "name":  "C85_long_decay_h126",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C85_long_decay_h126"
+                    },
+                    {
+                        "name":  "C86_long_decay_h252",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C86_long_decay_h252"
+                    },
+                    {
+                        "name":  "C87_mid_decay_h126",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C87_mid_decay_h126"
+                    },
+                    {
+                        "name":  "C88_long_regime_similarity",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C88_long_regime_similarity"
+                    },
+                    {
+                        "name":  "C89_long_hybrid_decay_regime",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C89_long_hybrid_decay_regime"
+                    },
+                    {
+                        "name":  "C9_c4_baostock_to_20260618_train_20260622_selfscore",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C9_c4_baostock_to_20260618_train_20260622_selfscore"
+                    },
+                    {
+                        "name":  "C90_ultrashort_warm_start",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C90_ultrashort_warm_start"
+                    },
+                    {
+                        "name":  "C91_static_multi_expert",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C91_static_multi_expert"
+                    },
+                    {
+                        "name":  "C92_dwm_dynamic_weight",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C92_dwm_dynamic_weight"
+                    },
+                    {
+                        "name":  "C93_disagreement_risk_control",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C93_disagreement_risk_control"
+                    },
+                    {
+                        "name":  "C94_best_second_blend",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C94_best_second_blend"
+                    },
+                    {
+                        "name":  "C95_stability_pack",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C95_stability_pack"
+                    },
+                    {
+                        "name":  "C96_final_candidate",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C96_final_candidate"
+                    },
+                    {
+                        "name":  "C97_anchor_portfolio_ensemble_sweep",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C97_anchor_portfolio_ensemble_sweep"
+                    },
+                    {
+                        "name":  "C98_anchor_c77_c84_c92_best_mean",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C98_anchor_c77_c84_c92_best_mean"
+                    },
+                    {
+                        "name":  "C99_anchor_c77_c84_c92_c90_balanced",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\08_experiment_generalization_selfscore_20260701\\candidates\\C99_anchor_c77_c84_c92_c90_balanced"
+                    }
+                ]
+}

@@ -1,0 +1,125 @@
+﻿{
+    "created_at":  "2026-07-07T14:28:24",
+    "workspace_root":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU",
+    "renamed_directories":  [
+                                {
+                                    "to":  "BaoStock_Datasets",
+                                    "from":  "03_data_baostock_expansion_20260630"
+                                },
+                                {
+                                    "to":  "Experimental_WorkSpace",
+                                    "from":  "08_experiment_generalization_selfscore_20260701"
+                                },
+                                {
+                                    "to":  "C0_BaseModel",
+                                    "from":  "C4_recent_weighted_train"
+                                },
+                                {
+                                    "to":  "C1_Champion_RegimeGate",
+                                    "from":  "C77_c4_regime_raw_volume5_gate_c69_else_c4"
+                                },
+                                {
+                                    "to":  "C2_StrictClean_Baseline",
+                                    "from":  "C302_formal_purge_clean_c4_cutoff_20260313"
+                                },
+                                {
+                                    "to":  "candidate/C1_Submission_App_20260703",
+                                    "from":  "candidate/C77_Submission_App_20260703"
+                                }
+                            ],
+    "retained_experimental_models":  [
+                                         "C0_BaseModel",
+                                         "C1_Champion_RegimeGate",
+                                         "C2_StrictClean_Baseline"
+                                     ],
+    "deleted_scope":  "All non-retained model directories under Experimental_WorkSpace/candidates plus old experiment lab outputs under Experimental_WorkSpace, excluding shared_envs and PYTORCH_ENVIRONMENT.md.",
+    "preserved_experiment_children":  [
+                                          "candidates",
+                                          "shared_envs",
+                                          "PYTORCH_ENVIRONMENT.md"
+                                      ],
+    "preserved_submission_candidates":  [
+                                            "C1_Submission_App_20260703",
+                                            "Improvement_THU_original_candidate_20260705",
+                                            "THU-BDC2026-main"
+                                        ],
+    "top_level_entries":  [
+                              {
+                                  "Name":  ".venv",
+                                  "Mode":  "d-----",
+                                  "LastWriteTime":  "\/Date(1783217770966)\/"
+                              },
+                              {
+                                  "Name":  "04_framework_walkforward_eval_20260701",
+                                  "Mode":  "d-----",
+                                  "LastWriteTime":  "\/Date(1782961102967)\/"
+                              },
+                              {
+                                  "Name":  "BaoStock_Datasets",
+                                  "Mode":  "d-----",
+                                  "LastWriteTime":  "\/Date(1782961053274)\/"
+                              },
+                              {
+                                  "Name":  "candidate",
+                                  "Mode":  "d-----",
+                                  "LastWriteTime":  "\/Date(1783405552876)\/"
+                              },
+                              {
+                                  "Name":  "docs",
+                                  "Mode":  "d-----",
+                                  "LastWriteTime":  "\/Date(1783247595279)\/"
+                              },
+                              {
+                                  "Name":  "Experimental_WorkSpace",
+                                  "Mode":  "d-----",
+                                  "LastWriteTime":  "\/Date(1783405555924)\/"
+                              },
+                              {
+                                  "Name":  "skills",
+                                  "Mode":  "d-----",
+                                  "LastWriteTime":  "\/Date(1783308394977)\/"
+                              },
+                              {
+                                  "Name":  "_cleanup_reports",
+                                  "Mode":  "d-----",
+                                  "LastWriteTime":  "\/Date(1783247704427)\/"
+                              },
+                              {
+                                  "Name":  "AGENTS.md",
+                                  "Mode":  "-a----",
+                                  "LastWriteTime":  "\/Date(1783405664875)\/"
+                              },
+                              {
+                                  "Name":  "pyproject.toml",
+                                  "Mode":  "-a----",
+                                  "LastWriteTime":  "\/Date(1782699605980)\/"
+                              },
+                              {
+                                  "Name":  "uv.lock",
+                                  "Mode":  "-a----",
+                                  "LastWriteTime":  "\/Date(1774426710000)\/"
+                              },
+                              {
+                                  "Name":  "WORKSPACE_LAYOUT_20260705.md",
+                                  "Mode":  "-a----",
+                                  "LastWriteTime":  "\/Date(1783405664874)\/"
+                              }
+                          ],
+    "current_model_dirs":  [
+                               {
+                                   "Name":  "C0_BaseModel",
+                                   "LastWriteTime":  "\/Date(1783161175835)\/"
+                               },
+                               {
+                                   "Name":  "C1_Champion_RegimeGate",
+                                   "LastWriteTime":  "\/Date(1783034150165)\/"
+                               },
+                               {
+                                   "Name":  "C2_StrictClean_Baseline",
+                                   "LastWriteTime":  "\/Date(1783405616704)\/"
+                               }
+                           ],
+    "remaining_cache_dirs":  [
+
+                             ]
+}

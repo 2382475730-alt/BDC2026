@@ -1,0 +1,8 @@
+{
+  "model_id": "C2",
+  "model_name": "C2_StrictClean_Baseline",
+  "former_id": "C302",
+  "former_directory": "C302_formal_purge_clean_c4_cutoff_20260313",
+  "role": "strict formal-purge clean baseline",
+  "renamed_at": "2026-07-07"
+}

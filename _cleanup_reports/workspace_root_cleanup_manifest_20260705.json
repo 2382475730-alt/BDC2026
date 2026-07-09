@@ -1,0 +1,51 @@
+﻿{
+    "created_at":  "2026-07-05T18:35:04",
+    "workspace":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU",
+    "note":  "Removed duplicate original submission app files from workspace root after copying them into candidate/Improvement_THU_original_candidate_20260705. Kept .venv, pyproject.toml, and uv.lock as workspace runtime files.",
+    "removed":  [
+                    {
+                        "name":  "code",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\code"
+                    },
+                    {
+                        "name":  "data",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\data"
+                    },
+                    {
+                        "name":  "model",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\model"
+                    },
+                    {
+                        "name":  "output",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\output"
+                    },
+                    {
+                        "name":  "temp",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\temp"
+                    },
+                    {
+                        "name":  ".dockerignore",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\.dockerignore"
+                    },
+                    {
+                        "name":  "Dockerfile",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Dockerfile"
+                    },
+                    {
+                        "name":  "init.sh",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\init.sh"
+                    },
+                    {
+                        "name":  "readme.md",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\readme.md"
+                    },
+                    {
+                        "name":  "test.sh",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\test.sh"
+                    },
+                    {
+                        "name":  "train.sh",
+                        "full_name":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\train.sh"
+                    }
+                ]
+}

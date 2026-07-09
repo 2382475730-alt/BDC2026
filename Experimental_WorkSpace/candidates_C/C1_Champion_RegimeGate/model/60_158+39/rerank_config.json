@@ -1,0 +1,61 @@
+{
+    "window_scores": [
+        -0.010149979709826177,
+        0.011575146713598479,
+        -0.005733684881364431
+    ],
+    "mean_window_score": -0.0014361726258640432,
+    "min_window_score": -0.010149979709826177,
+    "robust_val_score": -0.004050314751052683,
+    "pool_size": 150,
+    "inference_cross_sectional_norm": true,
+    "ensemble_second_best": true,
+    "rerank_return_5_weight": -3.0,
+    "rerank_volume_change_weight": 0.8,
+    "rerank_volatility_10_weight": -0.3,
+    "output_top_k": 5,
+    "weight_mode": "regime_volume_gate_c69_else_c4",
+    "rank_weights": [
+        0.05,
+        0.15,
+        0.5,
+        0.15,
+        0.15
+    ],
+    "softmax_temperature": 0.03,
+    "min_weight": 0.05,
+    "max_weight": 0.5,
+    "rerank_extra_weights": {
+        "atr_14": 1.0,
+        "open_close_spread": 1.5,
+        "volume_ratio": -1.0,
+        "_gate_volume_ratio_5": 0.0
+    },
+    "metric": "acceptance-gated validation-grid candidate",
+    "manual_selected_ranks": [
+        1,
+        2,
+        12,
+        15,
+        17
+    ],
+    "regime_gate_feature": "_gate_volume_ratio_5",
+    "regime_volume_ratio_scaled_threshold": 1.111401,
+    "regime_manual_selected_ranks": [
+        1,
+        2,
+        12,
+        15,
+        17
+    ],
+    "regime_manual_rank_weights": [
+        0.05,
+        0.15,
+        0.5,
+        0.15,
+        0.15
+    ],
+    "regime_c4_temperature": 0.03,
+    "regime_c4_min_weight": 0.05,
+    "regime_c4_max_weight": 0.5
+}

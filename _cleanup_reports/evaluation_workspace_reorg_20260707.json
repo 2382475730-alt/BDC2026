@@ -1,0 +1,41 @@
+﻿{
+    "created_at":  "2026-07-07T15:04:15",
+    "action":  "rename_and_classify_evaluation_workspace",
+    "renamed_directory":  {
+                              "from":  "04_framework_walkforward_eval_20260701",
+                              "to":  "Evaluation"
+                          },
+    "script_categories":  {
+                              "walk_forward":  [
+                                                   "Evaluation/scripts/walk_forward/walk_forward_eval.py"
+                                               ],
+                              "reporting":  [
+                                                "Evaluation/scripts/reporting/build_walk_forward_report.py"
+                                            ],
+                              "self_score":  [
+
+                                             ],
+                              "leakage_audit":  [
+
+                                                ],
+                              "scoreboard":  [
+
+                                             ]
+                          },
+    "config_categories":  [
+                              "Evaluation/configs/walk_forward",
+                              "Evaluation/configs/self_score",
+                              "Evaluation/configs/leakage_audit",
+                              "Evaluation/configs/scoreboard"
+                          ],
+    "output_directories":  [
+                               "Evaluation/runs",
+                               "Evaluation/reports"
+                           ],
+    "candidate_packages_modified":  false,
+    "syntax_check":  {
+                         "command":  "python -m py_compile Evaluation/scripts/walk_forward/walk_forward_eval.py Evaluation/scripts/reporting/build_walk_forward_report.py",
+                         "ok":  true
+                     },
+    "old_directory_exists":  false
+}

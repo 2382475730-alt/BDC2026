@@ -1,0 +1,4 @@
+interface:
+  display_name: "BDC2026 Experiment Runner"
+  short_description: "Run BDC2026 experiments and validation."
+  default_prompt: "Use $bdc2026-experiment-runner to run model experiments and walk-forward validation."

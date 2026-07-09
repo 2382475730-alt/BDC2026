@@ -1,0 +1,48 @@
+{
+  "run_dir": "Experimental_WorkSpace\\candidates_D\\D001_MarketEncoder_Baseline\\experiments\\r2_D001_three_set_top2_20260708",
+  "best_checkpoint": "Experimental_WorkSpace\\candidates_D\\D001_MarketEncoder_Baseline\\experiments\\r2_D001_three_set_top2_20260708\\best_model.pth",
+  "last_checkpoint": "Experimental_WorkSpace\\candidates_D\\D001_MarketEncoder_Baseline\\experiments\\r2_D001_three_set_top2_20260708\\last_model.pth",
+  "checkpoint_metric": "val_robust_final_score",
+  "best_score": 0.0036574066314151,
+  "best_epoch": 42,
+  "epochs": 90,
+  "stopped_reason": "manual_stop_for_iteration_after_plateau",
+  "best_val_mean_final_score": 0.1072932955428058,
+  "best_val_mean_portfolio_return": 0.033079752358996,
+  "best_test_mean_final_score": -0.049362347635474,
+  "best_test_mean_portfolio_return": -0.0129710677473877,
+  "latest_epoch": 90,
+  "split": {
+    "mode": "three_set_t5",
+    "rule": "Train fits model/scalers; validation selects checkpoints and hyperparameters; local_test is frozen diagnostic only.",
+    "label": "open(T+5) / open(T+1) - 1",
+    "train": {
+      "sample_count": 1148,
+      "sample_start": "2021-04-02",
+      "sample_end": "2025-12-24",
+      "label_end_start": "2021-04-12",
+      "label_end_end": "2025-12-31"
+    },
+    "validation": {
+      "sample_count": 30,
+      "sample_start": "2026-01-05",
+      "sample_end": "2026-02-13",
+      "label_end_start": "2026-01-12",
+      "label_end_end": "2026-03-02"
+    },
+    "local_test": {
+      "sample_count": 13,
+      "sample_start": "2026-02-24",
+      "sample_end": "2026-03-12",
+      "label_end_start": "2026-03-03",
+      "label_end_end": "2026-03-19"
+    },
+    "val_start": "2026-01-05",
+    "val_end": "2026-02-20",
+    "test_start": "2026-02-23",
+    "test_end": "2026-03-12",
+    "one_shot_test_date": "2026-03-12",
+    "one_shot_test_sample_count": 1,
+    "train_label_end_before_val_start": true
+  }
+}

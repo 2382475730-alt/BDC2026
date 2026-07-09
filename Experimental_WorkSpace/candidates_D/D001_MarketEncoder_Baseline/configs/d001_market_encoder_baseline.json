@@ -1,0 +1,61 @@
+{
+  "experiment_id": "D001",
+  "seed": 20260707,
+  "data": {
+    "train_csv": "data/train.csv",
+    "date_col": "日期",
+    "stock_col": "股票代码",
+    "min_stocks_per_day": 10
+  },
+  "label": {
+    "horizon": 5,
+    "buy_offset": 1,
+    "sell_offset": 5
+  },
+  "features": {
+    "version": "d_market_v1",
+    "sequence_length": 60
+  },
+  "model": {
+    "d_model": 128,
+    "nhead": 4,
+    "num_layers": 2,
+    "dim_feedforward": 256,
+    "dropout": 0.1,
+    "use_factor_encoder": false
+  },
+  "loss": {
+    "temperature": 1.0,
+    "pairwise_weight": 0.25,
+    "pairwise_margin": 0.05,
+    "portfolio_return_weight": 0.0,
+    "portfolio_volatility_weight": 0.0
+  },
+  "portfolio": {
+    "top_k": 5,
+    "mode": "topk_equal",
+    "softmax_temperature": 1.0,
+    "max_weight": 1.0,
+    "min_weight": 0.0
+  },
+  "training": {
+    "batch_size": 2,
+    "num_epochs": 20,
+    "learning_rate": 0.00005,
+    "weight_decay": 0.00001,
+    "grad_clip": 5.0,
+    "num_workers": 0,
+    "early_stop_patience": 5
+  },
+  "validation": {
+    "mode": "c_legacy_last_two_months",
+    "folds": [
+      ["fold1", "2024-01-02", "2024-12-31"],
+      ["fold2", "2025-01-02", "2025-12-31"],
+      ["fold3", "2026-01-19", "2026-03-12"]
+    ]
+  },
+  "output": {
+    "run_dir": "experiments/D001_manual_run"
+  }
+}

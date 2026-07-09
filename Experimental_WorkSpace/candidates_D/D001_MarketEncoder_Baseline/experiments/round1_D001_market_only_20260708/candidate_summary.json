@@ -1,0 +1,17 @@
+{
+  "run_dir": "experiments\\round1_D001_market_only_20260708",
+  "best_checkpoint": "experiments\\round1_D001_market_only_20260708\\best_model.pth",
+  "last_checkpoint": "experiments\\round1_D001_market_only_20260708\\last_model.pth",
+  "checkpoint_metric": "val_robust_final_score",
+  "best_score": -0.025720729206768378,
+  "epochs": 31,
+  "split": {
+    "mode": "c_legacy_last_two_months",
+    "val_start": "2026-01-19",
+    "val_end": "2026-03-19",
+    "train_sample_count": 1158,
+    "val_sample_count": 33,
+    "train_label_end_before_val_start": true
+  },
+  "elapsed_minutes": 13.658499459425608
+}

@@ -1,0 +1,26 @@
+﻿{
+    "created_at":  "2026-07-07T15:26:26",
+    "action":  "rename_experimental_candidate_family",
+    "renamed_directory":  {
+                              "from":  "Experimental_WorkSpace/candidates",
+                              "to":  "Experimental_WorkSpace/candidates_C"
+                          },
+    "rationale":  "C-series models share the same bottom-level training-program lineage and should be grouped in one candidate-family folder.",
+    "current_family_dirs":  [
+                                "candidates_C"
+                            ],
+    "candidates_C_children":  [
+                                  "C0_BaseModel",
+                                  "C1_Champion_RegimeGate",
+                                  "C2_StrictClean_Baseline"
+                              ],
+    "future_rule":  "When the bottom-level training program changes, create a separate family folder such as Experimental_WorkSpace/candidates_D.",
+    "docs_updated":  [
+                         "AGENTS.md",
+                         "WORKSPACE_LAYOUT_20260705.md",
+                         "Experimental_WorkSpace/README.md",
+                         "Evaluation/README.md"
+                     ],
+    "old_directory_exists":  false,
+    "new_directory_exists":  true
+}

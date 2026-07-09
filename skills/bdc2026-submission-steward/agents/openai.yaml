@@ -1,0 +1,4 @@
+interface:
+  display_name: "BDC2026 Submission Steward"
+  short_description: "Keep the BDC2026 submission package clean and valid."
+  default_prompt: "Use $bdc2026-submission-steward to validate and clean the BDC2026 submission package."

@@ -1,0 +1,39 @@
+# Local Python environments and package caches
+.venv/
+Experimental_WorkSpace/shared_envs/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local/editor state
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Competition data and generated experiment artifacts
+BaoStock_Datasets/data/
+Experimental_WorkSpace/runs/
+Experimental_WorkSpace/reports/
+Experimental_WorkSpace/**/automation_runs/
+Experimental_WorkSpace/**/data_snapshots/
+candidate/**/data/
+candidate/**/model/
+candidate/**/output/
+
+# Large model/data artifacts
+*.csv
+*.pth
+*.pt
+*.ckpt
+*.pkl
+
+# Logs and transient outputs
+*.log
+events.out.tfevents.*
+*.tmp
+*.bak

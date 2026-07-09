@@ -1,0 +1,79 @@
+﻿{
+    "created_at":  "2026-07-07T14:32:28",
+    "workspace_root":  "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU",
+    "retained_model_mapping":  [
+                                   {
+                                       "new_id":  "C0",
+                                       "directory":  "Experimental_WorkSpace/candidates/C0_BaseModel",
+                                       "former_id":  "C4_recent_weighted_train",
+                                       "role":  "base Transformer model"
+                                   },
+                                   {
+                                       "new_id":  "C1",
+                                       "directory":  "Experimental_WorkSpace/candidates/C1_Champion_RegimeGate",
+                                       "former_id":  "C77_c4_regime_raw_volume5_gate_c69_else_c4",
+                                       "role":  "champion regime-gated baseline"
+                                   },
+                                   {
+                                       "new_id":  "C2",
+                                       "directory":  "Experimental_WorkSpace/candidates/C2_StrictClean_Baseline",
+                                       "former_id":  "C302_formal_purge_clean_c4_cutoff_20260313",
+                                       "role":  "strict-clean baseline"
+                                   }
+                               ],
+    "renamed_data_directory":  {
+                                   "from":  "03_data_baostock_expansion_20260630",
+                                   "to":  "BaoStock_Datasets"
+                               },
+    "renamed_experiment_directory":  {
+                                         "from":  "08_experiment_generalization_selfscore_20260701",
+                                         "to":  "Experimental_WorkSpace"
+                                     },
+    "retained_experimental_candidate_dirs":  [
+                                                 "C0_BaseModel",
+                                                 "C1_Champion_RegimeGate",
+                                                 "C2_StrictClean_Baseline"
+                                             ],
+    "retained_submission_candidate_dirs":  [
+                                               "C1_Submission_App_20260703",
+                                               "Improvement_THU_original_candidate_20260705",
+                                               "THU-BDC2026-main"
+                                           ],
+    "unexpected_experimental_candidate_dirs":  [
+
+                                               ],
+    "old_top_level_path_status":  [
+                                      {
+                                          "path":  "03_data_baostock_expansion_20260630",
+                                          "exists":  false
+                                      },
+                                      {
+                                          "path":  "08_experiment_generalization_selfscore_20260701",
+                                          "exists":  false
+                                      },
+                                      {
+                                          "path":  "candidate\\C77_Submission_App_20260703",
+                                          "exists":  false
+                                      }
+                                  ],
+    "remaining_cache_dirs_under_retained_models":  [
+
+                                                   ],
+    "docs_updated":  [
+                         "AGENTS.md",
+                         "WORKSPACE_LAYOUT_20260705.md",
+                         "skills/bdc2026-experiment-runner/SKILL.md",
+                         "skills/bdc2026-submission-steward/SKILL.md",
+                         "candidate/C1_Submission_App_20260703/readme.md",
+                         "candidate/C1_Submission_App_20260703/MODEL_CARD.md"
+                     ],
+    "submission_validation":  {
+                                  "package":  "candidate/C1_Submission_App_20260703",
+                                  "command":  "python code/src/validate_submission.py --write-manifest",
+                                  "ok":  true
+                              },
+    "notes":  [
+                  "Historical evaluation CSV/log/JSON files may still contain former model identifiers for provenance.",
+                  "No model training was run during the rename and cleanup."
+              ]
+}

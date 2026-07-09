@@ -1,0 +1,11 @@
+{
+  "python": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\.venv\\Scripts\\python.exe",
+  "python_version": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "torch": "2.10.0+cu128",
+  "cuda_available": true,
+  "cuda_device_count": 1,
+  "cuda_device_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "data_path": "..\\..\\candidates_C\\C0_BaseModel\\data\\train.csv",
+  "data_md5": "5f389f4817dc1d33ebf53e7fed6425fd"
+}

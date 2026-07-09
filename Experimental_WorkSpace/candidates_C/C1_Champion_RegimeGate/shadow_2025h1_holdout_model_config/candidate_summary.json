@@ -1,0 +1,29 @@
+{
+  "candidate_name": "candidate",
+  "candidate_dir": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\08_experiment_generalization_selfscore_20260701\\candidates\\C77_c4_regime_raw_volume5_gate_c69_else_c4",
+  "policy": "model_config",
+  "window_mode": "frozen",
+  "training_mode": "frozen_existing",
+  "model_asof_date": "2021-01-04",
+  "start_date": "2025-03-03",
+  "end_date": "2025-06-30",
+  "step_days": 5,
+  "horizon_days": 5,
+  "purge_days": 5,
+  "min_weight": 0.05,
+  "max_weight": 0.8,
+  "min_effective_holdings": 1.0,
+  "primary_net_field": "net_score_10bps",
+  "official_self_score": null,
+  "fold_plan_count": 17,
+  "metrics": {
+    "fold_count": 17,
+    "mean_net_score": 0.006821455713880491,
+    "median_net_score": -0.00065470254116251,
+    "hit_rate": 0.47058823529411764,
+    "worst_20pct_mean": -0.040889777391880294,
+    "min_net_score": -0.08309338824144705,
+    "max_net_score": 0.1424172270521885,
+    "max_drawdown_proxy": -0.13121894485497382
+  }
+}
