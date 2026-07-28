@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "status": "PASS",
+  "tdd": {
+    "red_phase": {
+      "status": "EXPECTED_FAIL",
+      "reason": "loss and protocol modules did not exist",
+      "failed_test_modules": [
+        "test_h_loss",
+        "test_h_protocol"
+      ]
+    },
+    "green_phase": {
+      "tests_run": 16,
+      "failures": 0,
+      "errors": 0
+    }
+  },
+  "coverage": {
+    "tool": "Python stdlib trace --count --missing",
+    "scope": [
+      "Experimental_WorkSpace/candidates_H/code/src/loss.py",
+      "Experimental_WorkSpace/candidates_H/code/src/protocol.py"
+    ],
+    "hit_executable_lines": 417,
+    "missed_executable_lines": 91,
+    "line_coverage_percent": 82.09,
+    "threshold_percent": 80.0,
+    "threshold_pass": true
+  },
+  "cuda_smoke": {
+    "status": "PASS",
+    "h0_loss_finite": true,
+    "h1_loss_finite": true,
+    "outer_two_epoch_validation_schedule": [
+      false,
+      true
+    ],
+    "outer_validation_evaluation_count": 1
+  },
+  "static_and_artifact_checks": {
+    "python_ast_files": 14,
+    "json_files": 14,
+    "executed_notebook_code_cells": 7,
+    "notebook_error_outputs": 0,
+    "artifact_hash_errors": 0,
+    "git_diff_check_exit": 0
+  },
+  "terminal_guards": {
+    "finalist_lock_exists": false,
+    "h01_exists": false,
+    "candidate_h_exists": false,
+    "sealed_holdout_access_count": 0
+  }
+}

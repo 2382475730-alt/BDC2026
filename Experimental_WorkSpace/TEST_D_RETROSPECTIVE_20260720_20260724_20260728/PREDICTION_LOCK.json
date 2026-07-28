@@ -1,0 +1,51 @@
+{
+  "schema_version": "test_d_retrospective_prediction_lock_v1",
+  "classification": "RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "status": "LOCKED_BEFORE_OUTCOME_ACCESS",
+  "created_at": "2026-07-28T10:42:11.8467799+08:00",
+  "protocol": {
+    "decision_date": "2026-07-17",
+    "buy_date": "2026-07-20",
+    "sell_date": "2026-07-24",
+    "holding_return": "sell_open / buy_open - 1",
+    "top_k": 2,
+    "weight_rule": "equal_weight",
+    "outcome_was_public_before_this_test": true,
+    "eligible_as_independent_holdout": false
+  },
+  "inputs": {
+    "preregistration_sha256": "3837EF2A3D770475AAAFB0A21B012E8DCC518E46C27B1746D80CC8DF4EDE08FB",
+    "causal_manifest_sha256": "E7B6D01FBF699D064CD40FFD2D13794CC306643189BF7EF60C54649592B11FF6",
+    "causal_prefix_sha256": "E806FEAFE78B9918E23B2CFD48989EFCE9B1CADC4DB24FD345CAE789003EB2B7",
+    "causal_prefix_date_end": "2026-07-17",
+    "causal_prefix_stocks": 300,
+    "causal_prefix_future_rows": 0,
+    "source": "Tencent",
+    "adjust": "qfq",
+    "source_mix": false
+  },
+  "frozen_candidate_d": {
+    "checkpoint_sha256": "BD85F504599D1995BD19F254C78136BE1CF42E74A349F32ED6BDEC5CCB0EF86D",
+    "scalers_sha256": "3D647F554D5E09C50E56488931DEABD54FF08750EDB645F265FF91D00BC62B38",
+    "inference_program_sha256": "4A5A14F7ADADE757105532512B95F5D7310AF9EE44F701581E0542AED688D71D",
+    "retrained": false
+  },
+  "repeatability": {
+    "pass1_sha256": "7E2FD397A5B776534D595F5B3FEB1BC3CE6DC82098B67629B67C745DAAFB8BCB",
+    "pass2_sha256": "7E2FD397A5B776534D595F5B3FEB1BC3CE6DC82098B67629B67C745DAAFB8BCB",
+    "byte_identical": true
+  },
+  "portfolio": [
+    {
+      "stock_code": "300476",
+      "weight": 0.5
+    },
+    {
+      "stock_code": "688183",
+      "weight": 0.5
+    }
+  ],
+  "weight_sum": 1.0,
+  "outcome_accessed_before_lock": false,
+  "candidate_package_written": false
+}

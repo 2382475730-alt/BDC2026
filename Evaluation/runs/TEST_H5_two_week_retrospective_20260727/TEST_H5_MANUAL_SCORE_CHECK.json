@@ -1,0 +1,10 @@
+{
+  "marker": "TEST",
+  "experiment_id": "TEST_H5_TWO_WEEK_RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "weekly_holding_sum_match": true,
+  "recomputed_two_week_gross_compound": -0.11700358291598079,
+  "reported_two_week_gross_compound": -0.11700358291598068,
+  "recomputed_two_week_net_10bps_compound": -0.12078509925520631,
+  "reported_two_week_net_10bps_compound": -0.1207850992552062,
+  "passed": true
+}

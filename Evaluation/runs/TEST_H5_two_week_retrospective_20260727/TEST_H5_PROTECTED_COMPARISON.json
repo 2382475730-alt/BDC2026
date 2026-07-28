@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "status": "PASS_TASK_RELATIVE_PER_FILE",
+  "git_clean_claimed": false,
+  "historical_dirty_worktree_preserved": true,
+  "roots": {
+    "candidate_all": {
+      "added": [],
+      "removed": [],
+      "changed": [],
+      "compliant": true
+    },
+    "d01_research_champion": {
+      "added": [],
+      "removed": [],
+      "changed": [],
+      "compliant": true
+    },
+    "tri_candidate_workspace": {
+      "added": [],
+      "removed": [],
+      "changed": [],
+      "compliant": true
+    },
+    "tri_candidate_evaluation": {
+      "added": [],
+      "removed": [],
+      "changed": [],
+      "compliant": true
+    },
+    "historical_h5_evaluation": {
+      "added": [],
+      "removed": [],
+      "changed": [],
+      "compliant": true
+    },
+    "h_series_policy_scope": {
+      "added": [
+        "H_VALIDATION_EXPOSURE_LEDGER.json",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W1_20260703/data/shared_train_readonly.csv",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W1_20260703/frozen_config.json",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W1_20260703/prediction_lock.json",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W1_20260703/prediction_lock.json.sha256",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W1_20260703/predictions/result_pass1.csv",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W1_20260703/predictions/result_pass2.csv",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W1_20260703/predictions/scores_pass1.csv",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W1_20260703/predictions/scores_pass2.csv",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W1_20260703/training/final_epoch_1.pth",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W1_20260703/training/frozen_config.json",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W1_20260703/training/scalers.json",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W1_20260703/training/training_history.csv",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W1_20260703/training/training_manifest.json",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W2_20260710/data/shared_train_readonly.csv",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W2_20260710/frozen_config.json",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W2_20260710/prediction_lock.json",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W2_20260710/prediction_lock.json.sha256",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W2_20260710/predictions/result_pass1.csv",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W2_20260710/predictions/result_pass2.csv",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W2_20260710/predictions/scores_pass1.csv",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W2_20260710/predictions/scores_pass2.csv",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W2_20260710/training/final_epoch_1.pth",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W2_20260710/training/frozen_config.json",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W2_20260710/training/scalers.json",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W2_20260710/training/training_history.csv",
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W2_20260710/training/training_manifest.json"
+      ],
+      "removed": [],
+      "changed": [
+        "H_experiment_registry.json",
+        "README.md",
+        "TEST_STATUS.json"
+      ],
+      "allowed_added_exact": [
+        "H_VALIDATION_EXPOSURE_LEDGER.json"
+      ],
+      "allowed_added_prefixes": [
+        "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/"
+      ],
+      "allowed_changed": [
+        "H_experiment_registry.json",
+        "README.md",
+        "TEST_STATUS.json"
+      ],
+      "unexpected_added": [],
+      "unexpected_changed": [],
+      "compliant": true
+    }
+  },
+  "single_files": {
+    "tri_controller": {
+      "path": "Evaluation/scripts/walk_forward/tri_candidate_recent_rolling.py",
+      "before_sha256": "13370847481F9CFCC599CCADF52ACB6700389BE6C464FC638EE5EA3B144902B0",
+      "after_sha256": "13370847481F9CFCC599CCADF52ACB6700389BE6C464FC638EE5EA3B144902B0",
+      "unchanged": true
+    },
+    "tri_tests": {
+      "path": "Evaluation/scripts/walk_forward/test_tri_candidate_recent_rolling.py",
+      "before_sha256": "6A51F5EA6A9433DEE54FFF1892FC5B0C1E45190DEFCD97671B0A33B146427B5A",
+      "after_sha256": "6A51F5EA6A9433DEE54FFF1892FC5B0C1E45190DEFCD97671B0A33B146427B5A",
+      "unchanged": true
+    },
+    "historical_h5_reporter": {
+      "path": "Evaluation/scripts/reporting/create_test_h5_final_report.py",
+      "before_sha256": "30CB0E5CEB76067629DF823ED6C89B46C8BB3B25AAB8604489C35B4C3F478110",
+      "after_sha256": "30CB0E5CEB76067629DF823ED6C89B46C8BB3B25AAB8604489C35B4C3F478110",
+      "unchanged": true
+    },
+    "h5_two_week_scorer": {
+      "path": "Evaluation/scripts/walk_forward/score_test_h5_two_week_retrospective.py",
+      "before_sha256": "1511F8EF38580CD540086F9CC3DF7ED3CE8EAF64B28632536ACAFF9DAA344F24",
+      "after_sha256": "1511F8EF38580CD540086F9CC3DF7ED3CE8EAF64B28632536ACAFF9DAA344F24",
+      "unchanged": true
+    },
+    "h5_two_week_finalizer": {
+      "path": "Evaluation/scripts/reporting/finalize_test_h5_two_week_retrospective.py",
+      "before_sha256": "9FB60C6FD90007D329DC3592F0F81577E2A5BA8F1564027B29E062D6DB2A7F88",
+      "after_sha256": "9FB60C6FD90007D329DC3592F0F81577E2A5BA8F1564027B29E062D6DB2A7F88",
+      "unchanged": true
+    }
+  },
+  "document_constraints": {
+    "registry_old_entries_unchanged": true,
+    "registry_one_entry_appended": true,
+    "test_status_old_keys_unchanged": true,
+    "test_status_diagnostic_added": true,
+    "exposure_old_entries_unchanged": true,
+    "exposure_entries_appended": true,
+    "evaluation_readme_updated": true,
+    "h_readme_required_markers": true
+  }
+}

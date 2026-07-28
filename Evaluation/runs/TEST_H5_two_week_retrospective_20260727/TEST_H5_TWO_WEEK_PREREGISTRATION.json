@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "experiment_id": "TEST_H5_TWO_WEEK_RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "marker": "TEST",
+  "registered_at_utc": "2026-07-27T01:53:12.4848385Z",
+  "status": "PREREGISTERED_NOT_SCORED",
+  "diagnostic_class": "RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "blind_test": false,
+  "independent_holdout": false,
+  "promotion_evidence": false,
+  "promotion_allowed": false,
+  "serious_allowed": false,
+  "h01_creation_allowed": false,
+  "user_authorized_exposure_reclassification": {
+    "range": [
+      "2026-04-03",
+      "2026-07-03"
+    ],
+    "new_status": "PERMANENTLY_EXPOSED_H_SERIES_TRAINING_RANGE",
+    "future_holdout_use_allowed": false,
+    "future_promotion_use_allowed": false
+  },
+  "frozen_h5": {
+    "seed": 20260726,
+    "fixed_final_epoch": 1,
+    "early_stopping": false,
+    "checkpoint_search": false,
+    "objective_mode": "predicted_boundary_stability",
+    "boundary_hard_negative_k": 15,
+    "feature_version": "d_market_v1",
+    "sequence_length": 60,
+    "enable_industry": false,
+    "enable_futures": false,
+    "enable_financials": false,
+    "enable_corporate_events": false,
+    "portfolio": {
+      "mode": "topk_equal",
+      "top_k": 5,
+      "weights": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "weight_sum": 1.0,
+      "expected_hhi": 0.2
+    },
+    "label": {
+      "formula": "open(T+5) / open(T+1) - 1",
+      "horizon": 5,
+      "buy_offset": 1,
+      "sell_offset": 5
+    },
+    "optimizer_and_loss_weights_source": "Experimental_WorkSpace/candidates_H/configs/TEST_H_QUICK_BASE.json plus TEST_H5_PREDICTED_BOUNDARY_OBJECTIVE_V2 overrides",
+    "epoch_rule_source": "most recent pre-existing H5 sentinel inner selection, 2026Q1 selected epoch 1",
+    "post_score_changes_allowed": false
+  },
+  "rounds": [
+    {
+      "round_id": "W1_20260703",
+      "decision_date": "2026-07-03",
+      "buy_date": "2026-07-06",
+      "sell_date": "2026-07-10",
+      "input_path": "Experimental_WorkSpace/tri_candidate_rolling_validation_20260722/rounds/W1_20260703/data/shared_train.csv",
+      "input_sha256": "DC76F0C68BA46C0D629AF37C5F7E280873D732702CB6CA1E375E89715946E07E",
+      "expected_rows": 337852,
+      "expected_stocks": 300,
+      "date_start": "2021-10-12",
+      "date_end": "2026-07-03",
+      "expected_training_samples": 1083,
+      "training_sample_start": "2022-01-04",
+      "training_sample_end": "2026-06-26",
+      "maximum_label_end_date": "2026-07-03"
+    },
+    {
+      "round_id": "W2_20260710",
+      "decision_date": "2026-07-10",
+      "buy_date": "2026-07-13",
+      "sell_date": "2026-07-17",
+      "input_path": "Experimental_WorkSpace/tri_candidate_rolling_validation_20260722/rounds/W2_20260710/data/shared_train.csv",
+      "input_sha256": "7E8CC2F5A6B685F21CAB17BA3A929D6DB8B15FFC2A5461C6CE1C3ED4B36D7F12",
+      "expected_rows": 339352,
+      "expected_stocks": 300,
+      "date_start": "2021-10-12",
+      "date_end": "2026-07-10",
+      "expected_training_samples": 1088,
+      "training_sample_start": "2022-01-04",
+      "training_sample_end": "2026-07-03",
+      "maximum_label_end_date": "2026-07-10",
+      "forbidden_row_date_on_or_after": "2026-07-13",
+      "warm_start_from_w1_allowed": false
+    }
+  ],
+  "execution_order": [
+    "freeze code and configuration hashes",
+    "run tests and CUDA smoke without isolated validation access",
+    "train W1 from scratch",
+    "run W1 inference twice and lock byte-identical result",
+    "train W2 from scratch",
+    "run W2 inference twice and lock byte-identical result",
+    "verify both prediction locks",
+    "hash and parse isolated validation exactly once",
+    "score both weeks together",
+    "generate audit and final diagnostic report"
+  ],
+  "validation_access": {
+    "expected_sha256": "B21FB1BEEFAE407729C305E01E274695FE083C718B695F06A2146D7512B6AFC9",
+    "training_access_count": 0,
+    "inference_access_count": 0,
+    "scoring_access_limit": 1,
+    "raw_validation_copy_into_workspace_allowed": false,
+    "score_before_both_locks_allowed": false
+  },
+  "scoring": {
+    "cost_scenarios_bps_per_side": [
+      0,
+      10,
+      20
+    ],
+    "primary_cost_bps_per_side": 10,
+    "compound_across_two_weeks": true,
+    "comparators": [
+      "THU-BDC2026-main",
+      "Candidate-C",
+      "Candidate-D",
+      "HS300_EQUAL_WEIGHT"
+    ],
+    "formal_stability_gate_active": false,
+    "cvar_allowed": false
+  },
+  "cache_policy": {
+    "persistent_full_state_cache": false,
+    "historical_h5_cache_reuse_allowed": false,
+    "delete_historical_cache_allowed": false
+  },
+  "runtime_budgets_minutes": {
+    "preflight": 2,
+    "tests_and_cuda_smoke": 3,
+    "w1_training_and_lock": 6,
+    "w2_training_and_lock": 6,
+    "one_shot_scoring_and_report": 3,
+    "gpu_total_hard_limit": 20
+  },
+  "allowed_write_roots": [
+    "Experimental_WorkSpace/candidates_H/code",
+    "Experimental_WorkSpace/candidates_H/tests",
+    "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727",
+    "Evaluation/scripts/walk_forward",
+    "Evaluation/runs/TEST_H5_two_week_retrospective_20260727",
+    "Evaluation/reports",
+    "Experimental_WorkSpace/candidates_H/README.md",
+    "Experimental_WorkSpace/candidates_H/H_experiment_registry.json",
+    "Experimental_WorkSpace/candidates_H/TEST_STATUS.json",
+    "Evaluation/README.md"
+  ],
+  "protected_scopes": [
+    "candidate/THU-BDC2026-main",
+    "candidate/Candidate-D",
+    "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709",
+    "Experimental_WorkSpace/candidates_H/code/run_h5_predicted_boundary.py",
+    "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727",
+    "Evaluation/runs/TEST_H5_predicted_boundary_20260727",
+    "Evaluation/runs/tri_candidate_recent_rolling_20260722",
+    "Experimental_WorkSpace/tri_candidate_rolling_validation_20260722/rounds/W1_20260703/round_manifest.json",
+    "Experimental_WorkSpace/tri_candidate_rolling_validation_20260722/rounds/W2_20260710/round_manifest.json"
+  ],
+  "frozen_file_hashes_sha256": {
+    "Experimental_WorkSpace/candidates_H/configs/TEST_H_QUICK_BASE.json": "D595B5E6CCD3094F6E7E59E922A17425E624A4921B3E0036C669F1AD0B1E29C0",
+    "Experimental_WorkSpace/candidates_H/code/run_h5_predicted_boundary.py": "B86730EDB4E11BA66BDFE3B26F65BD2D90D77085F9A39BE810E71E1F5E720768",
+    "Experimental_WorkSpace/candidates_H/code/src/loss.py": "E0D40E7A7AAB8AB01F912BE725082E77D8024A5B90FEC312FC62B7FF45002BCE",
+    "Experimental_WorkSpace/candidates_H/code/src/model.py": "BD36F4F23154497A1410AA6C66DBA6978BDAE0C161D60D03E43D5E1A68C70A20",
+    "Experimental_WorkSpace/candidates_H/code/src/dataset.py": "AB8972ED6A6AD80AC1F2A3499D65EBDB8EB3ED567A7CF06239A8B936EE2C4239",
+    "Experimental_WorkSpace/candidates_H/code/src/featurework.py": "E4E5F1E433B90FAB914B7950F8A458E69748978F8B003EDFB9621ABC1A887058",
+    "Experimental_WorkSpace/candidates_H/code/src/evaluator.py": "C3C061E1082A91F41224CBE45B458929BB364E1C52E515700A713DC559BA85F4",
+    "Experimental_WorkSpace/candidates_H/code/src/train.py": "9A5798E9E6FDDD3C92B3BA039BC34F331B36E59B75481515D14801C53E667035",
+    "Experimental_WorkSpace/candidates_H/code/src/state_cache.py": "C9CA10F5129C12080D680803BE76C272CBEB053DDB79FE6C489E71CC70CADA8F",
+    "Experimental_WorkSpace/tri_candidate_rolling_validation_20260722/rounds/W1_20260703/round_manifest.json": "63F33992868FC2677ADBE76F308CC32A08BFA83673FAE2F0D11B863BBE18270E",
+    "Experimental_WorkSpace/tri_candidate_rolling_validation_20260722/rounds/W2_20260710/round_manifest.json": "0AA99CD46E4A75BB549739AE129DB95F51724679F153E7E7260C72A274CDA6B8"
+  },
+  "hard_stop_conditions": [
+    "training input hash, row count, stock count, date range, sample count, sample end, or label end mismatch",
+    "isolated validation is read before both prediction locks are verified",
+    "frozen code or configuration changes after freeze",
+    "scaler is fit on inference, validation, or scoring data",
+    "historical H5 cache is reused or an unexpected cache hit occurs",
+    "CUDA is unavailable, loss or gradient is non-finite, OOM occurs, or a round exceeds six minutes",
+    "repeated inference is not byte-identical",
+    "prediction has duplicates, non-five-stock output, unequal weights, invalid weights, or weight sum not equal to one",
+    "a protected scope changes",
+    "training, epoch, top-k, weights, reranking, or thresholds change after scoring",
+    "more than one scoring access occurs",
+    "any attempt is made to create H01, run Serious, promote, or modify candidate packages"
+  ],
+  "retry_policy": {
+    "maximum_identical_transient_retries_before_prediction_lock": 1,
+    "configuration_changes_on_retry_allowed": false,
+    "resume_from_partial_checkpoint_allowed": false
+  }
+}

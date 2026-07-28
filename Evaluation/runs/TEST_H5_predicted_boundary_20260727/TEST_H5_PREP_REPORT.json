@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "status": "PASS",
+  "h0_reuse": "PASS",
+  "exposure_registry": "COMPLETE_CONSERVATIVE",
+  "sealed_holdout_access_count": 0
+}

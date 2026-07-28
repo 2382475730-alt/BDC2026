@@ -1,0 +1,485 @@
+{
+  "snapshot_id": "D02_FrozenResearchChampion_20260709",
+  "created_at_utc": "2026-07-09T08:54:17Z",
+  "type": "frozen_research_champion_snapshot",
+  "source_experiment_id": "D_AUTO_CHAMPION_REF_20260709_110423",
+  "source_run_dir": "Experimental_WorkSpace\\candidates_D\\automation_runs\\D_AUTO_CHAMPION_REF_20260709_110423",
+  "snapshot_dir": "Experimental_WorkSpace\\candidates_D\\D02_FrozenResearchChampion_20260709",
+  "identity": {
+    "is_research_champion_snapshot": true,
+    "is_new_challenger": false,
+    "is_submission_package": false,
+    "candidate_package_modified": false
+  },
+  "data": {
+    "train_csv": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_D\\data_snapshots\\c0_train_plus_baostock_future_20260703.csv",
+    "data_md5": "78759d892c95eb8ba547c2df9a8fca5a",
+    "feature_version": "d_market_v1",
+    "label": "open(T+5) / open(T+1) - 1"
+  },
+  "training_program": {
+    "seed": 20260708,
+    "model": {
+      "d_model": 128,
+      "nhead": 4,
+      "num_layers": 2,
+      "dim_feedforward": 256,
+      "dropout": 0.1,
+      "use_factor_encoder": false
+    },
+    "loss": {
+      "temperature": 1.0,
+      "pairwise_weight": 0.25,
+      "pairwise_margin": 0.05,
+      "portfolio_return_weight": 0.05,
+      "portfolio_volatility_weight": 0.01
+    },
+    "portfolio": {
+      "top_k": 2,
+      "mode": "topk_equal",
+      "softmax_temperature": 1.0,
+      "max_weight": 1.0,
+      "min_weight": 0.0
+    },
+    "training": {
+      "batch_size": 4,
+      "num_epochs": 12,
+      "learning_rate": 5e-05,
+      "weight_decay": 1e-05,
+      "grad_clip": 5.0,
+      "num_workers": 0,
+      "early_stop_patience": 4,
+      "checkpoint_metric": "val_robust_final_score"
+    },
+    "validation": {
+      "mode": "purged_walk_forward",
+      "train_start": "2022-01-04",
+      "folds": [
+        [
+          "research_validation_2025_to_2026_first_trading_day",
+          "2025-01-03",
+          "2026-01-05"
+        ]
+      ]
+    },
+    "best_epoch": 12,
+    "epochs": 12,
+    "checkpoint_metric": "val_robust_final_score"
+  },
+  "research_validation_metrics": {
+    "official_proxy_score": 0.03711983576319238,
+    "weekly_cumulative_net_return": 2.4696850615960635,
+    "mean_weekly_net": 0.02812305849117497,
+    "median_weekly_net": 0.011561056351378442,
+    "max_drawdown_abs": 0.30052236067111693,
+    "worst_week": -0.1384535469931582,
+    "CVaR95_loss_abs": 0.11100414457583074
+  },
+  "required_artifacts": {
+    "code_snapshot": "code_snapshot/",
+    "config": "generated_config.json",
+    "model_weight": "best_model.pth",
+    "scalers": "scalers.json",
+    "split_metadata": "split_metadata.json",
+    "leakage_audit": "leakage_audit.json",
+    "metrics_v2": "metrics_v2.json",
+    "weekly_backtest": "weekly_backtest.csv",
+    "official_proxy": "official_proxy_result.json",
+    "champion_gate": "champion_gate_decision.json",
+    "run_report": "RUN_REPORT.md"
+  },
+  "file_inventory": [
+    {
+      "path": "best_model.pth",
+      "size_bytes": 5134893,
+      "md5": "758a9a21a8318d4e2e61dd8d3b84d168"
+    },
+    {
+      "path": "best_val_daily_metrics.csv",
+      "size_bytes": 49150,
+      "md5": "4b70935855e79eda25dc9c25e18d94bd"
+    },
+    {
+      "path": "best_val_predictions.csv",
+      "size_bytes": 4318192,
+      "md5": "0ebfaa93630abc3be8cc884ddd3c0bc6"
+    },
+    {
+      "path": "candidate_summary.json",
+      "size_bytes": 1496,
+      "md5": "f390f0d5f29f0d8cb352083e1958ec10"
+    },
+    {
+      "path": "champion_gate_decision.json",
+      "size_bytes": 2809,
+      "md5": "a0596fa730c91adaccf1355771a4ca9a"
+    },
+    {
+      "path": "code_snapshot/generated_config.json",
+      "size_bytes": 1820,
+      "md5": "a4cbd34953fcfcc289c13bb1a3d27ad9"
+    },
+    {
+      "path": "code_snapshot/src/__init__.py",
+      "size_bytes": 44,
+      "md5": "f9dad3dcd0c234fb62a0a2a46ef3beeb"
+    },
+    {
+      "path": "code_snapshot/src/__pycache__/config.cpython-311.pyc",
+      "size_bytes": 4128,
+      "md5": "25786cc296d4ec72c53f00feaa60b7b8"
+    },
+    {
+      "path": "code_snapshot/src/__pycache__/dataset.cpython-311.pyc",
+      "size_bytes": 20061,
+      "md5": "c0a71635811d92297bf46a9a39992775"
+    },
+    {
+      "path": "code_snapshot/src/__pycache__/evaluator.cpython-311.pyc",
+      "size_bytes": 12841,
+      "md5": "f1d24b62272c1061ebdc44df1ece38df"
+    },
+    {
+      "path": "code_snapshot/src/__pycache__/featurework.cpython-311.pyc",
+      "size_bytes": 18642,
+      "md5": "c1930cf21101b37ab52dc1a73d3c6ff5"
+    },
+    {
+      "path": "code_snapshot/src/__pycache__/loss.cpython-311.pyc",
+      "size_bytes": 8775,
+      "md5": "2f42b437429084606cc287a2aad58136"
+    },
+    {
+      "path": "code_snapshot/src/__pycache__/model.cpython-311.pyc",
+      "size_bytes": 14173,
+      "md5": "4622c38e3a941bbbcd025e0aa98b1866"
+    },
+    {
+      "path": "code_snapshot/src/__pycache__/train.cpython-311.pyc",
+      "size_bytes": 34075,
+      "md5": "06ed78863fb8c97209cb35400dbff290"
+    },
+    {
+      "path": "code_snapshot/src/config.py",
+      "size_bytes": 2591,
+      "md5": "997cd756d8dc4ff122d7dd36cedb23bf"
+    },
+    {
+      "path": "code_snapshot/src/dataset.py",
+      "size_bytes": 10954,
+      "md5": "48a49c57cb98f58529f639a4a49a3e9c"
+    },
+    {
+      "path": "code_snapshot/src/evaluator.py",
+      "size_bytes": 7227,
+      "md5": "7c87354b3cbba0c83e3525d2a55d2f06"
+    },
+    {
+      "path": "code_snapshot/src/featurework.py",
+      "size_bytes": 10471,
+      "md5": "ad216669fba18c99ef7907f67c96549e"
+    },
+    {
+      "path": "code_snapshot/src/loss.py",
+      "size_bytes": 4523,
+      "md5": "4f97761f1d83b01f9a9f053fe7b0fd75"
+    },
+    {
+      "path": "code_snapshot/src/model.py",
+      "size_bytes": 7434,
+      "md5": "6b237e547ec56a8f85a4c9e6194ba141"
+    },
+    {
+      "path": "code_snapshot/src/test.py",
+      "size_bytes": 3306,
+      "md5": "cdc3081393f41f5f0ae567cbb7c702a9"
+    },
+    {
+      "path": "code_snapshot/src/train.py",
+      "size_bytes": 22434,
+      "md5": "3abda4cb7b198068f0f5871ba6d3add0"
+    },
+    {
+      "path": "config.json",
+      "size_bytes": 1820,
+      "md5": "4ebd0d6f7c580783b51791df975714dc"
+    },
+    {
+      "path": "D02_SNAPSHOT_MANIFEST.json",
+      "size_bytes": 14757,
+      "md5": "087c7a59038b6f2ccb030ad45a0a359f"
+    },
+    {
+      "path": "environment.json",
+      "size_bytes": 706,
+      "md5": "4ac6ea4ddfc614ac8b575bc60b3240b6"
+    },
+    {
+      "path": "generated_config.json",
+      "size_bytes": 1820,
+      "md5": "a4cbd34953fcfcc289c13bb1a3d27ad9"
+    },
+    {
+      "path": "last_model.pth",
+      "size_bytes": 5134893,
+      "md5": "758a9a21a8318d4e2e61dd8d3b84d168"
+    },
+    {
+      "path": "latest_train_daily_metrics.csv",
+      "size_bytes": 145372,
+      "md5": "6251e312e6e6cee8f8572a108020e634"
+    },
+    {
+      "path": "latest_val_daily_metrics.csv",
+      "size_bytes": 49150,
+      "md5": "4b70935855e79eda25dc9c25e18d94bd"
+    },
+    {
+      "path": "latest_val_predictions.csv",
+      "size_bytes": 4318192,
+      "md5": "0ebfaa93630abc3be8cc884ddd3c0bc6"
+    },
+    {
+      "path": "leakage_audit.json",
+      "size_bytes": 507,
+      "md5": "c0cfb762eb633d4c4b8de832c34d0acf"
+    },
+    {
+      "path": "metrics_v2.json",
+      "size_bytes": 3166,
+      "md5": "79f1e5fb0c533321abd03839e7d06c1d"
+    },
+    {
+      "path": "MODEL_CARD.md",
+      "size_bytes": 1378,
+      "md5": "233cad48d602fbc7652aaaeec3871502"
+    },
+    {
+      "path": "official_baseline_comparison/compare_stderr.log",
+      "size_bytes": 0,
+      "md5": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "path": "official_baseline_comparison/compare_stdout.log",
+      "size_bytes": 2926,
+      "md5": "fc58a7b615d8f0d15bac8a2f73ef4a83"
+    },
+    {
+      "path": "official_baseline_comparison/comparison_report.md",
+      "size_bytes": 2966,
+      "md5": "b8d3c932a004da9b9932ca8e55299fa7"
+    },
+    {
+      "path": "official_baseline_comparison/comparison_summary.json",
+      "size_bytes": 6082,
+      "md5": "7c97dff8ef2a2e24ef86311589b9fbb2"
+    },
+    {
+      "path": "official_baseline_comparison/D_aligned_predictions.csv",
+      "size_bytes": 4187116,
+      "md5": "a12ca050da4e651d84aeae0523404cfa"
+    },
+    {
+      "path": "official_baseline_comparison/D_current_top2_daily_metrics.csv",
+      "size_bytes": 49697,
+      "md5": "22041b87ee002741fff2e10c1d9c19a5"
+    },
+    {
+      "path": "official_baseline_comparison/D_top5_diagnostic_daily_metrics.csv",
+      "size_bytes": 49744,
+      "md5": "cf0d5843c06b16629d857f009155adca"
+    },
+    {
+      "path": "official_baseline_comparison/official_baseline_predictions.csv",
+      "size_bytes": 3059352,
+      "md5": "f3b19145dbb7a1fadcdca29a7572b836"
+    },
+    {
+      "path": "official_baseline_comparison/official_default_top5_daily_metrics.csv",
+      "size_bytes": 46791,
+      "md5": "06e2b80b318e8dbf222296b26289554e"
+    },
+    {
+      "path": "official_baseline_comparison/official_top2_diagnostic_daily_metrics.csv",
+      "size_bytes": 46542,
+      "md5": "4651d8d7c44c49a75754ed3eb422f126"
+    },
+    {
+      "path": "official_baseline_result.json",
+      "size_bytes": 6102,
+      "md5": "537f56cf7b0ef408058f9285bfee36f9"
+    },
+    {
+      "path": "official_proxy_daily.csv",
+      "size_bytes": 38625,
+      "md5": "6220683bce67173dbabd14a323993eb8"
+    },
+    {
+      "path": "official_proxy_result.json",
+      "size_bytes": 450,
+      "md5": "2a4695670ccaf9b5273f7fecdbd3b49e"
+    },
+    {
+      "path": "production_refit_20260703/__pycache__/production_refit_runner.cpython-311.pyc",
+      "size_bytes": 37764,
+      "md5": "c2ea91dcc37b464b08a27260e659fb16"
+    },
+    {
+      "path": "production_refit_20260703/D02_PRODUCTION_REFIT_FINAL_REPORT_CN.md",
+      "size_bytes": 4051,
+      "md5": "ace5d933d75245dea5880f29293112c2"
+    },
+    {
+      "path": "production_refit_20260703/environment.json",
+      "size_bytes": 706,
+      "md5": "4ac6ea4ddfc614ac8b575bc60b3240b6"
+    },
+    {
+      "path": "production_refit_20260703/final_model.pth",
+      "size_bytes": 5134957,
+      "md5": "e5c9afd57b830c70826938b226dd4cf3"
+    },
+    {
+      "path": "production_refit_20260703/final_prediction/prediction_manifest.json",
+      "size_bytes": 543,
+      "md5": "097b719f30c32f857561d5d5a1520229"
+    },
+    {
+      "path": "production_refit_20260703/final_prediction/ranked_scores.csv",
+      "size_bytes": 46789,
+      "md5": "6f74287df43d86f6629b09a163685c57"
+    },
+    {
+      "path": "production_refit_20260703/final_prediction/result.csv",
+      "size_bytes": 41,
+      "md5": "d0f5e2491288480132f81dbde2803603"
+    },
+    {
+      "path": "production_refit_20260703/generated_config_production_refit.json",
+      "size_bytes": 1854,
+      "md5": "972de8a3349f8000c2d9333583c15607"
+    },
+    {
+      "path": "production_refit_20260703/latest_train_daily_metrics.csv",
+      "size_bytes": 217759,
+      "md5": "9f56f343773638757f8a1354f9e968ae"
+    },
+    {
+      "path": "production_refit_20260703/latest_train_predictions.csv",
+      "size_bytes": 19027150,
+      "md5": "f8369ce84c7b3b860013a3f521aa446a"
+    },
+    {
+      "path": "production_refit_20260703/leakage_audit.json",
+      "size_bytes": 599,
+      "md5": "c72f11667e05fe7b3b5537661c64e45d"
+    },
+    {
+      "path": "production_refit_20260703/production_refit_manifest.json",
+      "size_bytes": 2625,
+      "md5": "da43d97f3f205de2d2feee310a952352"
+    },
+    {
+      "path": "production_refit_20260703/PRODUCTION_REFIT_REPORT.md",
+      "size_bytes": 2754,
+      "md5": "413773c7a694d70704446cdf1ad742c0"
+    },
+    {
+      "path": "production_refit_20260703/production_refit_runner.py",
+      "size_bytes": 25247,
+      "md5": "c53896431c274bd7272e03dfe5b6dac9"
+    },
+    {
+      "path": "production_refit_20260703/scalers.json",
+      "size_bytes": 2192,
+      "md5": "5c061163fbcf794ac0fd21c1c86ef096"
+    },
+    {
+      "path": "production_refit_20260703/split_metadata.json",
+      "size_bytes": 1342,
+      "md5": "b12f871a053e2b615519a76b305cb0ae"
+    },
+    {
+      "path": "production_refit_20260703/train_stderr.log",
+      "size_bytes": 0,
+      "md5": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "path": "production_refit_20260703/train_stdout.log",
+      "size_bytes": 3832,
+      "md5": "a011f1cbb0454f8440a259717e63a69b"
+    },
+    {
+      "path": "production_refit_20260703/training_history.csv",
+      "size_bytes": 5011,
+      "md5": "25e31715494b39cac788175659b4a535"
+    },
+    {
+      "path": "production_refit_manifest.json",
+      "size_bytes": 673,
+      "md5": "28bb401929eb1b2ad6940e8b08c6680b"
+    },
+    {
+      "path": "resume_command.txt",
+      "size_bytes": 672,
+      "md5": "05615e7a81fcba8793fb60e0c0972818"
+    },
+    {
+      "path": "RUN_REPORT.md",
+      "size_bytes": 1687,
+      "md5": "4e0dc053dda66cafc24dc4ea651cdf6c"
+    },
+    {
+      "path": "scalers.json",
+      "size_bytes": 2205,
+      "md5": "058147aba2ee2a3108527f10519106d6"
+    },
+    {
+      "path": "split_metadata.json",
+      "size_bytes": 562,
+      "md5": "841047795b0b364f673ba424e541c0e1"
+    },
+    {
+      "path": "train_stderr.log",
+      "size_bytes": 0,
+      "md5": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    {
+      "path": "train_stdout.log",
+      "size_bytes": 4491,
+      "md5": "cbc59eb8f6b4b3b06da81d78fc397523"
+    },
+    {
+      "path": "training_history.csv",
+      "size_bytes": 10287,
+      "md5": "0a1c929effb162b827808db35fc9038c"
+    },
+    {
+      "path": "weekly_backtest.csv",
+      "size_bytes": 9314,
+      "md5": "32ef9677e0e1ff76a72c6f8025c4b790"
+    },
+    {
+      "path": "weekly_backtest_result.json",
+      "size_bytes": 1179,
+      "md5": "c987cf68bf970c68794cb65ecbe2707f"
+    }
+  ],
+  "updated_at_utc": "2026-07-09T09:08:34Z",
+  "production_refit_20260703": {
+    "status": "completed",
+    "path": "production_refit_20260703",
+    "raw_data_start": "2021-01-04",
+    "raw_data_end": "2026-07-03",
+    "train_sample_start": "2022-01-04",
+    "train_sample_end": "2026-06-26",
+    "feature_end_for_inference": "2026-07-03",
+    "decision_date": "2026-07-03",
+    "buy_date": "2026-07-06",
+    "planned_sell_date": "2026-07-10",
+    "leakage_audit": "pass",
+    "final_model": "production_refit_20260703/final_model.pth",
+    "result_csv": "production_refit_20260703/final_prediction/result.csv",
+    "ranked_scores": "production_refit_20260703/final_prediction/ranked_scores.csv"
+  }
+}

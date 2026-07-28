@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "lineage": "F-series",
+  "retained_model": null,
+  "submission_eligibility": "RESEARCH_ONLY_REPORTING_UNVERIFIED",
+  "market_cutoff": "2026-07-03",
+  "stages": [
+    {
+      "id": "F0_COMPLIANCE",
+      "validation": "exact URLs and MD5 values match the 2026-07-18 reporting email",
+      "stop_on_fail": "formal submission use prohibited; research may continue"
+    },
+    {
+      "id": "F1_DATA",
+      "validation": "industry coverage >= 0.99; IF coverage >= 0.99; unique keys; hashes frozen",
+      "stop_on_fail": true
+    },
+    {
+      "id": "F2_CAUSALITY",
+      "validation": "feature truncation equivalence and lag-safe futures construction",
+      "stop_on_fail": true
+    },
+    {
+      "id": "F3_SMOKE",
+      "validation": "finite forward, loss, gradients, and expected feature dimensions",
+      "stop_on_fail": true
+    },
+    {
+      "id": "F4_QUICK",
+      "validation": "3/4 positive folds; recent fold positive; pooled PDR >= 0.50; positive excess without best two weeks",
+      "stop_on_fail": true
+    },
+    {
+      "id": "F5_SERIOUS",
+      "validation": "multi-seed robustness, cost, D01 and official same-protocol comparisons",
+      "requires": "F4_QUICK pass"
+    }
+  ]
+}

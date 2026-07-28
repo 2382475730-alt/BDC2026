@@ -1,0 +1,21 @@
+{
+  "leakage_audit": "pass",
+  "checks": {
+    "raw_max_date_lte_2026_07_03": "2026-07-03",
+    "train_label_end_lte_raw_data_end": "2026-07-03",
+    "train_sample_end": "2026-06-26",
+    "feature_end_for_inference": "2026-07-03",
+    "decision_date": "2026-07-03",
+    "scaler_fit_scope": "production_train_samples_only",
+    "scaler_fit_sample_count": 1083,
+    "no_validation_set": true,
+    "prediction_uses_future_label": false,
+    "feature_truncation_equivalence": {
+      "status": "pass",
+      "sampled_dates": [
+        "2026-07-03"
+      ]
+    }
+  },
+  "issues": []
+}

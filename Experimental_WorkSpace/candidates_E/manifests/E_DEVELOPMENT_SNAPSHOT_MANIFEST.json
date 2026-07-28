@@ -1,0 +1,17 @@
+{
+  "schema_version": "e_r1_development_snapshot_v1",
+  "source_path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_D\\data_snapshots\\c0_train_plus_baostock_future_20260703.csv",
+  "source_md5": "78759d892c95eb8ba547c2df9a8fca5a",
+  "source_sha256": "8e9cf37e5c53e4edafddc3f6f6b5843d4037376334e6f53cba068699095df1ad",
+  "filter_mode": "STREAM_DATE_FIELD_ONLY_NO_SEALED_NUMERIC_PARSE",
+  "numeric_cutoff_inclusive": "2026-03-27",
+  "output_path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_E\\data_snapshots\\E_R1_DEVELOPMENT_THROUGH_20260327.csv",
+  "output_md5": "4317396bd19364de7afc2a7fb87938ed",
+  "output_sha256": "534443dab2a6cd3a491913e4c7fe7103c05a068de6c24c6b7aed23716ba6f115",
+  "row_count": 368952,
+  "date_start": "2021-01-04",
+  "date_end": "2026-03-27",
+  "trading_date_count": 1266,
+  "stock_count": 300,
+  "sealed_numeric_access": false
+}

@@ -1,0 +1,7 @@
+    1: from numpy import ufunc
+       
+    1: _UFunc_Nin1_Nout1 = ufunc
+    1: _UFunc_Nin2_Nout1 = ufunc
+    1: _UFunc_Nin1_Nout2 = ufunc
+    1: _UFunc_Nin2_Nout2 = ufunc
+    1: _GUFunc_Nin2_Nout1 = ufunc

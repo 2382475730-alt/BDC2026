@@ -1,0 +1,28 @@
+{
+    "window_scores": [
+        0.004670435329899192,
+        0.0010492737076541001,
+        0.01612601347733289
+    ],
+    "mean_window_score": 0.00728190750496206,
+    "min_window_score": 0.0010492737076541001,
+    "robust_val_score": 0.005412117365769672,
+    "pool_size": 150,
+    "inference_cross_sectional_norm": true,
+    "ensemble_second_best": true,
+    "rerank_return_5_weight": -3.0,
+    "rerank_volume_change_weight": 0.8,
+    "rerank_volatility_10_weight": -0.3,
+    "output_top_k": 5,
+    "weight_mode": "regime_volume_gate_c69_else_c4",
+    "softmax_temperature": 0.03,
+    "min_weight": 0.05,
+    "max_weight": 0.5,
+    "rerank_extra_weights": {
+        "atr_14": 1.0,
+        "open_close_spread": 1.5,
+        "volume_ratio": -1.0,
+        "_gate_volume_ratio_5": 0.0
+    },
+    "metric": "acceptance-gated validation-grid candidate"
+}

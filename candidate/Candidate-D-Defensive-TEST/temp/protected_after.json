@@ -1,0 +1,20 @@
+﻿{
+  "candidate/Candidate-D": {
+    "path": "candidate/Candidate-D",
+    "file_count": 30,
+    "bytes": 56180202,
+    "tree_sha256": "b56a82d3a522cbef8e8eba70b885d098969d8ddad53ff11d1568cd91a4939250"
+  },
+  "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709": {
+    "path": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709",
+    "file_count": 61,
+    "bytes": 61829994,
+    "tree_sha256": "255825edc754a2f87eeeca1df4135aa494ce52dd226982df93e87e84f9978a5a"
+  },
+  "candidate/THU-BDC2026-main": {
+    "path": "candidate/THU-BDC2026-main",
+    "file_count": 58,
+    "bytes": 48069050,
+    "tree_sha256": "ddf049c075edfcf9a519777fa612d3d40a03ba664700fabfc1ff7fd9aaee6700"
+  }
+}

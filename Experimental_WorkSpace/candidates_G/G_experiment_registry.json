@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "lineage": "G-series",
+  "retained_model": null,
+  "experiments": [
+    {
+      "experiment_id": "TEST_G_FINANCIAL_FUSION_20260726",
+      "marker": "TEST",
+      "status": "REJECTED_AT_QUICK_GATE",
+      "positive_fold_count": 2,
+      "recent_fold_mean_excess": 0.030735391890630095,
+      "excess_sum_without_best_two_weeks": -0.22562992945313493,
+      "summary": "automation_runs/TEST_G_QUICK_SUMMARY.json",
+      "model_card": "TEST_MODEL_CARD.md"
+    }
+  ]
+}

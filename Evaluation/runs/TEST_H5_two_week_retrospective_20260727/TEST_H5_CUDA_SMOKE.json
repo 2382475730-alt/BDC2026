@@ -1,0 +1,13 @@
+{
+  "marker": "TEST",
+  "experiment_id": "TEST_H5_TWO_WEEK_RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "device": "cuda",
+  "cuda_available": true,
+  "cuda_device": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "sample_count": 2,
+  "loss": 6.075697422027588,
+  "loss_finite": true,
+  "gradients_finite": true,
+  "passed": true,
+  "validation_access_count": 0
+}

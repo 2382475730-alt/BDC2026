@@ -1,0 +1,278 @@
+{
+  "schema_version": "e_r1_preregistration_v1",
+  "round": "E_R1",
+  "status": "LOCKED_BEFORE_IMPLEMENTATION_AND_RETURN_ACCESS",
+  "created_date": "2026-07-15",
+  "wall_clock_budget_hours": 24,
+  "candidate_name": "E001_RecentRegimeMixture_Ranker",
+  "protocol_mutation_after_results_forbidden": true,
+  "data": {
+    "source_relative_path": "../candidates_D/data_snapshots/c0_train_plus_baostock_future_20260703.csv",
+    "md5": "78759d892c95eb8ba547c2df9a8fca5a",
+    "sha256": "8e9cf37e5c53e4edafddc3f6f6b5843d4037376334e6f53cba068699095df1ad",
+    "raw_date_start": "2021-01-04",
+    "raw_date_end": "2026-07-03",
+    "stock_count": 300,
+    "development_numeric_cutoff": "2026-03-27",
+    "supervised_sample_start": "2022-01-04",
+    "network_data_forbidden": true,
+    "future_membership_feature_forbidden": true
+  },
+  "label": {
+    "formula": "open(T+5)/open(T+1)-1",
+    "calendar": "global_trading_calendar",
+    "buy_offset": 1,
+    "sell_offset": 5,
+    "missing_target_open_policy": "drop_sample",
+    "label_purge_trading_days": 5,
+    "additional_embargo_trading_days": 0,
+    "additional_embargo_reason": "The locked R5 train_end and label_end<first_decision rule already implement the requested five-trading-day T+5 isolation; no duplicate second embargo is applied."
+  },
+  "folds": [
+    {
+      "fold_id": "E_R1_F1_2025_Q1",
+      "train_start": "2022-01-04",
+      "train_end": "2024-12-25",
+      "train_max_label_end": "2025-01-02",
+      "inner_train_end": "2024-11-20",
+      "inner_train_max_label_end": "2024-11-27",
+      "inner_start": "2024-11-28",
+      "inner_end": "2024-12-25",
+      "first_decision_date": "2025-01-03",
+      "last_decision_date": "2025-03-21",
+      "buy_start": "2025-01-06",
+      "sell_end": "2025-03-28",
+      "week_count": 12
+    },
+    {
+      "fold_id": "E_R1_F2_2025_Q2",
+      "train_start": "2022-01-04",
+      "train_end": "2025-03-26",
+      "train_max_label_end": "2025-04-02",
+      "inner_train_end": "2025-02-19",
+      "inner_train_max_label_end": "2025-02-26",
+      "inner_start": "2025-02-27",
+      "inner_end": "2025-03-26",
+      "first_decision_date": "2025-04-03",
+      "last_decision_date": "2025-06-20",
+      "buy_start": "2025-04-07",
+      "sell_end": "2025-06-27",
+      "week_count": 12
+    },
+    {
+      "fold_id": "E_R1_F3_2025_Q3",
+      "train_start": "2022-01-04",
+      "train_end": "2025-06-26",
+      "train_max_label_end": "2025-07-03",
+      "inner_train_end": "2025-05-21",
+      "inner_train_max_label_end": "2025-05-28",
+      "inner_start": "2025-05-29",
+      "inner_end": "2025-06-26",
+      "first_decision_date": "2025-07-04",
+      "last_decision_date": "2025-09-19",
+      "buy_start": "2025-07-07",
+      "sell_end": "2025-09-26",
+      "week_count": 12
+    },
+    {
+      "fold_id": "E_R1_F4_2026_Q1",
+      "train_start": "2022-01-04",
+      "train_end": "2025-12-23",
+      "train_max_label_end": "2025-12-30",
+      "inner_train_end": "2025-08-19",
+      "inner_train_max_label_end": "2025-08-26",
+      "inner_start": "2025-08-27",
+      "inner_end": "2025-09-23",
+      "first_decision_date": "2025-12-31",
+      "last_decision_date": "2026-03-20",
+      "buy_start": "2026-01-05",
+      "sell_end": "2026-03-27",
+      "week_count": 11
+    }
+  ],
+  "legacy": {
+    "train_start": "2022-01-04",
+    "train_end": "2024-12-25",
+    "validation_start": "2025-01-03",
+    "validation_end": "2026-01-05",
+    "use": "official baseline and D02 fixed-protocol reproduction only"
+  },
+  "sealed_holdout": {
+    "status": "SEALED",
+    "unseal_limit": 1,
+    "unseal_count": 0,
+    "decision_start": "2026-04-03",
+    "decision_end": "2026-06-26",
+    "buy_start": "2026-04-07",
+    "sell_end": "2026-07-03",
+    "week_count": 13,
+    "access_condition": "exactly one finalist code/config/seed/policy/hash lock exists",
+    "post_access_tuning_forbidden": true
+  },
+  "quick_seeds": [20260720, 20260721, 20260722],
+  "serious_seeds": [20260720, 20260721, 20260722, 20260723, 20260724],
+  "smoke_seed": 20260719,
+  "stages": [
+    {
+      "stage": "E0",
+      "family": "control",
+      "configs": ["E0_D02_EXACT"]
+    },
+    {
+      "stage": "E1",
+      "family": "causal_cleaning",
+      "configs": ["E1A_DEDUP_ST60", "E1B_CAUSAL_SCALE_ST60", "E1C_FULL_CAUSAL_ST60"]
+    },
+    {
+      "stage": "E2",
+      "family": "market_temporal_encoder",
+      "configs": ["E2_MARKET_GRU60"]
+    },
+    {
+      "stage": "E3",
+      "family": "stable_recent_regime_mixture",
+      "configs": ["E3_MIX_HL252", "E3_MIX_HL126"]
+    },
+    {
+      "stage": "E4",
+      "family": "portfolio_control_on_best_ranker_only",
+      "configs": ["P1_TOP4_BOUNDED_SOFTMAX", "P2_SHRUNK_COV_OPT_TOP5", "P3_CONFIDENCE_EXPOSURE_TOP4"]
+    }
+  ],
+  "architecture": {
+    "stable_window": 120,
+    "recent_window": 20,
+    "market_window": 60,
+    "d_model": 128,
+    "nhead": 4,
+    "stable_layers": 1,
+    "recent_layers": 1,
+    "market_encoder": "single_layer_GRU",
+    "cross_stock_layers": 1,
+    "gate_scope": "one market scalar per decision date",
+    "gate_initial_probability": 0.2,
+    "recent_head_zero_initialized": true,
+    "score_contract": "ranking_scores == stable_score + gate * recent_residual",
+    "recent_half_lives": [252, 126]
+  },
+  "loss": {
+    "primary": "straight_through_hard_forward_soft_backward_top2_utility",
+    "inference_score_key": "ranking_scores",
+    "hard_forward_top_k": 2,
+    "listwise_weight": 1.0,
+    "pairwise_weight": 0.25,
+    "topk_return_weight": 0.05,
+    "robust_downside_weight": 0.01,
+    "recent_aux_weight": 0.15,
+    "time_block_dro_enabled": false
+  },
+  "training": {
+    "inner_max_epochs": 12,
+    "checkpoint_metric": "val_robust_gate_score",
+    "outer_checkpoint_selection_allowed": false,
+    "outer_fixed_epoch_source": "matching fold/seed inner run",
+    "serious_fixed_epoch_source": "per-fold median of Quick inner selected epochs",
+    "batch_size": 2,
+    "gradient_accumulation_steps": 2,
+    "learning_rate": 0.00005,
+    "weight_decay": 0.00001,
+    "deterministic_algorithms": true,
+    "submission_training_limit_hours": 8,
+    "target_training_limit_hours": 7,
+    "prediction_limit_minutes": 5,
+    "target_prediction_limit_minutes": 4
+  },
+  "cost": {
+    "buy_commission": 0.0005,
+    "sell_commission": 0.0005,
+    "sell_stamp_tax": 0.0005,
+    "weekly_forced_liquidation": true,
+    "buy_notional": "sum(weights)",
+    "sell_notional": "sum(weights*(1+stock_return))",
+    "net_formula": "gross-0.0005*buy_notional-0.0010*sell_notional"
+  },
+  "aggregation": {
+    "unique_development_weeks": 47,
+    "seed_week_aggregation": "arithmetic mean across seeds before market-week metrics",
+    "pdr_strict_epsilon": 1e-12,
+    "remove_best_two": "remove two largest unique-calendar-week excess values",
+    "max_drawdown_initial_nav": 1.0,
+    "cvar_alpha": 0.05
+  },
+  "gates": {
+    "quick": {
+      "exceeds_same_protocol_official_baseline": true,
+      "pooled_mean_net_excess_gt": 0.0,
+      "pdr_gte": 0.5,
+      "nonnegative_fold_count_gte": 3,
+      "f4_mean_net_excess_gt": 0.0,
+      "excess_sum_without_best_two_gt": 0.0,
+      "max_drawdown_ratio_lte": 1.05,
+      "cvar95_ratio_lte": 1.05
+    },
+    "alpha": {
+      "positive_seed_count_gte": 4,
+      "seed_count": 5,
+      "worst_seed_mean_net_excess_gte": -0.005,
+      "median_gross_official_proxy_gt_d02": true,
+      "pdr_gte": 0.52,
+      "positive_fold_count_gte": 3,
+      "f4_mean_net_excess_gt": 0.0,
+      "excess_sum_without_best_two_gt": 0.0,
+      "max_drawdown_ratio_lte": 1.0,
+      "cvar95_ratio_lte": 1.0,
+      "exact_repeat_required": true
+    },
+    "defensive": {
+      "exceeds_same_protocol_official_baseline": true,
+      "d02_gross_official_proxy_retention_gte": 0.9,
+      "max_drawdown_reduction_gte": 0.15,
+      "cvar95_reduction_gte": 0.15,
+      "identity": "DEFENSIVE_ONLY"
+    },
+    "sealed": {
+      "mean_net_excess_gt": 0.0,
+      "pdr_gte": 0.5,
+      "max_drawdown_ratio_lte": 1.0,
+      "cvar95_ratio_lte": 1.0
+    }
+  },
+  "portfolio": {
+    "ranking_control": {"policy": "P0", "top_k": 2, "equal_weight": true, "q": 1.0},
+    "main_min_stocks": 3,
+    "main_max_stocks": 5,
+    "shorting": false,
+    "leverage": false,
+    "q_min": 0.5,
+    "q_max": 1.0,
+    "invested_max_single_weight": 0.35,
+    "invested_hhi_max": 0.34,
+    "cash_row_in_result_csv": false
+  },
+  "selection_order": [
+    "all hard gates",
+    "higher pooled mean net excess",
+    "higher median gross official proxy",
+    "lower max drawdown",
+    "lower CVaR95",
+    "lower composition turnover",
+    "lexicographically smaller config id"
+  ],
+  "stop_rules": {
+    "consecutive_failed_new_families": 3,
+    "data_leakage_failure": true,
+    "wall_clock_budget_exhausted": true,
+    "max_serious_models": 2,
+    "max_finalists": 1
+  },
+  "immutability": {
+    "forbidden_write_paths": [
+      "candidate/",
+      "Experimental_WorkSpace/candidates_D/D02_FrozenResearchChampion_20260709/",
+      "Experimental_WorkSpace/candidates_D/D03_R5_L1_F0_ResearchCandidate_20260711/",
+      "Experimental_WorkSpace/candidates_D/D04_D001_P2_InverseVol_ResearchCandidate_20260713/"
+    ],
+    "candidate_promotion_forbidden": true
+  }
+}
+

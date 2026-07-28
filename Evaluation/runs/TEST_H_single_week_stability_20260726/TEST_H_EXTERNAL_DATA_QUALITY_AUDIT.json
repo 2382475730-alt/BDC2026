@@ -1,0 +1,509 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "created_date": "2026-07-26",
+  "intended_use": "H-series branch eligibility for single-week stability experiments",
+  "source_records": {
+    "industry": {
+      "dataset_id": "csi300_industry_static_2026-07-26",
+      "provider": "Eastmoney public CSI 300 component endpoint",
+      "url": "https://datacenter-web.eastmoney.com/api/data/v1/get?reportName=RPT_INDEX_TS_COMPONENT&columns=SECUCODE%2CSECURITY_CODE%2CTYPE%2CSECURITY_NAME_ABBR%2CINDUSTRY&quoteColumns=&quoteType=0&source=WEB&client=WEB&filter=%28TYPE%3D%221%22%29&pageNumber=1&pageSize=500&sortColumns=SECURITY_CODE&sortTypes=1",
+      "retrieved_at_utc": "2026-07-26T08:14:43.980837+00:00",
+      "reporting_status": "UNVERIFIED_AFTER_2026-07-18_RESEARCH_ONLY",
+      "processed_file": "BaoStock_Datasets/data/fusion_research_20260726/industry/processed/csi300_industry_static.csv",
+      "processed_md5": "53ce047811f3d8183aae99e73ee91568",
+      "processed_sha256": "312b3a63148870db036b9ec9a8ee4f0d0c279b735624030ba77bdd727a39fbcd",
+      "processed_md5_matches_manifest": true,
+      "processed_sha256_matches_manifest": true,
+      "all_manifest_files_match": true
+    },
+    "cffex": {
+      "dataset_id": "cffex_equity_index_daily_2021-01-04_2026-07-03",
+      "provider": "China Financial Futures Exchange",
+      "url": "http://www.cffex.com.cn/sj/historysj/{month}/zip/{month}.zip",
+      "retrieved_at_utc": "2026-07-26T08:37:26.100903+00:00",
+      "reporting_status": "UNVERIFIED_AFTER_2026-07-18_RESEARCH_ONLY",
+      "processed_file": "BaoStock_Datasets/data/fusion_research_20260726/cffex/processed/cffex_market_features.csv",
+      "processed_md5": "d248fb807b7dbecabf0420614d3826e6",
+      "processed_sha256": "2540a97c8c203c7b474306eb94bf58df486d52f3e1474d927352352c010f8615",
+      "processed_md5_matches_manifest": true,
+      "processed_sha256_matches_manifest": true,
+      "all_manifest_files_match": true
+    },
+    "financial": {
+      "dataset_id": "eastmoney_financial_pit_2020-01-01_2026-07-03",
+      "provider": "Eastmoney public data center",
+      "url": "https://datacenter.eastmoney.com/securities/api/data/v1/get",
+      "retrieved_at_utc": "2026-07-26T08:58:52.662706+00:00",
+      "reporting_status": "UNVERIFIED_AFTER_2026-07-18_RESEARCH_ONLY",
+      "processed_file": "BaoStock_Datasets/data/fusion_research_20260726/financial/processed/financial_point_in_time.csv",
+      "processed_md5": "31e48fa9938da205599f9e141a36fb19",
+      "processed_sha256": "1bf786ff76c974772dfed921236209ce1cbf167923828c8bf6131a30757ebc8f",
+      "processed_md5_matches_manifest": true,
+      "processed_sha256_matches_manifest": true,
+      "all_manifest_files_match": true
+    }
+  },
+  "manifest_integrity": {
+    "industry": {
+      "file_count": 3,
+      "missing_count": 0,
+      "md5_mismatch_count": 0,
+      "sha256_mismatch_count": 0,
+      "all_files_match": true
+    },
+    "cffex": {
+      "file_count": 71,
+      "missing_count": 0,
+      "md5_mismatch_count": 0,
+      "sha256_mismatch_count": 0,
+      "all_files_match": true
+    },
+    "financial": {
+      "file_count": 302,
+      "missing_count": 0,
+      "md5_mismatch_count": 0,
+      "sha256_mismatch_count": 0,
+      "all_files_match": true
+    }
+  },
+  "industry": {
+    "summary": {
+      "row_count": 300,
+      "stock_count": 300,
+      "duplicate_stock_count": 0,
+      "missing_industry_count": 0,
+      "industry_count": 76,
+      "small_group_count_lt_5": 56,
+      "small_group_stock_count_lt_5": 120,
+      "small_group_stock_share_lt_5": 0.4,
+      "min_group_size": 1,
+      "median_group_size": 3.0,
+      "max_group_size": 24,
+      "classification_asof_date": "2026-07-26",
+      "historical_point_in_time_all": false
+    },
+    "gate_passed": false
+  },
+  "cffex": {
+    "summary": {
+      "row_count": 1331,
+      "duplicate_date_count": 0,
+      "date_start": "2021-01-04",
+      "date_end": "2026-07-03",
+      "all_values_finite": true,
+      "prior_consumer_lag_days": 0,
+      "main_contract_selection": "highest prior-day open interest; current-day fallback on first observation",
+      "same_contract_return_rule": "same-contract close-to-close return before dominant-contract selection",
+      "required_corrected_field_presence": {
+        "spot_basis": false,
+        "annualized_term_structure": false,
+        "spot_basis_change": false,
+        "risk_state": false
+      }
+    },
+    "field_profile": [
+      {
+        "field": "fut_if_return_1",
+        "coverage": 1.0,
+        "zero_rate": 0.003756574004507889,
+        "q01": -0.030903426377005765,
+        "median": -0.0002470559169891,
+        "q99": 0.03154940061502992,
+        "nonfinite_count": 0,
+        "robust_3iqr_outlier_count": 10,
+        "robust_3iqr_outlier_rate": 0.007513148009015778
+      },
+      {
+        "field": "fut_if_return_5",
+        "coverage": 1.0,
+        "zero_rate": 0.002253944402704733,
+        "q01": -0.06359932339521387,
+        "median": 0.0002941032302337,
+        "q99": 0.06836856446798349,
+        "nonfinite_count": 0,
+        "robust_3iqr_outlier_count": 7,
+        "robust_3iqr_outlier_rate": 0.005259203606311044
+      },
+      {
+        "field": "fut_if_volatility_20",
+        "coverage": 1.0,
+        "zero_rate": 0.003005259203606311,
+        "q01": 0.00417878084068416,
+        "median": 0.0095985981608009,
+        "q99": 0.03463512407478649,
+        "nonfinite_count": 0,
+        "robust_3iqr_outlier_count": 44,
+        "robust_3iqr_outlier_rate": 0.03305785123966942
+      },
+      {
+        "field": "fut_if_volume_z20",
+        "coverage": 1.0,
+        "zero_rate": 0.003005259203606311,
+        "q01": -3.415983288422159,
+        "median": 0.1624430014849683,
+        "q99": 2.708018113746545,
+        "nonfinite_count": 0,
+        "robust_3iqr_outlier_count": 0,
+        "robust_3iqr_outlier_rate": 0.0
+      },
+      {
+        "field": "fut_if_oi_change",
+        "coverage": 1.0,
+        "zero_rate": 0.0007513148009015778,
+        "q01": -0.18527465332738347,
+        "median": 0.0008176314411443,
+        "q99": 0.12061491856519937,
+        "nonfinite_count": 0,
+        "robust_3iqr_outlier_count": 10,
+        "robust_3iqr_outlier_rate": 0.007513148009015778
+      },
+      {
+        "field": "fut_if_term_spread",
+        "coverage": 1.0,
+        "zero_rate": 0.005259203606311044,
+        "q01": -0.010512305398389711,
+        "median": -0.0018619872482085,
+        "q99": 0.003386240904700465,
+        "nonfinite_count": 0,
+        "robust_3iqr_outlier_count": 1,
+        "robust_3iqr_outlier_rate": 0.0007513148009015778
+      },
+      {
+        "field": "fut_if_ih_spread_5",
+        "coverage": 1.0,
+        "zero_rate": 0.0007513148009015778,
+        "q01": -0.02039116843410357,
+        "median": 0.0006751180793702,
+        "q99": 0.02104371176166313,
+        "nonfinite_count": 0,
+        "robust_3iqr_outlier_count": 2,
+        "robust_3iqr_outlier_rate": 0.0015026296018031556
+      },
+      {
+        "field": "fut_ic_if_spread_5",
+        "coverage": 1.0,
+        "zero_rate": 0.0007513148009015778,
+        "q01": -0.04227382132110017,
+        "median": 0.0026444805677795,
+        "q99": 0.046452620002169806,
+        "nonfinite_count": 0,
+        "robust_3iqr_outlier_count": 8,
+        "robust_3iqr_outlier_rate": 0.006010518407212622
+      },
+      {
+        "field": "fut_im_if_spread_5",
+        "coverage": 1.0,
+        "zero_rate": 0.28249436513899323,
+        "q01": -0.0410002251292566,
+        "median": 0.0,
+        "q99": 0.050981287171204134,
+        "nonfinite_count": 0,
+        "robust_3iqr_outlier_count": 26,
+        "robust_3iqr_outlier_rate": 0.019534184823441023
+      }
+    ],
+    "gate_passed": false
+  },
+  "financial": {
+    "summary": {
+      "row_count": 7436,
+      "stock_count": 300,
+      "duplicate_stock_report_count": 0,
+      "future_available_count": 0,
+      "revision_delayed_count": 6173,
+      "revision_delayed_share": 0.8301506186121571,
+      "revision_delay_days_median": 364.0,
+      "revision_delay_days_p95": 373.0,
+      "has_version_identifier": false,
+      "latest_revision_only_grain": true
+    },
+    "field_profile": [
+      {
+        "field": "epsjb",
+        "coverage": 0.9959655728886498,
+        "zero_rate": 0.0,
+        "q01": -0.9895,
+        "median": 0.5,
+        "q99": 7.362185,
+        "nonfinite_count": 0,
+        "robust_3iqr_outlier_count": 334,
+        "robust_3iqr_outlier_rate": 0.045098568728058334,
+        "availability_delay_days_median": 395.0,
+        "availability_delay_days_p95": 482.0,
+        "age_at_cutoff_days_median": 1190.0,
+        "age_at_cutoff_days_p95": 2194.0
+      },
+      {
+        "field": "bps",
+        "coverage": 0.9904518558364712,
+        "zero_rate": 0.0,
+        "q01": 1.15951933518836,
+        "median": 8.42641738025,
+        "q99": 49.91653060513347,
+        "nonfinite_count": 0,
+        "robust_3iqr_outlier_count": 115,
+        "robust_3iqr_outlier_rate": 0.015614392396469789,
+        "availability_delay_days_median": 395.0,
+        "availability_delay_days_p95": 482.0,
+        "age_at_cutoff_days_median": 1190.0,
+        "age_at_cutoff_days_p95": 2194.0
+      },
+      {
+        "field": "roejq",
+        "coverage": 0.9904518558364712,
+        "zero_rate": 0.00013577732518669383,
+        "q01": -15.658,
+        "median": 6.22,
+        "q99": 39.073599999999914,
+        "nonfinite_count": 0,
+        "robust_3iqr_outlier_count": 146,
+        "robust_3iqr_outlier_rate": 0.0198234894772573,
+        "availability_delay_days_median": 395.0,
+        "availability_delay_days_p95": 482.0,
+        "age_at_cutoff_days_median": 1190.0,
+        "age_at_cutoff_days_p95": 2194.0
+      },
+      {
+        "field": "zzcjll",
+        "coverage": 0.992200107584723,
+        "zero_rate": 0.0,
+        "q01": -6.252134751832,
+        "median": 2.2212116494,
+        "q99": 24.486161406336986,
+        "nonfinite_count": 0,
+        "robust_3iqr_outlier_count": 184,
+        "robust_3iqr_outlier_rate": 0.024939007861209,
+        "availability_delay_days_median": 395.0,
+        "availability_delay_days_p95": 482.0,
+        "age_at_cutoff_days_median": 1190.0,
+        "age_at_cutoff_days_p95": 2194.0
+      },
+      {
+        "field": "xsjll",
+        "coverage": 0.9977138246369016,
+        "zero_rate": 0.0,
+        "q01": -48.721117453476005,
+        "median": 12.6671417194,
+        "q99": 142.31314681593193,
+        "nonfinite_count": 0,
+        "robust_3iqr_outlier_count": 145,
+        "robust_3iqr_outlier_rate": 0.019544412993664915,
+        "availability_delay_days_median": 395.0,
+        "availability_delay_days_p95": 482.0,
+        "age_at_cutoff_days_median": 1190.0,
+        "age_at_cutoff_days_p95": 2194.0
+      },
+      {
+        "field": "zcfzl",
+        "coverage": 0.992603550295858,
+        "zero_rate": 0.0,
+        "q01": 7.427281653280001,
+        "median": 54.5668987251,
+        "q99": 93.74217220988,
+        "nonfinite_count": 0,
+        "robust_3iqr_outlier_count": 0,
+        "robust_3iqr_outlier_rate": 0.0,
+        "availability_delay_days_median": 395.0,
+        "availability_delay_days_p95": 482.0,
+        "age_at_cutoff_days_median": 1190.0,
+        "age_at_cutoff_days_p95": 2194.0
+      },
+      {
+        "field": "totaloperaterevetz",
+        "coverage": 0.9907208176438945,
+        "zero_rate": 0.0,
+        "q01": -51.4363510692777,
+        "median": 9.587513675026,
+        "q99": 178.01876223596437,
+        "nonfinite_count": 0,
+        "robust_3iqr_outlier_count": 218,
+        "robust_3iqr_outlier_rate": 0.029591421202660513,
+        "availability_delay_days_median": 395.0,
+        "availability_delay_days_p95": 482.0,
+        "age_at_cutoff_days_median": 1190.0,
+        "age_at_cutoff_days_p95": 2194.0
+      },
+      {
+        "field": "parentnetprofittz",
+        "coverage": 0.9907208176438945,
+        "zero_rate": 0.0,
+        "q01": -343.0121559965764,
+        "median": 11.727559880142,
+        "q99": 1125.1434921521595,
+        "nonfinite_count": 0,
+        "robust_3iqr_outlier_count": 614,
+        "robust_3iqr_outlier_rate": 0.08334464503868604,
+        "availability_delay_days_median": 395.0,
+        "availability_delay_days_p95": 482.0,
+        "age_at_cutoff_days_median": 1190.0,
+        "age_at_cutoff_days_p95": 2194.0
+      },
+      {
+        "field": "jyxjlyysr",
+        "coverage": 0.9977138246369016,
+        "zero_rate": 0.0,
+        "q01": -3.40428229407796,
+        "median": 0.123578617025,
+        "q99": 5.4673028968143536,
+        "nonfinite_count": 0,
+        "robust_3iqr_outlier_count": 771,
+        "robust_3iqr_outlier_rate": 0.10392236150424586,
+        "availability_delay_days_median": 395.0,
+        "availability_delay_days_p95": 482.0,
+        "age_at_cutoff_days_median": 1190.0,
+        "age_at_cutoff_days_p95": 2194.0
+      },
+      {
+        "field": "ld",
+        "coverage": 0.8308230231307154,
+        "zero_rate": 0.0,
+        "q01": 0.2372137771625,
+        "median": 1.446726092984,
+        "q99": 14.07775995711339,
+        "nonfinite_count": 0,
+        "robust_3iqr_outlier_count": 343,
+        "robust_3iqr_outlier_rate": 0.05551958562641632,
+        "availability_delay_days_median": 395.0,
+        "availability_delay_days_p95": 483.0,
+        "age_at_cutoff_days_median": 1190.0,
+        "age_at_cutoff_days_p95": 2194.0
+      },
+      {
+        "field": "sd",
+        "coverage": 0.8308230231307154,
+        "zero_rate": 0.0,
+        "q01": 0.19396523180577,
+        "median": 1.107713792141,
+        "q99": 13.400725413754335,
+        "nonfinite_count": 0,
+        "robust_3iqr_outlier_count": 379,
+        "robust_3iqr_outlier_rate": 0.06134671414697313,
+        "availability_delay_days_median": 395.0,
+        "availability_delay_days_p95": 483.0,
+        "age_at_cutoff_days_median": 1190.0,
+        "age_at_cutoff_days_p95": 2194.0
+      }
+    ],
+    "gate_passed": false
+  },
+  "corporate_events": {
+    "dataset_present": false,
+    "gate_passed": false
+  },
+  "branch_gates": {
+    "TEST_H0_CONTROL": {
+      "status": "ENABLED",
+      "uses_external_data": false,
+      "reason": "Frozen D01 market snapshot reproduced exactly."
+    },
+    "TEST_H1_TOPK_OBJECTIVE": {
+      "status": "ENABLED",
+      "uses_external_data": false,
+      "reason": "Only the preregistered objective/checkpoint semantics change."
+    },
+    "TEST_H2_FUTURES_INDUSTRY_RESIDUAL": {
+      "status": "BLOCKED_DATA_GATE",
+      "uses_external_data": true,
+      "reason": "Industry is not historical point-in-time; small groups violate the >=5 stability rule; futures lacks spot-basis/annualized-term/risk-state fields and the prior consumer lag is 0."
+    },
+    "TEST_H3_FINANCIAL_EVENT_RESIDUAL": {
+      "status": "BLOCKED_DATA_GATE",
+      "uses_external_data": true,
+      "reason": "The source exposes latest revised values at one stock/report grain, not true versioned announcement snapshots. Conservative available_date prevents direct look-ahead but cannot recreate versions."
+    },
+    "TEST_H4_CORPORATE_EVENT_RESIDUAL": {
+      "status": "BLOCKED_DATA_GATE",
+      "uses_external_data": true,
+      "reason": "No compliant point-in-time increase/decrease/repurchase event dataset is present."
+    }
+  },
+  "findings": [
+    {
+      "id": "DQ-H-001",
+      "dataset": "industry",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "failed_rule": "historical point-in-time classification and stable group size",
+      "evidence": {
+        "row_count": 300,
+        "stock_count": 300,
+        "duplicate_stock_count": 0,
+        "missing_industry_count": 0,
+        "industry_count": 76,
+        "small_group_count_lt_5": 56,
+        "small_group_stock_count_lt_5": 120,
+        "small_group_stock_share_lt_5": 0.4,
+        "min_group_size": 1,
+        "median_group_size": 3.0,
+        "max_group_size": 24,
+        "classification_asof_date": "2026-07-26",
+        "historical_point_in_time_all": false
+      },
+      "impact": "Static 2026 labels can time-travel across historical folds; tiny groups create unstable pseudo-industry ranks.",
+      "likely_cause": "The public component endpoint returned only a current snapshot with a fine-grained taxonomy.",
+      "remediation": "Acquire historical effective-dated classifications or keep H2 blocked; shrink only genuine point-in-time small groups upward."
+    },
+    {
+      "id": "DQ-H-002",
+      "dataset": "cffex",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "failed_rule": "corrected futures basis/term/risk fields and lag-safe consumption",
+      "evidence": {
+        "row_count": 1331,
+        "duplicate_date_count": 0,
+        "date_start": "2021-01-04",
+        "date_end": "2026-07-03",
+        "all_values_finite": true,
+        "prior_consumer_lag_days": 0,
+        "main_contract_selection": "highest prior-day open interest; current-day fallback on first observation",
+        "same_contract_return_rule": "same-contract close-to-close return before dominant-contract selection",
+        "required_corrected_field_presence": {
+          "spot_basis": false,
+          "annualized_term_structure": false,
+          "spot_basis_change": false,
+          "risk_state": false
+        }
+      },
+      "impact": "A market-wide same-day signal is not a causal, cross-sectional residual and cannot satisfy H2.",
+      "likely_cause": "The F-series table was designed for a preliminary fusion smoke test.",
+      "remediation": "Add CSI300 spot, annualized expiry-aware basis/term structure, OI/risk regimes, lag at least one day, and stock beta/size interactions."
+    },
+    {
+      "id": "DQ-H-003",
+      "dataset": "financial",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "failed_rule": "true versioned announcement snapshots",
+      "evidence": {
+        "row_count": 7436,
+        "stock_count": 300,
+        "duplicate_stock_report_count": 0,
+        "future_available_count": 0,
+        "revision_delayed_count": 6173,
+        "revision_delayed_share": 0.8301506186121571,
+        "revision_delay_days_median": 364.0,
+        "revision_delay_days_p95": 373.0,
+        "has_version_identifier": false,
+        "latest_revision_only_grain": true
+      },
+      "impact": "Event surprises and revision histories cannot be reconstructed; H3 would model stale/latest levels instead of point-in-time events.",
+      "likely_cause": "The endpoint returns the latest revision for each report period.",
+      "remediation": "Acquire versioned announcement snapshots with event timestamps; retain notice/update versions and derive event/decay/missingness features."
+    },
+    {
+      "id": "DQ-H-004",
+      "dataset": "corporate_events",
+      "severity": "HIGH",
+      "confidence": "HIGH",
+      "failed_rule": "compliant point-in-time source availability",
+      "evidence": {
+        "dataset_present": false
+      },
+      "impact": "H4 cannot be trained without inventing or backfilling event states.",
+      "likely_cause": "No approved source was frozen in the research dataset.",
+      "remediation": "Keep H4 closed until a reported, hashed, effective-dated source distinguishes plan/progress/completion."
+    }
+  ]
+}

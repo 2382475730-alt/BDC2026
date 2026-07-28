@@ -1,0 +1,25 @@
+    1: """
+       config for datetime formatting
+       """
+    1: from __future__ import annotations
+       
+    1: from pandas._config import config as cf
+       
+    1: pc_date_dayfirst_doc = """
+       : boolean
+           When True, prints and parses dates with the day first, eg 20/01/2005
+       """
+       
+    1: pc_date_yearfirst_doc = """
+       : boolean
+           When True, prints and parses dates with the year first, eg 2005/01/20
+       """
+       
+    2: with cf.config_prefix("display"):
+           # Needed upstream of `_libs` because these are used in tslibs.parsing
+    2:     cf.register_option(
+    1:         "date_dayfirst", False, pc_date_dayfirst_doc, validator=cf.is_bool
+           )
+    2:     cf.register_option(
+    1:         "date_yearfirst", False, pc_date_yearfirst_doc, validator=cf.is_bool
+           )

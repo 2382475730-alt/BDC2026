@@ -1,0 +1,61 @@
+{
+  "experiment_id": "D02_PRODUCTION_REFIT_20260703",
+  "seed": 20260708,
+  "data": {
+    "train_csv": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_D\\data_snapshots\\c0_train_plus_baostock_future_20260703.csv",
+    "date_col": "日期",
+    "stock_col": "股票代码",
+    "min_stocks_per_day": 10
+  },
+  "label": {
+    "horizon": 5,
+    "buy_offset": 1,
+    "sell_offset": 5
+  },
+  "features": {
+    "version": "d_market_v1",
+    "sequence_length": 60
+  },
+  "model": {
+    "d_model": 128,
+    "nhead": 4,
+    "num_layers": 2,
+    "dim_feedforward": 256,
+    "dropout": 0.1,
+    "use_factor_encoder": false
+  },
+  "loss": {
+    "temperature": 1.0,
+    "pairwise_weight": 0.25,
+    "pairwise_margin": 0.05,
+    "portfolio_return_weight": 0.05,
+    "portfolio_volatility_weight": 0.01
+  },
+  "portfolio": {
+    "top_k": 2,
+    "mode": "topk_equal",
+    "softmax_temperature": 1.0,
+    "max_weight": 1.0,
+    "min_weight": 0.0
+  },
+  "training": {
+    "batch_size": 4,
+    "num_epochs": 12,
+    "learning_rate": 5e-05,
+    "weight_decay": 1e-05,
+    "grad_clip": 5.0,
+    "num_workers": 0,
+    "early_stop_patience": 12,
+    "checkpoint_metric": "fixed_final_epoch_no_validation"
+  },
+  "validation": {
+    "mode": "production_refit_no_validation",
+    "source_champion_program": "D_AUTO_CHAMPION_REF_20260709_110423",
+    "fixed_epochs_from_research_best_epoch": 12,
+    "no_validation_set": true,
+    "no_future_model_selection": true
+  },
+  "output": {
+    "run_dir": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_D\\D02_FrozenResearchChampion_20260709\\production_refit_20260703"
+  }
+}

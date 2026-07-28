@@ -1,0 +1,31 @@
+{
+  "run_dir": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_D\\automation_runs\\D_AUTO_CHAMPION_REF_20260709_110423",
+  "best_checkpoint": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_D\\automation_runs\\D_AUTO_CHAMPION_REF_20260709_110423\\best_model.pth",
+  "last_checkpoint": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_D\\automation_runs\\D_AUTO_CHAMPION_REF_20260709_110423\\last_model.pth",
+  "checkpoint_metric": "val_robust_final_score",
+  "best_score": -0.24970948583819963,
+  "best_epoch": 12,
+  "epochs": 12,
+  "split": {
+    "mode": "purged_walk_forward",
+    "fold_start": "2025-01-03",
+    "fold_end": "2026-01-05",
+    "label": "open(T+5) / open(T+1) - 1",
+    "train": {
+      "sample_count": 722,
+      "sample_start": "2022-01-04",
+      "sample_end": "2024-12-25",
+      "label_end_start": "2022-01-11",
+      "label_end_end": "2025-01-02"
+    },
+    "validation": {
+      "sample_count": 243,
+      "sample_start": "2025-01-03",
+      "sample_end": "2026-01-05",
+      "label_end_start": "2025-01-10",
+      "label_end_end": "2026-01-12"
+    },
+    "train_label_end_before_val_start": true
+  },
+  "elapsed_minutes": 3.8657459139823915
+}

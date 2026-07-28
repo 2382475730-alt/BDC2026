@@ -1,0 +1,37 @@
+{
+  "round_id": "W1_20260703",
+  "candidate": "Candidate-C",
+  "status": "completed",
+  "train_data": {
+    "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\tri_candidate_rolling_validation_20260722\\rounds\\W1_20260703\\candidates\\Candidate-C\\data\\train.csv",
+    "rows": 337852,
+    "stocks": 300,
+    "date_start": "2021-10-12",
+    "date_end": "2026-07-03",
+    "sha256": "DC76F0C68BA46C0D629AF37C5F7E280873D732702CB6CA1E375E89715946E07E"
+  },
+  "training": {
+    "command": [
+      "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\shared_envs\\pytorch-cu128-py311\\Scripts\\python.exe",
+      "code/src/train.py"
+    ],
+    "cwd": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\tri_candidate_rolling_validation_20260722\\rounds\\W1_20260703\\candidates\\Candidate-C",
+    "started_at": "2026-07-22T07:32:09.251747+00:00",
+    "completed_at": "2026-07-22T07:47:06.699429+00:00",
+    "elapsed_seconds": 897.4366682000109,
+    "return_code": 0,
+    "log_path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\tri_candidate_rolling_validation_20260722\\rounds\\W1_20260703\\candidates\\Candidate-C\\logs\\training.log",
+    "log_sha256": "6B9A37B58354FE4F74FC60C1F24E602ABB28C036F029E1323C7E11EA5E372D56"
+  },
+  "checkpoint_hashes": {
+    "model/60_158+39/best_model.pth": "77B42DA9245BE692F5404171E5E446760B0B2155AD4E462B6FA9B627D1354B88",
+    "model/60_158+39/scaler.pkl": "FB7446ACC9CCF11C58087BD2C02DE0ECD493C67151E64A58F52AE12D70F16E4B"
+  },
+  "config_hashes": {
+    "code/src/config.py": "7B1DAE9427D683E27416016562130A069AD24FBA93670495D82F3BCE55DFB028",
+    "model/60_158+39/config.json": "7360A4D71AA12EB7F1FD20D1D0404789D5105F55A69CDBF53486F67518025E8B",
+    "model/60_158+39/rerank_config.json": "3ADC8814212462499CE15E724AAF6D0DF317AD324ECE365E04200EA1AA70B2F4"
+  },
+  "training_time_limit_seconds": 28800,
+  "training_time_passed": true
+}

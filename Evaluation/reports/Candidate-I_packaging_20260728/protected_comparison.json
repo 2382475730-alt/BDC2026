@@ -1,0 +1,29 @@
+{
+  "comparisons": {
+    "candidate_d": {
+      "added_paths": [],
+      "after_aggregate_sha256": "f4d106e526cfd6433f1b8c2dace6c85229e74221b7e2772224e499a1158421a8",
+      "before_aggregate_sha256": "f4d106e526cfd6433f1b8c2dace6c85229e74221b7e2772224e499a1158421a8",
+      "changed_paths": [],
+      "identical": true,
+      "removed_paths": []
+    },
+    "d01": {
+      "added_paths": [],
+      "after_aggregate_sha256": "2a532e15182ad47c8c2698101cf7b0941d6475d4414d7ac774c790446960bc71",
+      "before_aggregate_sha256": "2a532e15182ad47c8c2698101cf7b0941d6475d4414d7ac774c790446960bc71",
+      "changed_paths": [],
+      "identical": true,
+      "removed_paths": []
+    },
+    "official_reference": {
+      "added_paths": [],
+      "after_aggregate_sha256": "110faecbab2893c64b3cd3868fa8f599912087499b0126f595a53cdc854a25b6",
+      "before_aggregate_sha256": "110faecbab2893c64b3cd3868fa8f599912087499b0126f595a53cdc854a25b6",
+      "changed_paths": [],
+      "identical": true,
+      "removed_paths": []
+    }
+  },
+  "passed": true
+}

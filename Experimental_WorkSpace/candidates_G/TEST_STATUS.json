@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "lineage": "G-series",
+  "model_scope": "point-in-time financial statements + static industry + CFFEX equity-index futures",
+  "status": "REJECTED_AT_QUICK_GATE",
+  "submission_eligible": false,
+  "quick_gate": {
+    "paired_week_count": 53,
+    "mean_weekly_excess": 0.013877777769318153,
+    "median_weekly_excess": 0.0,
+    "paired_direction_rate": 0.5094339622641509,
+    "excess_sum": 0.7355222217738622,
+    "excess_sum_without_best_two_weeks": -0.22562992945313493,
+    "positive_fold_count": 2,
+    "recent_fold_mean_excess": 0.030735391890630095,
+    "passed": false
+  },
+  "summary_file": "automation_runs/TEST_G_QUICK_SUMMARY.json",
+  "paired_weekly_file": "automation_runs/TEST_G_QUICK_PAIRED_WEEKLY.csv",
+  "trained_model_outputs": [
+    {
+      "fold": "2025Q1",
+      "path": "automation_runs/TEST_G_QUICK_TEST_G_FINANCIAL_G_DEV_01_2025_Q1_S20260726/best_model.pth",
+      "bytes": 5194362,
+      "md5": "353e94e4d2d195d7446fa9afd663312b"
+    },
+    {
+      "fold": "2025Q2",
+      "path": "automation_runs/TEST_G_QUICK_TEST_G_FINANCIAL_G_DEV_02_2025_Q2_S20260726/best_model.pth",
+      "bytes": 5194362,
+      "md5": "e35ed9846eb9efc4ad5933f1c87cf577"
+    },
+    {
+      "fold": "2025Q3",
+      "path": "automation_runs/TEST_G_QUICK_TEST_G_FINANCIAL_G_DEV_03_2025_Q3_S20260726/best_model.pth",
+      "bytes": 5194362,
+      "md5": "79b7452a816c56a4869eb745e1897db3"
+    },
+    {
+      "fold": "2026Q1",
+      "path": "automation_runs/TEST_G_QUICK_TEST_G_FINANCIAL_G_DEV_04_2026_Q1_S20260726/best_model.pth",
+      "bytes": 5194362,
+      "md5": "82d3b3cd97e946ddb57c2f8704c39b1b"
+    }
+  ],
+  "warning": "TEST evidence only. Do not copy to candidate/ or describe as an improvement."
+}

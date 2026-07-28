@@ -1,0 +1,232 @@
+{
+  "schema_version": "test_d_prospective_8w_v1",
+  "experiment_id": "TEST_D_PROSPECTIVE_8W_20260727",
+  "classification": "PROSPECTIVE_SEQUENTIAL_DIAGNOSTIC",
+  "created_at": "2026-07-27T00:00:00+08:00",
+  "timezone": "Asia/Shanghai",
+  "minimum_valid_windows": 8,
+  "extend_to_windows_if_inconclusive": 12,
+  "performance_blinding": "UNTIL_MINIMUM_WINDOW_COUNT",
+  "promotion_policy": "NO_AUTOMATIC_PROMOTION",
+  "candidates": [
+    "THU-BDC2026-main",
+    "Candidate-D"
+  ],
+  "candidate_sources": {
+    "THU-BDC2026-main": "candidate/THU-BDC2026-main",
+    "Candidate-D": "candidate/Candidate-D"
+  },
+  "external_sealed_vault": "D:/Study/Competitions/2026年中国高校计算机大赛—大数据挑战赛-提交版本/BDC2026_D_Prospective_Sealed_20260727",
+  "trading_calendar": {
+    "market": "Shanghai Stock Exchange",
+    "source": "https://www.sse.com.cn/disclosure/dealinstruc/closed/",
+    "verified_on": "2026-07-27",
+    "special_sessions": {
+      "2026-09-25": "CLOSED_MID_AUTUMN",
+      "2026-09-28": "OPEN",
+      "2026-10-01_to_2026-10-07": "CLOSED_NATIONAL_DAY",
+      "2026-10-08": "OPEN"
+    }
+  },
+  "excluded_exposed_periods": [
+    {
+      "reason": "completed retrospective two-week rolling validation W1",
+      "decision_date": "2026-07-03",
+      "buy_date": "2026-07-06",
+      "sell_date": "2026-07-10"
+    },
+    {
+      "reason": "completed retrospective two-week rolling validation W2",
+      "decision_date": "2026-07-10",
+      "buy_date": "2026-07-13",
+      "sell_date": "2026-07-17"
+    },
+    {
+      "reason": "already elapsed before preregistration and therefore not prospective",
+      "decision_date": "2026-07-17",
+      "buy_date": "2026-07-20",
+      "sell_date": "2026-07-24"
+    }
+  ],
+  "windows": [
+    {
+      "window_id": "P01",
+      "role": "PRIMARY",
+      "decision_date": "2026-07-31",
+      "decision_lock_time": "2026-07-31T18:00:00+08:00",
+      "buy_date": "2026-08-03",
+      "buy_deadline": "2026-08-03T09:30:00+08:00",
+      "sell_date": "2026-08-07",
+      "score_not_before": "2026-08-07T09:31:00+08:00"
+    },
+    {
+      "window_id": "P02",
+      "role": "PRIMARY",
+      "decision_date": "2026-08-07",
+      "decision_lock_time": "2026-08-07T18:00:00+08:00",
+      "buy_date": "2026-08-10",
+      "buy_deadline": "2026-08-10T09:30:00+08:00",
+      "sell_date": "2026-08-14",
+      "score_not_before": "2026-08-14T09:31:00+08:00"
+    },
+    {
+      "window_id": "P03",
+      "role": "PRIMARY",
+      "decision_date": "2026-08-14",
+      "decision_lock_time": "2026-08-14T18:00:00+08:00",
+      "buy_date": "2026-08-17",
+      "buy_deadline": "2026-08-17T09:30:00+08:00",
+      "sell_date": "2026-08-21",
+      "score_not_before": "2026-08-21T09:31:00+08:00"
+    },
+    {
+      "window_id": "P04",
+      "role": "PRIMARY",
+      "decision_date": "2026-08-21",
+      "decision_lock_time": "2026-08-21T18:00:00+08:00",
+      "buy_date": "2026-08-24",
+      "buy_deadline": "2026-08-24T09:30:00+08:00",
+      "sell_date": "2026-08-28",
+      "score_not_before": "2026-08-28T09:31:00+08:00"
+    },
+    {
+      "window_id": "P05",
+      "role": "PRIMARY",
+      "decision_date": "2026-08-28",
+      "decision_lock_time": "2026-08-28T18:00:00+08:00",
+      "buy_date": "2026-08-31",
+      "buy_deadline": "2026-08-31T09:30:00+08:00",
+      "sell_date": "2026-09-04",
+      "score_not_before": "2026-09-04T09:31:00+08:00"
+    },
+    {
+      "window_id": "P06",
+      "role": "PRIMARY",
+      "decision_date": "2026-09-04",
+      "decision_lock_time": "2026-09-04T18:00:00+08:00",
+      "buy_date": "2026-09-07",
+      "buy_deadline": "2026-09-07T09:30:00+08:00",
+      "sell_date": "2026-09-11",
+      "score_not_before": "2026-09-11T09:31:00+08:00"
+    },
+    {
+      "window_id": "P07",
+      "role": "PRIMARY",
+      "decision_date": "2026-09-11",
+      "decision_lock_time": "2026-09-11T18:00:00+08:00",
+      "buy_date": "2026-09-14",
+      "buy_deadline": "2026-09-14T09:30:00+08:00",
+      "sell_date": "2026-09-18",
+      "score_not_before": "2026-09-18T09:31:00+08:00"
+    },
+    {
+      "window_id": "P08",
+      "role": "PRIMARY",
+      "decision_date": "2026-09-18",
+      "decision_lock_time": "2026-09-18T18:00:00+08:00",
+      "buy_date": "2026-09-21",
+      "buy_deadline": "2026-09-21T09:30:00+08:00",
+      "sell_date": "2026-09-28",
+      "score_not_before": "2026-09-28T09:31:00+08:00"
+    },
+    {
+      "window_id": "P09",
+      "role": "CONTINGENCY_EXTENSION",
+      "decision_date": "2026-09-28",
+      "decision_lock_time": "2026-09-28T18:00:00+08:00",
+      "buy_date": "2026-09-29",
+      "buy_deadline": "2026-09-29T09:30:00+08:00",
+      "sell_date": "2026-10-12",
+      "score_not_before": "2026-10-12T09:31:00+08:00"
+    },
+    {
+      "window_id": "P10",
+      "role": "CONTINGENCY_EXTENSION",
+      "decision_date": "2026-10-12",
+      "decision_lock_time": "2026-10-12T18:00:00+08:00",
+      "buy_date": "2026-10-13",
+      "buy_deadline": "2026-10-13T09:30:00+08:00",
+      "sell_date": "2026-10-19",
+      "score_not_before": "2026-10-19T09:31:00+08:00"
+    },
+    {
+      "window_id": "P11",
+      "role": "CONTINGENCY_EXTENSION",
+      "decision_date": "2026-10-19",
+      "decision_lock_time": "2026-10-19T18:00:00+08:00",
+      "buy_date": "2026-10-20",
+      "buy_deadline": "2026-10-20T09:30:00+08:00",
+      "sell_date": "2026-10-26",
+      "score_not_before": "2026-10-26T09:31:00+08:00"
+    },
+    {
+      "window_id": "P12",
+      "role": "CONTINGENCY_EXTENSION",
+      "decision_date": "2026-10-26",
+      "decision_lock_time": "2026-10-26T18:00:00+08:00",
+      "buy_date": "2026-10-27",
+      "buy_deadline": "2026-10-27T09:30:00+08:00",
+      "sell_date": "2026-11-02",
+      "score_not_before": "2026-11-02T09:31:00+08:00"
+    }
+  ],
+  "frozen_protocol": {
+    "candidate_d": {
+      "seed": 20260708,
+      "epochs": 12,
+      "sequence_length": 60,
+      "top_k": 2,
+      "weights": [
+        0.5,
+        0.5
+      ]
+    },
+    "candidate_d_runtime_metadata_allowlist": [
+      "experiment_id",
+      "submission.raw_data_end",
+      "submission.train_sample_end",
+      "submission.expected_train_sample_count"
+    ],
+    "training_mode": "FROM_SCRATCH_PER_WINDOW",
+    "checkpoint_selection": "FROZEN_PROGRAM_NO_POST_OUTCOME_SELECTION",
+    "training_bytes": "IDENTICAL_BETWEEN_CORE_CANDIDATES_PER_WINDOW",
+    "copy_method": "ORDINARY_COPY_NO_HARDLINK",
+    "inference_repetitions": 2,
+    "cost_bps_per_side": [
+      0,
+      10,
+      20
+    ]
+  },
+  "leakage_controls": {
+    "future_returns_use": "SCORING_ONLY_AFTER_SELL_OPEN",
+    "training_process_outcome_path_access": "FORBIDDEN",
+    "training_candidate_test_csv": "ABSENT",
+    "prediction_lock_deadline": "BEFORE_BUY_OPEN",
+    "missed_window_policy": "MARK_MISSED_NEVER_BACKFILL",
+    "score_storage": "EXTERNAL_SEALED_VAULT",
+    "public_receipt_contains_performance": false,
+    "audit_log": "APPEND_ONLY_SHA256_CHAIN",
+    "midpoint_review": "INTEGRITY_ONLY_NO_PERFORMANCE",
+    "candidate_package_writes": "FORBIDDEN"
+  },
+  "decision_gates": {
+    "minimum_valid_windows": 8,
+    "minimum_official_excess_wins": 6,
+    "minimum_official_excess_win_rate_for_extension": 0.75,
+    "mean_official_excess_positive": true,
+    "median_official_excess_positive": true,
+    "compound_net10_beats_official": true,
+    "compound_net10_beats_sse": true,
+    "leave_best_two_out_official_excess_positive": true,
+    "minimum_single_week_net10": -0.12,
+    "cost_direction_must_hold": true,
+    "extension_at_eight": {
+      "eligible_if_failed_non_safety_gate_count_is_at_most": 2,
+      "hard_fail_gates": [
+        "minimum_single_week_net10",
+        "cost_direction_must_hold"
+      ]
+    }
+  }
+}

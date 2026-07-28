@@ -1,8 +1,6 @@
 # Improvement-THU Workspace Layout
 
-Updated: 2026-07-08
-
-## Root
+Updated: 2026-07-28
 
 The workspace root is:
 
@@ -10,84 +8,126 @@ The workspace root is:
 D:\Study\Competitions\2026年中国高校计算机大赛—大数据挑战赛-提交版本\Improvement-THU
 ```
 
-The root is not a final submission package.
+The root is a research workspace, not a final submission package.
 
-## Main Directories
-
-```text
-BaoStock_Datasets/
-Experimental_WorkSpace/
-Evaluation/
-candidate/
-docs/
-skills/
-_cleanup_reports/
-.venv/
-```
-
-## Data
-
-`BaoStock_Datasets/` contains the local BaoStock datasets. It replaces the old directory:
+## Canonical Layout
 
 ```text
-03_data_baostock_expansion_20260630/
+Improvement-THU/
+├─ BaoStock_Datasets/                  # canonical local market data
+├─ Experimental_WorkSpace/
+│  ├─ candidates_C/
+│  │  └─ README.md                    # C-family history only
+│  ├─ candidates_D/
+│  │  ├─ D01_FrozenResearchChampion_20260709/
+│  │  │  ├─ code_snapshot/
+│  │  │  ├─ data/
+│  │  │  └─ production_refit_20260703/
+│  │  ├─ automation_runs/             # root-level reports/state/audits only
+│  │  ├─ D_experiment_registry.json
+│  │  ├─ README.md
+│  │  └─ run_d_*.py                   # retained protocol controllers
+│  ├─ candidates_E/
+│  │  ├─ E001_RecentRegimeMixture_Ranker/  # lightweight code/config only
+│  │  ├─ automation_runs/             # root-level audits/summaries only
+│  │  ├─ manifests/
+│  │  ├─ E_experiment_registry.json
+│  │  ├─ preregistration and final reports
+│  │  └─ README.md
+│  ├─ candidates_F/                    # TEST industry + index-futures evidence
+│  │  ├─ code/
+│  │  ├─ automation_runs/
+│  │  ├─ preregistration/stage plan
+│  │  ├─ TEST_STATUS.json
+│  │  └─ README.md
+│  ├─ candidates_G/                    # TEST point-in-time financial fusion
+│  │  ├─ code/
+│  │  ├─ automation_runs/
+│  │  ├─ preregistration/stage plan
+│  │  └─ README.md
+│  ├─ candidates_H/                    # TEST single-week stability lineage
+│  │  ├─ configs/
+│  │  ├─ preregistration/stage plan
+│  │  ├─ TEST_STATUS.json
+│  │  └─ README.md
+│  └─ shared_envs/
+│     └─ pytorch-cu128-py311/         # only retained GPU environment
+├─ Evaluation/                        # shared evaluation code and reports
+├─ candidate/
+│  ├─ THU-BDC2026-main/               # protected official reference
+│  ├─ Candidate-C/                    # C-family fallback submission
+│  ├─ Candidate-D/                    # D-family current submission candidate
+│  └─ Candidate-I/                    # submission-format TEST; research rejected
+├─ docs/                              # official competition specifications
+├─ skills/
+└─ _cleanup_reports/                  # immutable history + current cleanup audit
 ```
 
-## Experiments
+There is no canonical root `.venv`; use the shared environment under
+`Experimental_WorkSpace/shared_envs/`.
 
-`Experimental_WorkSpace/` contains experiment candidates and the shared training environment. It replaces the old directory:
+The candidate tree also contains `candidate/Candidate-D-Defensive-TEST/`, a
+forced submission-format TEST package whose V2 source was rejected at the
+combination gate. It does not replace `candidate/Candidate-D/`.
 
-```text
-08_experiment_generalization_selfscore_20260701/
-```
+## Model Identities
 
-Current retained C-series model baselines:
+Research snapshots and submission packages have separate names:
 
-```text
-Experimental_WorkSpace/candidates_C/C0_BaseModel/
-Experimental_WorkSpace/candidates_C/C1_Champion_RegimeGate/
-Experimental_WorkSpace/candidates_C/C2_StrictClean_Baseline/
-```
+- Research: `<series><two-digit-id>_<role-or-method>_<date>`.
+- Submission: `candidate/Candidate-<series>/`.
 
-Current D-series experiment package:
+Current identities:
 
-```text
-Experimental_WorkSpace/candidates_D/D001_MarketEncoder_Baseline/
-Experimental_WorkSpace/candidates_D/D_experiment_registry.json
-Experimental_WorkSpace/candidates_D/automation_runs/
-Experimental_WorkSpace/candidates_D/data_snapshots/
-```
+- `THU-BDC2026-main`: official reference; name and contents unchanged.
+- `Candidate-C`: C-series fallback submission. Former experiment-local C0/C1/C2
+  copies were retired.
+- `D01_FrozenResearchChampion_20260709`: current D Alpha Champion. Legacy ID:
+  `D02_FrozenResearchChampion_20260709`.
+- `Candidate-D`: submission package derived from D01's fixed production refit;
+  it does not define a new training program.
+- `Candidate-D-Defensive-TEST`: user-authorized submission-format TEST package
+  derived from Candidate-D plus the forced complete-link defensive policy
+  `EQ_V0.050_C0.150_T0.000_R0.100`. Its source V2 experiment was rejected at
+  the combination gate. It is not a Defensive Champion, does not replace
+  Candidate-D, and carries no improvement or promotion claim.
+- `Candidate-I`: user-authorized submission-format TEST package derived from
+  Candidate-D plus the fixed lag-1 residual rerank tuple
+  `(0.05, 0.05, 0.05)`. Its source TEST was rejected at the data gate. It does
+  not replace Candidate-D and carries no improvement or promotion claim.
+- Defensive Champion: `NONE`.
+- E retained numbered model: `NONE`.
+- F retained numbered model: `NONE`; its four-fold industry + futures run is
+  rejected and retained only as `TEST` evidence.
+- G retained numbered model: `NONE`; all financial-fusion outputs are marked
+  `TEST` while reporting eligibility and robustness remain unresolved.
+- H retained numbered model: `NONE`; the loss-only H1 branch was rejected at
+  Quick, H2/H3/H4 were blocked by data gates, and Serious/sealed evaluation did
+  not run. All H artifacts remain TEST-only.
 
-Model definitions:
+The next retained D research model starts at `D02_...`. Smoke/Quick/fold/seed
+runs use run IDs and do not consume formal numbers. Future E/F/G/H snapshots
+start at `E01_...`, `F01_...`, `G01_...`, or `H01_...` only after passing their
+frozen promotion gates and receiving explicit promotion approval.
 
-- `C0`: former `C4_recent_weighted_train`, the base Transformer model.
-- `C1`: former `C77_c4_regime_raw_volume5_gate_c69_else_c4`, the current champion regime-gated inference baseline.
-- `C2`: former `C302_formal_purge_clean_c4_cutoff_20260313`, the strict clean baseline.
-- `D001`: Market Encoder baseline for the D-series Market Intelligence lineage. Round1 and R2 have been trained; no D-series model has been promoted.
+## Scope Boundaries
 
-`candidates_C/` represents one candidate family that shares the same bottom-level training program lineage.
-
-`candidates_D/` represents a second candidate family for explicit market-state, factor, stock-temporal, and portfolio-aware modeling. The current D001 package contains code, configs, and experiment outputs.
-
-Within a candidate family, every candidate can keep its own package-local code under `code/src/` for reproducibility. The family boundary is determined by the bottom-level training program lineage, not by whether every inference script is byte-identical.
-
-Future bottom-level training-program experiments should use a separate candidate-family folder. The current D-series folder is:
-
-```text
-Experimental_WorkSpace/candidates_D/
-```
-
-Examples:
-
-- Inference-only changes such as rerank rules, regime gates, or portfolio weight modes can stay inside the same candidate family.
-- Changes to `train.py`, `model.py`, loss, labels, feature construction, dataset construction, optimizer schedule, or checkpoint-selection semantics should start a new candidate family.
-- A new candidate-family folder must include its own `README.md`.
+- `candidate/` contains clean submission/reference packages only.
+- `Experimental_WorkSpace/` contains retained research lineage, controllers,
+  registries, and the shared runtime.
+- `Evaluation/` contains shared code; it does not own model weights.
+- `BaoStock_Datasets/` contains data and provenance, never model artifacts.
+- Research-only auxiliary data is frozen under
+  `BaoStock_Datasets/data/fusion_research_20260726/`; it is not automatically
+  submission-eligible.
+- D01 is self-contained at
+  `Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709/data/train.csv`.
+- Historical reports may retain legacy IDs. Active docs, registries, configs,
+  and canonical paths use the new identities.
 
 ## Evaluation
 
-`Evaluation/` contains shared evaluation scripts, configurations, generated runs, and reports.
-
-Current categories:
+Reusable categories live under:
 
 ```text
 Evaluation/scripts/d_series/
@@ -98,60 +138,31 @@ Evaluation/scripts/leakage_audit/
 Evaluation/scripts/scoreboard/
 ```
 
-It replaces the old directory:
+Keep only small, valid, interpretable outputs under `Evaluation/runs/` and
+`Evaluation/reports/`.
 
-```text
-04_framework_walkforward_eval_20260701/
-```
+## Cleanup Provenance
 
-## Submission Candidates
+- Pre-cleanup manifest:
+  `_cleanup_reports/workspace_cleanup_renumber_20260717.json`
+- Execution log:
+  `_cleanup_reports/workspace_cleanup_execution_20260720.json`
+- Retired-model conclusions:
+  `_cleanup_reports/retired_model_conclusions_20260720.md`
+- Candidate validation:
+  `_cleanup_reports/candidate_validation_20260720.json`
 
-`candidate/` remains reserved for submission candidates and official/reference packages.
+Do not rewrite older reports merely to replace historical path names.
 
-Current submission/reference packages:
+## Operating Rules
 
-```text
-candidate/C1_Submission_App_20260703/
-candidate/Improvement_THU_original_candidate_20260705/
-candidate/THU-BDC2026-main/
-```
-
-## Cleanup Record
-
-The C0/C1/C2 rename and pruning manifest is:
-
-```text
-_cleanup_reports/model_workspace_rename_manifest_20260707.json
-```
-
-## Rules
-
-- Keep submission packages in `candidate/` clean.
-- Run exploratory training and D-series search in `Experimental_WorkSpace/`, not in `candidate/`.
-- Keep shared evaluation scripts in `Evaluation/`.
-- Use `BaoStock_Datasets/` as the local BaoStock data source.
-- Treat fixed `output/result.csv` self-score as a one-shot diagnostic; use walk-forward reports to discuss generalization risk.
-- When changing workspace structure or folder semantics, update `AGENTS.md`, this layout file, and the relevant local `README.md` in the same task.
-
-## D-Series Automation Additions
-
-`Evaluation/scripts/d_series/` contains reusable D-series research-validation utilities:
-
-```text
-split_and_purge.py
-leakage_audit.py
-official_proxy_eval.py
-weekly_backtest.py
-metrics_v2.py
-paired_champion_gate.py
-experiment_registry.py
-production_refit.py
-```
-
-`Experimental_WorkSpace/candidates_D/run_d_auto_iteration.py` orchestrates smoke checks and automated D-series challenger runs. Its generated artifacts stay under:
-
-```text
-Experimental_WorkSpace/candidates_D/automation_runs/
-```
-
-`Experimental_WorkSpace/candidates_D/data_snapshots/` stores derived D-series experiment input snapshots and manifests. Canonical market source records remain in `BaoStock_Datasets/`.
+- Train and search only in `Experimental_WorkSpace/`.
+- Do not modify `candidate/THU-BDC2026-main/`.
+- Do not promote a failed model into `candidate/`.
+  `Candidate-D-Defensive-TEST` and `Candidate-I` are documented 2026-07-28
+  user-authorized packaging exceptions and remain research-rejected TEST
+  identities, not promotion precedents.
+- Use the same-protocol official-baseline comparison plus robustness evidence
+  before claiming an improvement.
+- Update this file and the affected local README whenever canonical structure
+  changes.

@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "status": "COMPLETE",
+  "artifacts": [
+    {
+      "path": "Evaluation/runs/TEST_H5_predicted_boundary_20260727/TEST_H5_CACHE_MANIFEST.json",
+      "bytes": 5254,
+      "sha256": "16f5e3c9c43d45a849a7213502af5cea251f123b6dc3e910be393e9381f1502f"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H5_predicted_boundary_20260727/TEST_H5_ENVIRONMENT_AND_COMMANDS.json",
+      "bytes": 1442,
+      "sha256": "d3d0d8292680f2b76b3be966d7c92be273d29358c21c4ff462ad1b938f05807a"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H5_predicted_boundary_20260727/TEST_H5_FINAL_REPORT.json",
+      "bytes": 12014,
+      "sha256": "39b25e7db379d80a525ded0368c5baa7a17e03ea9e1c2c310ad15568db277ded"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H5_predicted_boundary_20260727/TEST_H5_FINAL_REPORT.md",
+      "bytes": 2258,
+      "sha256": "748095f491ad1e81f2c1c7ddeaa27469d157eea05bd5ac8f2adf32eb9d9c2b98"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H5_predicted_boundary_20260727/TEST_H5_H0_REUSE_AUDIT.json",
+      "bytes": 3097,
+      "sha256": "602ec9968750e4c1270c5750b702eaf4da4a17c54008b1a0cdc98f87ad180d83"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H5_predicted_boundary_20260727/TEST_H5_LEAKAGE_AND_INVARIANT_AUDIT.json",
+      "bytes": 8782,
+      "sha256": "81398046a60b151275d6160dbc7d9a9356223e96abc1dd460ca1976fe08ded44"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H5_predicted_boundary_20260727/TEST_H5_PREP_REPORT.json",
+      "bytes": 178,
+      "sha256": "975b110a89543d7a5537baa1954d105399de64595c8106c116623a07dd21ac93"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H5_predicted_boundary_20260727/TEST_H5_PREREGISTRATION.json",
+      "bytes": 2853,
+      "sha256": "6c0065656b12cc78a8ed38eb14338f1011e260185e265ba883059bb2b2c44cce"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H5_predicted_boundary_20260727/TEST_H5_PROTECTED_FILES_AFTER.json",
+      "bytes": 29065,
+      "sha256": "0be76d0bb7af8fc10e2d2768af3b6ae9992d1801e3d5b0a2a713b1168f40b741"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H5_predicted_boundary_20260727/TEST_H5_PROTECTED_FILES_BEFORE.json",
+      "bytes": 28417,
+      "sha256": "e344e5fe9ca7852d6ce9e3e7b4196619d9b5f77aee82c4716a1333963710266b"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H5_predicted_boundary_20260727/TEST_H5_RUNTIME_ENVIRONMENT.json",
+      "bytes": 1192,
+      "sha256": "0c12f544ad2e73c3ee6930132ca4986c869c3b9b8835458c2e51d3c3393f4b4d"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H5_predicted_boundary_20260727/TEST_H5_SENTINEL_BOUNDARY_DIAGNOSTICS.csv",
+      "bytes": 13033,
+      "sha256": "f15e12258316aa03376296f57fd1a1a8ee6f950b0d67191293aefc85c09cdd0e"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H5_predicted_boundary_20260727/TEST_H5_SENTINEL_GATE.json",
+      "bytes": 2902,
+      "sha256": "462e498ee897dcf7c4f7fc4bd603224cfab1ec71387d64d65deb52cb3c732860"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H5_predicted_boundary_20260727/TEST_H5_SENTINEL_PAIRED_RETURNS.csv",
+      "bytes": 8779,
+      "sha256": "c25c180e1b5d8a2179322413fdf07765179eb65efbd33395801a7923a09a0a50"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H5_predicted_boundary_20260727/TEST_H5_SENTINEL_PORTFOLIO_DECISIONS.csv",
+      "bytes": 8766,
+      "sha256": "1461163ed851248c624ab8fee10f2b3b2f9cd442b9c3d6f6467d37b13e5df399"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H5_predicted_boundary_20260727/TEST_H5_SMOKE_REPORT.json",
+      "bytes": 23083,
+      "sha256": "078e676f1ead97cc4f064a2d0ca25ac83b64e840ecfd561686972979ce71749a"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H5_predicted_boundary_20260727/TEST_H5_TESTS_AND_COVERAGE.json",
+      "bytes": 895,
+      "sha256": "ae850847707b966abc9b916b739edb71500a76e3bc3280809339990b1581712e"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H5_predicted_boundary_20260727/TEST_H5_VALIDATION_EXPOSURE_REGISTRY.json",
+      "bytes": 39822,
+      "sha256": "68a289d34eaf7ae7229cc549e44a25a322d65298b5dd6795b1b93f23dffa02c2"
+    }
+  ]
+}

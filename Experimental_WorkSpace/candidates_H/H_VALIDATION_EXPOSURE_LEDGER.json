@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "lineage": "H-series",
+  "policy": "append-only permanent exposure ledger",
+  "entries": [
+    {
+      "range_start": "2026-04-03",
+      "range_end": "2026-07-03",
+      "exposure_type": "EXPOSED_AS_TRAINING_INPUT_BY_TEST_H5_TWO_WEEK_RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+      "experiment_id": "TEST_H5_TWO_WEEK_RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+      "permanent": true,
+      "prohibited_as_holdout": true,
+      "promotion_evidence": false,
+      "note": "One-way reclassification authorized before execution; this range may never again be treated as fresh H-series validation."
+    },
+    {
+      "range_start": "2026-07-06",
+      "range_end": "2026-07-17",
+      "exposure_type": "EXPOSED_BEFORE_TASK_AS_SCORING_WINDOW",
+      "experiment_id": "TEST_H5_TWO_WEEK_RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+      "permanent": true,
+      "prohibited_as_holdout": true,
+      "promotion_evidence": false,
+      "note": "Previously observed two-week scoring window; current use is retrospective diagnostic only."
+    },
+    {
+      "range_start": "2026-07-06",
+      "range_end": "2026-07-10",
+      "exposure_type": "EXPOSED_AS_W2_RAW_TRAINING_ROWS",
+      "experiment_id": "TEST_H5_TWO_WEEK_RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+      "round_id": "W2_20260710",
+      "permanent": true,
+      "prohibited_as_holdout": true,
+      "promotion_evidence": false,
+      "note": "W2 same-byte training input includes raw market rows through 2026-07-10; supervised sample labels end at 2026-07-10 and sample dates end at 2026-07-03."
+    }
+  ]
+}

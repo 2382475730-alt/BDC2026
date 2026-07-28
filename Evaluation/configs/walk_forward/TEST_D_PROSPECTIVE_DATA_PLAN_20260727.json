@@ -1,0 +1,208 @@
+{
+  "schema_version": "test_d_prospective_data_plan_v2",
+  "experiment_id": "TEST_D_PROSPECTIVE_8W_20260727",
+  "created_at": "2026-07-27T14:00:00+08:00",
+  "amended_at": "2026-07-27T17:30:00+08:00",
+  "finalized_on": "2026-07-27",
+  "finalization_status": "FROZEN_BEFORE_P01_WITH_PROVIDER_FAILOVER",
+  "classification": "TEST_PROSPECTIVE_CAUSAL_INPUT_PLAN",
+  "base_snapshot": {
+    "path": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709/data/train.csv",
+    "date_end": "2026-07-03",
+    "sha256": "8E9CF37E5C53E4EDAFDDC3F6F6B5843D4037376334E6F53CBA068699095DF1AD"
+  },
+  "acquisition_program": {
+    "path": "BaoStock_Datasets/scripts/build_prospective_causal_prefix.py",
+    "sha256": "8AD16B177991D15F8ED6488629009C49C1E384AC9BF79E0FC5E79712CC3061A0",
+    "fallback_helper": {
+      "path": "BaoStock_Datasets/scripts/prospective_tencent_fallback.py",
+      "sha256": "7CD471D0E803235B7CE4D54518C2824DE37299639E021E1CB2F6D6506C0CE653"
+    },
+    "source_policy": "baostock_then_tencent_qfq",
+    "providers": [
+      {
+        "priority": 1,
+        "source": "BaoStock",
+        "source_host": "public-api.baostock.com:10030",
+        "adjustflag": "1"
+      },
+      {
+        "priority": 2,
+        "source": "Tencent",
+        "source_host": "web.ifzq.gtimg.cn:443",
+        "endpoint": "akshare.stock_zh_a_hist_tx",
+        "adjust": "qfq",
+        "activation": "only after the complete BaoStock attempt fails",
+        "calibration_overlap_calendar_days": 60,
+        "minimum_calibration_coverage": 0.95,
+        "minimum_overlap_rows_per_stock": 5,
+        "maximum_abs_return_difference_p95": 0.0025,
+        "maximum_price_scale_cv_p95": 0.01,
+        "field_reconstruction": {
+          "ohlc": "per-stock median causal close scale",
+          "volume": "per-stock median causal overlap scale",
+          "amount": "causal overlap median amount/(volume*close)",
+          "turnover": "causal overlap median free-float shares",
+          "amplitude_and_returns": "recomputed from aligned OHLC and previous close"
+        }
+      }
+    ],
+    "provider_mix_within_window_allowed": false,
+    "fallback_on_partial_symbol_failure": "fail the provider attempt; never mix symbols",
+    "future_query_allowed": false,
+    "historical_overlap_query_allowed": "Tencent calibration only, bounded by the current decision date",
+    "historical_overlap_replacement_allowed": false,
+    "minimum_cutoff_coverage": 0.95,
+    "preflight_without_model_scoring": {
+      "cutoff": "2026-07-24",
+      "universe_stocks": 300,
+      "download_successes": 300,
+      "calibrated_stocks": 300,
+      "overlap_rows": 12594,
+      "increment_rows": 4495,
+      "abs_return_difference_p95": 0.0006720329003516102,
+      "price_scale_cv_p95": 0.0016251393746607814,
+      "future_rows": 0,
+      "historical_overlap_rows_written": 0,
+      "zero_amount_rows": 0,
+      "zero_turnover_rows": 0,
+      "performance_computed": false
+    }
+  },
+  "outcome_acquisition_program": {
+    "path": "BaoStock_Datasets/scripts/build_prospective_outcome_bundle.py",
+    "sha256": "F53E1744ED527A67EB53BC1363F8F8A745C4D7A3B5B135645058215EF8F71B0A",
+    "fallback_helper": {
+      "path": "BaoStock_Datasets/scripts/prospective_tencent_fallback.py",
+      "sha256": "7CD471D0E803235B7CE4D54518C2824DE37299639E021E1CB2F6D6506C0CE653"
+    },
+    "source_policy": "baostock_then_tencent_qfq",
+    "providers": [
+      {
+        "priority": 1,
+        "source": "BaoStock",
+        "source_host": "public-api.baostock.com:10030",
+        "stock_adjustflag": "1",
+        "benchmark": "sh.000001",
+        "benchmark_adjustflag": "3"
+      },
+      {
+        "priority": 2,
+        "source": "Tencent",
+        "source_host": "web.ifzq.gtimg.cn:443",
+        "endpoint": "akshare.stock_zh_a_hist_tx",
+        "stock_adjust": "qfq",
+        "benchmark": "sh000001",
+        "benchmark_adjust": "none",
+        "activation": "only after the complete BaoStock stock-plus-benchmark attempt fails"
+      }
+    ],
+    "provider_mix_within_window_allowed": false,
+    "stocks_and_benchmark_must_switch_together": true,
+    "query_bounds": "buy_date through sell_date only",
+    "minimum_endpoint_coverage": 0.95,
+    "output_location": "external_sealed_vault/outcomes/<window_id>",
+    "later_window_query_allowed": false,
+    "training_workspace_write_allowed": false,
+    "candidate_package_write_allowed": false
+  },
+  "evaluation_program": {
+    "path": "Evaluation/scripts/walk_forward/prospective_d_stability.py",
+    "sha256": "198EC0B0F695E241A421E3ED11E6C8E0F05A1CC79076E567669D0C64566DE3EB"
+  },
+  "execution_freeze": {
+    "activation_event": "EXECUTION_FREEZE_ACTIVATED_BEFORE_P01",
+    "verification_stage": "verify-freeze",
+    "automatically_enforced_before": [
+      "prepare",
+      "train-lock",
+      "score",
+      "finalize"
+    ],
+    "mismatch_policy": "FAIL_CLOSED_NO_MUTATION"
+  },
+  "execution_rule": {
+    "acquisition_not_before": "decision_date 18:00 Asia/Shanghai",
+    "prediction_lock_before": "buy_date 09:30 Asia/Shanghai",
+    "outcome_acquisition_not_before": "sell_date 09:31 Asia/Shanghai",
+    "score_storage": "external sealed vault with hash-only public receipt",
+    "missed_window": "MISSED_NO_BACKFILL",
+    "base_selection": "previous completed causal prefix; P01 uses immutable base snapshot",
+    "retry_policy": "same command, frozen provider order, bounds and calibration gates only, before prediction-lock deadline",
+    "provider_failover": "discard the failed provider attempt and rebuild the entire window with Tencent; never merge provider rows"
+  },
+  "windows": [
+    {
+      "window_id": "P01",
+      "cutoff": "2026-07-31",
+      "base_prefix": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709/data/train.csv",
+      "out_dir": "BaoStock_Datasets/data/prospective_d_stability_20260727/P01"
+    },
+    {
+      "window_id": "P02",
+      "cutoff": "2026-08-07",
+      "base_prefix": "BaoStock_Datasets/data/prospective_d_stability_20260727/P01/shared_train_prefix.csv",
+      "out_dir": "BaoStock_Datasets/data/prospective_d_stability_20260727/P02"
+    },
+    {
+      "window_id": "P03",
+      "cutoff": "2026-08-14",
+      "base_prefix": "BaoStock_Datasets/data/prospective_d_stability_20260727/P02/shared_train_prefix.csv",
+      "out_dir": "BaoStock_Datasets/data/prospective_d_stability_20260727/P03"
+    },
+    {
+      "window_id": "P04",
+      "cutoff": "2026-08-21",
+      "base_prefix": "BaoStock_Datasets/data/prospective_d_stability_20260727/P03/shared_train_prefix.csv",
+      "out_dir": "BaoStock_Datasets/data/prospective_d_stability_20260727/P04"
+    },
+    {
+      "window_id": "P05",
+      "cutoff": "2026-08-28",
+      "base_prefix": "BaoStock_Datasets/data/prospective_d_stability_20260727/P04/shared_train_prefix.csv",
+      "out_dir": "BaoStock_Datasets/data/prospective_d_stability_20260727/P05"
+    },
+    {
+      "window_id": "P06",
+      "cutoff": "2026-09-04",
+      "base_prefix": "BaoStock_Datasets/data/prospective_d_stability_20260727/P05/shared_train_prefix.csv",
+      "out_dir": "BaoStock_Datasets/data/prospective_d_stability_20260727/P06"
+    },
+    {
+      "window_id": "P07",
+      "cutoff": "2026-09-11",
+      "base_prefix": "BaoStock_Datasets/data/prospective_d_stability_20260727/P06/shared_train_prefix.csv",
+      "out_dir": "BaoStock_Datasets/data/prospective_d_stability_20260727/P07"
+    },
+    {
+      "window_id": "P08",
+      "cutoff": "2026-09-18",
+      "base_prefix": "BaoStock_Datasets/data/prospective_d_stability_20260727/P07/shared_train_prefix.csv",
+      "out_dir": "BaoStock_Datasets/data/prospective_d_stability_20260727/P08"
+    },
+    {
+      "window_id": "P09",
+      "cutoff": "2026-09-28",
+      "base_prefix": "BaoStock_Datasets/data/prospective_d_stability_20260727/P08/shared_train_prefix.csv",
+      "out_dir": "BaoStock_Datasets/data/prospective_d_stability_20260727/P09"
+    },
+    {
+      "window_id": "P10",
+      "cutoff": "2026-10-12",
+      "base_prefix": "BaoStock_Datasets/data/prospective_d_stability_20260727/P09/shared_train_prefix.csv",
+      "out_dir": "BaoStock_Datasets/data/prospective_d_stability_20260727/P10"
+    },
+    {
+      "window_id": "P11",
+      "cutoff": "2026-10-19",
+      "base_prefix": "BaoStock_Datasets/data/prospective_d_stability_20260727/P10/shared_train_prefix.csv",
+      "out_dir": "BaoStock_Datasets/data/prospective_d_stability_20260727/P11"
+    },
+    {
+      "window_id": "P12",
+      "cutoff": "2026-10-26",
+      "base_prefix": "BaoStock_Datasets/data/prospective_d_stability_20260727/P11/shared_train_prefix.csv",
+      "out_dir": "BaoStock_Datasets/data/prospective_d_stability_20260727/P12"
+    }
+  ]
+}

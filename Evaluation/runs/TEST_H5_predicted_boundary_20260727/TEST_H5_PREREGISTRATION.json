@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "experiment_id": "TEST_H5_PREDICTED_BOUNDARY_OBJECTIVE_V2",
+  "registered_at": "2026-07-27T00:00:00+08:00",
+  "hypothesis": "Replacing only H1's label-bottom boundary term with a predicted-boundary hard-negative term will create non-degenerate top-5 decisions and improve the existing H0 control on exposed sentinel folds without worsening tail risk or the normalized rank-5/rank-6 margin.",
+  "single_model_variable": {
+    "changed": "boundary loss negative selection",
+    "control": "H1 label-ranked bottom-20 negatives",
+    "candidate": "highest predicted-score non-true-top-5 hard negatives, including false positives at the current predicted boundary",
+    "unchanged": [
+      "training data",
+      "feature specification",
+      "labels and relevance targets",
+      "model architecture",
+      "optimizer and schedule",
+      "all other objective terms",
+      "all objective weights",
+      "checkpoint-selection protocol"
+    ]
+  },
+  "stages": [
+    {
+      "name": "unit_and_cpu_diagnostics",
+      "gpu_required": false
+    },
+    {
+      "name": "cuda_smoke",
+      "maximum_epochs": 1,
+      "wall_clock_budget_minutes": 2
+    },
+    {
+      "name": "sentinel",
+      "seed": 20260726,
+      "folds": [
+        "2025Q2",
+        "2026Q1"
+      ],
+      "wall_clock_budget_minutes": 5
+    },
+    {
+      "name": "full_quick",
+      "conditional": true,
+      "requirements": [
+        "all sentinel gates pass",
+        "at least four outer windows are proven unconsumed before this task"
+      ]
+    }
+  ],
+  "sentinel_gate": {
+    "decision_change_rate_min": 0.2,
+    "minimum_changed_decisions_per_fold": 1,
+    "changed_decision_strict_win_rate_min_exclusive": 0.5,
+    "pooled_mean_excess_return_min_exclusive": 0.0,
+    "recent_fold_mean_excess_return_min_exclusive": 0.0,
+    "remove_best_one_excess_sum_min_exclusive": 0.0,
+    "candidate_cvar20_minus_control_min": 0.0,
+    "candidate_normalized_rank5_rank6_margin_minus_h1_min": 0.0,
+    "maximum_single_positive_contribution": 0.2
+  },
+  "exposure_rules": {
+    "already_exposed_outer_windows": [
+      "2025Q1",
+      "2025Q2",
+      "2025Q3",
+      "2026Q1"
+    ],
+    "allowed_use": "rejection_screen_only",
+    "promotion_evidence": false,
+    "absence_of_a_discovered_record_is_not_proof_of_non_exposure": true
+  },
+  "hard_stops": [
+    "any sealed-range read or evaluation",
+    "protected-directory fingerprint drift during this task",
+    "test or leakage invariant failure",
+    "smoke or sentinel time budget exceeded",
+    "any sentinel gate failure",
+    "fewer than four provably unconsumed outer windows for conditional full Quick"
+  ],
+  "prohibited": [
+    "new external data",
+    "sealed labels",
+    "Serious evaluation",
+    "H01 creation",
+    "formal candidate modification",
+    "model promotion"
+  ]
+}

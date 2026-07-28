@@ -1,0 +1,118 @@
+{
+  "decision": "REJECT",
+  "reason": "mean_weekly_excess; positive_diff_rate; diff_without_best_2_weeks; best_2_weeks_contribution_ratio; serious_challenger_3_seeds; seed_mean_excess_positive; seed_min_excess_not_materially_bad; cost_drag_le_half_gross_improvement",
+  "checks": [
+    {
+      "name": "leakage_audit_pass",
+      "passed": true,
+      "value": "pass",
+      "threshold": null,
+      "hard": true
+    },
+    {
+      "name": "reproducibility_check_pass",
+      "passed": true,
+      "value": "pass",
+      "threshold": null,
+      "hard": true
+    },
+    {
+      "name": "same_protocol_declared",
+      "passed": true,
+      "value": "fixed by orchestrator",
+      "threshold": null,
+      "hard": true
+    },
+    {
+      "name": "exceeds_official_baseline",
+      "passed": true,
+      "value": 0.03711983576319238,
+      "threshold": 0.012528499297343995,
+      "hard": true
+    },
+    {
+      "name": "net_cumulative_return_gt_champion",
+      "passed": true,
+      "value": 2.4696850615960635,
+      "threshold": null,
+      "hard": true
+    },
+    {
+      "name": "mean_weekly_excess",
+      "passed": false,
+      "value": null,
+      "threshold": 0.001,
+      "hard": true
+    },
+    {
+      "name": "median_weekly_excess",
+      "passed": true,
+      "value": null,
+      "threshold": 0.0,
+      "hard": true
+    },
+    {
+      "name": "positive_diff_rate",
+      "passed": false,
+      "value": null,
+      "threshold": 0.52,
+      "hard": true
+    },
+    {
+      "name": "max_drawdown_abs",
+      "passed": true,
+      "value": 0.30052236067111693,
+      "threshold": null,
+      "hard": true
+    },
+    {
+      "name": "CVaR_95_loss_abs",
+      "passed": true,
+      "value": 0.11100414457583074,
+      "threshold": null,
+      "hard": true
+    },
+    {
+      "name": "diff_without_best_2_weeks",
+      "passed": false,
+      "value": null,
+      "threshold": 0.0,
+      "hard": true
+    },
+    {
+      "name": "best_2_weeks_contribution_ratio",
+      "passed": false,
+      "value": null,
+      "threshold": 0.5,
+      "hard": true
+    },
+    {
+      "name": "serious_challenger_3_seeds",
+      "passed": false,
+      "value": 1,
+      "threshold": 3,
+      "hard": true
+    },
+    {
+      "name": "seed_mean_excess_positive",
+      "passed": false,
+      "value": null,
+      "threshold": 0.0,
+      "hard": true
+    },
+    {
+      "name": "seed_min_excess_not_materially_bad",
+      "passed": false,
+      "value": null,
+      "threshold": -0.005,
+      "hard": true
+    },
+    {
+      "name": "cost_drag_le_half_gross_improvement",
+      "passed": false,
+      "value": 0.07949999999999999,
+      "threshold": 0.012295668232924193,
+      "hard": true
+    }
+  ]
+}

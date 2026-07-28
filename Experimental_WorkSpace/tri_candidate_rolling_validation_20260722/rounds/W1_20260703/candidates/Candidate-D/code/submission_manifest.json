@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "description": "BDC2026 clean in-place submission source manifest",
+  "file_count": 19,
+  "total_bytes": 80544,
+  "files": [
+    {
+      "path": ".dockerignore",
+      "bytes": 98,
+      "sha256": "1a226ae04aa46c6fe3209426a8269482aab7fb2792e9da173e01ddd062d0332d"
+    },
+    {
+      "path": "Dockerfile",
+      "bytes": 200,
+      "sha256": "54837fdbc54d6c28b0ac615226a7ffe1d96900c8b0053a1d669e0e1b47724970"
+    },
+    {
+      "path": "code/src/__init__.py",
+      "bytes": 44,
+      "sha256": "f97c0883bcf31b7eb92f802542ea03856ca4e00a67749a74ef280f11ead746fd"
+    },
+    {
+      "path": "code/src/config.py",
+      "bytes": 2591,
+      "sha256": "6f484c1cbd62ae7592a79b64a8f6b9bf12195884275f4ccb537dcc363f23e11c"
+    },
+    {
+      "path": "code/src/dataset.py",
+      "bytes": 10954,
+      "sha256": "5be7c14fbbcb8d236283239bb455186a00bde75195d41a1981f00552a11a07b2"
+    },
+    {
+      "path": "code/src/evaluator.py",
+      "bytes": 7227,
+      "sha256": "f856e24cf4416fdecd76eaa003b8f053ade4482110bf4cd42a7e7a966da4fe4e"
+    },
+    {
+      "path": "code/src/featurework.py",
+      "bytes": 10471,
+      "sha256": "10f393c68d9a8fde61370e643fb5a5828e6bcc5465bb01a8786f3079f52ae7c9"
+    },
+    {
+      "path": "code/src/loss.py",
+      "bytes": 4523,
+      "sha256": "9f09293d0ac5cd71c04b9e71ba9349255c066f2bcf59694c515807f433048565"
+    },
+    {
+      "path": "code/src/model.py",
+      "bytes": 7434,
+      "sha256": "bd36f4f23154497a1410aa6c66dba6978bdae0c161d60d03e43d5e1a68c70a20"
+    },
+    {
+      "path": "code/src/score_self.py",
+      "bytes": 3149,
+      "sha256": "b681d2015a94dabcd96a155d7d23229e9c984419ba7485bb2a78eee51f21ad58"
+    },
+    {
+      "path": "code/src/submission_spec.py",
+      "bytes": 1895,
+      "sha256": "ab3065118b3251a98a1397f66b79f72debb217049130c65b9ddd1b489cc458f2"
+    },
+    {
+      "path": "code/src/test.py",
+      "bytes": 5455,
+      "sha256": "4a5a14f7adade757105532512b95f5d7310af9ee44f701581e0542aed688d71d"
+    },
+    {
+      "path": "code/src/train.py",
+      "bytes": 10364,
+      "sha256": "5ef84c26e124c58832c2e642c8798217c72f562c582e061e5e0a81ef77c1d300"
+    },
+    {
+      "path": "code/src/validate_submission.py",
+      "bytes": 11109,
+      "sha256": "9a93edf64e98653433d98162ed3e0336a80890ebf8d4810c0d88f1dbf7bc22fd"
+    },
+    {
+      "path": "init.sh",
+      "bytes": 340,
+      "sha256": "2e4cfcb21604a790b1298ba8627a8ac127f7600566b5d780bce8101bfab86d95"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 542,
+      "sha256": "8fe214fb0272552ef4ff09cfd4c64fad14e6cbbc806b3b1e9ee79e6520c25ebe"
+    },
+    {
+      "path": "readme.md",
+      "bytes": 3637,
+      "sha256": "0d003315179cbda44a72fc1b236c0ca88bf34a9fc8fa0ff628b7f23be29e3c8b"
+    },
+    {
+      "path": "test.sh",
+      "bytes": 307,
+      "sha256": "647996122ca1d0862351633baf76e7e639d1ec2b280d0b8397bfeed0d5efe222"
+    },
+    {
+      "path": "train.sh",
+      "bytes": 204,
+      "sha256": "f85af27fa7aabaf028c430c2e56de9b5e807f6a5d71af530f362a1c004fbde41"
+    }
+  ]
+}

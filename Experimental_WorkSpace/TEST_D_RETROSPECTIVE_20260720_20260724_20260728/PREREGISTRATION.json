@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "experiment_id": "TEST_D_RETROSPECTIVE_20260720_20260724_20260728",
+  "classification": "RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "status": "PREREGISTERED_BEFORE_PREDICTION_AND_SCORING",
+  "created_on": "2026-07-28",
+  "promotion_evidence": false,
+  "blind_test": false,
+  "model": {
+    "identity": "Candidate-D",
+    "policy": "USE_EXISTING_FROZEN_MODEL_NO_RETRAINING",
+    "checkpoint_sha256": "BD85F504599D1995BD19F254C78136BE1CF42E74A349F32ED6BDEC5CCB0EF86D",
+    "scalers_sha256": "3D647F554D5E09C50E56488931DEABD54FF08750EDB645F265FF91D00BC62B38",
+    "inference_program_sha256": "4A5A14F7ADADE757105532512B95F5D7310AF9EE44F701581E0542AED688D71D",
+    "portfolio": "TOP2_EQUAL_WEIGHT"
+  },
+  "window": {
+    "decision_date": "2026-07-17",
+    "causal_input_not_after": "2026-07-17",
+    "buy_date": "2026-07-20",
+    "sell_date": "2026-07-24",
+    "return_definition": "open_2026_07_24_div_open_2026_07_20_minus_1"
+  },
+  "execution_order": [
+    "BUILD_CAUSAL_INPUT_THROUGH_2026_07_17",
+    "RUN_TWO_BYTE_IDENTICAL_INFERENCES",
+    "WRITE_PREDICTION_LOCK",
+    "ACQUIRE_2026_07_20_TO_2026_07_24_OUTCOMES",
+    "SCORE_FIXED_PORTFOLIO_AND_SSE"
+  ],
+  "data_policy": {
+    "causal_provider_order": "BAOSTOCK_THEN_TENCENT_QFQ",
+    "outcome_provider_order": "BAOSTOCK_THEN_TENCENT_QFQ",
+    "provider_mixing_within_stage": false,
+    "future_rows_in_causal_input_allowed": false,
+    "outcome_allowed_in_model_or_scaler": false
+  },
+  "metrics": {
+    "portfolio_gross": true,
+    "portfolio_net_10bps_per_side": true,
+    "portfolio_net_20bps_per_side": true,
+    "sse_open_to_open": true,
+    "excess_vs_sse": true
+  },
+  "interpretation": "The period ended before this diagnostic was preregistered. Results are descriptive only and cannot be used as independent holdout or promotion evidence."
+}

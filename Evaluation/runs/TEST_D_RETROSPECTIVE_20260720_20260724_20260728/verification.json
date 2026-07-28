@@ -1,0 +1,40 @@
+{
+  "schema_version": "test_d_retrospective_verification_v1",
+  "classification": "RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "status": "PASS",
+  "checks": {
+    "json_parse": true,
+    "holding_rows_equal_2": true,
+    "weight_sum_equal_1": true,
+    "gross_return_recomputed": true,
+    "net_10bps_formula_recomputed": true,
+    "net_20bps_formula_recomputed": true,
+    "independent_existing_scorer_exact_match": true,
+    "prediction_lock_valid": true,
+    "outcome_bundle_validation_pass": true,
+    "outcome_contains_300_stocks_x_5_days": true,
+    "mechanical_future_data_leakage_check_pass": true,
+    "independent_holdout_check_fails_as_declared": true,
+    "promotion_eligible_is_false": true,
+    "formal_candidate_relative_path_or_hash_mismatches": 0
+  },
+  "artifacts": {
+    "holdings_csv": {
+      "sha256": "57C16949451664CBEDF1D449459BD6E8E19EA0E17C2569A5006BFB1015FBEBE0"
+    },
+    "score_json": {
+      "sha256": "E9C9392F7C3ED3399D161EF2A13DD1D02423505173EFB25C8517E83A62E95125"
+    },
+    "leakage_audit_json": {
+      "sha256": "988798BA4F553762816ED69293E40301B6574F700007E26F58A3B2004F1D1227"
+    },
+    "report_markdown": {
+      "sha256": "B47B313BB456E84489A6EFC54417715C9BF12686A2EFE2CB368E8BE526B01509"
+    }
+  },
+  "result": {
+    "portfolio_gross_return": -0.0978845220428976,
+    "sse_return": 0.016343765000026433,
+    "gross_excess_vs_sse": -0.11422828704292404
+  }
+}

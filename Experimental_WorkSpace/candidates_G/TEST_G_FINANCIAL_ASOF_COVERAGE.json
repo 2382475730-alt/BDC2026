@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "method": "For each date and stock, select the latest report-period state whose conservative available_date is not later than the sample date.",
+  "universe_count": 300,
+  "dates": {
+    "2025-01-03": {
+      "stock_count": 300,
+      "coverage": 1.0,
+      "median_report_age_days": 461.0
+    },
+    "2025-03-31": {
+      "stock_count": 300,
+      "coverage": 1.0,
+      "median_report_age_days": 548.0
+    },
+    "2025-04-01": {
+      "stock_count": 300,
+      "coverage": 1.0,
+      "median_report_age_days": 549.0
+    },
+    "2025-06-30": {
+      "stock_count": 300,
+      "coverage": 1.0,
+      "median_report_age_days": 456.0
+    },
+    "2025-07-01": {
+      "stock_count": 300,
+      "coverage": 1.0,
+      "median_report_age_days": 457.0
+    },
+    "2025-09-30": {
+      "stock_count": 300,
+      "coverage": 1.0,
+      "median_report_age_days": 92.0
+    },
+    "2026-01-05": {
+      "stock_count": 300,
+      "coverage": 1.0,
+      "median_report_age_days": 97.0
+    },
+    "2026-03-27": {
+      "stock_count": 300,
+      "coverage": 1.0,
+      "median_report_age_days": 178.0
+    }
+  },
+  "limitation": "Coverage is complete, but early-fold reports are stale because revised values are delayed to UPDATE_DATE rather than backfilled to NOTICE_DATE."
+}

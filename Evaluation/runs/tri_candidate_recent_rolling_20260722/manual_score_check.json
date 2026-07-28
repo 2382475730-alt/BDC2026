@@ -1,0 +1,13 @@
+{
+  "round_id": "W1_20260703",
+  "candidate": "THU-BDC2026-main",
+  "stock_id": "600489",
+  "weight": 0.2,
+  "open_buy": 207.2334146954333,
+  "open_sell": 209.40877564303133,
+  "stock_return_formula": 0.010497153418984606,
+  "recorded_stock_return": 0.010497153418984606,
+  "weighted_contribution_formula": 0.002099430683796921,
+  "recorded_weighted_contribution": 0.002099430683796921,
+  "passed": true
+}

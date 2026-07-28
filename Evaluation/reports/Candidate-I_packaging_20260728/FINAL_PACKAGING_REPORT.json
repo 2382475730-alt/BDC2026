@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "candidate_id": "Candidate-I",
+  "candidate_path": "candidate/Candidate-I",
+  "package_status": "SUBMISSION_FORMAT_READY",
+  "research_status": "REJECTED_AT_DATA_GATE",
+  "replacement_status": "DOES_NOT_REPLACE_CANDIDATE_D",
+  "algorithm": {
+    "base_model": "Candidate-D fixed 12-epoch production refit",
+    "lambda_momentum": 0.05,
+    "lambda_volume": 0.05,
+    "lambda_reversal": 0.05,
+    "lambda_selected_from_outcomes": false,
+    "factor_asof_rule": "strict lag-1",
+    "portfolio": "top-5 equal",
+    "weight_sum": 1.0,
+    "hhi": 0.2
+  },
+  "execution": {
+    "device": "cuda",
+    "decision_date": "2026-07-03",
+    "factor_asof_date": "2026-07-02",
+    "full_score_count": 300,
+    "factor_complete_count": 299,
+    "factor_universe_count": 300,
+    "selected_incomplete_factor_count": 0,
+    "pass1_elapsed_seconds": 13.776874600036535,
+    "pass2_elapsed_seconds": 13.44461390003562,
+    "double_run_byte_identical": true,
+    "result_sha256": "55f9b92fb8a4e4b0439aea4527db616dfb8d9ee3dd1c1605f780d9f42fc82251"
+  },
+  "output": [
+    {
+      "stock_id": "688126",
+      "weight": 0.2
+    },
+    {
+      "stock_id": "002463",
+      "weight": 0.2
+    },
+    {
+      "stock_id": "300442",
+      "weight": 0.2
+    },
+    {
+      "stock_id": "301308",
+      "weight": 0.2
+    },
+    {
+      "stock_id": "300433",
+      "weight": 0.2
+    }
+  ],
+  "official_submission_checks": {
+    "required_paths": true,
+    "readme_sections": true,
+    "offline_review_scripts": true,
+    "result_output_path": true,
+    "result_csv_format": true,
+    "submission_size_budget": true,
+    "source_manifest": true,
+    "inference_under_300_seconds": true,
+    "training_entrypoint_present": true,
+    "package_bytes": 56176307,
+    "max_package_bytes": 10000000000,
+    "manifest_file_count": 20,
+    "cache_directories": 0,
+    "pyc_files": 0,
+    "absolute_workspace_paths_in_package_text": 0
+  },
+  "verification": {
+    "unit_tests_passed": 32,
+    "unit_tests_failed": 0,
+    "residual_rerank_line_coverage_percent": 85,
+    "base_model_matches_candidate_d": true,
+    "base_scalers_match_candidate_d": true,
+    "train_data_matches_candidate_d": true,
+    "test_data_matches_candidate_d": true,
+    "candidate_d_unchanged": true,
+    "d01_unchanged": true,
+    "official_reference_unchanged": true,
+    "candidate_aggregate_sha256": "3902c3339bb5fab1e28490e76b6d6046110a40b9c07bac1171009469c969f788",
+    "source_manifest_sha256": "d8818b9ddb58bbc8f890a43d4d6a5912b84f1420bc3982478e188109a092c9fe"
+  },
+  "training_run_in_this_packaging_task": false,
+  "training_reproduction_basis": "copied base model/scalers/data are byte-identical to previously reproduced Candidate-D",
+  "claims": {
+    "submission_structure_ready": true,
+    "validated_improvement": false,
+    "beats_candidate_d": false,
+    "beats_official_baseline": false,
+    "future_return_guarantee": false
+  }
+}

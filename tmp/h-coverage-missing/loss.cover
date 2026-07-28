@@ -1,0 +1,308 @@
+    1: from __future__ import annotations
+       
+    1: from dataclasses import dataclass
+       
+    1: import torch
+    1: import torch.nn as nn
+    1: import torch.nn.functional as F
+       
+       
+    1: def masked_softmax(values: torch.Tensor, mask: torch.Tensor, temperature: float = 1.0) -> torch.Tensor:
+    9:     masked = values.masked_fill(~mask.bool(), -1e9)
+    9:     weights = torch.softmax(masked / max(float(temperature), 1e-6), dim=-1)
+    9:     weights = weights * mask.to(dtype=weights.dtype)
+    9:     return weights / weights.sum(dim=-1, keepdim=True).clamp_min(1e-12)
+       
+       
+    2: class ListwiseRankingLoss(nn.Module):
+    1:     def __init__(self, temperature: float = 1.0):
+    4:         super().__init__()
+    4:         self.temperature = temperature
+       
+    1:     def forward(self, scores: torch.Tensor, relevance: torch.Tensor, mask: torch.Tensor) -> torch.Tensor:
+    7:         valid_days = mask.sum(dim=-1) > 1
+    7:         if not bool(valid_days.any()):
+>>>>>>             return scores.sum() * 0.0
+    7:         masked_scores = scores.masked_fill(~mask.bool(), -1e9)
+    7:         masked_relevance = relevance.masked_fill(~mask.bool(), -1e9)
+    7:         pred_log_probs = F.log_softmax(masked_scores[valid_days] / self.temperature, dim=-1)
+    7:         target_probs = F.softmax(masked_relevance[valid_days] / self.temperature, dim=-1)
+    7:         return -(target_probs * pred_log_probs).sum(dim=-1).mean()
+       
+       
+    2: class PairwiseBoundaryLoss(nn.Module):
+    1:     def __init__(self, margin: float = 0.05, top_k: int = 5, bottom_k: int = 20):
+    4:         super().__init__()
+    4:         self.margin = margin
+    4:         self.top_k = top_k
+    4:         self.bottom_k = bottom_k
+       
+    1:     def forward(self, scores: torch.Tensor, labels: torch.Tensor, mask: torch.Tensor) -> torch.Tensor:
+    7:         losses: list[torch.Tensor] = []
+   14:         for day_scores, day_labels, day_mask in zip(scores, labels, mask):
+    7:             valid_scores = day_scores[day_mask]
+    7:             valid_labels = day_labels[day_mask]
+    7:             if valid_scores.numel() <= 1:
+>>>>>>                 continue
+    7:             order = torch.argsort(valid_labels, descending=True)
+    7:             top = order[: min(self.top_k, order.numel())]
+    7:             bottom = order[-min(self.bottom_k, max(1, order.numel() - top.numel())) :]
+    7:             gap = valid_scores[top].unsqueeze(1) - valid_scores[bottom].unsqueeze(0)
+    7:             losses.append(F.relu(self.margin - gap).mean())
+    7:         if not losses:
+>>>>>>             return scores.sum() * 0.0
+    7:         return torch.stack(losses).mean()
+       
+       
+    1: def differentiable_portfolio_weights(
+           logits: torch.Tensor,
+           mask: torch.Tensor,
+    1:     temperature: float = 1.0,
+       ) -> torch.Tensor:
+>>>>>>     return masked_softmax(logits, mask=mask, temperature=temperature)
+       
+       
+    2: class _StraightThroughHardWeights(torch.autograd.Function):
+    2:     @staticmethod
+    2:     def forward(
+               ctx,
+               hard: torch.Tensor,
+               soft: torch.Tensor,
+           ) -> torch.Tensor:
+    9:         return hard
+       
+    2:     @staticmethod
+    2:     def backward(
+               ctx,
+               gradient: torch.Tensor,
+           ) -> tuple[None, torch.Tensor]:
+    2:         return None, gradient
+       
+       
+    1: def differentiable_topk_weights(
+           scores: torch.Tensor,
+    1:     k: int = 5,
+    1:     temperature: float = 0.10,
+    1:     mask: torch.Tensor | None = None,
+       ) -> torch.Tensor:
+           """Exact hard top-k weights in the forward pass with softmax gradients."""
+       
+    9:     if scores.ndim != 2:
+>>>>>>         raise ValueError("scores must have shape [batch, stocks]")
+    9:     valid = torch.ones_like(scores, dtype=torch.bool) if mask is None else mask.bool()
+    9:     hard = torch.zeros_like(scores)
+   18:     for row_index in range(scores.shape[0]):
+    9:         valid_index = torch.nonzero(valid[row_index], as_tuple=False).flatten()
+    9:         selected_count = min(max(int(k), 0), int(valid_index.numel()))
+    9:         if selected_count == 0:
+>>>>>>             continue
+    9:         local_scores = scores[row_index, valid_index]
+    9:         local_top = torch.topk(local_scores, k=selected_count).indices
+    9:         selected_index = valid_index[local_top]
+    9:         hard[row_index, selected_index] = 1.0 / float(selected_count)
+    9:     soft = masked_softmax(scores, mask=valid, temperature=temperature)
+    9:     return _StraightThroughHardWeights.apply(hard, soft)
+       
+       
+    3: @dataclass
+    2: class LossBreakdown:
+    1:     total: torch.Tensor
+    1:     ranking: torch.Tensor
+    1:     pairwise: torch.Tensor
+    1:     portfolio_return: torch.Tensor
+    1:     portfolio_volatility: torch.Tensor
+    1:     topk_return: torch.Tensor
+    1:     downside: torch.Tensor
+    1:     cvar20: torch.Tensor
+    1:     positive_tail: torch.Tensor
+       
+       
+    2: class HStabilityLoss(nn.Module):
+    1:     """Preregistered H1 loss aligned to the final top-5 equal policy."""
+       
+    1:     def __init__(
+               self,
+    1:         ranking_weight: float = 1.0,
+    1:         temperature: float = 1.0,
+    1:         pairwise_weight: float = 0.25,
+    1:         pairwise_margin: float = 0.05,
+    1:         topk_return_weight: float = 0.05,
+    1:         downside_weight: float = 0.08,
+    1:         downside_temperature: float = 0.02,
+    1:         cvar_weight: float = 0.04,
+    1:         cvar_alpha: float = 0.20,
+    1:         positive_tail_weight: float = 0.02,
+    1:         positive_tail_cap: float = 0.08,
+    1:         topk: int = 5,
+    1:         topk_temperature: float = 0.10,
+           ):
+    4:         super().__init__()
+    4:         self.listwise = ListwiseRankingLoss(temperature=temperature)
+    4:         self.pairwise = PairwiseBoundaryLoss(margin=pairwise_margin)
+    4:         self.ranking_weight = float(ranking_weight)
+    4:         self.pairwise_weight = float(pairwise_weight)
+    4:         self.topk_return_weight = float(topk_return_weight)
+    4:         self.downside_weight = float(downside_weight)
+    4:         self.downside_temperature = float(downside_temperature)
+    4:         self.cvar_weight = float(cvar_weight)
+    4:         self.cvar_alpha = float(cvar_alpha)
+    4:         self.positive_tail_weight = float(positive_tail_weight)
+    4:         self.positive_tail_cap = float(positive_tail_cap)
+    4:         self.topk = int(topk)
+    4:         self.topk_temperature = float(topk_temperature)
+       
+    1:     def forward(
+               self,
+               scores: torch.Tensor,
+               labels: torch.Tensor,
+    1:         mask: torch.Tensor | None = None,
+    1:         relevance: torch.Tensor | None = None,
+           ) -> tuple[torch.Tensor, dict[str, torch.Tensor]]:
+    7:         valid = torch.ones_like(scores, dtype=torch.bool) if mask is None else mask.bool()
+    7:         target_relevance = labels if relevance is None else relevance
+    7:         ranking = self.listwise(scores, target_relevance, valid)
+    7:         pairwise = self.pairwise(scores, labels, valid)
+   14:         weights = differentiable_topk_weights(
+    7:             scores,
+    7:             k=self.topk,
+    7:             temperature=self.topk_temperature,
+    7:             mask=valid,
+               )
+    7:         selected_returns = (
+    7:             weights * labels.masked_fill(~valid, 0.0)
+    7:         ).sum(dim=-1)
+    7:         topk_return = -selected_returns.mean()
+    7:         downside = (
+   14:             F.softplus(-selected_returns / max(self.downside_temperature, 1e-6))
+    7:             * self.downside_temperature
+    7:         ).mean()
+   21:         tail_count = max(1, int(torch.ceil(
+    7:             torch.tensor(selected_returns.numel() * self.cvar_alpha)
+    7:         ).item()))
+   21:         worst_returns = torch.topk(
+    7:             selected_returns,
+    7:             k=min(tail_count, selected_returns.numel()),
+    7:             largest=False,
+    7:         ).values
+    7:         cvar20 = F.relu(-worst_returns).mean()
+   21:         positive_tail = F.relu(
+    7:             selected_returns - self.positive_tail_cap
+    7:         ).square().mean()
+    7:         total = (
+   42:             self.ranking_weight * ranking
+    7:             + self.pairwise_weight * pairwise
+    7:             + self.topk_return_weight * topk_return
+    7:             + self.downside_weight * downside
+    7:             + self.cvar_weight * cvar20
+    7:             + self.positive_tail_weight * positive_tail
+               )
+   14:         return total, {
+    7:             "ranking": ranking.detach(),
+    7:             "pairwise": pairwise.detach(),
+    7:             "topk_return": topk_return.detach(),
+    7:             "downside": downside.detach(),
+    7:             "cvar20": cvar20.detach(),
+    7:             "positive_tail": positive_tail.detach(),
+    7:             "total": total.detach(),
+               }
+       
+       
+    2: class PortfolioAwareRankingLoss(nn.Module):
+    1:     def __init__(
+               self,
+    1:         temperature: float = 1.0,
+    1:         pairwise_weight: float = 0.25,
+    1:         pairwise_margin: float = 0.05,
+    1:         portfolio_return_weight: float = 0.0,
+    1:         portfolio_volatility_weight: float = 0.0,
+    1:         objective_mode: str = "legacy",
+    1:         ranking_weight: float = 1.0,
+    1:         topk_return_weight: float = 0.05,
+    1:         downside_weight: float = 0.08,
+    1:         downside_temperature: float = 0.02,
+    1:         cvar_weight: float = 0.04,
+    1:         cvar_alpha: float = 0.20,
+    1:         positive_tail_weight: float = 0.02,
+    1:         positive_tail_cap: float = 0.08,
+    1:         topk: int = 5,
+    1:         topk_temperature: float = 0.10,
+           ):
+>>>>>>         super().__init__()
+>>>>>>         self.listwise = ListwiseRankingLoss(temperature=temperature)
+>>>>>>         self.pairwise = PairwiseBoundaryLoss(margin=pairwise_margin)
+>>>>>>         self.pairwise_weight = pairwise_weight
+>>>>>>         self.portfolio_return_weight = portfolio_return_weight
+>>>>>>         self.portfolio_volatility_weight = portfolio_volatility_weight
+>>>>>>         self.temperature = temperature
+>>>>>>         self.objective_mode = objective_mode
+>>>>>>         self.h_stability = HStabilityLoss(
+>>>>>>             ranking_weight=ranking_weight,
+>>>>>>             temperature=temperature,
+>>>>>>             pairwise_weight=pairwise_weight,
+>>>>>>             pairwise_margin=pairwise_margin,
+>>>>>>             topk_return_weight=topk_return_weight,
+>>>>>>             downside_weight=downside_weight,
+>>>>>>             downside_temperature=downside_temperature,
+>>>>>>             cvar_weight=cvar_weight,
+>>>>>>             cvar_alpha=cvar_alpha,
+>>>>>>             positive_tail_weight=positive_tail_weight,
+>>>>>>             positive_tail_cap=positive_tail_cap,
+>>>>>>             topk=topk,
+>>>>>>             topk_temperature=topk_temperature,
+               )
+       
+    1:     def forward(
+               self,
+               outputs: dict[str, torch.Tensor],
+               labels: torch.Tensor,
+               relevance: torch.Tensor,
+               mask: torch.Tensor,
+           ) -> LossBreakdown:
+>>>>>>         scores = outputs["ranking_scores"]
+>>>>>>         if self.objective_mode == "topk_stability":
+>>>>>>             total, parts = self.h_stability(
+>>>>>>                 scores,
+>>>>>>                 labels,
+>>>>>>                 mask=mask,
+>>>>>>                 relevance=relevance,
+                   )
+>>>>>>             zero = total.detach() * 0.0
+>>>>>>             return LossBreakdown(
+>>>>>>                 total=total,
+>>>>>>                 ranking=parts["ranking"],
+>>>>>>                 pairwise=parts["pairwise"],
+>>>>>>                 portfolio_return=-parts["topk_return"],
+>>>>>>                 portfolio_volatility=zero,
+>>>>>>                 topk_return=parts["topk_return"],
+>>>>>>                 downside=parts["downside"],
+>>>>>>                 cvar20=parts["cvar20"],
+>>>>>>                 positive_tail=parts["positive_tail"],
+                   )
+>>>>>>         if self.objective_mode != "legacy":
+>>>>>>             raise ValueError(f"unsupported objective_mode: {self.objective_mode}")
+>>>>>>         logits = outputs["portfolio_logits"]
+>>>>>>         ranking = self.listwise(scores, relevance, mask)
+>>>>>>         pairwise = self.pairwise(scores, labels, mask)
+       
+>>>>>>         weights = differentiable_portfolio_weights(logits, mask=mask, temperature=self.temperature)
+>>>>>>         daily_returns = (weights * labels.masked_fill(~mask.bool(), 0.0)).sum(dim=-1)
+>>>>>>         portfolio_return = daily_returns.mean()
+>>>>>>         portfolio_volatility = daily_returns.std(unbiased=False) if daily_returns.numel() > 1 else daily_returns.sum() * 0.0
+       
+>>>>>>         total = (
+>>>>>>             ranking
+>>>>>>             + self.pairwise_weight * pairwise
+>>>>>>             - self.portfolio_return_weight * portfolio_return
+>>>>>>             + self.portfolio_volatility_weight * portfolio_volatility
+               )
+>>>>>>         return LossBreakdown(
+>>>>>>             total=total,
+>>>>>>             ranking=ranking.detach(),
+>>>>>>             pairwise=pairwise.detach(),
+>>>>>>             portfolio_return=portfolio_return.detach(),
+>>>>>>             portfolio_volatility=portfolio_volatility.detach(),
+>>>>>>             topk_return=(-portfolio_return).detach(),
+>>>>>>             downside=portfolio_return.detach() * 0.0,
+>>>>>>             cvar20=portfolio_return.detach() * 0.0,
+>>>>>>             positive_tail=portfolio_return.detach() * 0.0,
+               )

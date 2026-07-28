@@ -1,0 +1,146 @@
+    1: """
+       Boilerplate functions used in defining binary operations.
+       """
+    1: from __future__ import annotations
+       
+    1: from functools import wraps
+    1: from typing import (
+           TYPE_CHECKING,
+           Callable,
+       )
+       
+    1: from pandas._libs.lib import item_from_zerodim
+    1: from pandas._libs.missing import is_matching_na
+       
+    1: from pandas.core.dtypes.generic import (
+           ABCIndex,
+           ABCSeries,
+       )
+       
+    1: if TYPE_CHECKING:
+           from pandas._typing import F
+       
+       
+    1: def unpack_zerodim_and_defer(name: str) -> Callable[[F], F]:
+           """
+           Boilerplate for pandas conventions in arithmetic and comparison methods.
+       
+           Parameters
+           ----------
+           name : str
+       
+           Returns
+           -------
+           decorator
+           """
+       
+   64:     def wrapper(method: F) -> F:
+   64:         return _unpack_zerodim_and_defer(method, name)
+       
+   64:     return wrapper
+       
+       
+    1: def _unpack_zerodim_and_defer(method, name: str):
+           """
+           Boilerplate for pandas conventions in arithmetic and comparison methods.
+       
+           Ensure method returns NotImplemented when operating against "senior"
+           classes.  Ensure zero-dimensional ndarrays are always unpacked.
+       
+           Parameters
+           ----------
+           method : binary method
+           name : str
+       
+           Returns
+           -------
+           method
+           """
+   64:     stripped_name = name.removeprefix("__").removesuffix("__")
+   64:     is_cmp = stripped_name in {"eq", "ne", "lt", "le", "gt", "ge"}
+       
+  128:     @wraps(method)
+  128:     def new_method(self, other):
+   25:         if is_cmp and isinstance(self, ABCIndex) and isinstance(other, ABCSeries):
+                   # For comparison ops, Index does *not* defer to Series
+                   pass
+               else:
+   25:             prio = getattr(other, "__pandas_priority__", None)
+   25:             if prio is not None:
+    4:                 if prio > self.__pandas_priority__:
+                           # e.g. other is DataFrame while self is Index/Series/EA
+                           return NotImplemented
+       
+   25:         other = item_from_zerodim(other)
+       
+   25:         return method(self, other)
+       
+   64:     return new_method
+       
+       
+    1: def get_op_result_name(left, right):
+           """
+           Find the appropriate name to pin to an operation result.  This result
+           should always be either an Index or a Series.
+       
+           Parameters
+           ----------
+           left : {Series, Index}
+           right : object
+       
+           Returns
+           -------
+           name : object
+               Usually a string
+           """
+   24:     if isinstance(right, (ABCSeries, ABCIndex)):
+    6:         name = _maybe_match_name(left, right)
+           else:
+   18:         name = left.name
+   24:     return name
+       
+       
+    1: def _maybe_match_name(a, b):
+           """
+           Try to find a name to attach to the result of an operation between
+           a and b.  If only one of these has a `name` attribute, return that
+           name.  Otherwise return a consensus name if they match or None if
+           they have different names.
+       
+           Parameters
+           ----------
+           a : object
+           b : object
+       
+           Returns
+           -------
+           name : str or None
+       
+           See Also
+           --------
+           pandas.core.common.consensus_name_attr
+           """
+    6:     a_has = hasattr(a, "name")
+    6:     b_has = hasattr(b, "name")
+    6:     if a_has and b_has:
+    6:         try:
+    6:             if a.name == b.name:
+    2:                 return a.name
+    4:             elif is_matching_na(a.name, b.name):
+                       # e.g. both are np.nan
+                       return a.name
+                   else:
+    4:                 return None
+               except TypeError:
+                   # pd.NA
+                   if is_matching_na(a.name, b.name):
+                       return a.name
+                   return None
+               except ValueError:
+                   # e.g. np.int64(1) vs (np.int64(1), np.int64(2))
+                   return None
+           elif a_has:
+               return a.name
+           elif b_has:
+               return b.name
+           return None

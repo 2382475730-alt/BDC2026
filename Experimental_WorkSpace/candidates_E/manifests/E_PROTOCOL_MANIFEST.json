@@ -1,0 +1,21 @@
+{
+  "schema_version": "e_protocol_manifest_v1",
+  "created_date": "2026-07-15",
+  "source_r5_manifest": "../candidates_D/automation_runs/R5_SPLIT_MANIFEST.json",
+  "source_r5_manifest_sha256": "3acb688df6cc996e42a2b0c2ef8754a5ecbc30be49ea753cf922d5a04851fb0e",
+  "preregistration": "../E_R1_PREREGISTRATION.json",
+  "preregistration_sha256": "e847f54b22713db453cd10fbbdedf12217e8cc1c0b323e37ad1464ebad827626",
+  "label": "open(T+5)/open(T+1)-1",
+  "fold_count": 4,
+  "unique_development_week_count": 47,
+  "quick_seeds": [20260720, 20260721, 20260722],
+  "serious_seeds": [20260720, 20260721, 20260722, 20260723, 20260724],
+  "purge": {"label_horizon_trading_days": 5, "condition": "train_label_end < first_evaluation_decision_date"},
+  "additional_embargo": {"trading_days": 0, "reason": "locked R5 boundaries already implement the five-day label isolation"},
+  "fees": {"buy_commission": 0.0005, "sell_commission": 0.0005, "sell_stamp_tax": 0.0005, "actual_notional": true},
+  "weekly_execution": {"decision": "last trading day before buy week", "buy": "first in-window trading day open", "sell": "last in-window trading day open", "boundary": "first-to-last observed in-window date"},
+  "sealed": {"window": "2026-04-07..2026-07-03", "status": "SEALED", "unseal_count": 0, "access_log": "../automation_runs/E_R1_SEALED_ACCESS_LOG.json"},
+  "gate_source": "../E_R1_PREREGISTRATION.json#gates",
+  "outer_checkpoint_selection_forbidden": true,
+  "legacy_repeated_tuning_forbidden": true
+}

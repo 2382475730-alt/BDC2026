@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "primary_policy": "TOP5_EQUAL",
+  "comparisons": {
+    "TOP2_EQUAL": {
+      "metrics": {
+        "positive_folds": 2,
+        "positive_folds_by_seed": {
+          "20260726": 2,
+          "20260727": 3
+        },
+        "recent_fold_id": "2026Q1",
+        "recent_fold_excess": 0.003751807930794622,
+        "seed_mean_excess": [
+          0.005567765130651922,
+          0.0027714815674995856
+        ],
+        "strict_weekly_win_rate": 0.10204081632653061,
+        "excess_sum_remove_best2": 0.13972528144950036,
+        "candidate_cvar20": -0.09376863142024369,
+        "control_cvar20": -0.09635154017960297,
+        "hhi": 0.5,
+        "best_positive_contribution": 0.07056002244505814,
+        "paired_decision_count": 98
+      },
+      "diagnostic_gate_pass": false,
+      "diagnostic_failed_checks": [
+        "positive_folds_at_least_3_of_4",
+        "strict_weekly_win_rate_at_least_55pct",
+        "hhi_at_most_0_30"
+      ],
+      "decision_authority": "DIAGNOSTIC_ONLY"
+    },
+    "TOP3_EQUAL": {
+      "metrics": {
+        "positive_folds": 1,
+        "positive_folds_by_seed": {
+          "20260726": 1,
+          "20260727": 1
+        },
+        "recent_fold_id": "2026Q1",
+        "recent_fold_excess": -0.001703635782398509,
+        "seed_mean_excess": [
+          -0.0002818965372078268,
+          -7.782463415138992e-05
+        ],
+        "strict_weekly_win_rate": 0.07142857142857142,
+        "excess_sum_remove_best2": -0.07828256332625931,
+        "candidate_cvar20": -0.08471877675037823,
+        "control_cvar20": -0.08639484204274284,
+        "hhi": 0.3333333333333333,
+        "best_positive_contribution": 0.08088499098194658,
+        "paired_decision_count": 98
+      },
+      "diagnostic_gate_pass": false,
+      "diagnostic_failed_checks": [
+        "positive_folds_at_least_3_of_4",
+        "recent_fold_positive",
+        "both_seed_means_positive",
+        "strict_weekly_win_rate_at_least_55pct",
+        "excess_positive_after_best_two_removed",
+        "hhi_at_most_0_30"
+      ],
+      "decision_authority": "DIAGNOSTIC_ONLY"
+    },
+    "TOP4_EQUAL": {
+      "metrics": {
+        "positive_folds": 1,
+        "positive_folds_by_seed": {
+          "20260726": 1,
+          "20260727": 2
+        },
+        "recent_fold_id": "2026Q1",
+        "recent_fold_excess": -0.0010434232482855995,
+        "seed_mean_excess": [
+          3.0530108214943084e-05,
+          7.00603942481839e-05
+        ],
+        "strict_weekly_win_rate": 0.05102040816326531,
+        "excess_sum_remove_best2": -0.04266314324922868,
+        "candidate_cvar20": -0.09014702712302092,
+        "control_cvar20": -0.08940335541847157,
+        "hhi": 0.25,
+        "best_positive_contribution": 0.0636937329341366,
+        "paired_decision_count": 98
+      },
+      "diagnostic_gate_pass": false,
+      "diagnostic_failed_checks": [
+        "positive_folds_at_least_3_of_4",
+        "recent_fold_positive",
+        "strict_weekly_win_rate_at_least_55pct",
+        "excess_positive_after_best_two_removed",
+        "cvar20_not_worse_than_control"
+      ],
+      "decision_authority": "DIAGNOSTIC_ONLY"
+    },
+    "TOP5_EQUAL": {
+      "metrics": {
+        "positive_folds": 1,
+        "positive_folds_by_seed": {
+          "20260726": 1,
+          "20260727": 3
+        },
+        "recent_fold_id": "2026Q1",
+        "recent_fold_excess": 0.0028665182180702673,
+        "seed_mean_excess": [
+          -0.0003614611733628755,
+          0.0008749812166681714
+        ],
+        "strict_weekly_win_rate": 0.08163265306122448,
+        "excess_sum_remove_best2": -0.1138144300784914,
+        "candidate_cvar20": -0.08833157902437955,
+        "control_cvar20": -0.0937116504259756,
+        "hhi": 0.2,
+        "best_positive_contribution": 0.06630176015462527,
+        "paired_decision_count": 98
+      },
+      "diagnostic_gate_pass": false,
+      "diagnostic_failed_checks": [
+        "positive_folds_at_least_3_of_4",
+        "both_seed_means_positive",
+        "strict_weekly_win_rate_at_least_55pct",
+        "excess_positive_after_best_two_removed"
+      ],
+      "decision_authority": "PRIMARY"
+    },
+    "TOP5_RANK_30_25_20_15_10": {
+      "metrics": {
+        "positive_folds": 2,
+        "positive_folds_by_seed": {
+          "20260726": 2,
+          "20260727": 4
+        },
+        "recent_fold_id": "2026Q1",
+        "recent_fold_excess": 0.0013442098850977044,
+        "seed_mean_excess": [
+          0.0004924547593632065,
+          0.0006700558849249332
+        ],
+        "strict_weekly_win_rate": 0.22448979591836735,
+        "excess_sum_remove_best2": -0.03314178964937966,
+        "candidate_cvar20": -0.08451811805993195,
+        "control_cvar20": -0.08811439620490993,
+        "hhi": 0.225,
+        "best_positive_contribution": 0.07023979433537664,
+        "paired_decision_count": 98
+      },
+      "diagnostic_gate_pass": false,
+      "diagnostic_failed_checks": [
+        "positive_folds_at_least_3_of_4",
+        "strict_weekly_win_rate_at_least_55pct",
+        "excess_positive_after_best_two_removed"
+      ],
+      "decision_authority": "DIAGNOSTIC_ONLY"
+    }
+  }
+}

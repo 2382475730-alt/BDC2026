@@ -1,0 +1,13 @@
+{
+  "sample_count": 243,
+  "date_start": "2025-01-03",
+  "date_end": "2026-01-05",
+  "official_proxy_final_score": 0.03711983576319238,
+  "mean_portfolio_return": 0.03711983576319238,
+  "median_portfolio_return": 0.0195012064650655,
+  "cumulative_return": 2565.9760393482347,
+  "mean_final_score": 0.10061039088775973,
+  "median_final_score": 0.06340361175988395,
+  "min_final_score": -1.067122531537657,
+  "hit_rate": 0.654320987654321
+}

@@ -1,0 +1,21 @@
+{
+  "python": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\shared_envs\\pytorch-cu128-py311\\Scripts\\python.exe",
+  "python_version": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "torch": "2.10.0+cu128",
+  "cuda_available": true,
+  "cuda_device_count": 1,
+  "cuda_device_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "data_path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_D\\D01_FrozenResearchChampion_20260709\\data\\train.csv",
+  "data_md5": "78759d892c95eb8ba547c2df9a8fca5a",
+  "industry_csv_path": null,
+  "industry_csv_md5": null,
+  "futures_csv_path": null,
+  "futures_csv_md5": null,
+  "schema_version": 1,
+  "marker": "TEST",
+  "experiment_id": "TEST_H5_PREDICTED_BOUNDARY_OBJECTIVE_V2",
+  "data_sha256": "8e9cf37e5c53e4edafddc3f6f6b5843d4037376334e6f53cba068699095df1ad",
+  "controller": "Experimental_WorkSpace/candidates_H/code/run_h5_predicted_boundary.py",
+  "controller_sha256": "b86730edb4e11ba66bdfe3b26f65bd2d90d77085f9a39be810e71e1f5e720768"
+}

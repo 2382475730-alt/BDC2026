@@ -1,0 +1,46 @@
+{
+  "schema_version": "tri_candidate_leakage_audit_v1",
+  "generated_at": "2026-07-23T04:16:37.865151+00:00",
+  "status": "PASS",
+  "issues": [],
+  "rounds": {
+    "W1_20260703": {
+      "shared_train": {
+        "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\tri_candidate_rolling_validation_20260722\\rounds\\W1_20260703\\data\\shared_train.csv",
+        "rows": 337852,
+        "stocks": 300,
+        "date_start": "2021-10-12",
+        "date_end": "2026-07-03",
+        "sha256": "DC76F0C68BA46C0D629AF37C5F7E280873D732702CB6CA1E375E89715946E07E"
+      },
+      "candidate_train_hashes": [
+        "DC76F0C68BA46C0D629AF37C5F7E280873D732702CB6CA1E375E89715946E07E",
+        "DC76F0C68BA46C0D629AF37C5F7E280873D732702CB6CA1E375E89715946E07E",
+        "DC76F0C68BA46C0D629AF37C5F7E280873D732702CB6CA1E375E89715946E07E"
+      ],
+      "all_predictions_locked": true,
+      "future_rows_beyond_cutoff": 0
+    },
+    "W2_20260710": {
+      "shared_train": {
+        "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\tri_candidate_rolling_validation_20260722\\rounds\\W2_20260710\\data\\shared_train.csv",
+        "rows": 339352,
+        "stocks": 300,
+        "date_start": "2021-10-12",
+        "date_end": "2026-07-10",
+        "sha256": "7E8CC2F5A6B685F21CAB17BA3A929D6DB8B15FFC2A5461C6CE1C3ED4B36D7F12"
+      },
+      "candidate_train_hashes": [
+        "7E8CC2F5A6B685F21CAB17BA3A929D6DB8B15FFC2A5461C6CE1C3ED4B36D7F12",
+        "7E8CC2F5A6B685F21CAB17BA3A929D6DB8B15FFC2A5461C6CE1C3ED4B36D7F12",
+        "7E8CC2F5A6B685F21CAB17BA3A929D6DB8B15FFC2A5461C6CE1C3ED4B36D7F12"
+      ],
+      "all_predictions_locked": true,
+      "future_rows_beyond_cutoff": 0
+    }
+  },
+  "w2_second_week_row_count": 0,
+  "validation_kept_outside_workspace": true,
+  "hyperparameters_changed_from_w1_outcomes": false,
+  "candidate_packages_modified": false
+}

@@ -1,0 +1,55 @@
+    1: """
+       Public API classes that store intermediate results useful for type-hinting.
+       """
+       
+    1: from pandas._libs import NaTType
+    1: from pandas._libs.missing import NAType
+       
+    1: from pandas.core.groupby import (
+           DataFrameGroupBy,
+           SeriesGroupBy,
+       )
+    1: from pandas.core.resample import (
+           DatetimeIndexResamplerGroupby,
+           PeriodIndexResamplerGroupby,
+           Resampler,
+           TimedeltaIndexResamplerGroupby,
+           TimeGrouper,
+       )
+    1: from pandas.core.window import (
+           Expanding,
+           ExpandingGroupby,
+           ExponentialMovingWindow,
+           ExponentialMovingWindowGroupby,
+           Rolling,
+           RollingGroupby,
+           Window,
+       )
+       
+       # TODO: Can't import Styler without importing jinja2
+       # from pandas.io.formats.style import Styler
+    1: from pandas.io.json._json import JsonReader
+    1: from pandas.io.stata import StataReader
+       
+    1: __all__ = [
+           "DataFrameGroupBy",
+           "DatetimeIndexResamplerGroupby",
+           "Expanding",
+           "ExpandingGroupby",
+           "ExponentialMovingWindow",
+           "ExponentialMovingWindowGroupby",
+           "JsonReader",
+           "NaTType",
+           "NAType",
+           "PeriodIndexResamplerGroupby",
+           "Resampler",
+           "Rolling",
+           "RollingGroupby",
+           "SeriesGroupBy",
+           "StataReader",
+           # See TODO above
+           # "Styler",
+           "TimedeltaIndexResamplerGroupby",
+           "TimeGrouper",
+           "Window",
+       ]

@@ -1,0 +1,2 @@
+    1: from numpy._core.records import *
+    1: from numpy._core.records import __all__, __doc__

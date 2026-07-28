@@ -1,0 +1,15 @@
+{
+  "experiment_id": "D_AUTO_CHAMPION_REF_20260709_110423",
+  "status": "skipped",
+  "reason": "Champion Gate decision was REJECT",
+  "champion_config": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_D\\automation_runs\\D_AUTO_CHAMPION_REF_20260709_110423\\generated_config.json",
+  "raw_data_end": "2026-07-03",
+  "train_sample_end": "2026-06-26",
+  "feature_end_for_inference": "2026-07-03",
+  "rules": {
+    "no_validation_set": true,
+    "no_early_stopping": true,
+    "no_hyperparameter_search": true,
+    "fixed_epoch_from_champion_program": true
+  }
+}

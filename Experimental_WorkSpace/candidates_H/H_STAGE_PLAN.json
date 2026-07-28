@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "lineage": "H-series",
+  "retained_model": null,
+  "submission_eligible": false,
+  "terminal_result": {
+    "status": "REJECTED_AT_QUICK_GATE",
+    "stopped_after": "H3_QUICK",
+    "serious_run": false,
+    "finalist_lock_created": false,
+    "sealed_holdout_access_count": 0,
+    "promotion_decision": "NO_PROMOTION"
+  },
+  "stages": [
+    {
+      "id": "H0_FREEZE_AND_REPRODUCE",
+      "validation": "environment, hashes, split/purge, D01 exact reproduction, protected fingerprints",
+      "stop_on_fail": true
+    },
+    {
+      "id": "H1_DATA_AUDIT",
+      "validation": "point-in-time equivalence, field coverage/age/anomalies, exact URLs/dates/hashes",
+      "stop_on_fail": "block only the affected external-data branch"
+    },
+    {
+      "id": "H2_OBJECTIVE_AND_NESTING_SMOKE",
+      "validation": "finite CUDA forward/backward/loss, hard-top-k parity, inner/outer isolation",
+      "stop_on_fail": true
+    },
+    {
+      "id": "H3_QUICK",
+      "seeds": [
+        20260726,
+        20260727
+      ],
+      "epochs": 3,
+      "validation": "all preregistered Quick hard gates",
+      "stop_on_fail": true
+    },
+    {
+      "id": "H4_SERIOUS",
+      "seeds": [
+        20260726,
+        20260727,
+        20260728
+      ],
+      "epochs": 12,
+      "requires": "at most two H3_QUICK passes"
+    },
+    {
+      "id": "H5_POLICY_LOCK",
+      "requires": "all Serious hard gates pass",
+      "allowed_policies": [
+        "TOP5_EQUAL",
+        "TOP5_RANK_30_25_20_15_10"
+      ]
+    },
+    {
+      "id": "H6_ONE_SHOT_SEALED",
+      "requires": "exactly one locked finalist and unseal count zero",
+      "unseal_limit": 1
+    },
+    {
+      "id": "H7_REPORT_NO_PROMOTION",
+      "validation": "complete TEST evidence and protected fingerprints unchanged"
+    }
+  ]
+}

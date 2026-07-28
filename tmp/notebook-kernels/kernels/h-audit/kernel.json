@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "C:\\Users\\Splendiferous\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-m",
+    "ipykernel_launcher",
+    "-f",
+    "{connection_file}"
+  ],
+  "display_name": "H Audit (bundled Python)",
+  "language": "python",
+  "env": {
+    "PYTHONPATH": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\tmp\\notebook-runtime",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONIOENCODING": "utf-8"
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "experiment_id": "TEST_H5_TWO_WEEK_RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "experiment_type": "RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "stage_order",
+      "expected": [
+        "code_config_frozen",
+        "round_inputs_prepared",
+        "cuda_smoke_passed",
+        "round_training_started",
+        "round_prediction_locked",
+        "round_training_started",
+        "round_prediction_locked",
+        "dual_prediction_locks_verified",
+        "scoring_started_after_dual_lock",
+        "scoring_completed"
+      ],
+      "observed": [
+        "code_config_frozen",
+        "round_inputs_prepared",
+        "cuda_smoke_passed",
+        "round_training_started",
+        "round_prediction_locked",
+        "round_training_started",
+        "round_prediction_locked",
+        "dual_prediction_locks_verified",
+        "scoring_started_after_dual_lock",
+        "scoring_completed"
+      ],
+      "evidence": "Evaluation\\runs\\TEST_H5_two_week_retrospective_20260727\\execution_events.jsonl",
+      "passed": true
+    },
+    {
+      "name": "code_and_config_freeze",
+      "expected": "all frozen bytes and SHA256 unchanged",
+      "observed": true,
+      "evidence": "Evaluation\\runs\\TEST_H5_two_week_retrospective_20260727\\TEST_H5_CODE_CONFIG_FREEZE.json",
+      "passed": true
+    },
+    {
+      "name": "dual_prediction_locks",
+      "expected": "W1 and W2 strict locks validate",
+      "observed": true,
+      "evidence": [
+        {
+          "checkpoint": {
+            "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_H\\automation_runs\\TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727\\W1_20260703\\training\\final_epoch_1.pth",
+            "bytes": 1733618,
+            "sha256": "F4AE6D891CDFE862402E2416D12B2CF5B3EAC13C6B80939EB68355295D5BF7EE"
+          },
+          "input_copy": {
+            "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_H\\automation_runs\\TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727\\W1_20260703\\data\\shared_train_readonly.csv",
+            "bytes": 43329176,
+            "sha256": "DC76F0C68BA46C0D629AF37C5F7E280873D732702CB6CA1E375E89715946E07E"
+          },
+          "result_pass1": {
+            "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_H\\automation_runs\\TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727\\W1_20260703\\predictions\\result_pass1.csv",
+            "bytes": 71,
+            "sha256": "5B79731DF774826FB6C5613B12536FF2158D726ECD17E8A4A38C4136FC2ABF78"
+          },
+          "result_pass2": {
+            "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_H\\automation_runs\\TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727\\W1_20260703\\predictions\\result_pass2.csv",
+            "bytes": 71,
+            "sha256": "5B79731DF774826FB6C5613B12536FF2158D726ECD17E8A4A38C4136FC2ABF78"
+          },
+          "scaler": {
+            "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_H\\automation_runs\\TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727\\W1_20260703\\training\\scalers.json",
+            "bytes": 2201,
+            "sha256": "C296894D46C58846AD8AFB11389FB7C712504622B141FB0DA7ABF1EAF40D4B48"
+          },
+          "scores_pass1": {
+            "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_H\\automation_runs\\TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727\\W1_20260703\\predictions\\scores_pass1.csv",
+            "bytes": 10324,
+            "sha256": "CD40E602165B5BEF4501E154B3EAD31FE5BC4EB88BB5A88D60A36E4F1C7D3CCE"
+          },
+          "scores_pass2": {
+            "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_H\\automation_runs\\TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727\\W1_20260703\\predictions\\scores_pass2.csv",
+            "bytes": 10324,
+            "sha256": "CD40E602165B5BEF4501E154B3EAD31FE5BC4EB88BB5A88D60A36E4F1C7D3CCE"
+          },
+          "training_manifest": {
+            "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_H\\automation_runs\\TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727\\W1_20260703\\training\\training_manifest.json",
+            "bytes": 3213,
+            "sha256": "0CCFFA8A068B9B46C05A06D56DE8E26A9D192BDFE56E6664556C84630E563FFE"
+          }
+        },
+        {
+          "checkpoint": {
+            "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_H\\automation_runs\\TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727\\W2_20260710\\training\\final_epoch_1.pth",
+            "bytes": 1733618,
+            "sha256": "3BADDACA8D8DA6DB8BE2AE050B93A1DC35E8707A605A5B97FA90C796E4B9CD1B"
+          },
+          "input_copy": {
+            "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_H\\automation_runs\\TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727\\W2_20260710\\data\\shared_train_readonly.csv",
+            "bytes": 43596858,
+            "sha256": "7E8CC2F5A6B685F21CAB17BA3A929D6DB8B15FFC2A5461C6CE1C3ED4B36D7F12"
+          },
+          "result_pass1": {
+            "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_H\\automation_runs\\TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727\\W2_20260710\\predictions\\result_pass1.csv",
+            "bytes": 71,
+            "sha256": "876EE48797D62A8E443FCD10BB8BB7218391703B22485B6C3BADB9B789F24A74"
+          },
+          "result_pass2": {
+            "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_H\\automation_runs\\TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727\\W2_20260710\\predictions\\result_pass2.csv",
+            "bytes": 71,
+            "sha256": "876EE48797D62A8E443FCD10BB8BB7218391703B22485B6C3BADB9B789F24A74"
+          },
+          "scaler": {
+            "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_H\\automation_runs\\TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727\\W2_20260710\\training\\scalers.json",
+            "bytes": 2206,
+            "sha256": "270CF2E21606A40A4B47497C6AA3F4CDDF7DF106081FAAD17F5B64EF70D13248"
+          },
+          "scores_pass1": {
+            "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_H\\automation_runs\\TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727\\W2_20260710\\predictions\\scores_pass1.csv",
+            "bytes": 10272,
+            "sha256": "67B0F25B628CB6CA9EA6D48972ACDD443BA1A06994792D32790731FF033C5A5D"
+          },
+          "scores_pass2": {
+            "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_H\\automation_runs\\TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727\\W2_20260710\\predictions\\scores_pass2.csv",
+            "bytes": 10272,
+            "sha256": "67B0F25B628CB6CA9EA6D48972ACDD443BA1A06994792D32790731FF033C5A5D"
+          },
+          "training_manifest": {
+            "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_H\\automation_runs\\TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727\\W2_20260710\\training\\training_manifest.json",
+            "bytes": 3208,
+            "sha256": "2868E1986CFBDF156B8668C49BCAC8EF249049F8794EA1094325329F000DDB51"
+          }
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "isolated_validation_access",
+      "expected": "one hash-before-parse event after both locks",
+      "observed": [
+        {
+          "bytes": 539581,
+          "event": "parsed",
+          "parse_count": 1,
+          "sha256": "B21FB1BEEFAE407729C305E01E274695FE083C718B695F06A2146D7512B6AFC9",
+          "sha256_verified_before_parse": true
+        }
+      ],
+      "evidence": "Evaluation\\runs\\TEST_H5_two_week_retrospective_20260727\\isolated_validation_access.jsonl",
+      "passed": true
+    },
+    {
+      "name": "validation_path_absent_from_train_and_infer",
+      "expected": false,
+      "observed": false,
+      "evidence": "two frozen configs and two training manifests",
+      "passed": true
+    },
+    {
+      "name": "ordinary_readonly_training_copies",
+      "expected": true,
+      "observed": true,
+      "evidence": [
+        {
+          "source_path": "Experimental_WorkSpace/tri_candidate_rolling_validation_20260722/rounds/W1_20260703/data/shared_train.csv",
+          "copy_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W1_20260703/data/shared_train_readonly.csv",
+          "source_sha256": "DC76F0C68BA46C0D629AF37C5F7E280873D732702CB6CA1E375E89715946E07E",
+          "copy_sha256": "DC76F0C68BA46C0D629AF37C5F7E280873D732702CB6CA1E375E89715946E07E",
+          "samefile": false,
+          "readonly": true,
+          "rows": 337852,
+          "stocks": 300,
+          "date_start": "2021-10-12",
+          "date_end": "2026-07-03",
+          "sample_count": 1083,
+          "sample_start": "2022-01-04",
+          "sample_end": "2026-06-26",
+          "max_label_end": "2026-07-03"
+        },
+        {
+          "source_path": "Experimental_WorkSpace/tri_candidate_rolling_validation_20260722/rounds/W2_20260710/data/shared_train.csv",
+          "copy_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W2_20260710/data/shared_train_readonly.csv",
+          "source_sha256": "7E8CC2F5A6B685F21CAB17BA3A929D6DB8B15FFC2A5461C6CE1C3ED4B36D7F12",
+          "copy_sha256": "7E8CC2F5A6B685F21CAB17BA3A929D6DB8B15FFC2A5461C6CE1C3ED4B36D7F12",
+          "samefile": false,
+          "readonly": true,
+          "rows": 339352,
+          "stocks": 300,
+          "date_start": "2021-10-12",
+          "date_end": "2026-07-10",
+          "sample_count": 1088,
+          "sample_start": "2022-01-04",
+          "sample_end": "2026-07-03",
+          "max_label_end": "2026-07-10"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "training_windows_and_samples",
+      "expected": {
+        "W1": [
+          337852,
+          300,
+          1083,
+          "2026-06-26",
+          "2026-07-03"
+        ],
+        "W2": [
+          339352,
+          300,
+          1088,
+          "2026-07-03",
+          "2026-07-10"
+        ]
+      },
+      "observed": {
+        "W1": [
+          337852,
+          300,
+          1083,
+          "2026-06-26",
+          "2026-07-03"
+        ],
+        "W2": [
+          339352,
+          300,
+          1088,
+          "2026-07-03",
+          "2026-07-10"
+        ]
+      },
+      "evidence": "prediction lock input sections",
+      "passed": true
+    },
+    {
+      "name": "production_refit_policy",
+      "expected": "CUDA; epoch1; no validation/selection/early-stop/resume/cache; finite loss/grad; <=360s",
+      "observed": {
+        "W1": {
+          "device": "cuda",
+          "fixed_epoch": 1,
+          "validation_evaluation_count": 0,
+          "from_scratch": true,
+          "cache_enabled": false,
+          "within_360_seconds": true
+        },
+        "W2": {
+          "device": "cuda",
+          "fixed_epoch": 1,
+          "validation_evaluation_count": 0,
+          "from_scratch": true,
+          "cache_enabled": false,
+          "within_360_seconds": true
+        }
+      },
+      "evidence": "training manifests",
+      "passed": true
+    },
+    {
+      "name": "round_semantic_identity",
+      "expected": true,
+      "observed": true,
+      "evidence": {
+        "W1": "41646E2666FE20749EA8343736A447BE84EFE11A777F15353EB34C053CD9C46E",
+        "W2": "41646E2666FE20749EA8343736A447BE84EFE11A777F15353EB34C053CD9C46E"
+      },
+      "passed": true
+    },
+    {
+      "name": "protected_scopes",
+      "expected": "PASS_TASK_RELATIVE_PER_FILE",
+      "observed": "PASS_TASK_RELATIVE_PER_FILE",
+      "evidence": "Evaluation\\runs\\TEST_H5_two_week_retrospective_20260727\\TEST_H5_PROTECTED_COMPARISON.json",
+      "passed": true
+    },
+    {
+      "name": "manual_score_recalculation",
+      "expected": true,
+      "observed": true,
+      "evidence": "Evaluation\\runs\\TEST_H5_two_week_retrospective_20260727\\TEST_H5_MANUAL_SCORE_CHECK.json",
+      "passed": true
+    },
+    {
+      "name": "post_score_model_events",
+      "expected": [],
+      "observed": [],
+      "evidence": "Evaluation\\runs\\TEST_H5_two_week_retrospective_20260727\\execution_events.jsonl",
+      "passed": true
+    },
+    {
+      "name": "diagnostic_only_no_formal_gate",
+      "expected": {
+        "status": "DIAGNOSTIC_ONLY",
+        "promotion_evidence": false,
+        "formal_stability_gate_active": false,
+        "cvar_reported": false
+      },
+      "observed": {
+        "status": "DIAGNOSTIC_ONLY",
+        "promotion_evidence": false,
+        "formal_stability_gate_active": false,
+        "cvar_reported": false
+      },
+      "evidence": "TEST_H5_TWO_WEEK_SCORE.json",
+      "passed": true
+    },
+    {
+      "name": "no_H01_Serious_Finalist_creation",
+      "expected": [],
+      "observed": [],
+      "evidence": "Experimental_WorkSpace\\candidates_H",
+      "passed": true
+    }
+  ]
+}

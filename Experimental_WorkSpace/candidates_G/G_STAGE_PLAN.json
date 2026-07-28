@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "lineage": "G-series",
+  "retained_model": null,
+  "submission_eligibility": "RESEARCH_ONLY_REPORTING_UNVERIFIED",
+  "market_cutoff": "2026-07-03",
+  "stages": [
+    {
+      "id": "G0_COMPLIANCE",
+      "data_sources": "team 2026-07-18 reporting email plus frozen source manifests",
+      "time_range": "reporting state as of 2026-07-18",
+      "validation": "exact URLs and MD5 values match the reporting email",
+      "stop_on_fail": "formal submission use prohibited; TEST research may continue"
+    },
+    {
+      "id": "G1_DATA",
+      "data_sources": "D01 BaoStock, Eastmoney industry/financial, CFFEX daily futures",
+      "time_range": "financial reports 2020-01-01..2026-07-03; market/futures 2021-01-04..2026-07-03",
+      "validation": "stock coverage >=0.99; IF coverage >=0.99; unique keys; no post-cutoff availability; hashes frozen",
+      "stop_on_fail": true
+    },
+    {
+      "id": "G2_CAUSALITY",
+      "data_sources": "processed point-in-time feature files",
+      "time_range": "synthetic boundary cases plus full frozen range",
+      "validation": "feature truncation equivalence; financial availability=max(notice,update); lag-safe futures construction",
+      "stop_on_fail": true
+    },
+    {
+      "id": "G3_SMOKE",
+      "data_sources": "latest 180 market dates plus all causally available auxiliary rows",
+      "time_range": "within 2021-01-04..2026-07-03",
+      "validation": "finite forward, loss, gradients, and stock/factor/market dimensions 43/8/25",
+      "stop_on_fail": true
+    },
+    {
+      "id": "G4_QUICK",
+      "data_sources": "four fixed development folds",
+      "time_range": "2025Q1, 2025Q2, 2025Q3, 2026Q1",
+      "validation": "3/4 positive folds; recent fold positive; pooled PDR >=0.50; positive excess without best two weeks",
+      "stop_on_fail": true
+    },
+    {
+      "id": "G5_TEST_ARCHIVE",
+      "data_sources": "all configs, logs, checkpoints, scalers, predictions and manifests",
+      "time_range": "2026-07-26 run",
+      "validation": "paths are under candidates_G and every deliverable is explicitly marked TEST",
+      "stop_on_fail": true
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+    1: from pathlib import Path
+    1: import sys
+    1: import unittest
+       
+    1: import numpy as np
+    1: import pandas as pd
+       
+       
+    1: SRC = Path(__file__).resolve().parents[1] / "code" / "src"
+    1: sys.path.insert(0, str(SRC))
+       
+    1: from protocol import (  # noqa: E402
+           ALLOWED_RESIDUAL_LAMBDAS,
+           DEVELOPMENT_FOLDS,
+           apply_portfolio_policy,
+           combine_residual_rank,
+           compute_weekly_metrics,
+           filter_development_dates,
+           five_trading_day_portfolios,
+           paired_quick_metrics,
+           quick_gate,
+           should_evaluate_validation,
+           validate_fold_plan,
+       )
+       
+       
+    2: class FoldProtocolTests(unittest.TestCase):
+    1:     def test_inner_windows_precede_outer_and_never_enter_sealed_periods(self):
+    1:         validate_fold_plan(DEVELOPMENT_FOLDS)
+    5:         for fold in DEVELOPMENT_FOLDS:
+    4:             self.assertLess(pd.Timestamp(fold.inner_end), pd.Timestamp(fold.outer_start))
+    4:             self.assertLess(pd.Timestamp(fold.train_end), pd.Timestamp(fold.inner_start))
+    4:             self.assertNotEqual(pd.Timestamp(fold.outer_start).quarter, 4)
+    1:         fold4 = DEVELOPMENT_FOLDS[-1]
+    1:         self.assertLessEqual(pd.Timestamp(fold4.inner_end), pd.Timestamp("2025-09-30"))
+       
+    1:     def test_outer_validation_happens_once_after_final_epoch(self):
+    9:         schedule = [
+    3:             should_evaluate_validation(epoch, selected_epochs=3, outer_once=True)
+    4:             for epoch in (1, 2, 3)
+               ]
+    1:         self.assertEqual(schedule, [False, False, True])
+    2:         self.assertTrue(
+    9:             all(
+    3:                 should_evaluate_validation(epoch, 3, outer_once=False)
+    4:                 for epoch in (1, 2, 3)
+                   )
+               )
+       
+    1:     def test_materialization_excludes_both_sealed_label_ranges(self):
+    1:         dates = pd.date_range("2025-09-29", "2026-04-07", freq="B")
+    1:         allowed = filter_development_dates(dates, end="2026-04-07")
+    1:         self.assertNotIn(pd.Timestamp("2025-10-01"), allowed)
+    1:         self.assertNotIn(pd.Timestamp("2025-12-31"), allowed)
+    1:         self.assertNotIn(pd.Timestamp("2026-04-03"), allowed)
+    1:         self.assertIn(pd.Timestamp("2026-01-05"), allowed)
+       
+       
+    2: class PortfolioPolicyTests(unittest.TestCase):
+    1:     def setUp(self):
+    8:         self.frame = pd.DataFrame(
+    4:             {
+    4:                 "stock_id": list("ABCDEF"),
+    4:                 "score": [6.0, 5.0, 4.0, 3.0, 2.0, 1.0],
+    4:                 "label": [0.06, 0.05, 0.04, 0.03, 0.02, -0.20],
+                   }
+               )
+       
+    1:     def test_equal_and_rank_policies_have_valid_weights_and_hhi(self):
+    5:         for k in (2, 3, 4, 5):
+    4:             equal = apply_portfolio_policy(self.frame, k=k, weighting="equal")
+    4:             rank = apply_portfolio_policy(self.frame, k=k, weighting="rank")
+    4:             self.assertAlmostEqual(equal["weight"].sum(), 1.0)
+    4:             self.assertAlmostEqual(rank["weight"].sum(), 1.0)
+    4:             self.assertLessEqual(float((equal["weight"] ** 2).sum()), 0.5)
+    4:             self.assertLessEqual(float((rank["weight"] ** 2).sum()), 0.56)
+       
+    1:     def test_fixed_rank_policy_uses_preregistered_weights(self):
+    2:         fixed = apply_portfolio_policy(
+    1:             self.frame,
+    1:             k=5,
+    1:             weighting="fixed_30_25_20_15_10",
+               )
+    2:         np.testing.assert_allclose(
+    1:             fixed["weight"].to_numpy(),
+    1:             [0.30, 0.25, 0.20, 0.15, 0.10],
+               )
+       
+    1:     def test_five_day_portfolios_are_nonoverlapping(self):
+    1:         rows = []
+    1:         dates = pd.date_range("2025-01-02", periods=12, freq="B")
+   13:         for date in dates:
+   84:             for index in range(6):
+  144:                 rows.append(
+   72:                     {
+   72:                         "sample_end_date": date,
+   72:                         "stock_id": f"S{index}",
+   72:                         "score": 6.0 - index,
+   72:                         "label": 0.01 * (5 - index),
+                           }
+                       )
+    1:         result = five_trading_day_portfolios(pd.DataFrame(rows), k=5)
+    2:         self.assertEqual(
+    1:             list(pd.to_datetime(result["decision_date"])),
+    1:             [dates[0], dates[5], dates[10]],
+               )
+    1:         np.testing.assert_allclose(result["hhi"], 0.20)
+       
+    1:     def test_residual_combiner_is_clipped_and_lambda_grid_is_frozen(self):
+    1:         self.assertEqual(ALLOWED_RESIDUAL_LAMBDAS, (0.0, 0.05, 0.10))
+    1:         base = np.array([0.2, -0.4])
+    1:         aux = np.array([9.0, -9.0])
+    1:         result = combine_residual_rank(base, aux, 0.10)
+    1:         np.testing.assert_allclose(result, [0.3, -0.5])
+    2:         with self.assertRaises(ValueError):
+    1:             combine_residual_rank(base, aux, 0.07)
+       
+       
+    2: class StabilityMetricTests(unittest.TestCase):
+    1:     def test_weekly_metrics_include_robustness_diagnostics(self):
+    1:         values = [0.03, -0.02, 0.01, 0.05, -0.01]
+    1:         metrics = compute_weekly_metrics(values)
+   11:         for key in (
+                   "mean",
+                   "median",
+                   "hit_rate",
+                   "std",
+                   "q10",
+                   "cvar20",
+                   "worst",
+                   "sum_remove_best1",
+                   "sum_remove_best2",
+                   "best_positive_contribution",
+               ):
+   10:             self.assertIn(key, metrics)
+    1:         self.assertAlmostEqual(metrics["worst"], -0.02)
+    1:         self.assertLessEqual(metrics["best_positive_contribution"], 1.0)
+       
+    1:     def test_quick_gate_enforces_every_preregistered_threshold(self):
+    1:         passing = {
+    1:             "positive_folds": 3,
+    1:             "recent_fold_excess": 0.01,
+    1:             "seed_mean_excess": [0.01, 0.02],
+    1:             "strict_weekly_win_rate": 0.60,
+    1:             "excess_sum_remove_best2": 0.001,
+    1:             "candidate_cvar20": -0.03,
+    1:             "control_cvar20": -0.04,
+    1:             "hhi": 0.20,
+    1:             "best_positive_contribution": 0.15,
+               }
+    1:         result = quick_gate(passing)
+    1:         self.assertTrue(result.passed)
+   10:         for key in passing:
+    9:             broken = dict(passing)
+    9:             if key == "positive_folds":
+    1:                 broken[key] = 2
+    8:             elif key == "recent_fold_excess":
+    1:                 broken[key] = 0.0
+    7:             elif key == "seed_mean_excess":
+    1:                 broken[key] = [0.01, -0.01]
+    6:             elif key == "strict_weekly_win_rate":
+    1:                 broken[key] = 0.54
+    5:             elif key == "excess_sum_remove_best2":
+    1:                 broken[key] = 0.0
+    4:             elif key == "candidate_cvar20":
+    1:                 broken[key] = -0.05
+    3:             elif key == "control_cvar20":
+    1:                 broken[key] = -0.02
+    2:             elif key == "hhi":
+    1:                 broken[key] = 0.31
+    1:             elif key == "best_positive_contribution":
+    1:                 broken[key] = 0.21
+    9:             self.assertFalse(quick_gate(broken).passed, key)
+       
+    1:     def test_paired_quick_metrics_match_seed_fold_and_date(self):
+    1:         rows = []
+    3:         for seed in (1, 2):
+   10:             for fold_index, fold_id in enumerate(("F1", "F2", "F3", "F4")):
+   48:                 for week in range(5):
+   80:                     rows.append(
+   40:                         {
+   40:                             "seed": seed,
+   40:                             "fold_id": fold_id,
+   40:                             "decision_date": f"2025-{fold_index + 1:02d}-{week + 1:02d}",
+   40:                             "portfolio_return": 0.01,
+   40:                             "hhi": 0.20,
+                               }
+                           )
+    1:         control = pd.DataFrame(rows)
+    1:         candidate = control.copy()
+    1:         candidate["portfolio_return"] += 0.001
+    1:         metrics, paired = paired_quick_metrics(control, candidate)
+    1:         self.assertEqual(len(paired), len(control))
+    1:         self.assertEqual(metrics["positive_folds"], 4)
+    1:         np.testing.assert_allclose(metrics["seed_mean_excess"], [0.001, 0.001])
+    1:         self.assertEqual(metrics["strict_weekly_win_rate"], 1.0)
+       
+       
+    1: if __name__ == "__main__":
+           unittest.main()

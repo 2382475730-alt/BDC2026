@@ -1,0 +1,340 @@
+    1: """
+       
+       accessor.py contains base classes for implementing accessor properties
+       that can be mixed into or pinned onto other pandas classes.
+       
+       """
+    1: from __future__ import annotations
+       
+    1: from typing import (
+           Callable,
+           final,
+       )
+    1: import warnings
+       
+    1: from pandas.util._decorators import doc
+    1: from pandas.util._exceptions import find_stack_level
+       
+       
+    2: class DirNamesMixin:
+    1:     _accessors: set[str] = set()
+    1:     _hidden_attrs: frozenset[str] = frozenset()
+       
+    2:     @final
+    2:     def _dir_deletions(self) -> set[str]:
+               """
+               Delete unwanted __dir__ for this object.
+               """
+               return self._accessors | self._hidden_attrs
+       
+    1:     def _dir_additions(self) -> set[str]:
+               """
+               Add additional __dir__ for this object.
+               """
+               return {accessor for accessor in self._accessors if hasattr(self, accessor)}
+       
+    1:     def __dir__(self) -> list[str]:
+               """
+               Provide method name lookup and completion.
+       
+               Notes
+               -----
+               Only provide 'public' methods.
+               """
+               rv = set(super().__dir__())
+               rv = (rv - self._dir_deletions()) | self._dir_additions()
+               return sorted(rv)
+       
+       
+    2: class PandasDelegate:
+    1:     """
+           Abstract base class for delegating methods/properties.
+           """
+       
+    1:     def _delegate_property_get(self, name: str, *args, **kwargs):
+               raise TypeError(f"You cannot access the property {name}")
+       
+    1:     def _delegate_property_set(self, name: str, value, *args, **kwargs):
+               raise TypeError(f"The property {name} cannot be set")
+       
+    1:     def _delegate_method(self, name: str, *args, **kwargs):
+               raise TypeError(f"You cannot call method {name}")
+       
+    2:     @classmethod
+    2:     def _add_delegate_accessors(
+               cls,
+               delegate,
+               accessors: list[str],
+               typ: str,
+    1:         overwrite: bool = False,
+    1:         accessor_mapping: Callable[[str], str] = lambda x: x,
+    1:         raise_on_missing: bool = True,
+           ) -> None:
+               """
+               Add accessors to cls from the delegate class.
+       
+               Parameters
+               ----------
+               cls
+                   Class to add the methods/properties to.
+               delegate
+                   Class to get methods/properties and doc-strings.
+               accessors : list of str
+                   List of accessors to add.
+               typ : {'property', 'method'}
+               overwrite : bool, default False
+                   Overwrite the method/property in the target class if it exists.
+               accessor_mapping: Callable, default lambda x: x
+                   Callable to map the delegate's function to the cls' function.
+               raise_on_missing: bool, default True
+                   Raise if an accessor does not exist on delegate.
+                   False skips the missing accessor.
+               """
+       
+   13:         def _create_delegator_property(name: str):
+   95:             def _getter(self):
+                       return self._delegate_property_get(name)
+       
+   95:             def _setter(self, new_values):
+                       return self._delegate_property_set(name, new_values)
+       
+   95:             _getter.__name__ = name
+   95:             _setter.__name__ = name
+       
+  190:             return property(
+   95:                 fget=_getter,
+   95:                 fset=_setter,
+   95:                 doc=getattr(delegate, accessor_mapping(name)).__doc__,
+                   )
+       
+   13:         def _create_delegator_method(name: str):
+   45:             def f(self, *args, **kwargs):
+    1:                 return self._delegate_method(name, *args, **kwargs)
+       
+   45:             f.__name__ = name
+   45:             f.__doc__ = getattr(delegate, accessor_mapping(name)).__doc__
+       
+   45:             return f
+       
+  157:         for name in accessors:
+  144:             if (
+  144:                 not raise_on_missing
+   52:                 and getattr(delegate, accessor_mapping(name), None) is None
+                   ):
+    4:                 continue
+       
+  140:             if typ == "property":
+   95:                 f = _create_delegator_property(name)
+                   else:
+   45:                 f = _create_delegator_method(name)
+       
+                   # don't overwrite existing methods/properties
+  140:             if overwrite or not hasattr(cls, name):
+  129:                 setattr(cls, name, f)
+       
+       
+    1: def delegate_names(
+           delegate,
+           accessors: list[str],
+           typ: str,
+    1:     overwrite: bool = False,
+   93:     accessor_mapping: Callable[[str], str] = lambda x: x,
+    1:     raise_on_missing: bool = True,
+       ):
+           """
+           Add delegated names to a class using a class decorator.  This provides
+           an alternative usage to directly calling `_add_delegate_accessors`
+           below a class definition.
+       
+           Parameters
+           ----------
+           delegate : object
+               The class to get methods/properties & doc-strings.
+           accessors : Sequence[str]
+               List of accessor to add.
+           typ : {'property', 'method'}
+           overwrite : bool, default False
+              Overwrite the method/property in the target class if it exists.
+           accessor_mapping: Callable, default lambda x: x
+               Callable to map the delegate's function to the cls' function.
+           raise_on_missing: bool, default True
+               Raise if an accessor does not exist on delegate.
+               False skips the missing accessor.
+       
+           Returns
+           -------
+           callable
+               A class decorator.
+       
+           Examples
+           --------
+           @delegate_names(Categorical, ["categories", "ordered"], "property")
+           class CategoricalAccessor(PandasDelegate):
+               [...]
+           """
+       
+   13:     def add_delegate_accessors(cls):
+   26:         cls._add_delegate_accessors(
+   13:             delegate,
+   13:             accessors,
+   13:             typ,
+   13:             overwrite=overwrite,
+   13:             accessor_mapping=accessor_mapping,
+   13:             raise_on_missing=raise_on_missing,
+               )
+   13:         return cls
+       
+   13:     return add_delegate_accessors
+       
+       
+       # Ported with modifications from xarray; licence at LICENSES/XARRAY_LICENSE
+       # https://github.com/pydata/xarray/blob/master/xarray/core/extensions.py
+       # 1. We don't need to catch and re-raise AttributeErrors as RuntimeErrors
+       # 2. We use a UserWarning instead of a custom Warning
+       
+       
+    2: class CachedAccessor:
+    1:     """
+           Custom property-like object.
+       
+           A descriptor for caching accessors.
+       
+           Parameters
+           ----------
+           name : str
+               Namespace that will be accessed under, e.g. ``df.foo``.
+           accessor : cls
+               Class with the extension methods.
+       
+           Notes
+           -----
+           For accessor, The class's __init__ method assumes that one of
+           ``Series``, ``DataFrame`` or ``Index`` as the
+           single argument ``data``.
+           """
+       
+    1:     def __init__(self, name: str, accessor) -> None:
+   10:         self._name = name
+   10:         self._accessor = accessor
+       
+    1:     def __get__(self, obj, cls):
+    3:         if obj is None:
+                   # we're accessing the attribute of the class, i.e., Dataset.geo
+    2:             return self._accessor
+    1:         accessor_obj = self._accessor(obj)
+               # Replace the property with the accessor object. Inspired by:
+               # https://www.pydanny.com/cached-property.html
+               # We need to use object.__setattr__ because we overwrite __setattr__ on
+               # NDFrame
+    1:         object.__setattr__(obj, self._name, accessor_obj)
+    1:         return accessor_obj
+       
+       
+    2: @doc(klass="", others="")
+    2: def _register_accessor(name: str, cls):
+           """
+           Register a custom accessor on {klass} objects.
+       
+           Parameters
+           ----------
+           name : str
+               Name under which the accessor should be registered. A warning is issued
+               if this name conflicts with a preexisting attribute.
+       
+           Returns
+           -------
+           callable
+               A class decorator.
+       
+           See Also
+           --------
+           register_dataframe_accessor : Register a custom accessor on DataFrame objects.
+           register_series_accessor : Register a custom accessor on Series objects.
+           register_index_accessor : Register a custom accessor on Index objects.
+       
+           Notes
+           -----
+           When accessed, your accessor will be initialized with the pandas object
+           the user is interacting with. So the signature must be
+       
+           .. code-block:: python
+       
+               def __init__(self, pandas_object):  # noqa: E999
+                   ...
+       
+           For consistency with pandas methods, you should raise an ``AttributeError``
+           if the data passed to your accessor has an incorrect dtype.
+       
+           >>> pd.Series(['a', 'b']).dt
+           Traceback (most recent call last):
+           ...
+           AttributeError: Can only use .dt accessor with datetimelike values
+       
+           Examples
+           --------
+           In your library code::
+       
+               import pandas as pd
+       
+               @pd.api.extensions.register_dataframe_accessor("geo")
+               class GeoAccessor:
+                   def __init__(self, pandas_obj):
+                       self._obj = pandas_obj
+       
+                   @property
+                   def center(self):
+                       # return the geographic center point of this DataFrame
+                       lat = self._obj.latitude
+                       lon = self._obj.longitude
+                       return (float(lon.mean()), float(lat.mean()))
+       
+                   def plot(self):
+                       # plot this array's data on a map, e.g., using Cartopy
+                       pass
+       
+           Back in an interactive IPython session:
+       
+               .. code-block:: ipython
+       
+                   In [1]: ds = pd.DataFrame({{"longitude": np.linspace(0, 10),
+                      ...:                    "latitude": np.linspace(0, 20)}})
+                   In [2]: ds.geo.center
+                   Out[2]: (5.0, 10.0)
+                   In [3]: ds.geo.plot()  # plots data on a map
+           """
+       
+           def decorator(accessor):
+               if hasattr(cls, name):
+                   warnings.warn(
+                       f"registration of accessor {repr(accessor)} under name "
+                       f"{repr(name)} for type {repr(cls)} is overriding a preexisting "
+                       f"attribute with the same name.",
+                       UserWarning,
+                       stacklevel=find_stack_level(),
+                   )
+               setattr(cls, name, CachedAccessor(name, accessor))
+               cls._accessors.add(name)
+               return accessor
+       
+           return decorator
+       
+       
+    2: @doc(_register_accessor, klass="DataFrame")
+    2: def register_dataframe_accessor(name: str):
+           from pandas import DataFrame
+       
+           return _register_accessor(name, DataFrame)
+       
+       
+    2: @doc(_register_accessor, klass="Series")
+    2: def register_series_accessor(name: str):
+           from pandas import Series
+       
+           return _register_accessor(name, Series)
+       
+       
+    2: @doc(_register_accessor, klass="Index")
+    2: def register_index_accessor(name: str):
+           from pandas import Index
+       
+           return _register_accessor(name, Index)

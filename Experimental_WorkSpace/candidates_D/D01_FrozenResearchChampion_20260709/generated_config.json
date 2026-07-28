@@ -1,0 +1,65 @@
+{
+  "experiment_id": "D_AUTO_CHAMPION_REF_20260709_110423",
+  "seed": 20260708,
+  "data": {
+    "train_csv": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_D\\data_snapshots\\c0_train_plus_baostock_future_20260703.csv",
+    "date_col": "日期",
+    "stock_col": "股票代码",
+    "min_stocks_per_day": 10
+  },
+  "label": {
+    "horizon": 5,
+    "buy_offset": 1,
+    "sell_offset": 5
+  },
+  "features": {
+    "version": "d_market_v1",
+    "sequence_length": 60
+  },
+  "model": {
+    "d_model": 128,
+    "nhead": 4,
+    "num_layers": 2,
+    "dim_feedforward": 256,
+    "dropout": 0.1,
+    "use_factor_encoder": false
+  },
+  "loss": {
+    "temperature": 1.0,
+    "pairwise_weight": 0.25,
+    "pairwise_margin": 0.05,
+    "portfolio_return_weight": 0.05,
+    "portfolio_volatility_weight": 0.01
+  },
+  "portfolio": {
+    "top_k": 2,
+    "mode": "topk_equal",
+    "softmax_temperature": 1.0,
+    "max_weight": 1.0,
+    "min_weight": 0.0
+  },
+  "training": {
+    "batch_size": 4,
+    "num_epochs": 12,
+    "learning_rate": 5e-05,
+    "weight_decay": 1e-05,
+    "grad_clip": 5.0,
+    "num_workers": 0,
+    "early_stop_patience": 4,
+    "checkpoint_metric": "val_robust_final_score"
+  },
+  "validation": {
+    "mode": "purged_walk_forward",
+    "train_start": "2022-01-04",
+    "folds": [
+      [
+        "research_validation_2025_to_2026_first_trading_day",
+        "2025-01-03",
+        "2026-01-05"
+      ]
+    ]
+  },
+  "output": {
+    "run_dir": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_D\\automation_runs\\D_AUTO_CHAMPION_REF_20260709_110423"
+  }
+}

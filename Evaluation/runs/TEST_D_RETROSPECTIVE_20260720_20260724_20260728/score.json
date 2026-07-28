@@ -1,0 +1,70 @@
+{
+  "schema_version": "test_d_retrospective_score_v1",
+  "classification": "RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "model": "Candidate-D",
+  "retrained": false,
+  "protocol": {
+    "decision_date": "2026-07-17",
+    "buy_date": "2026-07-20",
+    "sell_date": "2026-07-24",
+    "return_formula": "sell_open / buy_open - 1",
+    "cost_bps_per_side": [
+      0,
+      10,
+      20
+    ]
+  },
+  "portfolio": {
+    "top_k": 2,
+    "weight_rule": "equal_weight",
+    "weight_sum": 1.0,
+    "holdings": [
+      {
+        "stock_code": "300476",
+        "weight": 0.5,
+        "open_buy": 246.7,
+        "open_sell": 233.45,
+        "stock_return": -0.05370895824888533,
+        "weighted_contribution": -0.026854479124442665
+      },
+      {
+        "stock_code": "688183",
+        "weight": 0.5,
+        "open_buy": 116.5,
+        "open_sell": 99.95,
+        "stock_return": -0.14206008583690988,
+        "weighted_contribution": -0.07103004291845494
+      }
+    ],
+    "gross_return": -0.0978845220428976,
+    "net_10bps_per_side_return": -0.0998845220428976,
+    "net_20bps_per_side_return": -0.10188452204289761
+  },
+  "benchmark": {
+    "name": "上证指数",
+    "code": "sh000001",
+    "open_buy": 3791.66,
+    "open_sell": 3853.63,
+    "return": 0.016343765000026433
+  },
+  "comparison": {
+    "gross_excess_vs_sse": -0.11422828704292404,
+    "net_10bps_excess_vs_sse": -0.11622828704292404,
+    "net_20bps_excess_vs_sse": -0.11822828704292404,
+    "outperformed_sse_gross": false
+  },
+  "source": {
+    "provider": "Tencent",
+    "stock_adjust": "qfq",
+    "benchmark_adjust": "none",
+    "source_mix_within_outcome_window": false,
+    "outcome_market_sha256": "E5A44C18CDA2F879DA2F80BAC367BBAED7588862865E0620E34BD734CB60F243",
+    "sse_open_sha256": "AEC192D95DF30C0BA5D288B360CB33068F4BF8241330EC2E3F8150786F91D4A6"
+  },
+  "independent_recalculation": {
+    "implementation": "Evaluation.scripts.walk_forward.prospective_d_stability._portfolio_score",
+    "status": "PASS",
+    "exact_match": true
+  },
+  "promotion_eligible": false
+}

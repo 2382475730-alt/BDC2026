@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "status": "PASS",
+  "control": "existing frozen TEST_H0_CONTROL outer predictions",
+  "data_path": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709/data/train.csv",
+  "data_sha256": "8e9cf37e5c53e4edafddc3f6f6b5843d4037376334e6f53cba068699095df1ad",
+  "seed": 20260726,
+  "folds": [
+    {
+      "fold_id": "2025Q2",
+      "status": "PASS",
+      "checks": {
+        "marker_test": true,
+        "seed_match": true,
+        "objective_legacy": true,
+        "feature_spec_match": true,
+        "model_spec_match": true,
+        "label_spec_match": true,
+        "data_sha256_match": true,
+        "fold_match": true,
+        "training_cutoff_match": true,
+        "outer_evaluation_once": true,
+        "outer_evaluation_count_one": true,
+        "prediction_dates_in_fold": true,
+        "prediction_dates_not_sealed": true
+      },
+      "config_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2025Q2/outer/config.json",
+      "config_sha256": "316c83142e2fb75f2115ba0ee2c920d122a1054b2e5c3e4356f14f3b9482eaa1",
+      "summary_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2025Q2/outer/candidate_summary.json",
+      "summary_sha256": "1a1f8f7c5f4185d658c1dffc90100c5ec9714fbf40c9545b2278917a25f18cde",
+      "prediction_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2025Q2/outer/best_val_predictions.csv",
+      "prediction_sha256": "98b649d562389c687a0be20c28d823725b70fd1e07cfa4f612cd02d2657158a5",
+      "prediction_row_count": 17880
+    },
+    {
+      "fold_id": "2026Q1",
+      "status": "PASS",
+      "checks": {
+        "marker_test": true,
+        "seed_match": true,
+        "objective_legacy": true,
+        "feature_spec_match": true,
+        "model_spec_match": true,
+        "label_spec_match": true,
+        "data_sha256_match": true,
+        "fold_match": true,
+        "training_cutoff_match": true,
+        "outer_evaluation_once": true,
+        "outer_evaluation_count_one": true,
+        "prediction_dates_in_fold": true,
+        "prediction_dates_not_sealed": true
+      },
+      "config_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2026Q1/outer/config.json",
+      "config_sha256": "9dbe8ea3cc58f7d289e2fb4d0dbe7d6e4e9bd4aa088e549a4fcc2daff8d2e300",
+      "summary_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2026Q1/outer/candidate_summary.json",
+      "summary_sha256": "539aff7235c1a24fbec0b78ac10de0448f0228f02bc2d0023e6e06fddfc6dec6",
+      "prediction_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2026Q1/outer/best_val_predictions.csv",
+      "prediction_sha256": "6ad734a1d9cee85cef51cc9fb11dfc7fd81e3c5325419cd3f12dbe90ef50db7d",
+      "prediction_row_count": 16162
+    }
+  ],
+  "sealed_holdout_access_count": 0
+}

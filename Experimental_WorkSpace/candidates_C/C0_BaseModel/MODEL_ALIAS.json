@@ -1,8 +1,0 @@
-{
-  "model_id": "C0",
-  "model_name": "C0_BaseModel",
-  "former_id": "C4",
-  "former_directory": "C4_recent_weighted_train",
-  "role": "base Transformer baseline",
-  "renamed_at": "2026-07-07"
-}

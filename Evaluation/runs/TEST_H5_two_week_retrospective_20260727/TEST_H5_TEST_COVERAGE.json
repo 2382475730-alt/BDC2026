@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "experiment_id": "TEST_H5_TWO_WEEK_RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "tool": "Python 3.11 standard-library trace --count --missing",
+  "module": "Experimental_WorkSpace/candidates_H/code/src/production.py",
+  "executed_lines": 516,
+  "missing_lines": 39,
+  "executable_lines": 555,
+  "line_coverage_percent": 92.97,
+  "required_percent": 80.0,
+  "passed": true,
+  "test_command_scope": "Experimental_WorkSpace.candidates_H.tests.test_h5_two_week_diagnostic",
+  "tests_run": 11,
+  "tests_passed": 11
+}

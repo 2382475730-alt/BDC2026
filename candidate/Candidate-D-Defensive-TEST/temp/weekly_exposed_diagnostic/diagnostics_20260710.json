@@ -1,0 +1,81 @@
+{
+  "classification": "FORCED_TEST_PACKAGE_NOT_RESEARCH_GATE_APPROVED",
+  "policy_id": "EQ_V0.050_C0.150_T0.000_R0.100",
+  "decision_date": "2026-07-10",
+  "pool_size_used": 20,
+  "universe_size": 299,
+  "feasible_capacity": 20,
+  "cluster_count": 17,
+  "largest_cluster": 2,
+  "regime_multiplier": 1.0,
+  "hhi": 0.20000000000000004,
+  "max_weight": 0.2,
+  "weighted_pair_correlation": 0.3544266948735857,
+  "selected": [
+    {
+      "stock_id": "000977",
+      "selection_order": 1,
+      "cluster_id": "000938",
+      "defensive_score": 0.9526315789473685,
+      "d_rank_score": 1.0,
+      "volatility_rank": 0.42105263157894735,
+      "reversal_risk_rank": 0.2631578947368421,
+      "max_selected_correlation": 0.0,
+      "turnover_penalty": 0.0,
+      "cluster_penalty": 0.0,
+      "weight": 0.2
+    },
+    {
+      "stock_id": "688126",
+      "selection_order": 2,
+      "cluster_id": "688126",
+      "defensive_score": 0.8184210526315789,
+      "d_rank_score": 0.9473684210526316,
+      "volatility_rank": 1.0,
+      "reversal_risk_rank": 0.7894736842105263,
+      "max_selected_correlation": 0.3738010131592669,
+      "turnover_penalty": 0.0,
+      "cluster_penalty": 0.0,
+      "weight": 0.2
+    },
+    {
+      "stock_id": "688183",
+      "selection_order": 3,
+      "cluster_id": "002463",
+      "defensive_score": 0.7894736842105262,
+      "d_rank_score": 0.8421052631578947,
+      "volatility_rank": 0.7368421052631579,
+      "reversal_risk_rank": 0.15789473684210525,
+      "max_selected_correlation": 0.3973434709409454,
+      "turnover_penalty": 0.0,
+      "cluster_penalty": 0.0,
+      "weight": 0.2
+    },
+    {
+      "stock_id": "603893",
+      "selection_order": 4,
+      "cluster_id": "603893",
+      "defensive_score": 0.7052631578947369,
+      "d_rank_score": 0.736842105263158,
+      "volatility_rank": 0.0,
+      "reversal_risk_rank": 0.3157894736842105,
+      "max_selected_correlation": 0.5014306242465127,
+      "turnover_penalty": 0.0,
+      "cluster_penalty": 0.0,
+      "weight": 0.2
+    },
+    {
+      "stock_id": "300442",
+      "selection_order": 5,
+      "cluster_id": "300442",
+      "defensive_score": 0.6921052631578947,
+      "d_rank_score": 0.7894736842105263,
+      "volatility_rank": 0.2631578947368421,
+      "reversal_risk_rank": 0.8421052631578947,
+      "max_selected_correlation": 0.4788788694662122,
+      "turnover_penalty": 0.0,
+      "cluster_penalty": 0.0,
+      "weight": 0.2
+    }
+  ]
+}

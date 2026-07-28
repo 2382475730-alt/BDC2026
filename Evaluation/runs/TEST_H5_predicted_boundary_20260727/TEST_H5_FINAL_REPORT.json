@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "experiment_id": "TEST_H5_PREDICTED_BOUNDARY_OBJECTIVE_V2",
+  "status": "REJECTED_AT_SENTINEL",
+  "retained_model": null,
+  "submission_eligible": false,
+  "promotion_decision": "NO_PROMOTION",
+  "serious_run": false,
+  "full_quick_run": false,
+  "finalist_lock_created": false,
+  "h01_created": false,
+  "sealed_holdout_access_count": 0,
+  "candidate_modified_by_h5_workflow": false,
+  "stop_reason": [
+    "changed_decision_strict_win_rate_above_50pct",
+    "cvar20_not_worse_than_control",
+    "normalized_rank5_rank6_margin_not_worse_than_h1",
+    "fresh_four_outer_windows_not_proven"
+  ],
+  "smoke": {
+    "status": "PASS",
+    "elapsed_minutes": 0.5217128116666572,
+    "cache_equivalence": {
+      "same_loss": true,
+      "same_dimensions": true,
+      "second_read_verified_hit": true
+    }
+  },
+  "sentinel": {
+    "schema_version": 1,
+    "marker": "TEST",
+    "experiment_id": "TEST_H5_PREDICTED_BOUNDARY_OBJECTIVE_V2",
+    "status": "REJECTED_AT_SENTINEL",
+    "elapsed_minutes": 4.1714460816666055,
+    "metrics": {
+      "paired_decision_count": 23,
+      "changed_decision_count": 22,
+      "decision_change_rate": 0.9565217391304348,
+      "changed_decisions_by_fold": {
+        "2025Q2": 11,
+        "2026Q1": 11
+      },
+      "changed_decision_strict_win_rate": 0.3181818181818182,
+      "pooled_mean_excess_return": 0.004877388738500685,
+      "recent_fold_mean_excess_return": 0.0014056880090555007,
+      "remove_best_one_excess_sum": 0.008389670634642292,
+      "candidate_cvar20": -0.08802336676046249,
+      "control_cvar20": -0.08717681061476465,
+      "candidate_cvar20_minus_control": -0.000846556145697841,
+      "candidate_best_positive_contribution": 0.1946412914964355,
+      "h5_mean_normalized_rank5_rank6_margin": 0.08553495531763036,
+      "h1_mean_normalized_rank5_rank6_margin": 0.18980349502736038,
+      "h5_minus_h1_normalized_rank5_rank6_margin": -0.10426853970972999,
+      "mean_h5_h0_top5_overlap": 4.4035087719298245,
+      "mean_h5_h0_top5_jaccard": 0.8028404344193817
+    },
+    "checks": {
+      "decision_change_rate_at_least_20pct": true,
+      "changed_decision_in_each_fold": true,
+      "changed_decision_strict_win_rate_above_50pct": false,
+      "pooled_mean_excess_positive": true,
+      "recent_fold_mean_excess_positive": true,
+      "remove_best_one_excess_sum_positive": true,
+      "cvar20_not_worse_than_control": false,
+      "normalized_rank5_rank6_margin_not_worse_than_h1": false,
+      "best_positive_contribution_at_most_20pct": true,
+      "all_outer_evaluation_counts_one": true,
+      "within_five_minutes": true
+    },
+    "failed_checks": [
+      "changed_decision_strict_win_rate_above_50pct",
+      "cvar20_not_worse_than_control",
+      "normalized_rank5_rank6_margin_not_worse_than_h1"
+    ],
+    "runs": [
+      {
+        "marker": "TEST",
+        "seed": 20260726,
+        "fold_id": "2025Q2",
+        "selected_epochs": 2,
+        "inner_best_score": -0.011107464847786975,
+        "outer_best_score": -0.007460083218300724,
+        "outer_evaluation_count": 1,
+        "outer_prediction_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/sentinel/S20260726/2025Q2/outer/best_val_predictions.csv"
+      },
+      {
+        "marker": "TEST",
+        "seed": 20260726,
+        "fold_id": "2026Q1",
+        "selected_epochs": 1,
+        "inner_best_score": 0.008157970566255012,
+        "outer_best_score": -0.03215182334095603,
+        "outer_evaluation_count": 1,
+        "outer_prediction_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/sentinel/S20260726/2026Q1/outer/best_val_predictions.csv"
+      }
+    ],
+    "serious_authorized": false,
+    "promotion_authorized": false,
+    "sealed_holdout_access_count": 0
+  },
+  "exposure": {
+    "status": "COMPLETE_CONSERVATIVE",
+    "provably_unconsumed_outer_window_count": 0,
+    "fresh_window_gate_passed": false
+  },
+  "tests": {
+    "schema_version": 1,
+    "marker": "TEST",
+    "method": "stdlib sys.settrace plus AST statement lines",
+    "tests_successful": true,
+    "tests_run": 23,
+    "minimum_required_pct": 80.0,
+    "reports": {
+      "loss.py": {
+        "statement_lines": 156,
+        "executed_statement_lines": 135,
+        "coverage_pct": 86.54,
+        "missing_statement_lines": [
+          25,
+          46,
+          53,
+          102,
+          119,
+          145,
+          148,
+          155,
+          212,
+          385,
+          386,
+          387,
+          388,
+          389,
+          391,
+          392,
+          393,
+          394,
+          396,
+          402,
+          425
+        ]
+      },
+      "state_cache.py": {
+        "statement_lines": 35,
+        "executed_statement_lines": 33,
+        "coverage_pct": 94.29,
+        "missing_statement_lines": [
+          77,
+          91
+        ]
+      }
+    },
+    "passed": true
+  },
+  "cache": {
+    "schema_version": 1,
+    "marker": "TEST",
+    "status": "PASS",
+    "entry_count": 6,
+    "total_blob_bytes": 4949627249,
+    "entries": [
+      {
+        "cache_key": "1b78ef5a77cf23d19228954a8c37882222b0957591a5cfcc5cb8438c88c34ac2",
+        "manifest_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/feature_cache/1b78ef5a77cf23d19228954a8c37882222b0957591a5cfcc5cb8438c88c34ac2.manifest.json",
+        "blob_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/feature_cache/1b78ef5a77cf23d19228954a8c37882222b0957591a5cfcc5cb8438c88c34ac2.pkl",
+        "blob_bytes": 150689974,
+        "blob_sha256": "bc40e0514b5970fe07196b4685ca4b3cbe2cd21ca20c90d8d4ca84b395f35a0a",
+        "verified": true,
+        "phase": "outer",
+        "fold_id": "2025Q2",
+        "training_end": "2025-03-24",
+        "sample_date_count": 120,
+        "scaler_fit_scope": "fold_training_samples_only"
+      },
+      {
+        "cache_key": "440076335e77a370cf336c8caf0b36ba2b2a9eab798cf657e0fc1c713352bb6c",
+        "manifest_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/feature_cache/440076335e77a370cf336c8caf0b36ba2b2a9eab798cf657e0fc1c713352bb6c.manifest.json",
+        "blob_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/feature_cache/440076335e77a370cf336c8caf0b36ba2b2a9eab798cf657e0fc1c713352bb6c.pkl",
+        "blob_bytes": 1206607994,
+        "blob_sha256": "a91488eabb082f6a9e06532bc93f3c36e1f96d715292055cad506297d9b9e6c5",
+        "verified": true,
+        "phase": "inner",
+        "fold_id": "2026Q1",
+        "training_end": "2025-06-23",
+        "sample_date_count": 904,
+        "scaler_fit_scope": "fold_training_samples_only"
+      },
+      {
+        "cache_key": "48ff20c5badeab8acab174c2cfeaf56d36ea4071c223fd8d5da07a3874fc3f2a",
+        "manifest_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/feature_cache/48ff20c5badeab8acab174c2cfeaf56d36ea4071c223fd8d5da07a3874fc3f2a.manifest.json",
+        "blob_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/feature_cache/48ff20c5badeab8acab174c2cfeaf56d36ea4071c223fd8d5da07a3874fc3f2a.pkl",
+        "blob_bytes": 1032442496,
+        "blob_sha256": "73b578b97891abc20bba4adb1cfa093b8711578bb8602b6f5350ffd6fad89d6f",
+        "verified": true,
+        "phase": "inner",
+        "fold_id": "2025Q2",
+        "training_end": "2024-12-24",
+        "sample_date_count": 778,
+        "scaler_fit_scope": "fold_training_samples_only"
+      },
+      {
+        "cache_key": "c2aac50a115735525edf2c8bab3f328d9f902136bf99ee055606641e6b32e4b6",
+        "manifest_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/feature_cache/c2aac50a115735525edf2c8bab3f328d9f902136bf99ee055606641e6b32e4b6.manifest.json",
+        "blob_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/feature_cache/c2aac50a115735525edf2c8bab3f328d9f902136bf99ee055606641e6b32e4b6.pkl",
+        "blob_bytes": 1122964362,
+        "blob_sha256": "d6109885753d6c775607cda1fdc2d534283b1292a46706d442e18db5ec238096",
+        "verified": true,
+        "phase": "outer",
+        "fold_id": "2025Q2",
+        "training_end": "2025-03-24",
+        "sample_date_count": 843,
+        "scaler_fit_scope": "fold_training_samples_only"
+      },
+      {
+        "cache_key": "c66060206d6ca11de63840e142b66bb9c608fce0bd5eb65369d08b4d63688806",
+        "manifest_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/feature_cache/c66060206d6ca11de63840e142b66bb9c608fce0bd5eb65369d08b4d63688806.manifest.json",
+        "blob_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/feature_cache/c66060206d6ca11de63840e142b66bb9c608fce0bd5eb65369d08b4d63688806.pkl",
+        "blob_bytes": 149046313,
+        "blob_sha256": "206d1fbaf745946d6dbf62ee32b9113e1584dfa990f8cea3bc361d7026622c4c",
+        "verified": true,
+        "phase": "inner",
+        "fold_id": "2025Q2",
+        "training_end": "2024-12-24",
+        "sample_date_count": 120,
+        "scaler_fit_scope": "fold_training_samples_only"
+      },
+      {
+        "cache_key": "c9bd246ed19067155207f0180049cf185defec02106c55f60056543dbd5debe4",
+        "manifest_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/feature_cache/c9bd246ed19067155207f0180049cf185defec02106c55f60056543dbd5debe4.manifest.json",
+        "blob_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/feature_cache/c9bd246ed19067155207f0180049cf185defec02106c55f60056543dbd5debe4.pkl",
+        "blob_bytes": 1287876110,
+        "blob_sha256": "7138eb42c94470f5144ac19860f03b935b66abf774dfe36b367af0cb6cac1050",
+        "verified": true,
+        "phase": "outer",
+        "fold_id": "2026Q1",
+        "training_end": "2025-09-23",
+        "sample_date_count": 963,
+        "scaler_fit_scope": "fold_training_samples_only"
+      }
+    ],
+    "equivalence": {
+      "same_loss": true,
+      "same_dimensions": true,
+      "second_read_verified_hit": true
+    }
+  },
+  "protection": {
+    "all_unchanged": true,
+    "details": {
+      "official_reference": {
+        "unchanged": true,
+        "added": [],
+        "removed": [],
+        "changed": [],
+        "before_file_count": 58,
+        "after_file_count": 58
+      },
+      "candidate_d": {
+        "unchanged": true,
+        "added": [],
+        "removed": [],
+        "changed": [],
+        "before_file_count": 30,
+        "after_file_count": 30
+      },
+      "d01_research_snapshot": {
+        "unchanged": true,
+        "added": [],
+        "removed": [],
+        "changed": [],
+        "before_file_count": 61,
+        "after_file_count": 61
+      }
+    }
+  },
+  "leakage_and_invariants": {
+    "status": "PASS",
+    "checks": {
+      "protected_directories_unchanged": true,
+      "all_new_experiment_ids_test": true,
+      "all_prediction_markers_test": true,
+      "only_frozen_d01_data_configured": true,
+      "configured_validation_windows_unsealed": true,
+      "materialized_prediction_dates_unsealed": true,
+      "training_labels_purged_before_validation": true,
+      "scalers_fit_on_fold_training_only": true,
+      "outer_evaluation_count_exactly_one": true,
+      "single_model_variable_only": true,
+      "no_h01_path": true,
+      "no_serious_path": true,
+      "no_formal_candidate_modification": true,
+      "sealed_holdout_access_count_zero": true,
+      "finalist_lock_not_created": true
+    }
+  }
+}

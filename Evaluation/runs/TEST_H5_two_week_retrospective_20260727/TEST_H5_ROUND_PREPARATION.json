@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "experiment_id": "TEST_H5_TWO_WEEK_RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "experiment_type": "RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "prepared_at_utc": "2026-07-27T02:31:06.446569+00:00",
+  "validation_path_present": false,
+  "semantic_fingerprint_equal_across_rounds": true,
+  "rounds": {
+    "W1": {
+      "round_id": "W1_20260703",
+      "input_source": "Experimental_WorkSpace/tri_candidate_rolling_validation_20260722/rounds/W1_20260703/data/shared_train.csv",
+      "input_copy": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W1_20260703/data/shared_train_readonly.csv",
+      "source_sha256": "DC76F0C68BA46C0D629AF37C5F7E280873D732702CB6CA1E375E89715946E07E",
+      "copy_sha256": "DC76F0C68BA46C0D629AF37C5F7E280873D732702CB6CA1E375E89715946E07E",
+      "samefile": false,
+      "readonly": true,
+      "rows": 337852,
+      "stocks": 300,
+      "date_start": "2021-10-12",
+      "date_end": "2026-07-03",
+      "config": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W1_20260703/frozen_config.json",
+      "semantic_fingerprint": "41646E2666FE20749EA8343736A447BE84EFE11A777F15353EB34C053CD9C46E"
+    },
+    "W2": {
+      "round_id": "W2_20260710",
+      "input_source": "Experimental_WorkSpace/tri_candidate_rolling_validation_20260722/rounds/W2_20260710/data/shared_train.csv",
+      "input_copy": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W2_20260710/data/shared_train_readonly.csv",
+      "source_sha256": "7E8CC2F5A6B685F21CAB17BA3A929D6DB8B15FFC2A5461C6CE1C3ED4B36D7F12",
+      "copy_sha256": "7E8CC2F5A6B685F21CAB17BA3A929D6DB8B15FFC2A5461C6CE1C3ED4B36D7F12",
+      "samefile": false,
+      "readonly": true,
+      "rows": 339352,
+      "stocks": 300,
+      "date_start": "2021-10-12",
+      "date_end": "2026-07-10",
+      "config": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W2_20260710/frozen_config.json",
+      "semantic_fingerprint": "41646E2666FE20749EA8343736A447BE84EFE11A777F15353EB34C053CD9C46E"
+    }
+  }
+}

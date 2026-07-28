@@ -1,0 +1,93 @@
+{
+  "experiment_id": "TEST_D_PROSPECTIVE_8W_20260727",
+  "at": "2026-07-28T09:28:00.278712+08:00",
+  "state_status": "PREREGISTERED_NOT_STARTED",
+  "performance_blinded": true,
+  "sealed_score_count": 0,
+  "windows": [
+    {
+      "window_id": "P01",
+      "phase": "WAIT_DECISION",
+      "decision_date": "2026-07-31",
+      "buy_date": "2026-08-03",
+      "sell_date": "2026-08-07"
+    },
+    {
+      "window_id": "P02",
+      "phase": "WAIT_DECISION",
+      "decision_date": "2026-08-07",
+      "buy_date": "2026-08-10",
+      "sell_date": "2026-08-14"
+    },
+    {
+      "window_id": "P03",
+      "phase": "WAIT_DECISION",
+      "decision_date": "2026-08-14",
+      "buy_date": "2026-08-17",
+      "sell_date": "2026-08-21"
+    },
+    {
+      "window_id": "P04",
+      "phase": "WAIT_DECISION",
+      "decision_date": "2026-08-21",
+      "buy_date": "2026-08-24",
+      "sell_date": "2026-08-28"
+    },
+    {
+      "window_id": "P05",
+      "phase": "WAIT_DECISION",
+      "decision_date": "2026-08-28",
+      "buy_date": "2026-08-31",
+      "sell_date": "2026-09-04"
+    },
+    {
+      "window_id": "P06",
+      "phase": "WAIT_DECISION",
+      "decision_date": "2026-09-04",
+      "buy_date": "2026-09-07",
+      "sell_date": "2026-09-11"
+    },
+    {
+      "window_id": "P07",
+      "phase": "WAIT_DECISION",
+      "decision_date": "2026-09-11",
+      "buy_date": "2026-09-14",
+      "sell_date": "2026-09-18"
+    },
+    {
+      "window_id": "P08",
+      "phase": "WAIT_DECISION",
+      "decision_date": "2026-09-18",
+      "buy_date": "2026-09-21",
+      "sell_date": "2026-09-28"
+    },
+    {
+      "window_id": "P09",
+      "phase": "WAIT_DECISION",
+      "decision_date": "2026-09-28",
+      "buy_date": "2026-09-29",
+      "sell_date": "2026-10-12"
+    },
+    {
+      "window_id": "P10",
+      "phase": "WAIT_DECISION",
+      "decision_date": "2026-10-12",
+      "buy_date": "2026-10-13",
+      "sell_date": "2026-10-19"
+    },
+    {
+      "window_id": "P11",
+      "phase": "WAIT_DECISION",
+      "decision_date": "2026-10-19",
+      "buy_date": "2026-10-20",
+      "sell_date": "2026-10-26"
+    },
+    {
+      "window_id": "P12",
+      "phase": "WAIT_DECISION",
+      "decision_date": "2026-10-26",
+      "buy_date": "2026-10-27",
+      "sell_date": "2026-11-02"
+    }
+  ]
+}

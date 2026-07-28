@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "decision_date": "2026-07-03",
+  "feature_end_for_inference": "2026-07-03",
+  "buy_date": "2026-07-06",
+  "planned_sell_date": "2026-07-10",
+  "rule": "D02 production refit model, top-k equal-weight portfolio from Champion config",
+  "max_stocks": 5,
+  "output_stock_count": 2,
+  "weight_sum": 1.0,
+  "cash_weight": 0.0,
+  "uses_future_market_data": false,
+  "uses_future_return_labels": false,
+  "ranked_scores": "final_prediction/ranked_scores.csv",
+  "result_csv": "final_prediction/result.csv"
+}

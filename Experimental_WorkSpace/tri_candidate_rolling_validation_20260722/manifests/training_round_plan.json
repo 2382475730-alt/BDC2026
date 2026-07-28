@@ -1,0 +1,75 @@
+{
+  "schema_version": "tri_candidate_rolling_validation_v1",
+  "created_date": "2026-07-22",
+  "candidates": [
+    "THU-BDC2026-main",
+    "Candidate-C",
+    "Candidate-D"
+  ],
+  "shared_base": {
+    "path": "../data/shared_train_through_20260703.csv",
+    "source_path": "../../candidates_D/D01_FrozenResearchChampion_20260709/data/train.csv",
+    "date_start": "2021-10-12",
+    "date_end": "2026-07-03",
+    "rows": 337852,
+    "stocks": 300,
+    "sequence_context_sessions": 60,
+    "first_eligible_sample_date": "2022-01-04",
+    "md5": "e84142bd4750708a8ac9fcb4897d7b4d",
+    "sha256": "dc76f0c68ba46c0d629af37c5f7e280873d732702cb6ca1e375e89715946e07e"
+  },
+  "isolated_validation": {
+    "external_directory": "D:/Study/Competitions/2026年中国高校计算机大赛—大数据挑战赛-提交版本/BDC2026_Validation_20260706_20260718_Isolated",
+    "data_file": "validation_20260706_20260717.csv",
+    "requested_calendar_range": "2026-07-06 through 2026-07-18",
+    "actual_trading_range": "2026-07-06 through 2026-07-17",
+    "rows": 3000,
+    "stocks": 300,
+    "trading_days": 10,
+    "sha256": "b21fb1beefae407729c305e01e274695fe083c718b695f06a2146d7512b6afc9",
+    "w2_feature_training_gate_passed": true,
+    "amount_estimation_relative_error_p95": 0.029113190300313355,
+    "turnover_estimation_relative_error_p95": 0.012801257114296088,
+    "hs300_official_file_date": "2026-07-21",
+    "hs300_exact_universe_match": true
+  },
+  "label": "open(T+5) / open(T+1) - 1",
+  "rounds": [
+    {
+      "round_id": "W1_20260703",
+      "decision_date": "2026-07-03",
+      "raw_training_and_feature_data": "shared 60-session context and training base from 2021-10-12 through 2026-07-03; eligible samples start 2022-01-04",
+      "raw_row_count": 337852,
+      "eligible_sample_date_count": 1083,
+      "latest_eligible_label_sample_date": "2026-06-26",
+      "maximum_label_end_date": "2026-07-03",
+      "buy_date": "2026-07-06",
+      "sell_date": "2026-07-10",
+      "validation_access_gate": "score only after all three predictions are frozen and hashed"
+    },
+    {
+      "round_id": "W2_20260710",
+      "decision_date": "2026-07-10",
+      "raw_training_and_feature_data": "same shared base plus validation rows from 2026-07-06 through 2026-07-10; eligible samples start 2022-01-04",
+      "planned_raw_row_count": 339352,
+      "eligible_sample_date_count": 1088,
+      "latest_eligible_label_sample_date": "2026-07-03",
+      "maximum_label_end_date": "2026-07-10",
+      "buy_date": "2026-07-13",
+      "sell_date": "2026-07-17",
+      "validation_access_gate": "materialize only after W1 predictions are frozen; W2 returns remain sealed until all W2 predictions are frozen",
+      "candidate_d_round_config_after_gate": {
+        "raw_data_end": "2026-07-10",
+        "train_sample_end": "2026-07-03",
+        "expected_train_sample_count": 1088
+      }
+    }
+  ],
+  "invariants": {
+    "same_raw_train_bytes_for_all_three_per_round": true,
+    "candidate_packages_unchanged": true,
+    "validation_kept_outside_workspace": true,
+    "hyperparameters_and_inference_policy_frozen_across_rounds": true,
+    "future_returns_never_used_for_scaler_training_or_selection": true
+  }
+}

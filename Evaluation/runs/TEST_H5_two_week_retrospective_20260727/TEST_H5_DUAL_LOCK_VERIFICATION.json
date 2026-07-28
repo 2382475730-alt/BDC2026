@@ -1,0 +1,38 @@
+{
+  "marker": "TEST",
+  "experiment_id": "TEST_H5_TWO_WEEK_RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "experiment_type": "RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "both_locks_verified": true,
+  "semantic_fingerprint_equal": true,
+  "future_returns_accessed": false,
+  "validation_parse_count": 0,
+  "verified_at_utc": "2026-07-27T02:36:13.315623+00:00",
+  "locks": {
+    "W1": {
+      "verified": true,
+      "lock_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W1_20260703/prediction_lock.json",
+      "lock_sha256": "6F9399A4E16FBF0F1C53E6316E2CF5AA99581053075444ECC6CB2DAE4D7B1687",
+      "decision_date": "2026-07-03",
+      "selected_stocks": [
+        "688126",
+        "688082",
+        "688183",
+        "688008",
+        "301308"
+      ]
+    },
+    "W2": {
+      "verified": true,
+      "lock_path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727/W2_20260710/prediction_lock.json",
+      "lock_sha256": "8E37201849752D34E8F189C78F10468E12DA06627B49008B47682438B3B9D27A",
+      "decision_date": "2026-07-10",
+      "selected_stocks": [
+        "688126",
+        "688082",
+        "600584",
+        "688521",
+        "688008"
+      ]
+    }
+  }
+}

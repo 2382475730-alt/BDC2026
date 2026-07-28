@@ -1,0 +1,20 @@
+{
+  "leakage_audit": "pass",
+  "checks": {
+    "train_label_end_before_validation_start": true,
+    "prediction_date_stock_unique": true,
+    "duplicate_prediction_rows": 0,
+    "prediction_date_start": "2025-01-03",
+    "prediction_date_end": "2026-01-05",
+    "date_level_prediction_split": true,
+    "feature_truncation_equivalence": {
+      "status": "pass",
+      "sampled_dates": [
+        "2025-01-03",
+        "2025-01-06",
+        "2025-01-07"
+      ]
+    }
+  },
+  "issues": []
+}

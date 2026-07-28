@@ -1,0 +1,80 @@
+{
+  "marker": "TEST",
+  "submission_eligible": false,
+  "source": "existing rejected F/G Quick best_val_predictions.csv files",
+  "week_semantics": "last decision date in each W-FRI group; five-day label; non-overlapping weekly observations",
+  "policies": [
+    {
+      "policy_id": "TOP1_EQUAL",
+      "weights": [
+        1.0
+      ],
+      "hhi": 1.0
+    },
+    {
+      "policy_id": "TOP2_EQUAL",
+      "weights": [
+        0.5,
+        0.5
+      ],
+      "hhi": 0.5
+    },
+    {
+      "policy_id": "TOP3_EQUAL",
+      "weights": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "hhi": 0.3333333333333333
+    },
+    {
+      "policy_id": "TOP4_EQUAL",
+      "weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "hhi": 0.25
+    },
+    {
+      "policy_id": "TOP5_EQUAL",
+      "weights": [
+        0.2,
+        0.2,
+        0.2,
+        0.2,
+        0.2
+      ],
+      "hhi": 0.20000000000000004
+    },
+    {
+      "policy_id": "TOP5_RANK_30_25_20_15_10",
+      "weights": [
+        0.3,
+        0.25,
+        0.2,
+        0.15,
+        0.1
+      ],
+      "hhi": 0.225
+    }
+  ],
+  "stability_gate": {
+    "positive_fold_count_ge_3": true,
+    "recent_fold_mean_excess_positive": true,
+    "strict_win_rate_ge_0_55": true,
+    "excess_sum_without_best_two_positive": true,
+    "cvar20_not_worse_than_control": true,
+    "hhi_le_0_30": true
+  },
+  "outputs": [
+    "TEST_MANIFEST.json",
+    "TEST_ONE_WEEK_STABILITY_REPORT.md",
+    "TEST_absolute_stability_summary.csv",
+    "TEST_paired_stability_gates.csv",
+    "TEST_paired_weekly_returns.csv",
+    "TEST_weekly_policy_returns.csv"
+  ]
+}

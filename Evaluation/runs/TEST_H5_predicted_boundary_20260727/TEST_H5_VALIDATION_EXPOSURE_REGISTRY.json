@@ -1,0 +1,985 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "status": "COMPLETE_CONSERVATIVE",
+  "scanned_json_files": 177,
+  "discovered_window_record_count": 155,
+  "discovered_windows": [
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2025Q1/inner/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2024-10-01",
+      "end": "2024-12-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2025Q1/inner/config.json",
+      "window_id": "2025Q1_INNER",
+      "start": "2024-10-01",
+      "end": "2024-12-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2025Q1/inner/split_metadata.json",
+      "window_id": "fold",
+      "start": "2024-10-01",
+      "end": "2024-12-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2025Q1/inner/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2024-10-01",
+      "end": "2024-12-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2025Q1/inner/config.json",
+      "window_id": "2025Q1_INNER",
+      "start": "2024-10-01",
+      "end": "2024-12-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2025Q1/inner/split_metadata.json",
+      "window_id": "fold",
+      "start": "2024-10-01",
+      "end": "2024-12-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2025Q1/inner/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2024-10-01",
+      "end": "2024-12-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2025Q1/inner/config.json",
+      "window_id": "2025Q1_INNER",
+      "start": "2024-10-01",
+      "end": "2024-12-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2025Q1/inner/split_metadata.json",
+      "window_id": "fold",
+      "start": "2024-10-01",
+      "end": "2024-12-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2025Q1/inner/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2024-10-01",
+      "end": "2024-12-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2025Q1/inner/config.json",
+      "window_id": "2025Q1_INNER",
+      "start": "2024-10-01",
+      "end": "2024-12-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2025Q1/inner/split_metadata.json",
+      "window_id": "fold",
+      "start": "2024-10-01",
+      "end": "2024-12-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2025Q2/inner/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2025Q2/inner/config.json",
+      "window_id": "2025Q2_INNER",
+      "start": "2025-01-03",
+      "end": "2025-03-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2025Q2/inner/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2025Q2/inner/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2025Q2/inner/config.json",
+      "window_id": "2025Q2_INNER",
+      "start": "2025-01-03",
+      "end": "2025-03-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2025Q2/inner/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2025Q2/inner/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2025Q2/inner/config.json",
+      "window_id": "2025Q2_INNER",
+      "start": "2025-01-03",
+      "end": "2025-03-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2025Q2/inner/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2025Q2/inner/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2025Q2/inner/config.json",
+      "window_id": "2025Q2_INNER",
+      "start": "2025-01-03",
+      "end": "2025-03-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2025Q2/inner/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-24"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_CONTROL_F_DEV_01_2025_Q1_S20260726/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_CONTROL_F_DEV_01_2025_Q1_S20260726/config.json",
+      "window_id": "F_DEV_01_2025_Q1",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_CONTROL_F_DEV_01_2025_Q1_S20260726/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_FUSION_F_DEV_01_2025_Q1_S20260726/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_FUSION_F_DEV_01_2025_Q1_S20260726/config.json",
+      "window_id": "F_DEV_01_2025_Q1",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_FUSION_F_DEV_01_2025_Q1_S20260726/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_CONTROL_G_DEV_01_2025_Q1_S20260726/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_CONTROL_G_DEV_01_2025_Q1_S20260726/config.json",
+      "window_id": "G_DEV_01_2025_Q1",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_CONTROL_G_DEV_01_2025_Q1_S20260726/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_FINANCIAL_G_DEV_01_2025_Q1_S20260726/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_FINANCIAL_G_DEV_01_2025_Q1_S20260726/config.json",
+      "window_id": "G_DEV_01_2025_Q1",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_FINANCIAL_G_DEV_01_2025_Q1_S20260726/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2025Q1/outer/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2025Q1/outer/config.json",
+      "window_id": "2025Q1_OUTER",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2025Q1/outer/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2025Q1/outer/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2025Q1/outer/config.json",
+      "window_id": "2025Q1_OUTER",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2025Q1/outer/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2025Q1/outer/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2025Q1/outer/config.json",
+      "window_id": "2025Q1_OUTER",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2025Q1/outer/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2025Q1/outer/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2025Q1/outer/config.json",
+      "window_id": "2025Q1_OUTER",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2025Q1/outer/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2025-03-31"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2026-01-05"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709/code_snapshot/generated_config.json",
+      "window_id": "research_validation_2025_to_2026_first_trading_day",
+      "start": "2025-01-03",
+      "end": "2026-01-05"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709/config.json",
+      "window_id": "research_validation_2025_to_2026_first_trading_day",
+      "start": "2025-01-03",
+      "end": "2026-01-05"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709/generated_config.json",
+      "window_id": "research_validation_2025_to_2026_first_trading_day",
+      "start": "2025-01-03",
+      "end": "2026-01-05"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2026-01-05"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_STAGE0_D01_EXACT_REPRO_S20260708/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2026-01-05"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_STAGE0_D01_EXACT_REPRO_S20260708/config.json",
+      "window_id": "research_validation_2025_to_2026_first_trading_day",
+      "start": "2025-01-03",
+      "end": "2026-01-05"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_STAGE0_D01_EXACT_REPRO_S20260708/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-01-03",
+      "end": "2026-01-05"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2025Q3/inner/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2025Q3/inner/config.json",
+      "window_id": "2025Q3_INNER",
+      "start": "2025-04-01",
+      "end": "2025-06-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2025Q3/inner/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2025Q3/inner/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2025Q3/inner/config.json",
+      "window_id": "2025Q3_INNER",
+      "start": "2025-04-01",
+      "end": "2025-06-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2025Q3/inner/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2025Q3/inner/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2025Q3/inner/config.json",
+      "window_id": "2025Q3_INNER",
+      "start": "2025-04-01",
+      "end": "2025-06-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2025Q3/inner/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2025Q3/inner/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2025Q3/inner/config.json",
+      "window_id": "2025Q3_INNER",
+      "start": "2025-04-01",
+      "end": "2025-06-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2025Q3/inner/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_CONTROL_F_DEV_02_2025_Q2_S20260726/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_CONTROL_F_DEV_02_2025_Q2_S20260726/config.json",
+      "window_id": "F_DEV_02_2025_Q2",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_CONTROL_F_DEV_02_2025_Q2_S20260726/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_FUSION_F_DEV_02_2025_Q2_S20260726/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_FUSION_F_DEV_02_2025_Q2_S20260726/config.json",
+      "window_id": "F_DEV_02_2025_Q2",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_FUSION_F_DEV_02_2025_Q2_S20260726/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_CONTROL_G_DEV_02_2025_Q2_S20260726/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_CONTROL_G_DEV_02_2025_Q2_S20260726/config.json",
+      "window_id": "G_DEV_02_2025_Q2",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_CONTROL_G_DEV_02_2025_Q2_S20260726/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_FINANCIAL_G_DEV_02_2025_Q2_S20260726/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_FINANCIAL_G_DEV_02_2025_Q2_S20260726/config.json",
+      "window_id": "G_DEV_02_2025_Q2",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_FINANCIAL_G_DEV_02_2025_Q2_S20260726/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2025Q2/outer/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2025Q2/outer/config.json",
+      "window_id": "2025Q2_OUTER",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2025Q2/outer/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2025Q2/outer/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2025Q2/outer/config.json",
+      "window_id": "2025Q2_OUTER",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2025Q2/outer/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2025Q2/outer/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2025Q2/outer/config.json",
+      "window_id": "2025Q2_OUTER",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2025Q2/outer/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2025Q2/outer/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2025Q2/outer/config.json",
+      "window_id": "2025Q2_OUTER",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2025Q2/outer/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-04-01",
+      "end": "2025-06-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2026Q1/inner/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2026Q1/inner/config.json",
+      "window_id": "2026Q1_INNER",
+      "start": "2025-07-01",
+      "end": "2025-09-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2026Q1/inner/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2026Q1/inner/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2026Q1/inner/config.json",
+      "window_id": "2026Q1_INNER",
+      "start": "2025-07-01",
+      "end": "2025-09-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2026Q1/inner/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2026Q1/inner/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2026Q1/inner/config.json",
+      "window_id": "2026Q1_INNER",
+      "start": "2025-07-01",
+      "end": "2025-09-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2026Q1/inner/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2026Q1/inner/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2026Q1/inner/config.json",
+      "window_id": "2026Q1_INNER",
+      "start": "2025-07-01",
+      "end": "2025-09-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2026Q1/inner/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-23"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_CONTROL_F_DEV_03_2025_Q3_S20260726/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_CONTROL_F_DEV_03_2025_Q3_S20260726/config.json",
+      "window_id": "F_DEV_03_2025_Q3",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_CONTROL_F_DEV_03_2025_Q3_S20260726/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_FUSION_F_DEV_03_2025_Q3_S20260726/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_FUSION_F_DEV_03_2025_Q3_S20260726/config.json",
+      "window_id": "F_DEV_03_2025_Q3",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_FUSION_F_DEV_03_2025_Q3_S20260726/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_CONTROL_G_DEV_03_2025_Q3_S20260726/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_CONTROL_G_DEV_03_2025_Q3_S20260726/config.json",
+      "window_id": "G_DEV_03_2025_Q3",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_CONTROL_G_DEV_03_2025_Q3_S20260726/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_FINANCIAL_G_DEV_03_2025_Q3_S20260726/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_FINANCIAL_G_DEV_03_2025_Q3_S20260726/config.json",
+      "window_id": "G_DEV_03_2025_Q3",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_FINANCIAL_G_DEV_03_2025_Q3_S20260726/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2025Q3/outer/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2025Q3/outer/config.json",
+      "window_id": "2025Q3_OUTER",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2025Q3/outer/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2025Q3/outer/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2025Q3/outer/config.json",
+      "window_id": "2025Q3_OUTER",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2025Q3/outer/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2025Q3/outer/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2025Q3/outer/config.json",
+      "window_id": "2025Q3_OUTER",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2025Q3/outer/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2025Q3/outer/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2025Q3/outer/config.json",
+      "window_id": "2025Q3_OUTER",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2025Q3/outer/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_SMOKE/TEST_H1_TOPK_OBJECTIVE/outer_once/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_SMOKE/TEST_H1_TOPK_OBJECTIVE/outer_once/config.json",
+      "window_id": "2025Q3_OUTER",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_SMOKE/TEST_H1_TOPK_OBJECTIVE/outer_once/split_metadata.json",
+      "window_id": "fold",
+      "start": "2025-07-01",
+      "end": "2025-09-30"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_CONTROL_F_DEV_04_2026_Q1_S20260726/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_CONTROL_F_DEV_04_2026_Q1_S20260726/config.json",
+      "window_id": "F_DEV_04_2026_Q1",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_CONTROL_F_DEV_04_2026_Q1_S20260726/split_metadata.json",
+      "window_id": "fold",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_FUSION_F_DEV_04_2026_Q1_S20260726/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_FUSION_F_DEV_04_2026_Q1_S20260726/config.json",
+      "window_id": "F_DEV_04_2026_Q1",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_F/automation_runs/F_QUICK_F_FUSION_F_DEV_04_2026_Q1_S20260726/split_metadata.json",
+      "window_id": "fold",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_CONTROL_G_DEV_04_2026_Q1_S20260726/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_CONTROL_G_DEV_04_2026_Q1_S20260726/config.json",
+      "window_id": "G_DEV_04_2026_Q1",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_CONTROL_G_DEV_04_2026_Q1_S20260726/split_metadata.json",
+      "window_id": "fold",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_FINANCIAL_G_DEV_04_2026_Q1_S20260726/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_FINANCIAL_G_DEV_04_2026_Q1_S20260726/config.json",
+      "window_id": "G_DEV_04_2026_Q1",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_QUICK_TEST_G_FINANCIAL_G_DEV_04_2026_Q1_S20260726/split_metadata.json",
+      "window_id": "fold",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2026Q1/outer/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2026Q1/outer/config.json",
+      "window_id": "2026Q1_OUTER",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260726/2026Q1/outer/split_metadata.json",
+      "window_id": "fold",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2026Q1/outer/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2026Q1/outer/config.json",
+      "window_id": "2026Q1_OUTER",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H0_CONTROL/S20260727/2026Q1/outer/split_metadata.json",
+      "window_id": "fold",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2026Q1/outer/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2026Q1/outer/config.json",
+      "window_id": "2026Q1_OUTER",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260726/2026Q1/outer/split_metadata.json",
+      "window_id": "fold",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2026Q1/outer/candidate_summary.json",
+      "window_id": "fold",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2026Q1/outer/config.json",
+      "window_id": "2026Q1_OUTER",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    },
+    {
+      "source": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK/TEST_H1_TOPK_OBJECTIVE/S20260727/2026Q1/outer/split_metadata.json",
+      "window_id": "fold",
+      "start": "2026-01-05",
+      "end": "2026-03-27"
+    }
+  ],
+  "known_h_outer_windows": [
+    {
+      "fold_id": "2025Q1",
+      "outer_start": "2025-01-03",
+      "outer_end": "2025-03-31",
+      "status": "EXPOSED_BEFORE_H5",
+      "allowed_use": "rejection_screen_only"
+    },
+    {
+      "fold_id": "2025Q2",
+      "outer_start": "2025-04-01",
+      "outer_end": "2025-06-30",
+      "status": "EXPOSED_BEFORE_H5",
+      "allowed_use": "rejection_screen_only"
+    },
+    {
+      "fold_id": "2025Q3",
+      "outer_start": "2025-07-01",
+      "outer_end": "2025-09-30",
+      "status": "EXPOSED_BEFORE_H5",
+      "allowed_use": "rejection_screen_only"
+    },
+    {
+      "fold_id": "2026Q1",
+      "outer_start": "2026-01-05",
+      "outer_end": "2026-03-27",
+      "status": "EXPOSED_BEFORE_H5",
+      "allowed_use": "rejection_screen_only"
+    }
+  ],
+  "provably_unconsumed_outer_windows": [],
+  "provably_unconsumed_outer_window_count": 0,
+  "full_quick_fresh_window_requirement": 4,
+  "fresh_window_gate_passed": false,
+  "reason": "The workspace has no authoritative complete pre-task exposure ledger from which absence can prove non-consumption. Discovered absence is therefore not treated as fresh evidence.",
+  "sealed_ranges": [
+    [
+      "2025-10-01",
+      "2025-12-31"
+    ],
+    [
+      "2026-04-03",
+      "2026-07-03"
+    ]
+  ],
+  "sealed_holdout_access_count": 0
+}

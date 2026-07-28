@@ -1,0 +1,2807 @@
+{
+  "schema_version": "test_d_causal_prefix_v1",
+  "classification": "TEST_PROSPECTIVE_CAUSAL_INPUT",
+  "created_at": "2026-07-28T10:30:00+08:00",
+  "source_policy": "baostock_then_tencent_qfq",
+  "source": "Tencent",
+  "source_host": "web.ifzq.gtimg.cn:443",
+  "adjustflag": "qfq",
+  "source_mix": false,
+  "attempts": [
+    {
+      "provider": "BaoStock",
+      "status": "FAILED",
+      "selected": false,
+      "error": "RuntimeError: baostock login failed: 10002007 网络接收错误。"
+    },
+    {
+      "provider": "Tencent",
+      "status": "PASS",
+      "selected": true
+    }
+  ],
+  "query_bounds": {
+    "base_end": "2026-07-03",
+    "start_date": "2026-07-04",
+    "end_date": "2026-07-17"
+  },
+  "time_gate": {
+    "status": "PASS",
+    "cutoff": "2026-07-17",
+    "checked_at": "2026-07-28T10:30:00+08:00",
+    "unlock_time": "2026-07-17T18:00:00+08:00"
+  },
+  "base_prefix": {
+    "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_D\\D01_FrozenResearchChampion_20260709\\data\\train.csv",
+    "rows": 388452,
+    "date_end": "2026-07-03",
+    "sha256": "8E9CF37E5C53E4EDAFDDC3F6F6B5843D4037376334E6F53CBA068699095DF1AD",
+    "md5": "78759d892c95eb8ba547c2df9a8fca5a"
+  },
+  "increment": {
+    "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\TEST_D_RETROSPECTIVE_20260720_20260724_20260728\\causal_input\\causal_increment.csv",
+    "sha256": "4E193513D94F2235B28C4953CF4399E4B3DFCDE06CCC14FED3204A0FEAEABACB",
+    "md5": "b7aa6796e4046e3754986f1d40c850ca",
+    "download_reports": [
+      {
+        "symbol": "000001",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000002",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000063",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000100",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000157",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000166",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000301",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000333",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000338",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000408",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000425",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000538",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000568",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000596",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000617",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000625",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000630",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000651",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000657",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000708",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000725",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000768",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000776",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000792",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000807",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000858",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000895",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000938",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000963",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000975",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000977",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000988",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "000999",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "001280",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "001391",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "001965",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "001979",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002001",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002027",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002028",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002049",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002050",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002074",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002142",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002179",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002202",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002230",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002236",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002241",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002304",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002311",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002352",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002353",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002371",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002384",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002415",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002422",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002460",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002463",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002466",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002475",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002493",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002532",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002558",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002594",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002600",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002602",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002625",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002648",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002709",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002714",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002736",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002837",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002916",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002920",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "002938",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "003816",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300014",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300015",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300033",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300059",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300122",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300124",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300251",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300274",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300308",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300316",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300394",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300408",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300413",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300418",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300433",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300442",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300450",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300476",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300498",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300502",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300628",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300661",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300750",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300760",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300803",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300832",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300866",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300896",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "300999",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "301165",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "301236",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "301269",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "301308",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "302132",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600000",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600009",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600010",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600011",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600015",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600016",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600018",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600019",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600023",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600025",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600026",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600027",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600028",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600029",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600030",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600031",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600036",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600039",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600048",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600050",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600061",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600066",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600085",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600089",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600104",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600111",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600115",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600118",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600150",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600160",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600176",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600183",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600188",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600196",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600219",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600221",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600233",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600276",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600309",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600346",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600362",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600372",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600406",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600415",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600426",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600436",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600438",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600460",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600482",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600489",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600515",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600519",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600522",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600547",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600549",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600570",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600584",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600585",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600588",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600600",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600660",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600674",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600690",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600741",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600760",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600795",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600803",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600809",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600845",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600875",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600886",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600887",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600893",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600900",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600905",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600918",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600919",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600926",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600930",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600938",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600941",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600958",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 51,
+        "start_date": "2026-05-07",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600989",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "600999",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601006",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601009",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601012",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601018",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601021",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601058",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601059",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601066",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601077",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601088",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601100",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601111",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601117",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601127",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601136",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601138",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601166",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601169",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601186",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601211",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601225",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601229",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601238",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601288",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601318",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601319",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601328",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601336",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601360",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601377",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601390",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601398",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601456",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601600",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601601",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601607",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601618",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601628",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601633",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601658",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601668",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601669",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601688",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601689",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601698",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601727",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601728",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601766",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601788",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601800",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601816",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601818",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601825",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601838",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601857",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601868",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601872",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601877",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601878",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601881",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601888",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601898",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601899",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601901",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601916",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601919",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601939",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601985",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601988",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601995",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "601998",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "603019",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "603259",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "603260",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "603288",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "603296",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "603369",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "603392",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "603501",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "603799",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "603893",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "603986",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "603993",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "605117",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "605499",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "688008",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "688009",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "688012",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "688036",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "688041",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "688047",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "688072",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 42,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "688082",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "688111",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "688126",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "688183",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "688223",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "688256",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "688271",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "688303",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "688396",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "688472",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "688506",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "688521",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      },
+      {
+        "symbol": "688981",
+        "source": "akshare.stock_zh_a_hist_tx:qfq",
+        "rows": 52,
+        "start_date": "2026-05-06",
+        "end_date": "2026-07-17",
+        "ok": true,
+        "error": ""
+      }
+    ],
+    "provider_validation": {
+      "status": "PASS",
+      "provider": "Tencent",
+      "endpoint": "akshare.stock_zh_a_hist_tx",
+      "adjust": "qfq",
+      "base_end": "2026-07-03",
+      "cutoff": "2026-07-17",
+      "overlap_rows": 12594,
+      "calibrated_stocks": 300,
+      "minimum_calibrated_stocks": 285,
+      "minimum_overlap_rows": 5,
+      "abs_return_diff_p95": 0.0006895795062893124,
+      "maximum_return_diff_p95": 0.0025,
+      "price_scale_cv_p95": 0.0017729227809835538,
+      "maximum_scale_cv_p95": 0.01,
+      "increment_rows": 2995,
+      "increment_stocks": 300,
+      "history_overlap_rows_written": 0,
+      "future_rows": 0,
+      "source_mix": false,
+      "query_bounds": {
+        "start_date": "2026-05-04",
+        "end_date": "2026-07-17"
+      },
+      "api_request_successes": 300,
+      "api_request_failures": 0
+    },
+    "calibration": {
+      "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\TEST_D_RETROSPECTIVE_20260720_20260724_20260728\\causal_input\\tencent_calibration.csv",
+      "sha256": "4E7CDEBCB7F7FA650AEBF09A7B165D306197BECA710C9E61E7D124D7AB2CD812",
+      "md5": "1c57f440fe5b4b806643ec20a6db00e6",
+      "rows": 300
+    }
+  },
+  "output_prefix": {
+    "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\TEST_D_RETROSPECTIVE_20260720_20260724_20260728\\causal_input\\shared_train_prefix.csv",
+    "sha256": "E806FEAFE78B9918E23B2CFD48989EFCE9B1CADC4DB24FD345CAE789003EB2B7",
+    "md5": "677634e627077f56166cf255925ca9f5"
+  },
+  "validation": {
+    "status": "PASS",
+    "cutoff": "2026-07-17",
+    "rows": 391447,
+    "stocks": 300,
+    "date_start": "2021-01-04",
+    "date_end": "2026-07-17",
+    "base_rows": 388452,
+    "increment_rows": 2995,
+    "increment_date_start": "2026-07-06",
+    "increment_date_end": "2026-07-17",
+    "cutoff_stocks": 300,
+    "minimum_cutoff_stocks": 285,
+    "future_rows": 0,
+    "history_overlap_rows": 0,
+    "unexpected_universe_stocks": 0
+  },
+  "future_query_performed": false,
+  "future_rows": 0,
+  "historical_overlap_replaced": false,
+  "candidate_package_written": false
+}

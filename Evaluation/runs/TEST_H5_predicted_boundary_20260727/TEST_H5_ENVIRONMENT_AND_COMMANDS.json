@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "captured_at": "2026-07-26T16:47:42.670587+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "executable": "D:\\Dev\\Python\\Python311\\python.exe",
+  "cwd": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU",
+  "commands": {
+    "unit_tests": "Experimental_WorkSpace/shared_envs/pytorch-cu128-py311/Scripts/python.exe -m unittest discover -s Experimental_WorkSpace/candidates_H/tests -v",
+    "coverage": "Experimental_WorkSpace/shared_envs/pytorch-cu128-py311/Scripts/python.exe Experimental_WorkSpace/candidates_H/tests/run_line_coverage.py Evaluation/runs/TEST_H5_predicted_boundary_20260727/TEST_H5_TESTS_AND_COVERAGE.json",
+    "prep": "Experimental_WorkSpace/shared_envs/pytorch-cu128-py311/Scripts/python.exe Experimental_WorkSpace/candidates_H/code/run_h5_predicted_boundary.py prep",
+    "smoke": "Experimental_WorkSpace/shared_envs/pytorch-cu128-py311/Scripts/python.exe Experimental_WorkSpace/candidates_H/code/run_h5_predicted_boundary.py smoke",
+    "sentinel": "Experimental_WorkSpace/shared_envs/pytorch-cu128-py311/Scripts/python.exe Experimental_WorkSpace/candidates_H/code/run_h5_predicted_boundary.py sentinel",
+    "full_quick": "NOT_RUN: blocked by sentinel failure and fresh-window exposure gate"
+  }
+}

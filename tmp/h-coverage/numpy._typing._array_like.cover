@@ -1,0 +1,106 @@
+    1: import sys
+    1: from collections.abc import Callable, Collection, Sequence
+    1: from typing import TYPE_CHECKING, Any, Protocol, TypeAlias, TypeVar, runtime_checkable
+       
+    1: import numpy as np
+    1: from numpy import dtype
+       
+    1: from ._nbit_base import _32Bit, _64Bit
+    1: from ._nested_sequence import _NestedSequence
+    1: from ._shape import _AnyShape
+       
+    1: if TYPE_CHECKING:
+           StringDType = np.dtypes.StringDType
+       else:
+           # at runtime outside of type checking importing this from numpy.dtypes
+           # would lead to a circular import
+    1:     from numpy._core.multiarray import StringDType
+       
+    1: _T = TypeVar("_T")
+    1: _ScalarT = TypeVar("_ScalarT", bound=np.generic)
+    1: _DTypeT = TypeVar("_DTypeT", bound=dtype[Any])
+    1: _DTypeT_co = TypeVar("_DTypeT_co", covariant=True, bound=dtype[Any])
+       
+    1: NDArray: TypeAlias = np.ndarray[_AnyShape, dtype[_ScalarT]]
+       
+       # The `_SupportsArray` protocol only cares about the default dtype
+       # (i.e. `dtype=None` or no `dtype` parameter at all) of the to-be returned
+       # array.
+       # Concrete implementations of the protocol are responsible for adding
+       # any and all remaining overloads
+    3: @runtime_checkable
+    2: class _SupportsArray(Protocol[_DTypeT_co]):
+    1:     def __array__(self) -> np.ndarray[Any, _DTypeT_co]: ...
+       
+       
+    3: @runtime_checkable
+    2: class _SupportsArrayFunc(Protocol):
+    1:     """A protocol class representing `~class.__array_function__`."""
+    6:     def __array_function__(
+               self,
+    1:         func: Callable[..., Any],
+    1:         types: Collection[type[Any]],
+    1:         args: tuple[Any, ...],
+    1:         kwargs: dict[str, Any],
+    1:     ) -> object: ...
+       
+       
+       # TODO: Wait until mypy supports recursive objects in combination with typevars
+    1: _FiniteNestedSequence: TypeAlias = (
+    5:     _T
+    1:     | Sequence[_T]
+    1:     | Sequence[Sequence[_T]]
+    1:     | Sequence[Sequence[Sequence[_T]]]
+    1:     | Sequence[Sequence[Sequence[Sequence[_T]]]]
+       )
+       
+       # A subset of `npt.ArrayLike` that can be parametrized w.r.t. `np.generic`
+    1: _ArrayLike: TypeAlias = (
+    2:     _SupportsArray[dtype[_ScalarT]]
+    1:     | _NestedSequence[_SupportsArray[dtype[_ScalarT]]]
+       )
+       
+       # A union representing array-like objects; consists of two typevars:
+       # One representing types that can be parametrized w.r.t. `np.dtype`
+       # and another one for the rest
+    1: _DualArrayLike: TypeAlias = (
+    4:     _SupportsArray[_DTypeT]
+    1:     | _NestedSequence[_SupportsArray[_DTypeT]]
+    1:     | _T
+    1:     | _NestedSequence[_T]
+       )
+       
+    1: if sys.version_info >= (3, 12):
+           from collections.abc import Buffer as _Buffer
+       else:
+    3:     @runtime_checkable
+    2:     class _Buffer(Protocol):
+    1:         def __buffer__(self, flags: int, /) -> memoryview: ...
+       
+    1: ArrayLike: TypeAlias = _Buffer | _DualArrayLike[dtype[Any], complex | bytes | str]
+       
+       # `ArrayLike<X>_co`: array-like objects that can be coerced into `X`
+       # given the casting rules `same_kind`
+    1: _ArrayLikeBool_co: TypeAlias = _DualArrayLike[dtype[np.bool], bool]
+    1: _ArrayLikeUInt_co: TypeAlias = _DualArrayLike[dtype[np.bool | np.unsignedinteger], bool]
+    1: _ArrayLikeInt_co: TypeAlias = _DualArrayLike[dtype[np.bool | np.integer], int]
+    1: _ArrayLikeFloat_co: TypeAlias = _DualArrayLike[dtype[np.bool | np.integer | np.floating], float]
+    1: _ArrayLikeComplex_co: TypeAlias = _DualArrayLike[dtype[np.bool | np.number], complex]
+    1: _ArrayLikeNumber_co: TypeAlias = _ArrayLikeComplex_co
+    1: _ArrayLikeTD64_co: TypeAlias = _DualArrayLike[dtype[np.bool | np.integer | np.timedelta64], int]
+    1: _ArrayLikeDT64_co: TypeAlias = _ArrayLike[np.datetime64]
+    1: _ArrayLikeObject_co: TypeAlias = _ArrayLike[np.object_]
+       
+    1: _ArrayLikeVoid_co: TypeAlias = _ArrayLike[np.void]
+    1: _ArrayLikeBytes_co: TypeAlias = _DualArrayLike[dtype[np.bytes_], bytes]
+    1: _ArrayLikeStr_co: TypeAlias = _DualArrayLike[dtype[np.str_], str]
+    1: _ArrayLikeString_co: TypeAlias = _DualArrayLike[StringDType, str]
+    1: _ArrayLikeAnyString_co: TypeAlias = _DualArrayLike[dtype[np.character] | StringDType, bytes | str]
+       
+    1: __Float64_co: TypeAlias = np.floating[_64Bit] | np.float32 | np.float16 | np.integer | np.bool
+    1: __Complex128_co: TypeAlias = np.number[_64Bit] | np.number[_32Bit] | np.float16 | np.integer | np.bool
+    1: _ArrayLikeFloat64_co: TypeAlias = _DualArrayLike[dtype[__Float64_co], float]
+    1: _ArrayLikeComplex128_co: TypeAlias = _DualArrayLike[dtype[__Complex128_co], complex]
+       
+       # NOTE: This includes `builtins.bool`, but not `numpy.bool`.
+    1: _ArrayLikeInt: TypeAlias = _DualArrayLike[dtype[np.integer], int]

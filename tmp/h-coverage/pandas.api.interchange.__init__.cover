@@ -1,0 +1,8 @@
+    1: """
+       Public API for DataFrame interchange protocol.
+       """
+       
+    1: from pandas.core.interchange.dataframe_protocol import DataFrame
+    1: from pandas.core.interchange.from_dataframe import from_dataframe
+       
+    1: __all__ = ["from_dataframe", "DataFrame"]

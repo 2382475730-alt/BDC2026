@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "lineage": "F-series",
+  "model_scope": "industry + CFFEX equity-index futures",
+  "status": "REJECTED_AT_QUICK_GATE",
+  "submission_eligible": false,
+  "summary": "Only 2 of 4 folds were positive and the recent 2026Q1 fold was negative.",
+  "summary_file": "automation_runs/F_QUICK_SUMMARY.json",
+  "paired_weekly_file": "automation_runs/F_QUICK_PAIRED_WEEKLY.csv",
+  "trained_model_outputs": [
+    "automation_runs/F_QUICK_F_FUSION_F_DEV_01_2025_Q1_S20260726/best_model.pth",
+    "automation_runs/F_QUICK_F_FUSION_F_DEV_02_2025_Q2_S20260726/best_model.pth",
+    "automation_runs/F_QUICK_F_FUSION_F_DEV_03_2025_Q3_S20260726/best_model.pth",
+    "automation_runs/F_QUICK_F_FUSION_F_DEV_04_2026_Q1_S20260726/best_model.pth"
+  ],
+  "warning": "TEST evidence only. Do not copy to candidate/ or describe as an improvement."
+}

@@ -1,8 +1,0 @@
-{
-  "model_id": "C1",
-  "model_name": "C1_Champion_RegimeGate",
-  "former_id": "C77",
-  "former_directory": "C77_c4_regime_raw_volume5_gate_c69_else_c4",
-  "role": "champion regime-gated inference baseline",
-  "renamed_at": "2026-07-07"
-}

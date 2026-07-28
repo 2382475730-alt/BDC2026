@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "method": "stdlib sys.settrace plus AST statement lines",
+  "tests_successful": true,
+  "tests_run": 23,
+  "minimum_required_pct": 80.0,
+  "reports": {
+    "loss.py": {
+      "statement_lines": 156,
+      "executed_statement_lines": 135,
+      "coverage_pct": 86.54,
+      "missing_statement_lines": [
+        25,
+        46,
+        53,
+        102,
+        119,
+        145,
+        148,
+        155,
+        212,
+        385,
+        386,
+        387,
+        388,
+        389,
+        391,
+        392,
+        393,
+        394,
+        396,
+        402,
+        425
+      ]
+    },
+    "state_cache.py": {
+      "statement_lines": 35,
+      "executed_statement_lines": 33,
+      "coverage_pct": 94.29,
+      "missing_statement_lines": [
+        77,
+        91
+      ]
+    }
+  },
+  "passed": true
+}

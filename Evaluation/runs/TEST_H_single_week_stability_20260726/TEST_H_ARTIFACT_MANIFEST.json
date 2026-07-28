@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "files": [
+    {
+      "path": "Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_ENVIRONMENT_COMMANDS.md",
+      "bytes": 1428,
+      "sha256": "66aa3cfc2c2bc3540bbf2faf43155b3ae04a1f08a036363269c8f30a94dfbf78"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_external_data_quality_audit.ipynb",
+      "bytes": 65757,
+      "sha256": "2c12f63c806096dcc52f1c8ea9e066c3b1d703855876c7c90e2e83b50866a556"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_EXTERNAL_DATA_QUALITY_AUDIT.json",
+      "bytes": 19634,
+      "sha256": "ac409bc47e4f1923e7da34d252a135fd28fba421e05271b3c29d6d8523692123"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_EXTERNAL_DATA_QUALITY_REPORT.md",
+      "bytes": 2040,
+      "sha256": "4e01a2739f2a57067257fd880fa9b7e16156a5cca435bc6cc22ef1de23bb24a3"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_FEATURE_DATA_MANIFEST.json",
+      "bytes": 5034,
+      "sha256": "27695fa95e5439ce1ccf87294760c92f348770ebfd72e3803738b75eea3639b8"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_FINAL_REPORT.json",
+      "bytes": 3024,
+      "sha256": "568607019f7e818b1debd7f3716594a186707bbef4e591b4a4a3f6112a998a64"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_FINAL_REPORT.md",
+      "bytes": 4910,
+      "sha256": "3c9fe2334b0f3711d3c8ffa465b8f46b0459561573a8d91dc762e474b5876253"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_FOLD_SEED_METRICS.csv",
+      "bytes": 1498,
+      "sha256": "cee2ee02662a12a5d12970fc3060c335bb21646849f7e618f7c31606cdc8a006"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_INVARIANT_AUDIT.json",
+      "bytes": 10289,
+      "sha256": "c82f42fae255afcd4835482eba7cbd6840c4a4249ae8528336d826ab3d567285"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_POLICY_COMPARISONS.json",
+      "bytes": 5304,
+      "sha256": "855c7ebbb83f09745d83060e555763371b13882af3cd6faa4d2102e8e329dc14"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_POLICY_DIAGNOSTICS.csv",
+      "bytes": 2574,
+      "sha256": "f4d1ca61c8e842aa72e27ee8152ca490b79e4eb82ecf401ca3e40a5c2f72c439"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_PROTECTED_FINGERPRINTS_AFTER.json",
+      "bytes": 2183,
+      "sha256": "713862b903297df681ab0a41c07b18233b341e71adbc3f0a781ef1894aff0120"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_QUICK_GATE.json",
+      "bytes": 1609,
+      "sha256": "e3cda622ab9a31b4e8311be9289c018cd68f7666d296bd647b5f6737d28ac2ed"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_QUICK_PAIRED_FIVE_DAY_RETURNS.csv",
+      "bytes": 35707,
+      "sha256": "f49f239406818f762e668672a50a0b55103e5b856916eee4f6fd1aae64cf2799"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_QUICK_PORTFOLIO_DECISIONS.csv",
+      "bytes": 159930,
+      "sha256": "9bdf864501b565a40ddcdaab3e014bf3160aa165e7d7374bcbed024b4d5ab64f"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_QUICK_SELECTED_EPOCHS.csv",
+      "bytes": 3510,
+      "sha256": "bb4e00138524e6151d2f9acc8cc3e8e89b68f807205872cf76b98af59ec1ec42"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_SMOKE_REPORT.json",
+      "bytes": 4955,
+      "sha256": "ba33dd8543d2fbe0f76cab178785ad312fe5fd97612eab4172a35e13531b1d4c"
+    },
+    {
+      "path": "Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_TEST_VERIFICATION_REPORT.json",
+      "bytes": 1361,
+      "sha256": "460b4ed1ca1739337bad856a7b6bdc00268ff9ee74025daab5ea45f061e17863"
+    }
+  ]
+}

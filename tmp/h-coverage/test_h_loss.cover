@@ -1,0 +1,117 @@
+    1: from pathlib import Path
+    1: import sys
+    1: import unittest
+       
+    1: import torch
+       
+       
+    1: SRC = Path(__file__).resolve().parents[1] / "code" / "src"
+    1: sys.path.insert(0, str(SRC))
+       
+    1: from loss import (  # noqa: E402
+           HStabilityLoss,
+           differentiable_topk_weights,
+       )
+       
+       
+    2: class DifferentiableTopKWeightsTests(unittest.TestCase):
+    1:     def test_forward_is_exact_hard_top5_equal_and_backward_is_finite(self):
+    2:         scores = torch.tensor(
+    1:             [[0.1, 0.9, 0.2, 0.8, 0.7, 0.3, 0.6]],
+    1:             dtype=torch.float32,
+    1:             requires_grad=True,
+               )
+    1:         weights = differentiable_topk_weights(scores, k=5, temperature=0.2)
+    2:         expected = torch.tensor(
+    1:             [[0.0, 0.2, 0.0, 0.2, 0.2, 0.0, 0.2]],
+    1:             dtype=torch.float32,
+               )
+    1:         expected[0, 5] = 0.2
+    1:         self.assertTrue(torch.equal(weights.detach(), expected))
+    1:         self.assertAlmostEqual(float(weights.detach().sum()), 1.0, places=6)
+    1:         (weights * torch.arange(7, dtype=torch.float32)).sum().backward()
+    1:         self.assertTrue(torch.isfinite(scores.grad).all())
+       
+    1:     def test_mask_and_small_cross_section_are_supported(self):
+    1:         scores = torch.tensor([[3.0, 2.0, 1.0, -1.0]])
+    1:         mask = torch.tensor([[True, False, True, False]])
+    2:         weights = differentiable_topk_weights(
+    1:             scores, k=5, temperature=0.1, mask=mask
+               )
+    2:         self.assertTrue(
+    1:             torch.equal(weights, torch.tensor([[0.5, 0.0, 0.5, 0.0]]))
+               )
+       
+       
+    2: class HStabilityLossTests(unittest.TestCase):
+    1:     def setUp(self):
+    8:         self.loss = HStabilityLoss(
+    4:             ranking_weight=1.0,
+    4:             pairwise_weight=0.25,
+    4:             pairwise_margin=0.05,
+    4:             topk_return_weight=0.05,
+    4:             downside_weight=0.08,
+    4:             downside_temperature=0.02,
+    4:             cvar_weight=0.04,
+    4:             cvar_alpha=0.20,
+    4:             positive_tail_weight=0.02,
+    4:             positive_tail_cap=0.08,
+    4:             topk=5,
+    4:             topk_temperature=0.10,
+               )
+       
+    1:     def test_combined_loss_has_finite_gradient_and_full_breakdown(self):
+    2:         scores = torch.tensor(
+    1:             [[0.9, 0.8, 0.7, 0.6, 0.5, 0.4]],
+    1:             dtype=torch.float32,
+    1:             requires_grad=True,
+               )
+    2:         labels = torch.tensor(
+    1:             [[0.04, 0.03, 0.02, 0.01, -0.01, -0.02]],
+    1:             dtype=torch.float32,
+               )
+    1:         total, breakdown = self.loss(scores, labels)
+    1:         total.backward()
+    1:         self.assertTrue(torch.isfinite(total))
+    1:         self.assertTrue(torch.isfinite(scores.grad).all())
+    2:         self.assertEqual(
+    1:             set(breakdown),
+    1:             {
+                       "ranking",
+                       "pairwise",
+                       "topk_return",
+                       "downside",
+                       "cvar20",
+                       "positive_tail",
+                       "total",
+                   },
+               )
+       
+    1:     def test_topk_component_uses_ranking_scores(self):
+    1:         ranking_scores = torch.tensor([[9.0, 8.0, 7.0, 6.0, 5.0, -5.0]])
+    1:         labels = torch.tensor([[0.1, 0.1, 0.1, 0.1, 0.1, -1.0]])
+    1:         _, good = self.loss(ranking_scores, labels)
+    1:         _, bad = self.loss(-ranking_scores, labels)
+    1:         self.assertLess(good["topk_return"], bad["topk_return"])
+       
+    1:     def test_downside_and_cvar_penalize_negative_selected_returns(self):
+    1:         scores = torch.tensor([[6.0, 5.0, 4.0, 3.0, 2.0, 1.0]])
+    1:         positive = torch.full_like(scores, 0.02)
+    1:         negative = torch.full_like(scores, -0.02)
+    1:         _, pos = self.loss(scores, positive)
+    1:         _, neg = self.loss(scores, negative)
+    1:         self.assertGreater(neg["downside"], pos["downside"])
+    1:         self.assertGreater(neg["cvar20"], pos["cvar20"])
+       
+    1:     def test_positive_tail_penalty_activates_on_spike(self):
+    1:         scores = torch.tensor([[6.0, 5.0, 4.0, 3.0, 2.0, 1.0]])
+    1:         ordinary = torch.full_like(scores, 0.04)
+    1:         spike = torch.full_like(scores, 0.20)
+    1:         _, ordinary_parts = self.loss(scores, ordinary)
+    1:         _, spike_parts = self.loss(scores, spike)
+    1:         self.assertEqual(float(ordinary_parts["positive_tail"]), 0.0)
+    1:         self.assertGreater(float(spike_parts["positive_tail"]), 0.0)
+       
+       
+    1: if __name__ == "__main__":
+           unittest.main()

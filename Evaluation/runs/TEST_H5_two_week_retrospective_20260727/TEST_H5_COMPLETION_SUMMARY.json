@@ -1,0 +1,10 @@
+{
+  "marker": "TEST",
+  "experiment_id": "TEST_H5_TWO_WEEK_RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "experiment_type": "RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "status": "DIAGNOSTIC_ONLY",
+  "audit_status": "PASS",
+  "score_path": "Evaluation\\runs\\TEST_H5_two_week_retrospective_20260727\\TEST_H5_TWO_WEEK_SCORE.json",
+  "audit_path": "Evaluation\\runs\\TEST_H5_two_week_retrospective_20260727\\TEST_H5_LEAKAGE_AUDIT.json",
+  "report_path": "Evaluation\\reports\\TEST_H5_two_week_retrospective_20260727.md"
+}

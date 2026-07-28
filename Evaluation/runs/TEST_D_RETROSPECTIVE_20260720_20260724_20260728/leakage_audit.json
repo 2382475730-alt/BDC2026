@@ -1,0 +1,105 @@
+{
+  "schema_version": "test_d_retrospective_leakage_audit_v1",
+  "classification": "RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "mechanical_future_data_leakage_status": "PASS",
+  "independent_holdout_status": "FAIL_RETROSPECTIVE_OUTCOME_ALREADY_PUBLIC",
+  "overall_interpretation": "No mechanical future-data leakage was detected in this execution chain, but the elapsed and previously exposed outcome window is not an independent holdout.",
+  "checks": [
+    {
+      "check": "preregistration_precedes_inference",
+      "status": "PASS",
+      "evidence": {
+        "preregistration_last_write": "2026-07-28T10:28:25.8085284+08:00",
+        "inference_pass1_last_write": "2026-07-28T10:41:11.3526760+08:00",
+        "preregistration_sha256": "3837EF2A3D770475AAAFB0A21B012E8DCC518E46C27B1746D80CC8DF4EDE08FB"
+      }
+    },
+    {
+      "check": "frozen_model_and_scalers",
+      "status": "PASS",
+      "evidence": {
+        "raw_training_data_end": "2026-07-03",
+        "checkpoint_sha256": "BD85F504599D1995BD19F254C78136BE1CF42E74A349F32ED6BDEC5CCB0EF86D",
+        "scalers_sha256": "3D647F554D5E09C50E56488931DEABD54FF08750EDB645F265FF91D00BC62B38",
+        "inference_program_sha256": "4A5A14F7ADADE757105532512B95F5D7310AF9EE44F701581E0542AED688D71D",
+        "retrained": false
+      }
+    },
+    {
+      "check": "causal_inference_input",
+      "status": "PASS",
+      "evidence": {
+        "rows": 391447,
+        "stocks": 300,
+        "date_min": "2021-01-04",
+        "date_max": "2026-07-17",
+        "rows_after_cutoff": 0,
+        "history_overlap_rows_written": 0,
+        "causal_prefix_sha256": "E806FEAFE78B9918E23B2CFD48989EFCE9B1CADC4DB24FD345CAE789003EB2B7",
+        "provider_calibration_status": "PASS",
+        "provider_abs_return_diff_p95": 0.0006895795062893124,
+        "provider_price_scale_cv_p95": 0.0017729227809835538
+      }
+    },
+    {
+      "check": "repeated_inference",
+      "status": "PASS",
+      "evidence": {
+        "pass1_last_write": "2026-07-28T10:41:11.3526760+08:00",
+        "pass2_last_write": "2026-07-28T10:41:27.6531058+08:00",
+        "pass1_sha256": "7E2FD397A5B776534D595F5B3FEB1BC3CE6DC82098B67629B67C745DAAFB8BCB",
+        "pass2_sha256": "7E2FD397A5B776534D595F5B3FEB1BC3CE6DC82098B67629B67C745DAAFB8BCB",
+        "byte_identical": true
+      }
+    },
+    {
+      "check": "prediction_lock_precedes_outcome",
+      "status": "PASS",
+      "evidence": {
+        "prediction_lock_last_write": "2026-07-28T10:42:45.9999396+08:00",
+        "outcome_manifest_last_write": "2026-07-28T10:57:20.8929929+08:00",
+        "prediction_lock_sha256": "2BB63C1A2052F0EE44A8256D2EDC696CD4C219DFE55CE1767C83374B0D1ED35D",
+        "outcome_manifest_sha256": "FA4CC137B642117EADE11D82C49FA97B5F22965BB526630507614228FE641945"
+      }
+    },
+    {
+      "check": "bounded_outcome_bundle",
+      "status": "PASS",
+      "evidence": {
+        "stock_rows": 1500,
+        "stocks": 300,
+        "buy_endpoint_stocks": 300,
+        "sell_endpoint_stocks": 300,
+        "stock_date_min": "2026-07-20",
+        "stock_date_max": "2026-07-24",
+        "stock_rows_outside_window": 0,
+        "sse_rows": 5,
+        "sse_date_min": "2026-07-20",
+        "sse_date_max": "2026-07-24",
+        "source": "Tencent",
+        "source_mix_within_outcome_window": false
+      }
+    },
+    {
+      "check": "formal_candidate_unchanged",
+      "status": "PASS",
+      "evidence": {
+        "original_file_count": 30,
+        "snapshot_file_count": 30,
+        "relative_path_or_hash_mismatch_count": 0,
+        "candidate_package_written": false
+      }
+    },
+    {
+      "check": "independent_holdout",
+      "status": "FAIL",
+      "evidence": {
+        "outcome_window_ended": "2026-07-24",
+        "test_executed_on": "2026-07-28",
+        "reason": "The outcome was already public before preregistration and execution."
+      }
+    }
+  ],
+  "promotion_eligible": false,
+  "safe_use": "Descriptive retrospective diagnosis only; do not use as sealed validation or as a basis for tuning Candidate-D."
+}

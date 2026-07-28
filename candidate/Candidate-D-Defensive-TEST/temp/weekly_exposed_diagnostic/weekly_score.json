@@ -1,0 +1,40 @@
+{
+  "classification": "RETROSPECTIVE_EXPOSED_DIAGNOSTIC_NOT_PROMOTION_ELIGIBLE",
+  "policy_id": "EQ_V0.050_C0.150_T0.000_R0.100",
+  "return_formula": "sum(weight * (sell_open / buy_open - 1))",
+  "weeks": [
+    {
+      "decision_date": "2026-07-03",
+      "buy_date": "2026-07-06",
+      "sell_date": "2026-07-10",
+      "gross_return": 0.032676303061280804,
+      "net_10bps_per_side_return": 0.030676303061280802,
+      "net_20bps_per_side_return": 0.028676303061280804,
+      "cross_week_turnover": null,
+      "holdings": "300442,300476,301165,688126,688521"
+    },
+    {
+      "decision_date": "2026-07-10",
+      "buy_date": "2026-07-13",
+      "sell_date": "2026-07-17",
+      "gross_return": -0.055086444771144244,
+      "net_10bps_per_side_return": -0.057086444771144246,
+      "net_20bps_per_side_return": -0.05908644477114425,
+      "cross_week_turnover": 0.6000000000000001,
+      "holdings": "000977,300442,603893,688126,688183"
+    },
+    {
+      "decision_date": "2026-07-17",
+      "buy_date": "2026-07-20",
+      "sell_date": "2026-07-24",
+      "gross_return": -0.07848532255004557,
+      "net_10bps_per_side_return": -0.08048532255004558,
+      "net_20bps_per_side_return": -0.08248532255004558,
+      "cross_week_turnover": 0.4,
+      "holdings": "300394,300442,300476,688126,688183"
+    }
+  ],
+  "cumulative_gross_return": -0.10079534316598504,
+  "cumulative_net_10bps_per_side_return": -0.10638009058247555,
+  "cumulative_net_20bps_per_side_return": -0.11194169316268021
+}

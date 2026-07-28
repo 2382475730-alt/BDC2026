@@ -1,0 +1,114 @@
+    1: from collections.abc import Sequence  # noqa: F811
+    1: from typing import (
+           Any,
+           Protocol,
+           TypeAlias,
+           TypedDict,
+           TypeVar,
+           runtime_checkable,
+       )
+       
+    1: import numpy as np
+       
+    1: from ._char_codes import (
+           _BoolCodes,
+           _BytesCodes,
+           _ComplexFloatingCodes,
+           _DT64Codes,
+           _FloatingCodes,
+           _NumberCodes,
+           _ObjectCodes,
+           _SignedIntegerCodes,
+           _StrCodes,
+           _TD64Codes,
+           _UnsignedIntegerCodes,
+           _VoidCodes,
+       )
+       
+    1: _ScalarT = TypeVar("_ScalarT", bound=np.generic)
+    1: _DTypeT_co = TypeVar("_DTypeT_co", bound=np.dtype, covariant=True)
+       
+    1: _DTypeLikeNested: TypeAlias = Any  # TODO: wait for support for recursive types
+       
+       
+       # Mandatory keys
+    2: class _DTypeDictBase(TypedDict):
+    1:     names: Sequence[str]
+    1:     formats: Sequence[_DTypeLikeNested]
+       
+       
+       # Mandatory + optional keys
+    2: class _DTypeDict(_DTypeDictBase, total=False):
+           # Only `str` elements are usable as indexing aliases,
+           # but `titles` can in principle accept any object
+    1:     offsets: Sequence[int]
+    1:     titles: Sequence[Any]
+    1:     itemsize: int
+    1:     aligned: bool
+       
+       
+       # A protocol for anything with the dtype attribute
+    3: @runtime_checkable
+    2: class _SupportsDType(Protocol[_DTypeT_co]):
+    2:     @property
+    2:     def dtype(self) -> _DTypeT_co: ...
+       
+       
+       # A subset of `npt.DTypeLike` that can be parametrized w.r.t. `np.generic`
+    1: _DTypeLike: TypeAlias = type[_ScalarT] | np.dtype[_ScalarT] | _SupportsDType[np.dtype[_ScalarT]]
+       
+       
+       # Would create a dtype[np.void]
+    1: _VoidDTypeLike: TypeAlias = (
+           # If a tuple, then it can be either:
+           # - (flexible_dtype, itemsize)
+           # - (fixed_dtype, shape)
+           # - (base_dtype, new_dtype)
+           # But because `_DTypeLikeNested = Any`, the first two cases are redundant
+       
+           # tuple[_DTypeLikeNested, int] | tuple[_DTypeLikeNested, _ShapeLike] |
+    3:     tuple[_DTypeLikeNested, _DTypeLikeNested]
+       
+           # [(field_name, field_dtype, field_shape), ...]
+           # The type here is quite broad because NumPy accepts quite a wide
+           # range of inputs inside the list; see the tests for some examples.
+    1:     | list[Any]
+       
+           # {'names': ..., 'formats': ..., 'offsets': ..., 'titles': ..., 'itemsize': ...}
+    1:     | _DTypeDict
+       )
+       
+       # Aliases for commonly used dtype-like objects.
+       # Note that the precision of `np.number` subclasses is ignored herein.
+    1: _DTypeLikeBool: TypeAlias = type[bool] | _DTypeLike[np.bool] | _BoolCodes
+    1: _DTypeLikeInt: TypeAlias = (
+    1:     type[int] | _DTypeLike[np.signedinteger] | _SignedIntegerCodes
+       )
+    1: _DTypeLikeUInt: TypeAlias = _DTypeLike[np.unsignedinteger] | _UnsignedIntegerCodes
+    1: _DTypeLikeFloat: TypeAlias = type[float] | _DTypeLike[np.floating] | _FloatingCodes
+    1: _DTypeLikeComplex: TypeAlias = (
+    1:     type[complex] | _DTypeLike[np.complexfloating] | _ComplexFloatingCodes
+       )
+    1: _DTypeLikeComplex_co: TypeAlias = (
+    1:     type[complex] | _DTypeLike[np.bool | np.number] | _BoolCodes | _NumberCodes
+       )
+    1: _DTypeLikeDT64: TypeAlias = _DTypeLike[np.timedelta64] | _TD64Codes
+    1: _DTypeLikeTD64: TypeAlias = _DTypeLike[np.datetime64] | _DT64Codes
+    1: _DTypeLikeBytes: TypeAlias = type[bytes] | _DTypeLike[np.bytes_] | _BytesCodes
+    1: _DTypeLikeStr: TypeAlias = type[str] | _DTypeLike[np.str_] | _StrCodes
+    1: _DTypeLikeVoid: TypeAlias = (
+    1:     type[memoryview] | _DTypeLike[np.void] | _VoidDTypeLike | _VoidCodes
+       )
+    1: _DTypeLikeObject: TypeAlias = type[object] | _DTypeLike[np.object_] | _ObjectCodes
+       
+       
+       # Anything that can be coerced into numpy.dtype.
+       # Reference: https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html
+    1: DTypeLike: TypeAlias = _DTypeLike[Any] | _VoidDTypeLike | str | None
+       
+       # NOTE: while it is possible to provide the dtype as a dict of
+       # dtype-like objects (e.g. `{'field1': ..., 'field2': ..., ...}`),
+       # this syntax is officially discouraged and
+       # therefore not included in the type-union defining `DTypeLike`.
+       #
+       # See https://github.com/numpy/numpy/issues/16891 for more details.

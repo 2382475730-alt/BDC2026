@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "captured_at": "2026-07-22T07:20:14.773156+00:00",
+  "environment": {
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "torch": "2.10.0+cu128",
+    "cuda_available": true,
+    "cuda_runtime": "12.8",
+    "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "pandas": "2.3.2",
+    "numpy": "2.3.3",
+    "sklearn": "1.7.2",
+    "joblib": "1.5.2",
+    "python_executable": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\shared_envs\\pytorch-cu128-py311\\Scripts\\python.exe",
+    "captured_at": "2026-07-22T07:20:23.353814+00:00"
+  },
+  "base_train": {
+    "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\tri_candidate_rolling_validation_20260722\\data\\shared_train_through_20260703.csv",
+    "rows": 337852,
+    "stocks": 300,
+    "date_start": "2021-10-12",
+    "date_end": "2026-07-03",
+    "sha256": "DC76F0C68BA46C0D629AF37C5F7E280873D732702CB6CA1E375E89715946E07E"
+  },
+  "validation": {
+    "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\BDC2026_Validation_20260706_20260718_Isolated\\validation_20260706_20260717.csv",
+    "reported_sha256": "B21FB1BEEFAE407729C305E01E274695FE083C718B695F06A2146D7512B6AFC9",
+    "rows": 3000,
+    "stocks": 300,
+    "w2_feature_gate_passed": true,
+    "price_bytes_accessed_before_w1_lock": false
+  },
+  "universe_exact_match": true,
+  "candidate_sources": [
+    "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\tri_candidate_rolling_validation_20260722\\candidates\\THU-BDC2026-main",
+    "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\tri_candidate_rolling_validation_20260722\\candidates\\Candidate-C",
+    "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\tri_candidate_rolling_validation_20260722\\candidates\\Candidate-D"
+  ]
+}

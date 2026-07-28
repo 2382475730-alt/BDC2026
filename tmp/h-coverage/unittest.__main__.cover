@@ -1,0 +1,18 @@
+    1: """Main entry point"""
+       
+    1: import sys
+    1: if sys.argv[0].endswith("__main__.py"):
+    1:     import os.path
+           # We change sys.argv[0] to make help message more useful
+           # use executable without path, unquoted
+           # (it's just a hint anyway)
+           # (if you have spaces in your executable you get what you deserve!)
+    1:     executable = os.path.basename(sys.executable)
+    1:     sys.argv[0] = executable + " -m unittest"
+    1:     del os
+       
+    1: __unittest = True
+       
+    1: from .main import main
+       
+    1: main(module=None)

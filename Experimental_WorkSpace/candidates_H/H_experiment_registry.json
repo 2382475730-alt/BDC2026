@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "lineage": "H-series",
+  "retained_model": null,
+  "experiments": [
+    {
+      "experiment_id": "TEST_H_STAGE0_D01_EXACT_REPRO_S20260708",
+      "marker": "TEST",
+      "stage": "H0_FREEZE_AND_REPRODUCE",
+      "status": "PASS",
+      "seed": 20260708,
+      "epochs": 12,
+      "best_epoch": 12,
+      "best_score": -0.24970948583819963,
+      "mean_validation_return": 0.03711983576319238,
+      "run_dir": "automation_runs/TEST_H_STAGE0_D01_EXACT_REPRO_S20260708",
+      "report": "automation_runs/TEST_H_STAGE0_BASELINE_REPRODUCTION_REPORT.md"
+    },
+    {
+      "experiment_id": "TEST_H_EXTERNAL_DATA_QUALITY_AUDIT_20260726",
+      "marker": "TEST",
+      "stage": "DATA_QUALITY_AND_CAUSALITY_GATE",
+      "status": "COMPLETE",
+      "eligible_branches": [
+        "TEST_H0_CONTROL",
+        "TEST_H1_TOPK_OBJECTIVE"
+      ],
+      "blocked_branches": {
+        "TEST_H2_FUTURES_INDUSTRY_RESIDUAL": "BLOCKED_DATA_GATE",
+        "TEST_H3_FINANCIAL_EVENT_RESIDUAL": "BLOCKED_DATA_GATE",
+        "TEST_H4_CORPORATE_EVENT_RESIDUAL": "BLOCKED_DATA_GATE"
+      },
+      "notebook": "../../../Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_external_data_quality_audit.ipynb",
+      "report": "../../../Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_EXTERNAL_DATA_QUALITY_REPORT.md"
+    },
+    {
+      "experiment_id": "TEST_H_OBJECTIVE_AND_NESTING_SMOKE_S20260726",
+      "marker": "TEST",
+      "stage": "OBJECTIVE_AND_NESTING_SMOKE",
+      "status": "PASS",
+      "cuda": true,
+      "outer_validation_evaluation_count": 1,
+      "report": "../../../Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_SMOKE_REPORT.json"
+    },
+    {
+      "experiment_id": "TEST_H_QUICK_2SEED_4FOLD_20260726",
+      "marker": "TEST",
+      "stage": "QUICK",
+      "status": "REJECTED_AT_QUICK_GATE",
+      "branches": [
+        "TEST_H0_CONTROL",
+        "TEST_H1_TOPK_OBJECTIVE"
+      ],
+      "seeds": [
+        20260726,
+        20260727
+      ],
+      "outer_folds": [
+        "2025Q1",
+        "2025Q2",
+        "2025Q3",
+        "2026Q1"
+      ],
+      "completed_outer_runs": 16,
+      "paired_five_day_decisions": 98,
+      "failed_checks": [
+        "positive_folds_at_least_3_of_4",
+        "both_seed_means_positive",
+        "strict_weekly_win_rate_at_least_55pct",
+        "excess_positive_after_best_two_removed"
+      ],
+      "serious_run": false,
+      "sealed_holdout_access_count": 0,
+      "run_dir": "automation_runs/TEST_H_QUICK",
+      "gate": "../../../Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_QUICK_GATE.json",
+      "report": "../../../Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_FINAL_REPORT.md"
+    },
+    {
+      "experiment_id": "TEST_H5_PREDICTED_BOUNDARY_OBJECTIVE_V2",
+      "marker": "TEST",
+      "stage": "PREDICTED_BOUNDARY_SENTINEL",
+      "status": "REJECTED_AT_SENTINEL",
+      "single_model_variable": "replace H1 label-bottom boundary negatives with predicted-boundary hard negatives",
+      "seed": 20260726,
+      "sentinel_outer_folds": [
+        "2025Q2",
+        "2026Q1"
+      ],
+      "paired_five_day_decisions": 23,
+      "changed_decisions": 22,
+      "decision_change_rate": 0.9565217391304348,
+      "changed_decision_strict_win_rate": 0.3181818181818182,
+      "pooled_mean_excess_return": 0.004877388738500685,
+      "recent_fold_mean_excess_return": 0.0014056880090555007,
+      "candidate_cvar20_minus_control": -0.000846556145697841,
+      "h5_minus_h1_normalized_rank5_rank6_margin": -0.10426853970972999,
+      "failed_checks": [
+        "changed_decision_strict_win_rate_above_50pct",
+        "cvar20_not_worse_than_control",
+        "normalized_rank5_rank6_margin_not_worse_than_h1"
+      ],
+      "smoke_elapsed_minutes": 0.5217128116666572,
+      "sentinel_elapsed_minutes": 4.1714460816666055,
+      "full_quick_run": false,
+      "serious_run": false,
+      "sealed_holdout_access_count": 0,
+      "retained_model": null,
+      "run_dir": "automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727",
+      "report": "../../../Evaluation/runs/TEST_H5_predicted_boundary_20260727/TEST_H5_FINAL_REPORT.md"
+    },
+    {
+      "experiment_id": "TEST_H5_TWO_WEEK_RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+      "marker": "TEST",
+      "stage": "RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+      "status": "DIAGNOSTIC_ONLY",
+      "blind_test": false,
+      "independent_holdout": false,
+      "promotion_evidence": false,
+      "seed": 20260726,
+      "fixed_final_epoch": 1,
+      "rounds": [
+        "W1_20260703",
+        "W2_20260710"
+      ],
+      "weekly_gross_returns": [
+        0.058793296874714594,
+        -0.16603512726195238
+      ],
+      "two_week_gross_compound": -0.11700358291598068,
+      "two_week_net_10bps_compound": -0.1207850992552062,
+      "net_10bps_difference_vs_official": -0.05645146048098759,
+      "net_10bps_difference_vs_candidate_d": -0.21191458384657302,
+      "serious_run": false,
+      "retained_model": null,
+      "run_dir": "automation_runs/TEST_H5_TWO_WEEK_RETROSPECTIVE_20260727",
+      "score": "../../../Evaluation/runs/TEST_H5_two_week_retrospective_20260727/TEST_H5_TWO_WEEK_SCORE.json",
+      "report": "../../../Evaluation/reports/TEST_H5_two_week_retrospective_20260727.md"
+    }
+  ]
+}

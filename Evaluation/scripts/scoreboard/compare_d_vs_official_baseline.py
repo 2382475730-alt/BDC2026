@@ -17,17 +17,22 @@ import torch
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Score D001 and the official baseline on the same D validation labels."
+        description="Score a supplied D-series prediction table and the official baseline on the same labels."
     )
     parser.add_argument(
         "--output-dir",
         default=None,
-        help="Directory for comparison artifacts. Defaults to Evaluation/runs/d_vs_official_baseline_20260708.",
+        help="Directory for comparison artifacts. Defaults to Evaluation/runs/d01_vs_official_baseline.",
     )
     parser.add_argument(
         "--source-predictions",
-        default=None,
+        required=True,
         help="D-series prediction CSV with sample_end_date, stock_id, score, and label columns.",
+    )
+    parser.add_argument(
+        "--data-csv",
+        default=None,
+        help="Market-data CSV used to score the official checkpoint. Defaults to D01/data/train.csv.",
     )
     return parser.parse_args()
 
@@ -171,10 +176,13 @@ def load_official_modules(official_src: Path):
     return StockTransformer, feature_cloums_map, feature_engineer_func_map
 
 
-def official_predictions(root: Path, d_predictions: pd.DataFrame) -> tuple[pd.DataFrame, dict[str, object]]:
+def official_predictions(
+    root: Path,
+    d_predictions: pd.DataFrame,
+    data_csv: Path,
+) -> tuple[pd.DataFrame, dict[str, object]]:
     official_src = root / "candidate" / "THU-BDC2026-main" / "code" / "src"
     official_model_dir = root / "candidate" / "THU-BDC2026-main" / "model" / "60_158+39"
-    data_csv = root / "Experimental_WorkSpace" / "candidates_C" / "C0_BaseModel" / "data" / "train.csv"
     StockTransformer, feature_columns_map, feature_engineer_func_map = load_official_modules(official_src)
 
     with (official_model_dir / "config.json").open("r", encoding="utf-8") as handle:
@@ -298,27 +306,33 @@ def metric_table(summaries: dict[str, dict[str, float]]) -> str:
 def main() -> None:
     args = parse_args()
     root = repo_root()
-    output_dir = Path(args.output_dir) if args.output_dir else root / "Evaluation" / "runs" / "d_vs_official_baseline_20260708"
+    output_dir = (
+        Path(args.output_dir)
+        if args.output_dir
+        else root / "Evaluation" / "runs" / "d01_vs_official_baseline"
+    )
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    d_pred_path = (
-        Path(args.source_predictions)
-        if args.source_predictions
+    d_pred_path = Path(args.source_predictions)
+    data_csv = (
+        Path(args.data_csv)
+        if args.data_csv
         else root
         / "Experimental_WorkSpace"
         / "candidates_D"
-        / "D001_MarketEncoder_Baseline"
-        / "experiments"
-        / "round1_D001_market_only_top2_20260708"
-        / "best_val_predictions.csv"
+        / "D01_FrozenResearchChampion_20260709"
+        / "data"
+        / "train.csv"
     )
     if not d_pred_path.is_absolute():
         d_pred_path = root / d_pred_path
+    if not data_csv.is_absolute():
+        data_csv = root / data_csv
     d_predictions = pd.read_csv(d_pred_path, dtype={"stock_id": str})
     d_predictions["stock_id"] = d_predictions["stock_id"].astype(str).str.zfill(6)
     d_predictions["sample_end_date"] = pd.to_datetime(d_predictions["sample_end_date"])
 
-    official_pred, official_metadata = official_predictions(root, d_predictions)
+    official_pred, official_metadata = official_predictions(root, d_predictions, data_csv)
     official_pred["sample_end_date"] = pd.to_datetime(official_pred["sample_end_date"])
     official_pred["stock_id"] = official_pred["stock_id"].astype(str).str.zfill(6)
 
@@ -406,7 +420,7 @@ def main() -> None:
 
     report = "\n".join(
         [
-            "# D001 vs Official Baseline Same-Validation Comparison",
+            "# D-Series vs Official Baseline Same-Validation Comparison",
             "",
             f"- Validation source: `{d_pred_path}`",
             f"- Date range: {comparison['validation']['date_start']} to {comparison['validation']['date_end']}",
@@ -441,7 +455,7 @@ def main() -> None:
             "",
             "## Notes",
             "",
-            "- The official checkpoint is frozen from `candidate/THU-BDC2026-main`; it is scored on D001's validation dates and labels.",
+            "- The official checkpoint is frozen from `candidate/THU-BDC2026-main`; it is scored on the supplied D-series validation dates and labels.",
             "- The official package default portfolio emits top5 equal weights; the D-series source predictions are evaluated with top2 equal weights by default.",
             "- Top2/top5 diagnostic rows reuse each model's ranking scores while changing only the portfolio selection size.",
             "- Official baseline scores are all NaN on this validation input; official portfolio metrics therefore use the same `np.argsort(scores)[::-1]` fallback behavior used by its `predict.py`.",

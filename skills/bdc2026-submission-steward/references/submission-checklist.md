@@ -2,28 +2,49 @@
 
 ## Workspace Map
 
-- `candidate/`: submission candidates and official reference copies.
-- `candidate/C1_Submission_App_20260703/`: current cleaned candidate package, unless the user selects another target.
-- `candidate/Improvement_THU_original_candidate_20260705/`: archived original candidate reference.
-- `candidate/THU-BDC2026-main/`: official reference code copy.
-- `Experimental_WorkSpace/`: experiment outputs and candidate training runs.
-- `BaoStock_Datasets/`: BaoStock expanded data.
-- `Evaluation/`: centralized walk-forward, self-score, leakage-audit, scoreboard, and reporting framework.
-- `docs/`: competition PDFs.
+- `candidate/THU-BDC2026-main/`: protected official reference; name and contents
+  must remain unchanged.
+- `candidate/Candidate-C/`: current C-series fallback submission package.
+- `candidate/Candidate-D/`: current D-series submission candidate derived from
+  D01's fixed production refit.
+- `Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709/`:
+  retained D Alpha Champion source; legacy ID D02.
+- `Experimental_WorkSpace/`: research artifacts and shared runtime.
+- `BaoStock_Datasets/`: canonical local market data.
+- `Evaluation/`: shared evaluation code and small interpretable results.
+- `docs/`: official competition specifications.
+
+At most one current `Candidate-<series>` directory may exist per series. Do not
+create a parallel `candidates/` submission root.
 
 ## Clean Candidate Shape
 
-A final candidate should contain only package-relevant assets:
+A current package should contain only package-relevant assets:
 
-- `code/`
+- `code/src/`
 - `data/train.csv`
 - `data/test.csv`
 - `model/`
 - `output/result.csv`
-- `temp/`
+- empty `temp/`
 - `init.sh`, `train.sh`, `test.sh`
-- `pyproject.toml`, `uv.lock`, Docker files when present
-- `readme.md`, model notes, and manifest files required by the project
+- Docker and dependency files required by the package
+- `readme.md`, `MODEL_CARD.md`, and `code/submission_manifest.json`
+
+Exclude validation prediction matrices, ranked-score diagnostics, copied
+automation runs, research reports, old checkpoints, stdout/stderr logs,
+`__pycache__`, `.pyc`, absolute workspace paths, and network downloads.
+
+## Entrypoints
+
+- Paths must resolve relative to the package root.
+- Training starts from `data/train.csv`, uses a fixed seed, and writes the
+  package model artifacts.
+- Inference reads package-local data/model artifacts and writes
+  `output/result.csv`.
+- The code must run offline.
+- Official limits: training no more than 8 hours, inference no more than
+  5 minutes, and uncompressed package/Docker content below 10 GB.
 
 ## Result Constraints
 
@@ -31,12 +52,26 @@ A final candidate should contain only package-relevant assets:
 
 - columns exactly `stock_id,weight`
 - 1 to 5 rows
-- no duplicate stock IDs
+- unique six-digit stock IDs
 - non-negative weights
 - total weight less than or equal to 1
 
-The current risk-controlled target is five stocks with max single-stock weight near 0.5 unless the user explicitly changes the rule.
+## Validation
 
-## Validation Notes
+From the candidate root, run:
 
-Prefer running validation from the target candidate directory. If a command cannot run because dependencies are missing, report the exact dependency or environment gap instead of guessing.
+```powershell
+python -m compileall -q code
+python code/src/test.py --work-dir . --output output/result.csv
+python code/src/score_self.py --work-dir . --test-data data/test.csv --output output/result.csv
+python code/src/validate_submission.py --app-dir . --write-manifest
+python code/src/validate_submission.py --app-dir .
+```
+
+For a newly constructed family package, also reproduce the fixed-seed training
+when feasible and compare model state, scalers, and result hashes with the source
+refit. Record timing, size, dependency/CUDA status, hashes, and any robustness
+caveat.
+
+Do not mark a package `SUBMISSION_CANDIDATE_READY` until all applicable checks
+pass. Submission readiness does not by itself prove research improvement.

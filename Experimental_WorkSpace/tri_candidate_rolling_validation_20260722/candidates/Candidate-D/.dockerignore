@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.git/
+.venv/
+.vscode/
+.idea/
+temp/*
+!temp/.gitkeep
+output/*
+!output/result.csv

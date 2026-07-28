@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "canonical_id": "D01",
+  "canonical_name": "D01_FrozenResearchChampion_20260709",
+  "legacy_id": "D02",
+  "legacy_name": "D02_FrozenResearchChampion_20260709",
+  "renamed_at": "2026-07-20",
+  "role": "ALPHA_RESEARCH_CHAMPION",
+  "defensive_champion": null,
+  "source_program": "D_AUTO_CHAMPION_REF_20260709_110423",
+  "next_retained_id": "D02",
+  "paths": {
+    "active_config": "D01_ACTIVE_CONFIG.json",
+    "training_data": "data/train.csv",
+    "code": "code_snapshot/src",
+    "production_refit": "production_refit_20260703",
+    "submission_identity": "candidate/Candidate-D",
+    "immutable_legacy_manifest": "D02_SNAPSHOT_MANIFEST.json"
+  },
+  "hashes": {
+    "legacy_manifest_sha256": "4e4514bc15ca1c39736beae033738b80aa18002746253618f6eb7a7df5be4e5b",
+    "research_checkpoint_sha256": "8cf8d81774624eb3c02c1b62e1844c6c569133f4ffef3a7c9e6ff0571868a6cb",
+    "production_model_sha256": "bd85f504599d1995bd19f254c78136be1cf42e74a349f32ed6bdec5ccb0ef86d",
+    "production_scalers_sha256": "3d647f554d5e09c50e56488931deabd54ff08750edb645f265ff91d00bc62b38",
+    "training_data_sha256": "8e9cf37e5c53e4edafddc3f6f6b5843d4037376334e6f53cba068699095df1ad"
+  },
+  "provenance_policy": "Legacy frozen manifests and completed reports remain byte-preserved. This canonical overlay supplies the current ID and movable relative paths."
+}

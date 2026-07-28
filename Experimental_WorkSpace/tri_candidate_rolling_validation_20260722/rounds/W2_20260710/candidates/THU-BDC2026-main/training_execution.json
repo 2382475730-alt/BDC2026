@@ -1,0 +1,36 @@
+{
+  "round_id": "W2_20260710",
+  "candidate": "THU-BDC2026-main",
+  "status": "completed",
+  "train_data": {
+    "path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\tri_candidate_rolling_validation_20260722\\rounds\\W2_20260710\\candidates\\THU-BDC2026-main\\data\\train.csv",
+    "rows": 339352,
+    "stocks": 300,
+    "date_start": "2021-10-12",
+    "date_end": "2026-07-10",
+    "sha256": "7E8CC2F5A6B685F21CAB17BA3A929D6DB8B15FFC2A5461C6CE1C3ED4B36D7F12"
+  },
+  "training": {
+    "command": [
+      "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\shared_envs\\pytorch-cu128-py311\\Scripts\\python.exe",
+      "code/src/train.py"
+    ],
+    "cwd": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\tri_candidate_rolling_validation_20260722\\rounds\\W2_20260710\\candidates\\THU-BDC2026-main",
+    "started_at": "2026-07-22T08:17:02.133157+00:00",
+    "completed_at": "2026-07-22T08:26:18.573516+00:00",
+    "elapsed_seconds": 556.4395646999474,
+    "return_code": 0,
+    "log_path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\tri_candidate_rolling_validation_20260722\\rounds\\W2_20260710\\candidates\\THU-BDC2026-main\\logs\\training.log",
+    "log_sha256": "8D201DE4F40F52BE069E59D2CD603CF323B341D6180CE9FD6822803E9F4CCBD1"
+  },
+  "checkpoint_hashes": {
+    "model/60_158+39/best_model.pth": "6DF9FDA8136BF21E54836A47C4AD2B825F8044409D51692DAB06706A84B5956E",
+    "model/60_158+39/scaler.pkl": "E816230623A2204DCA1AC0786CBABDB0104CB70D4706EF868A30647D2D3D258F"
+  },
+  "config_hashes": {
+    "code/src/config.py": "063771449B6B3DB0528B9EA4723770A3328E3852099635A99039E366F4BFCEE6",
+    "model/60_158+39/config.json": "4E0937EED2307D6FC7B273CF7078D15267445E93BA2336D0B1FC81B3245A80F7"
+  },
+  "training_time_limit_seconds": 28800,
+  "training_time_passed": true
+}

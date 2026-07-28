@@ -1,0 +1,44 @@
+{
+  "schema_version": "e_feature_manifest_v1",
+  "created_date": "2026-07-15",
+  "feature_versions": {
+    "e1_dedup_v1": {
+      "description": "D02 causal stock features with all eight Factor aliases and duplicate open_close_spread removed",
+      "scaler_mode": "legacy_zero_before_fit_diagnostic",
+      "stock_window": 60
+    },
+    "e1_causal_scale_v1": {
+      "description": "e1_dedup_v1 plus finite-only train scaler and 60/120 history-valid features",
+      "scaler_mode": "fit_finite_train_then_transform_then_zero",
+      "stock_window": 60
+    },
+    "e1_full_v1": {
+      "description": "full preregistered E causal feature set with same-frequency daily beta/correlation",
+      "scaler_mode": "fit_finite_train_then_transform_then_zero",
+      "stock_window": 120,
+      "new_groups": ["cross_section_percentile", "robust_z_60_120", "momentum_slope_5_20_60", "drawdown_repair", "volatility_ratio", "volume_price_confirmation", "market_level_change"]
+    }
+  },
+  "removed_exact_duplicates": [
+    ["factor_momentum_short", "return_5"],
+    ["factor_momentum_medium", "return_20"],
+    ["factor_momentum_long", "return_60"],
+    ["factor_volatility", "volatility_20"],
+    ["factor_drawdown", "drawdown_20"],
+    ["factor_liquidity", "turnover"],
+    ["factor_volume_shock", "volume_ratio_20"],
+    ["factor_market_beta", "market_beta_20"],
+    ["open_close_spread", "intraday_return"]
+  ],
+  "routes": {
+    "stable": "stock features over last 60 or 120 observations",
+    "recent": "stock features over last 20 observations",
+    "market": "daily market level/change features over last 60 trading dates"
+  },
+  "cross_section_rank": {"method": "average", "pct": true, "nan_policy": "exclude"},
+  "robust_z": {"windows": [60, 120], "scale": 1.4826, "include_current": true},
+  "momentum_slope": {"windows": [5, 20, 60], "input": "log(close)", "intercept": true},
+  "truncation": {"atol": 1e-10, "required": true, "coverage": ["stock_features", "cross_section_features", "stable_sequence", "recent_sequence", "market_sequence", "missing_mask", "stock_order"]},
+  "runtime_fit_on_validation_forbidden": true
+}
+

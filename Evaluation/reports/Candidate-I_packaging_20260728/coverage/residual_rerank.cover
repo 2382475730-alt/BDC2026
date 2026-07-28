@@ -1,0 +1,344 @@
+>>>>>> from __future__ import annotations
+       
+>>>>>> from typing import Mapping, Sequence
+       
+>>>>>> import numpy as np
+>>>>>> import pandas as pd
+       
+>>>>>> from featurework import (
+           AMOUNT_COL,
+           CLOSE_COL,
+           DATE_COL,
+           HIGH_COL,
+           LOW_COL,
+           OPEN_COL,
+           STOCK_COL,
+           VOLUME_COL,
+       )
+       
+       
+>>>>>> ALLOWED_LAMBDAS = {
+>>>>>>     "lambda_momentum": (0.00, 0.05, 0.10, 0.15),
+>>>>>>     "lambda_volume": (0.00, 0.05, 0.10),
+>>>>>>     "lambda_reversal": (0.00, 0.05, 0.10),
+       }
+       
+       
+>>>>>> def _numeric(values: pd.Series) -> pd.Series:
+  110:     return pd.to_numeric(values, errors="coerce").replace(
+   55:         [np.inf, -np.inf],
+   55:         np.nan,
+           )
+       
+       
+>>>>>> def cross_section_rank(values: pd.Series) -> pd.Series:
+   28:     numeric = _numeric(values)
+   28:     finite = numeric.dropna()
+   28:     if finite.empty:
+>>>>>>         return pd.Series(0.0, index=values.index, dtype=float)
+   28:     lower = float(finite.quantile(0.025))
+   28:     upper = float(finite.quantile(0.975))
+   28:     ranked = (
+   28:         numeric.clip(lower=lower, upper=upper)
+   28:         .rank(method="average", pct=True, ascending=True)
+           )
+   28:     return (2.0 * (ranked - 0.5)).clip(-0.95, 0.95).fillna(0.0)
+       
+       
+>>>>>> def _positive_percentile(values: pd.Series) -> pd.Series:
+    9:     numeric = _numeric(values)
+    9:     finite = numeric.dropna()
+    9:     if finite.empty:
+>>>>>>         return pd.Series(0.0, index=values.index, dtype=float)
+    9:     lower = float(finite.quantile(0.025))
+    9:     upper = float(finite.quantile(0.975))
+    9:     return (
+    9:         numeric.clip(lower=lower, upper=upper)
+    9:         .rank(method="average", pct=True, ascending=True)
+    9:         .fillna(0.0)
+           )
+       
+       
+>>>>>> def _ols_residuals(
+           stock_returns: np.ndarray,
+           market_returns: np.ndarray,
+       ) -> np.ndarray:
+   36:     mask = np.isfinite(stock_returns) & np.isfinite(market_returns)
+   36:     if int(mask.sum()) < 40:
+>>>>>>         return np.full(stock_returns.shape, np.nan, dtype=np.float64)
+   36:     y = stock_returns[mask].astype(np.float64)
+   36:     x = market_returns[mask].astype(np.float64)
+   36:     design = np.column_stack([np.ones(len(x), dtype=np.float64), x])
+   36:     coefficients, *_ = np.linalg.lstsq(design, y, rcond=None)
+   36:     residuals = np.full(stock_returns.shape, np.nan, dtype=np.float64)
+   36:     residuals[mask] = y - design @ coefficients
+   36:     return residuals
+       
+       
+>>>>>> def _safe_log_ratio(value: float, reference: float) -> float:
+  144:     if (
+   72:         not np.isfinite(value)
+   72:         or not np.isfinite(reference)
+   72:         or value <= 0.0
+   72:         or reference <= 0.0
+           ):
+>>>>>>         return np.nan
+   72:     return float(np.log(value / reference))
+       
+       
+>>>>>> def build_lag1_residual_factors(
+           raw: pd.DataFrame,
+           decision_date: pd.Timestamp | str,
+       ) -> pd.DataFrame:
+    3:     required = {
+    3:         STOCK_COL,
+    3:         DATE_COL,
+    3:         OPEN_COL,
+    3:         CLOSE_COL,
+    3:         HIGH_COL,
+    3:         LOW_COL,
+    3:         VOLUME_COL,
+    3:         AMOUNT_COL,
+           }
+    3:     if missing := required.difference(raw.columns):
+>>>>>>         raise KeyError(f"missing residual-rerank columns: {sorted(missing)}")
+       
+    6:     frame = raw[list(required)].copy().rename(
+    3:         columns={
+    3:             STOCK_COL: "stock_id",
+    3:             DATE_COL: "date",
+    3:             OPEN_COL: "open",
+    3:             CLOSE_COL: "close",
+    3:             HIGH_COL: "high",
+    3:             LOW_COL: "low",
+    3:             VOLUME_COL: "volume",
+    3:             AMOUNT_COL: "amount",
+               }
+           )
+    3:     frame["date"] = pd.to_datetime(frame["date"]).dt.normalize()
+    3:     frame["stock_id"] = (
+    3:         frame["stock_id"]
+    3:         .astype(str)
+    3:         .str.replace(r"\.0$", "", regex=True)
+    3:         .str.zfill(6)
+           )
+   21:     for column in ("open", "close", "high", "low", "volume", "amount"):
+   18:         frame[column] = _numeric(frame[column])
+    3:     frame = (
+    3:         frame.drop_duplicates(["stock_id", "date"], keep="last")
+    3:         .sort_values(["stock_id", "date"])
+    3:         .reset_index(drop=True)
+           )
+       
+    3:     decision = pd.Timestamp(decision_date).normalize()
+    3:     prior_dates = sorted(frame.loc[frame["date"] < decision, "date"].unique())
+    3:     if not prior_dates:
+>>>>>>         raise ValueError("no lag-1 market data before the decision date")
+    3:     asof = pd.Timestamp(prior_dates[-1]).normalize()
+    3:     frame = frame.loc[frame["date"] <= asof].copy()
+    9:     frame["log_return"] = frame.groupby("stock_id", sort=False)[
+    3:         "close"
+   39:     ].transform(lambda values: np.log(values / values.shift(1)))
+    3:     market = frame.groupby("date", sort=True)["log_return"].mean()
+    3:     frame["market_log_return"] = frame["date"].map(market)
+       
+    3:     rows: list[dict[str, object]] = []
+   39:     for stock_id, full_group in frame.groupby("stock_id", sort=True):
+   36:         group = full_group.tail(61).copy()
+   36:         row: dict[str, object] = {
+   36:             "decision_date": decision,
+   36:             "factor_asof_date": asof,
+   36:             "stock_id": stock_id,
+               }
+   36:         if len(group) < 41:
+>>>>>>             rows.append(row)
+>>>>>>             continue
+       
+   36:         regression = group.tail(60)
+   72:         residuals = _ols_residuals(
+   36:             regression["log_return"].to_numpy(dtype=np.float64),
+   36:             regression["market_log_return"].to_numpy(dtype=np.float64),
+               )
+   36:         valid_residuals = residuals[np.isfinite(residuals)]
+   36:         current = group.iloc[-1]
+   36:         previous = group.iloc[-2]
+   36:         prior20 = group.iloc[-21:-1]
+   36:         high_reference = float(prior20["high"].max())
+   36:         breakout = (
+   72:             float(current["close"]) / high_reference - 1.0
+   72:             if np.isfinite(high_reference) and high_reference > 0.0
+>>>>>>             else np.nan
+               )
+   72:         volume_confirmation = _safe_log_ratio(
+   36:             float(current["volume"]),
+   36:             float(prior20["volume"].median()),
+               )
+   72:         amount_confirmation = _safe_log_ratio(
+   36:             float(current["amount"]),
+   36:             float(prior20["amount"].median()),
+               )
+   72:         gap_up = max(
+   36:             float(current["open"]) / float(previous["close"]) - 1.0,
+   36:             0.0,
+               )
+   72:         intraday_fade = max(
+   36:             1.0 - float(current["close"]) / float(current["open"]),
+   36:             0.0,
+               )
+   72:         price_range = max(
+   36:             float(current["high"]) - float(current["low"]),
+   36:             1e-12,
+               )
+  108:         upper_shadow = max(
+   72:             float(current["high"])
+   36:             - max(float(current["open"]), float(current["close"])),
+   36:             0.0,
+   36:         ) / price_range
+   72:         row.update(
+   36:             {
+                       "residual_5": (
+   36:                     float(valid_residuals[-5:].sum())
+   36:                     if len(valid_residuals) >= 20
+>>>>>>                     else np.nan
+                       ),
+                       "residual_20": (
+   36:                     float(valid_residuals[-20:].sum())
+   36:                     if len(valid_residuals) >= 20
+>>>>>>                     else np.nan
+                       ),
+                       "residual_20_ex5": (
+   36:                     float(valid_residuals[-20:-5].sum())
+   36:                     if len(valid_residuals) >= 20
+>>>>>>                     else np.nan
+                       ),
+   36:                 "breakout_20": breakout,
+                       "signed_volume_confirmation": (
+   72:                     float(np.sign(breakout) * max(volume_confirmation, 0.0))
+   36:                     if np.isfinite(breakout)
+   36:                     and np.isfinite(volume_confirmation)
+>>>>>>                     else np.nan
+                       ),
+                       "signed_amount_confirmation": (
+   72:                     float(np.sign(breakout) * max(amount_confirmation, 0.0))
+   36:                     if np.isfinite(breakout)
+   36:                     and np.isfinite(amount_confirmation)
+>>>>>>                     else np.nan
+                       ),
+   36:                 "gap_fade": gap_up * intraday_fade,
+   36:                 "upper_shadow": upper_shadow,
+                       "short_reversal": (
+   36:                     max(-float(valid_residuals[-3:].sum()), 0.0)
+   36:                     if len(valid_residuals) >= 3
+>>>>>>                     else np.nan
+                       ),
+                   }
+               )
+   36:         rows.append(row)
+       
+    3:     factors = pd.DataFrame(rows)
+    9:     momentum_components = pd.concat(
+    3:         [
+    3:             cross_section_rank(factors["residual_5"]),
+    3:             cross_section_rank(factors["residual_20"]),
+    3:             cross_section_rank(factors["residual_20_ex5"]),
+               ],
+    3:         axis=1,
+    3:     ).mean(axis=1)
+    3:     factors["momentum_rank"] = cross_section_rank(momentum_components)
+    3:     volume_components = (
+    9:         0.50 * cross_section_rank(factors["breakout_20"])
+    3:         + 0.25 * cross_section_rank(factors["signed_volume_confirmation"])
+    3:         + 0.25 * cross_section_rank(factors["signed_amount_confirmation"])
+           )
+    3:     factors["volume_rank"] = cross_section_rank(volume_components)
+    3:     leader = factors["momentum_rank"].clip(lower=0.0)
+    9:     risk_raw = leader * (
+    9:         _positive_percentile(factors["gap_fade"])
+    3:         + _positive_percentile(factors["upper_shadow"])
+    3:         + _positive_percentile(factors["short_reversal"])
+    3:     ) / 3.0
+    3:     factors["reversal_rank"] = cross_section_rank(risk_raw)
+    3:     component_columns = [
+               "residual_5",
+               "residual_20",
+               "residual_20_ex5",
+               "breakout_20",
+               "signed_volume_confirmation",
+               "signed_amount_confirmation",
+               "gap_fade",
+               "upper_shadow",
+               "short_reversal",
+           ]
+    3:     factors["factor_complete"] = factors[component_columns].notna().all(axis=1)
+    3:     return factors.sort_values("stock_id").reset_index(drop=True)
+       
+       
+>>>>>> def _validate_lambdas(lambdas: Mapping[str, float]) -> None:
+    5:     for name, allowed in ALLOWED_LAMBDAS.items():
+    4:         value = float(lambdas[name])
+    4:         if value not in allowed:
+    1:             raise ValueError(f"{name}={value} is outside the preregistered grid")
+       
+       
+>>>>>> def build_residual_rerank_portfolio(
+           *,
+           raw: pd.DataFrame,
+           decision_date: pd.Timestamp | str,
+           stock_codes: Sequence[object],
+           model_scores: Sequence[float],
+           lambdas: Mapping[str, float],
+       ) -> tuple[pd.DataFrame, dict[str, object]]:
+    2:     _validate_lambdas(lambdas)
+    2:     scores = pd.DataFrame(
+    1:         {
+   27:             "stock_id": [
+   13:                 str(value).replace(".0", "").zfill(6) for value in stock_codes
+                   ],
+    1:             "model_score": np.asarray(model_scores, dtype=np.float64),
+               }
+           )
+    1:     if scores["stock_id"].duplicated().any():
+>>>>>>         raise ValueError("Candidate-D score export contains duplicate stocks")
+    1:     factors = build_lag1_residual_factors(raw, decision_date)
+    2:     merged = scores.merge(
+    1:         factors,
+    1:         on="stock_id",
+    1:         how="left",
+    1:         validate="one_to_one",
+           )
+    1:     required_ranks = ["momentum_rank", "volume_rank", "reversal_rank"]
+    1:     if merged[required_ranks].isna().any().any():
+>>>>>>         raise ValueError("one or more model stocks lack residual-factor ranks")
+    1:     merged["d_rank_score"] = cross_section_rank(merged["model_score"])
+    1:     merged["alpha_score"] = (
+    4:         merged["d_rank_score"]
+    1:         + float(lambdas["lambda_momentum"]) * merged["momentum_rank"]
+    1:         + float(lambdas["lambda_volume"]) * merged["volume_rank"]
+    1:         - float(lambdas["lambda_reversal"]) * merged["reversal_rank"]
+           )
+    1:     selected = (
+    2:         merged.sort_values(
+    1:             ["alpha_score", "model_score", "stock_id"],
+    1:             ascending=[False, False, True],
+               )
+    1:         .head(5)
+    1:         .copy()
+           )
+    1:     if len(selected) != 5:
+>>>>>>         raise ValueError("residual rerank requires five selected stocks")
+    1:     result = selected[["stock_id"]].copy()
+    1:     result["weight"] = 0.20
+    1:     diagnostics = {
+    1:         "full_score_count": int(len(scores)),
+    2:         "factor_asof_date": pd.Timestamp(
+    1:             factors["factor_asof_date"].iloc[0]
+    1:         ).strftime("%Y-%m-%d"),
+    1:         "factor_complete_count": int(factors["factor_complete"].sum()),
+    1:         "factor_universe_count": int(len(factors)),
+    2:         "selected_incomplete_factor_count": int(
+    1:             (~selected["factor_complete"].fillna(False)).sum()
+               ),
+    1:         "hhi": float(np.square(result["weight"]).sum()),
+           }
+    1:     return result, diagnostics
+       

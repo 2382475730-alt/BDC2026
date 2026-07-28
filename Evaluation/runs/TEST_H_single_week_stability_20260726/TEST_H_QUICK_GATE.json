@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "primary_policy": "TOP5_EQUAL",
+  "status": "REJECTED_AT_QUICK_GATE",
+  "metrics": {
+    "positive_folds": 1,
+    "positive_folds_by_seed": {
+      "20260726": 1,
+      "20260727": 3
+    },
+    "recent_fold_id": "2026Q1",
+    "recent_fold_excess": 0.0028665182180702656,
+    "seed_mean_excess": [
+      -0.0003614611733628777,
+      0.0008749812166681698
+    ],
+    "strict_weekly_win_rate": 0.09183673469387756,
+    "excess_sum_remove_best2": -0.11381443007849155,
+    "candidate_cvar20": -0.08833157902437958,
+    "control_cvar20": -0.09371165042597564,
+    "hhi": 0.20000000000000004,
+    "best_positive_contribution": 0.06630176015462524,
+    "paired_decision_count": 98
+  },
+  "checks": {
+    "positive_folds_at_least_3_of_4": false,
+    "recent_fold_positive": true,
+    "both_seed_means_positive": false,
+    "strict_weekly_win_rate_at_least_55pct": false,
+    "excess_positive_after_best_two_removed": false,
+    "cvar20_not_worse_than_control": true,
+    "hhi_at_most_0_30": true,
+    "best_week_at_most_20pct_positive_sum": true
+  },
+  "failed_checks": [
+    "positive_folds_at_least_3_of_4",
+    "both_seed_means_positive",
+    "strict_weekly_win_rate_at_least_55pct",
+    "excess_positive_after_best_two_removed"
+  ],
+  "serious_authorized": false,
+  "sealed_holdout_access_count": 0,
+  "blocked_data_branches": {
+    "TEST_H2_FUTURES_INDUSTRY_RESIDUAL": "BLOCKED_DATA_GATE",
+    "TEST_H3_FINANCIAL_EVENT_RESIDUAL": "BLOCKED_DATA_GATE",
+    "TEST_H4_CORPORATE_EVENT_RESIDUAL": "BLOCKED_DATA_GATE"
+  }
+}

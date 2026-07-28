@@ -1,0 +1,62 @@
+{
+  "schema_version": 2,
+  "updated_at": "2026-07-20",
+  "family": "E",
+  "purpose": "Concise terminal registry after failed-run artifact cleanup",
+  "pre_cleanup_registry": {
+    "sha256": "180fcf35e2b97e60255305a995f7231d4edd3f2ebd5ea6a643047e71ef2bd751",
+    "inventory": "_cleanup_reports/workspace_cleanup_renumber_20260717.json",
+    "retirement_report": "_cleanup_reports/retired_model_conclusions_20260720.md"
+  },
+  "numbering": {
+    "format": "E<two-digit-id>_<role-or-method>_<date>",
+    "run_ids_do_not_consume_numbers": true,
+    "retained_model": null,
+    "next_retained_id": "E01"
+  },
+  "source_champion": {
+    "canonical_id": "D01",
+    "legacy_id": "D02",
+    "path": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709"
+  },
+  "programs": [
+    {
+      "program_id": "E_R1",
+      "name": "Recent Regime Mixture",
+      "status": "REJECTED",
+      "decision": "REJECT_E_ALPHA_CHAMPION",
+      "quick_variants": 6,
+      "serious_runs": 0,
+      "production_refit_created": false,
+      "numbered_snapshot_created": false,
+      "recent_holdout_opened": false,
+      "report": "Experimental_WorkSpace/candidates_E/E_R1_AUTO_ITERATION_REPORT_CN.md",
+      "report_sha256": "781cf9eea3a88e296fecbb8d873fc9efa93f9c28b53006e3cc949b86eb94e618",
+      "reason": "No preregistered Quick variant passed every frozen gate; E2 failed the without-best-two-weeks gate."
+    },
+    {
+      "program_id": "E_POSITION_R2",
+      "name": "Frozen-score exact-five-stock weighting study",
+      "status": "REJECTED",
+      "decision": "NO_FIVE_STOCK_POLICY_EXCEEDS_E2",
+      "production_refit_created": false,
+      "numbered_snapshot_created": false,
+      "legacy_holdout_opened": false,
+      "recent_holdout_opened": false,
+      "report": "Experimental_WorkSpace/candidates_E/E_POSITION_R2_REPORT_CN.md",
+      "report_sha256": "5ee3bebfe55e244c59acddaa6afd8ee717ec89b7fdaf8c68b7cc121e71f383d3",
+      "reason": "The highest-mean-return policy failed PDR, 2026Q1, without-best-two-weeks, T+5-retention, and official same-protocol gates."
+    }
+  ],
+  "retention": {
+    "failed_weights_retained": false,
+    "run_subdirectories_retained": 0,
+    "derived_data_snapshot_retained": false,
+    "lightweight_code_preregistration_manifests_audits_and_reports_retained": true
+  },
+  "champion_effect": {
+    "d_alpha_champion": "D01",
+    "d_defensive_champion": null,
+    "candidate_created": false
+  }
+}

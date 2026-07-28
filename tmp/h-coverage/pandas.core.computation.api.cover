@@ -1,0 +1,2 @@
+    1: __all__ = ["eval"]
+    1: from pandas.core.computation.eval import eval

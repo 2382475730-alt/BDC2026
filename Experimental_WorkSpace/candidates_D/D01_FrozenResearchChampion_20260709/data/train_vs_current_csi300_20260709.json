@@ -1,0 +1,22 @@
+{
+  "train_path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_D\\data_snapshots\\c0_train_plus_baostock_future_20260703.csv",
+  "train_md5": "78759d892c95eb8ba547c2df9a8fca5a",
+  "train_rows": 388452,
+  "train_unique_stock_count": 300,
+  "train_date_start": "2021-01-04",
+  "train_date_end": "2026-07-03",
+  "latest_date": "2026-07-03",
+  "latest_date_stock_count": 300,
+  "current_csi300_count": 300,
+  "eastmoney_success": true,
+  "common_count": 300,
+  "extra_in_train_count": 0,
+  "missing_from_train_count": 0,
+  "extra_in_latest_date_count": 0,
+  "missing_from_latest_date_count": 0,
+  "extra_in_train": [],
+  "missing_from_train": [],
+  "extra_in_latest_date": [],
+  "missing_from_latest_date": [],
+  "source_url": "https://datacenter-web.eastmoney.com/api/data/v1/get?reportName=RPT_INDEX_TS_COMPONENT&columns=SECUCODE%2CSECURITY_CODE%2CTYPE%2CSECURITY_NAME_ABBR%2CCLOSE_PRICE%2CINDUSTRY%2CREGION%2CWEIGHT%2CEPS%2CBPS%2CROE%2CTOTAL_SHARES%2CFREE_SHARES%2CFREE_CAP&quoteColumns=f2%2Cf3&quoteType=0&source=WEB&client=WEB&filter=%28TYPE%3D%221%22%29&pageNumber=1&pageSize=500&sortColumns=SECURITY_CODE&sortTypes=1"
+}

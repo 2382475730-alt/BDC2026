@@ -1,0 +1,30 @@
+{
+  "checked_at_local_date": "2026-07-09",
+  "train_path": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU\\Experimental_WorkSpace\\candidates_D\\data_snapshots\\c0_train_plus_baostock_future_20260703.csv",
+  "train_md5": "78759d892c95eb8ba547c2df9a8fca5a",
+  "train_rows": 388452,
+  "train_unique_stock_count": 300,
+  "train_date_start": "2021-01-04",
+  "train_date_end": "2026-07-03",
+  "latest_date": "2026-07-03",
+  "latest_date_stock_count": 300,
+  "official_csi_source": "https://oss-ch.csindex.com.cn/static/html/csindex/public/uploads/file/autofile/cons/000300cons.xls",
+  "official_csi_file_date_values": [
+    "20260709"
+  ],
+  "official_csi300_count": 300,
+  "eastmoney_source_url": "https://datacenter-web.eastmoney.com/api/data/v1/get?reportName=RPT_INDEX_TS_COMPONENT&columns=SECUCODE%2CSECURITY_CODE%2CTYPE%2CSECURITY_NAME_ABBR%2CWEIGHT&quoteColumns=f2%2Cf3&quoteType=0&source=WEB&client=WEB&filter=%28TYPE%3D%221%22%29&pageNumber=1&pageSize=500&sortColumns=SECURITY_CODE&sortTypes=1",
+  "eastmoney_csi300_count": 300,
+  "eastmoney_vs_official_extra_count": 0,
+  "eastmoney_vs_official_missing_count": 0,
+  "train_vs_official_common_count": 300,
+  "train_vs_official_extra_count": 0,
+  "train_vs_official_missing_count": 0,
+  "latest_date_vs_official_common_count": 300,
+  "latest_date_vs_official_extra_count": 0,
+  "latest_date_vs_official_missing_count": 0,
+  "extra_in_train_not_official": [],
+  "official_missing_from_train": [],
+  "extra_on_latest_date_not_official": [],
+  "official_missing_on_latest_date": []
+}

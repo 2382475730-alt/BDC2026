@@ -1,0 +1,84 @@
+{
+  "experiment_id": "TEST_H_QUICK_PLACEHOLDER",
+  "seed": 20260726,
+  "data": {
+    "train_csv": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709/data/train.csv",
+    "industry_csv": "",
+    "futures_csv": "",
+    "date_col": "日期",
+    "stock_col": "股票代码",
+    "min_stocks_per_day": 10
+  },
+  "label": {
+    "horizon": 5,
+    "buy_offset": 1,
+    "sell_offset": 5
+  },
+  "features": {
+    "version": "d_market_v1",
+    "sequence_length": 60,
+    "enable_industry": false,
+    "enable_futures": false,
+    "industry_missing_label": "UNKNOWN",
+    "futures_lag_days": 0
+  },
+  "model": {
+    "d_model": 128,
+    "nhead": 4,
+    "num_layers": 2,
+    "dim_feedforward": 256,
+    "dropout": 0.1,
+    "use_factor_encoder": false
+  },
+  "loss": {
+    "objective_mode": "legacy",
+    "ranking_weight": 1.0,
+    "temperature": 1.0,
+    "pairwise_weight": 0.25,
+    "pairwise_margin": 0.05,
+    "portfolio_return_weight": 0.05,
+    "portfolio_volatility_weight": 0.01,
+    "topk_return_weight": 0.05,
+    "downside_weight": 0.08,
+    "downside_temperature": 0.02,
+    "cvar_weight": 0.04,
+    "cvar_alpha": 0.20,
+    "positive_tail_weight": 0.02,
+    "positive_tail_cap": 0.08,
+    "topk": 5,
+    "topk_temperature": 0.10
+  },
+  "portfolio": {
+    "top_k": 5,
+    "mode": "topk_equal",
+    "softmax_temperature": 1.0,
+    "max_weight": 1.0,
+    "min_weight": 0.0
+  },
+  "training": {
+    "batch_size": 4,
+    "num_epochs": 3,
+    "learning_rate": 0.00005,
+    "weight_decay": 0.00001,
+    "grad_clip": 5.0,
+    "num_workers": 0,
+    "early_stop_patience": 3,
+    "checkpoint_metric": "val_stability_score",
+    "outer_evaluation_once": false
+  },
+  "validation": {
+    "mode": "purged_walk_forward",
+    "train_start": "2022-01-04",
+    "training_end": "2024-09-20",
+    "folds": [
+      [
+        "INNER_PLACEHOLDER",
+        "2024-10-01",
+        "2024-12-24"
+      ]
+    ]
+  },
+  "output": {
+    "run_dir": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H_QUICK_PLACEHOLDER"
+  }
+}

@@ -1,0 +1,65 @@
+    1: """
+       Data IO api
+       """
+       
+    1: from pandas.io.clipboards import read_clipboard
+    1: from pandas.io.excel import (
+           ExcelFile,
+           ExcelWriter,
+           read_excel,
+       )
+    1: from pandas.io.feather_format import read_feather
+    1: from pandas.io.gbq import read_gbq
+    1: from pandas.io.html import read_html
+    1: from pandas.io.json import read_json
+    1: from pandas.io.orc import read_orc
+    1: from pandas.io.parquet import read_parquet
+    1: from pandas.io.parsers import (
+           read_csv,
+           read_fwf,
+           read_table,
+       )
+    1: from pandas.io.pickle import (
+           read_pickle,
+           to_pickle,
+       )
+    1: from pandas.io.pytables import (
+           HDFStore,
+           read_hdf,
+       )
+    1: from pandas.io.sas import read_sas
+    1: from pandas.io.spss import read_spss
+    1: from pandas.io.sql import (
+           read_sql,
+           read_sql_query,
+           read_sql_table,
+       )
+    1: from pandas.io.stata import read_stata
+    1: from pandas.io.xml import read_xml
+       
+    1: __all__ = [
+           "ExcelFile",
+           "ExcelWriter",
+           "HDFStore",
+           "read_clipboard",
+           "read_csv",
+           "read_excel",
+           "read_feather",
+           "read_fwf",
+           "read_gbq",
+           "read_hdf",
+           "read_html",
+           "read_json",
+           "read_orc",
+           "read_parquet",
+           "read_pickle",
+           "read_sas",
+           "read_spss",
+           "read_sql",
+           "read_sql_query",
+           "read_sql_table",
+           "read_stata",
+           "read_table",
+           "read_xml",
+           "to_pickle",
+       ]

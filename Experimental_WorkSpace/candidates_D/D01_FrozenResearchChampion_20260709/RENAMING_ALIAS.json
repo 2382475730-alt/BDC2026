@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "renamed_at": "2026-07-20",
+  "canonical": {
+    "research_id": "D01",
+    "research_directory": "D01_FrozenResearchChampion_20260709",
+    "submission_directory": "candidate/Candidate-D"
+  },
+  "legacy_aliases": [
+    {
+      "legacy_id": "D02",
+      "legacy_directory": "D02_FrozenResearchChampion_20260709",
+      "reason": "Workspace cleanup compacted retained D-series research snapshots."
+    }
+  ],
+  "next_retained_research_id": "D02",
+  "rules": {
+    "research_pattern": "<family><two digits>_<descriptive_name>",
+    "only_retained_snapshots_consume_ids": true,
+    "submission_pattern": "candidate/Candidate-<family>",
+    "one_submission_candidate_per_family": true
+  },
+  "audit_manifest": "_cleanup_reports/workspace_cleanup_renumber_20260717.json"
+}

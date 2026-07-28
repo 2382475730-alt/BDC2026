@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "status": "PASS",
+  "checks": {
+    "protected_directories_unchanged": true,
+    "all_new_experiment_ids_test": true,
+    "all_prediction_markers_test": true,
+    "only_frozen_d01_data_configured": true,
+    "configured_validation_windows_unsealed": true,
+    "materialized_prediction_dates_unsealed": true,
+    "training_labels_purged_before_validation": true,
+    "scalers_fit_on_fold_training_only": true,
+    "outer_evaluation_count_exactly_one": true,
+    "single_model_variable_only": true,
+    "no_h01_path": true,
+    "no_serious_path": true,
+    "no_formal_candidate_modification": true,
+    "sealed_holdout_access_count_zero": true,
+    "finalist_lock_not_created": true
+  },
+  "failed_checks": [],
+  "sealed_holdout_access_count": 0,
+  "h01_paths": [],
+  "serious_paths": [],
+  "outer_summary_count": 2,
+  "configs": [
+    {
+      "path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/sentinel/S20260726/2025Q2/inner/config.json",
+      "experiment_id": "TEST_H5_PREDICTED_BOUNDARY_OBJECTIVE_V2_S20260726_2025Q2_INNER",
+      "marker_test": true,
+      "data_path": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709/data/train.csv",
+      "validation_folds": [
+        [
+          "2025Q2_INNER",
+          "2025-01-03",
+          "2025-03-24"
+        ]
+      ],
+      "validation_unsealed": true
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/sentinel/S20260726/2025Q2/outer/config.json",
+      "experiment_id": "TEST_H5_PREDICTED_BOUNDARY_OBJECTIVE_V2_S20260726_2025Q2_OUTER",
+      "marker_test": true,
+      "data_path": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709/data/train.csv",
+      "validation_folds": [
+        [
+          "2025Q2_OUTER",
+          "2025-04-01",
+          "2025-06-30"
+        ]
+      ],
+      "validation_unsealed": true
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/sentinel/S20260726/2026Q1/inner/config.json",
+      "experiment_id": "TEST_H5_PREDICTED_BOUNDARY_OBJECTIVE_V2_S20260726_2026Q1_INNER",
+      "marker_test": true,
+      "data_path": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709/data/train.csv",
+      "validation_folds": [
+        [
+          "2026Q1_INNER",
+          "2025-07-01",
+          "2025-09-23"
+        ]
+      ],
+      "validation_unsealed": true
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/sentinel/S20260726/2026Q1/outer/config.json",
+      "experiment_id": "TEST_H5_PREDICTED_BOUNDARY_OBJECTIVE_V2_S20260726_2026Q1_OUTER",
+      "marker_test": true,
+      "data_path": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709/data/train.csv",
+      "validation_folds": [
+        [
+          "2026Q1_OUTER",
+          "2026-01-05",
+          "2026-03-27"
+        ]
+      ],
+      "validation_unsealed": true
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/smoke/outer_once/config.json",
+      "experiment_id": "TEST_H5_PREDICTED_BOUNDARY_OBJECTIVE_V2_S20260726_2025Q2_OUTER",
+      "marker_test": true,
+      "data_path": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709/data/train.csv",
+      "validation_folds": [
+        [
+          "2025Q2_OUTER",
+          "2025-04-01",
+          "2025-06-30"
+        ]
+      ],
+      "validation_unsealed": true
+    }
+  ],
+  "splits": [
+    {
+      "path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/sentinel/S20260726/2025Q2/inner/split_metadata.json",
+      "train_label_end_before_val_start": true,
+      "scaler_fit_scope": "fold_training_samples_only",
+      "cache_status": "WRITE"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/sentinel/S20260726/2025Q2/outer/split_metadata.json",
+      "train_label_end_before_val_start": true,
+      "scaler_fit_scope": "fold_training_samples_only",
+      "cache_status": "WRITE"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/sentinel/S20260726/2026Q1/inner/split_metadata.json",
+      "train_label_end_before_val_start": true,
+      "scaler_fit_scope": "fold_training_samples_only",
+      "cache_status": "WRITE"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/sentinel/S20260726/2026Q1/outer/split_metadata.json",
+      "train_label_end_before_val_start": true,
+      "scaler_fit_scope": "fold_training_samples_only",
+      "cache_status": "WRITE"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/smoke/outer_once/split_metadata.json",
+      "train_label_end_before_val_start": true,
+      "scaler_fit_scope": "fold_training_samples_only",
+      "cache_status": "WRITE"
+    }
+  ],
+  "predictions": [
+    {
+      "path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/sentinel/S20260726/2025Q2/inner/best_val_predictions.csv",
+      "rows": 15147,
+      "date_start": "2025-01-03",
+      "date_end": "2025-03-24",
+      "dates_unsealed": true,
+      "marker_test": true
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/sentinel/S20260726/2025Q2/inner/latest_val_predictions.csv",
+      "rows": 15147,
+      "date_start": "2025-01-03",
+      "date_end": "2025-03-24",
+      "dates_unsealed": true,
+      "marker_test": true
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/sentinel/S20260726/2025Q2/outer/best_val_predictions.csv",
+      "rows": 17880,
+      "date_start": "2025-04-01",
+      "date_end": "2025-06-30",
+      "dates_unsealed": true,
+      "marker_test": true
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/sentinel/S20260726/2025Q2/outer/latest_val_predictions.csv",
+      "rows": 17880,
+      "date_start": "2025-04-01",
+      "date_end": "2025-06-30",
+      "dates_unsealed": true,
+      "marker_test": true
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/sentinel/S20260726/2026Q1/inner/best_val_predictions.csv",
+      "rows": 18178,
+      "date_start": "2025-07-01",
+      "date_end": "2025-09-23",
+      "dates_unsealed": true,
+      "marker_test": true
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/sentinel/S20260726/2026Q1/inner/latest_val_predictions.csv",
+      "rows": 18178,
+      "date_start": "2025-07-01",
+      "date_end": "2025-09-23",
+      "dates_unsealed": true,
+      "marker_test": true
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/sentinel/S20260726/2026Q1/outer/best_val_predictions.csv",
+      "rows": 16162,
+      "date_start": "2026-01-05",
+      "date_end": "2026-03-27",
+      "dates_unsealed": true,
+      "marker_test": true
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/sentinel/S20260726/2026Q1/outer/latest_val_predictions.csv",
+      "rows": 16162,
+      "date_start": "2026-01-05",
+      "date_end": "2026-03-27",
+      "dates_unsealed": true,
+      "marker_test": true
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/smoke/outer_once/best_val_predictions.csv",
+      "rows": 17880,
+      "date_start": "2025-04-01",
+      "date_end": "2025-06-30",
+      "dates_unsealed": true,
+      "marker_test": true
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/automation_runs/TEST_H5_PREDICTED_BOUNDARY_20260727/smoke/outer_once/latest_val_predictions.csv",
+      "rows": 17880,
+      "date_start": "2025-04-01",
+      "date_end": "2025-06-30",
+      "dates_unsealed": true,
+      "marker_test": true
+    }
+  ],
+  "single_variable_audit": {
+    "changed": [
+      "loss.objective_mode",
+      "loss.boundary_hard_negative_k"
+    ],
+    "semantic_variable": "boundary negative selection",
+    "all_other_h1_loss_terms_and_weights_equal": true
+  }
+}

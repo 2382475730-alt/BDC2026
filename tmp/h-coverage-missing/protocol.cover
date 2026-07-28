@@ -1,0 +1,367 @@
+    1: from __future__ import annotations
+       
+    1: from dataclasses import dataclass
+    1: from typing import Iterable, Mapping, Sequence
+       
+    1: import numpy as np
+    1: import pandas as pd
+       
+       
+    1: SEALED_RANGES = (
+           ("2025-10-01", "2025-12-31"),
+           ("2026-04-03", "2026-07-03"),
+       )
+    1: ALLOWED_RESIDUAL_LAMBDAS = (0.0, 0.05, 0.10)
+       
+       
+    3: @dataclass(frozen=True)
+    2: class DevelopmentFold:
+    1:     fold_id: str
+    1:     train_end: str
+    1:     inner_start: str
+    1:     inner_end: str
+    1:     outer_train_end: str
+    1:     outer_start: str
+    1:     outer_end: str
+       
+       
+    1: DEVELOPMENT_FOLDS = (
+    2:     DevelopmentFold(
+    1:         "2025Q1",
+    1:         "2024-09-20",
+    1:         "2024-10-01",
+    1:         "2024-12-24",
+    1:         "2024-12-24",
+    1:         "2025-01-03",
+    1:         "2025-03-31",
+           ),
+    2:     DevelopmentFold(
+    1:         "2025Q2",
+    1:         "2024-12-24",
+    1:         "2025-01-03",
+    1:         "2025-03-24",
+    1:         "2025-03-24",
+    1:         "2025-04-01",
+    1:         "2025-06-30",
+           ),
+    2:     DevelopmentFold(
+    1:         "2025Q3",
+    1:         "2025-03-24",
+    1:         "2025-04-01",
+    1:         "2025-06-23",
+    1:         "2025-06-23",
+    1:         "2025-07-01",
+    1:         "2025-09-30",
+           ),
+    2:     DevelopmentFold(
+    1:         "2026Q1",
+    1:         "2025-06-23",
+    1:         "2025-07-01",
+    1:         "2025-09-23",
+    1:         "2025-09-23",
+    1:         "2026-01-05",
+    1:         "2026-03-27",
+           ),
+       )
+       
+       
+    1: def _overlaps(
+           start: pd.Timestamp,
+           end: pd.Timestamp,
+           blocked_start: pd.Timestamp,
+           blocked_end: pd.Timestamp,
+       ) -> bool:
+   32:     return start <= blocked_end and end >= blocked_start
+       
+       
+    1: def validate_fold_plan(folds: Sequence[DevelopmentFold]) -> None:
+    2:     if len(folds) != 4:
+>>>>>>         raise ValueError("the preregistered development plan must contain four folds")
+   10:     for fold in folds:
+    8:         train_end = pd.Timestamp(fold.train_end)
+    8:         inner_start = pd.Timestamp(fold.inner_start)
+    8:         inner_end = pd.Timestamp(fold.inner_end)
+    8:         outer_train_end = pd.Timestamp(fold.outer_train_end)
+    8:         outer_start = pd.Timestamp(fold.outer_start)
+    8:         outer_end = pd.Timestamp(fold.outer_end)
+    8:         if not train_end < inner_start <= inner_end < outer_start <= outer_end:
+>>>>>>             raise ValueError(f"invalid chronological order in {fold.fold_id}")
+    8:         if not outer_train_end < outer_start:
+>>>>>>             raise ValueError(f"outer training leaks into {fold.fold_id}")
+   24:         for blocked_start, blocked_end in SEALED_RANGES:
+   16:             blocked_left = pd.Timestamp(blocked_start)
+   16:             blocked_right = pd.Timestamp(blocked_end)
+   16:             if _overlaps(inner_start, inner_end, blocked_left, blocked_right):
+>>>>>>                 raise ValueError(f"inner window overlaps sealed labels in {fold.fold_id}")
+   16:             if _overlaps(outer_start, outer_end, blocked_left, blocked_right):
+>>>>>>                 raise ValueError(f"outer window overlaps sealed labels in {fold.fold_id}")
+   16:             if blocked_left <= outer_train_end <= blocked_right:
+>>>>>>                 raise ValueError(f"outer training ends inside sealed labels in {fold.fold_id}")
+       
+       
+    1: def filter_development_dates(
+           dates: Iterable[pd.Timestamp | str],
+           end: pd.Timestamp | str,
+    1:     start: pd.Timestamp | str | None = None,
+       ) -> list[pd.Timestamp]:
+           """Return only label dates authorized for development materialization."""
+       
+    1:     lower = pd.Timestamp(start).normalize() if start is not None else None
+    1:     upper = pd.Timestamp(end).normalize()
+    1:     allowed: list[pd.Timestamp] = []
+  138:     for value in dates:
+  137:         current = pd.Timestamp(value).normalize()
+  137:         if current > upper or (lower is not None and current < lower):
+>>>>>>             continue
+  758:         if any(
+  208:             pd.Timestamp(blocked_start) <= current <= pd.Timestamp(blocked_end)
+  345:             for blocked_start, blocked_end in SEALED_RANGES
+               ):
+   69:             continue
+   68:         allowed.append(current)
+    1:     return sorted(set(allowed))
+       
+       
+    1: def should_evaluate_validation(
+           epoch: int,
+           selected_epochs: int,
+           outer_once: bool,
+       ) -> bool:
+    6:     return not outer_once or int(epoch) == int(selected_epochs)
+       
+       
+    1: def apply_portfolio_policy(
+           frame: pd.DataFrame,
+           k: int,
+    1:     weighting: str = "equal",
+       ) -> pd.DataFrame:
+   12:     required = {"stock_id", "score", "label"}
+   12:     missing = required.difference(frame.columns)
+   12:     if missing:
+>>>>>>         raise ValueError(f"missing policy columns: {sorted(missing)}")
+   12:     selected = (
+   12:         frame.replace([np.inf, -np.inf], np.nan)
+   12:         .dropna(subset=["score", "label"])
+   12:         .sort_values(["score", "stock_id"], ascending=[False, True])
+   12:         .head(max(0, int(k)))
+   12:         .copy()
+           )
+   12:     if selected.empty:
+>>>>>>         selected["weight"] = pd.Series(dtype=float)
+>>>>>>         return selected
+   12:     if weighting == "equal":
+    7:         raw = np.ones(len(selected), dtype=np.float64)
+    5:     elif weighting == "rank":
+    4:         raw = np.arange(len(selected), 0, -1, dtype=np.float64)
+    1:     elif weighting == "fixed_30_25_20_15_10":
+    1:         if len(selected) != 5 or int(k) != 5:
+>>>>>>             raise ValueError("fixed_30_25_20_15_10 requires five selected stocks")
+    1:         raw = np.asarray([0.30, 0.25, 0.20, 0.15, 0.10], dtype=np.float64)
+           else:
+>>>>>>         raise ValueError(f"unsupported weighting: {weighting}")
+   12:     selected["weight"] = raw / raw.sum()
+   12:     return selected
+       
+       
+    1: def five_trading_day_portfolios(
+           predictions: pd.DataFrame,
+    1:     k: int = 5,
+    1:     weighting: str = "equal",
+       ) -> pd.DataFrame:
+    1:     required = {"sample_end_date", "stock_id", "score", "label"}
+    1:     missing = required.difference(predictions.columns)
+    1:     if missing:
+>>>>>>         raise ValueError(f"missing prediction columns: {sorted(missing)}")
+    1:     working = predictions.copy()
+    3:     working["sample_end_date"] = pd.to_datetime(
+    1:         working["sample_end_date"]
+    1:     ).dt.normalize()
+    1:     decision_dates = sorted(working["sample_end_date"].dropna().unique())[::5]
+    1:     rows: list[dict[str, object]] = []
+    4:     for decision_date in decision_dates:
+    3:         day = working.loc[working["sample_end_date"] == decision_date]
+    3:         selected = apply_portfolio_policy(day, k=k, weighting=weighting)
+    3:         if selected.empty:
+>>>>>>             continue
+    6:         rows.append(
+    3:             {
+    3:                 "decision_date": pd.Timestamp(decision_date).strftime("%Y-%m-%d"),
+    6:                 "portfolio_return": float(
+    3:                     (selected["weight"] * selected["label"]).sum()
+                       ),
+    3:                 "hhi": float((selected["weight"] ** 2).sum()),
+    3:                 "stock_count": int(len(selected)),
+    3:                 "holdings": "|".join(selected["stock_id"].astype(str)),
+   39:                 "weights": "|".join(
+   18:                     f"{value:.8f}" for value in selected["weight"].astype(float)
+                       ),
+                   }
+               )
+    1:     return pd.DataFrame(rows)
+       
+       
+    1: def compute_weekly_metrics(values: Iterable[float]) -> dict[str, float]:
+    4:     array = np.asarray(list(values), dtype=np.float64)
+    4:     array = array[np.isfinite(array)]
+    4:     if array.size == 0:
+>>>>>>         return {
+>>>>>>             key: 0.0
+>>>>>>             for key in (
+                       "mean",
+                       "median",
+                       "hit_rate",
+                       "std",
+                       "q10",
+                       "cvar20",
+                       "worst",
+                       "sum_remove_best1",
+                       "sum_remove_best2",
+                       "best_positive_contribution",
+                   )
+               }
+    4:     tail_count = max(1, int(np.ceil(array.size * 0.20)))
+    4:     ordered_desc = np.sort(array)[::-1]
+    4:     positives = array[array > 0.0]
+    4:     positive_sum = float(positives.sum())
+    4:     best_contribution = (
+    4:         float(positives.max() / positive_sum) if positive_sum > 0.0 else 1.0
+           )
+    4:     return {
+    4:         "mean": float(array.mean()),
+    4:         "median": float(np.median(array)),
+    4:         "hit_rate": float(np.mean(array > 0.0)),
+    4:         "std": float(array.std()),
+    4:         "q10": float(np.quantile(array, 0.10)),
+    4:         "cvar20": float(np.sort(array)[:tail_count].mean()),
+    4:         "worst": float(array.min()),
+    4:         "sum_remove_best1": float(ordered_desc[1:].sum()),
+    4:         "sum_remove_best2": float(ordered_desc[2:].sum()),
+    4:         "best_positive_contribution": best_contribution,
+           }
+       
+       
+    3: @dataclass(frozen=True)
+    2: class GateResult:
+    1:     passed: bool
+    1:     checks: dict[str, bool]
+    1:     failed_checks: tuple[str, ...]
+       
+       
+    1: def quick_gate(metrics: Mapping[str, object]) -> GateResult:
+   40:     seed_means = [float(value) for value in metrics["seed_mean_excess"]]  # type: ignore[index]
+   10:     checks = {
+   10:         "positive_folds_at_least_3_of_4": int(metrics["positive_folds"]) >= 3,
+   10:         "recent_fold_positive": float(metrics["recent_fold_excess"]) > 0.0,
+   10:         "both_seed_means_positive": len(seed_means) == 2
+   39:         and all(value > 0.0 for value in seed_means),
+   30:         "strict_weekly_win_rate_at_least_55pct": float(
+   10:             metrics["strict_weekly_win_rate"]
+               )
+   10:         >= 0.55,
+   30:         "excess_positive_after_best_two_removed": float(
+   10:             metrics["excess_sum_remove_best2"]
+               )
+   10:         > 0.0,
+   20:         "cvar20_not_worse_than_control": float(metrics["candidate_cvar20"])
+   10:         >= float(metrics["control_cvar20"]),
+   10:         "hhi_at_most_0_30": float(metrics["hhi"]) <= 0.30,
+   30:         "best_week_at_most_20pct_positive_sum": float(
+   10:             metrics["best_positive_contribution"]
+               )
+   10:         <= 0.20,
+           }
+  100:     failed = tuple(name for name, passed in checks.items() if not passed)
+   10:     return GateResult(not failed, checks, failed)
+       
+       
+    1: def paired_quick_metrics(
+           control: pd.DataFrame,
+           candidate: pd.DataFrame,
+       ) -> tuple[dict[str, object], pd.DataFrame]:
+    1:     keys = ["seed", "fold_id", "decision_date"]
+    1:     required = {*keys, "portfolio_return", "hhi"}
+    3:     for name, frame in (("control", control), ("candidate", candidate)):
+    2:         missing = required.difference(frame.columns)
+    2:         if missing:
+>>>>>>             raise ValueError(f"{name} is missing paired columns: {sorted(missing)}")
+    2:         if frame.duplicated(keys).any():
+>>>>>>             raise ValueError(f"{name} contains duplicate paired decisions")
+    2:     paired = control.merge(
+    1:         candidate,
+    1:         on=keys,
+    1:         how="inner",
+    1:         suffixes=("_control", "_candidate"),
+    1:         validate="one_to_one",
+           )
+    1:     if len(paired) != len(control) or len(paired) != len(candidate):
+>>>>>>         raise ValueError("control and candidate decisions are not exactly paired")
+    1:     paired["excess"] = (
+    2:         paired["portfolio_return_candidate"]
+    1:         - paired["portfolio_return_control"]
+           )
+    1:     seed_fold = (
+    1:         paired.groupby(["seed", "fold_id"], sort=True)["excess"]
+    1:         .mean()
+    1:         .reset_index()
+           )
+    1:     positive_by_seed = (
+    2:         seed_fold.assign(positive=seed_fold["excess"] > 0.0)
+    1:         .groupby("seed")["positive"]
+    1:         .sum()
+           )
+    1:     latest_fold = (
+    2:         paired.assign(_date=pd.to_datetime(paired["decision_date"]))
+    1:         .groupby("fold_id")["_date"]
+    1:         .max()
+    1:         .idxmax()
+           )
+    1:     seed_means = (
+    1:         paired.groupby("seed", sort=True)["excess"].mean().astype(float).tolist()
+           )
+    1:     excess_metrics = compute_weekly_metrics(paired["excess"])
+    2:     candidate_metrics = compute_weekly_metrics(
+    1:         paired["portfolio_return_candidate"]
+           )
+    1:     control_metrics = compute_weekly_metrics(paired["portfolio_return_control"])
+    1:     metrics: dict[str, object] = {
+    1:         "positive_folds": int(positive_by_seed.min()),
+    7:         "positive_folds_by_seed": {
+    2:             str(int(seed)): int(count)
+    3:             for seed, count in positive_by_seed.items()
+               },
+    1:         "recent_fold_id": str(latest_fold),
+    2:         "recent_fold_excess": float(
+    1:             paired.loc[paired["fold_id"] == latest_fold, "excess"].mean()
+               ),
+    1:         "seed_mean_excess": seed_means,
+    1:         "strict_weekly_win_rate": float(np.mean(paired["excess"] > 0.0)),
+    1:         "excess_sum_remove_best2": excess_metrics["sum_remove_best2"],
+    1:         "candidate_cvar20": candidate_metrics["cvar20"],
+    1:         "control_cvar20": control_metrics["cvar20"],
+    1:         "hhi": float(paired["hhi_candidate"].max()),
+    2:         "best_positive_contribution": candidate_metrics[
+    1:             "best_positive_contribution"
+               ],
+    1:         "paired_decision_count": int(len(paired)),
+           }
+    1:     return metrics, paired
+       
+       
+    1: def combine_residual_rank(
+           base_rank: np.ndarray,
+           auxiliary_rank: np.ndarray,
+           residual_lambda: float,
+       ) -> np.ndarray:
+    2:     value = float(residual_lambda)
+    2:     if value not in ALLOWED_RESIDUAL_LAMBDAS:
+    2:         raise ValueError(
+    1:             f"lambda must be one of {ALLOWED_RESIDUAL_LAMBDAS}, got {value}"
+               )
+    1:     base = np.asarray(base_rank, dtype=np.float64)
+    1:     auxiliary = np.asarray(auxiliary_rank, dtype=np.float64)
+    1:     if base.shape != auxiliary.shape:
+>>>>>>         raise ValueError("base and auxiliary ranks must have identical shapes")
+    1:     return base + value * np.clip(auxiliary, -1.0, 1.0)
+       
+       
+    1: validate_fold_plan(DEVELOPMENT_FOLDS)

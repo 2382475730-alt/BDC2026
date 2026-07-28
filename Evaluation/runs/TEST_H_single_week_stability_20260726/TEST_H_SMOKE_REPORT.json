@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "status": "PASS",
+  "cuda": true,
+  "branches": {
+    "TEST_H0_CONTROL": {
+      "device": "cuda",
+      "train_samples": 55,
+      "val_samples": 55,
+      "test_samples": 0,
+      "stock_feature_dim": 19,
+      "factor_feature_dim": 8,
+      "market_feature_dim": 12,
+      "batch_shape": [
+        4,
+        297,
+        60,
+        19
+      ],
+      "loss": 5.934504985809326,
+      "split": {
+        "mode": "purged_walk_forward",
+        "fold_start": "2025-04-01",
+        "fold_end": "2025-06-23",
+        "label": "open(T+5) / open(T+1) - 1",
+        "train": {
+          "sample_count": 55,
+          "sample_start": "2024-12-20",
+          "sample_end": "2025-03-17",
+          "label_end_start": "2024-12-27",
+          "label_end_end": "2025-03-24"
+        },
+        "validation": {
+          "sample_count": 55,
+          "sample_start": "2025-04-01",
+          "sample_end": "2025-06-23",
+          "label_end_start": "2025-04-09",
+          "label_end_end": "2025-06-30"
+        },
+        "training_label_end_cap": "2025-03-24",
+        "train_label_end_before_val_start": true,
+        "materialized_label_date_count": 120,
+        "materialized_label_date_start": "2024-12-20",
+        "materialized_label_date_end": "2025-06-23",
+        "sealed_label_ranges_excluded": [
+          [
+            "2025-10-01",
+            "2025-12-31"
+          ],
+          [
+            "2026-04-03",
+            "2026-07-03"
+          ]
+        ]
+      }
+    },
+    "TEST_H1_TOPK_OBJECTIVE": {
+      "device": "cuda",
+      "train_samples": 55,
+      "val_samples": 55,
+      "test_samples": 0,
+      "stock_feature_dim": 19,
+      "factor_feature_dim": 8,
+      "market_feature_dim": 12,
+      "batch_shape": [
+        4,
+        297,
+        60,
+        19
+      ],
+      "loss": 5.934865474700928,
+      "split": {
+        "mode": "purged_walk_forward",
+        "fold_start": "2025-04-01",
+        "fold_end": "2025-06-23",
+        "label": "open(T+5) / open(T+1) - 1",
+        "train": {
+          "sample_count": 55,
+          "sample_start": "2024-12-20",
+          "sample_end": "2025-03-17",
+          "label_end_start": "2024-12-27",
+          "label_end_end": "2025-03-24"
+        },
+        "validation": {
+          "sample_count": 55,
+          "sample_start": "2025-04-01",
+          "sample_end": "2025-06-23",
+          "label_end_start": "2025-04-09",
+          "label_end_end": "2025-06-30"
+        },
+        "training_label_end_cap": "2025-03-24",
+        "train_label_end_before_val_start": true,
+        "materialized_label_date_count": 120,
+        "materialized_label_date_start": "2024-12-20",
+        "materialized_label_date_end": "2025-06-23",
+        "sealed_label_ranges_excluded": [
+          [
+            "2025-10-01",
+            "2025-12-31"
+          ],
+          [
+            "2026-04-03",
+            "2026-07-03"
+          ]
+        ]
+      }
+    }
+  },
+  "outer_once_integration": {
+    "marker": "TEST",
+    "experiment_id": "TEST_H_QUICK_TEST_H1_TOPK_OBJECTIVE_S20260726_2025Q3_OUTER",
+    "run_dir": "Experimental_WorkSpace\\candidates_H\\automation_runs\\TEST_H_SMOKE\\TEST_H1_TOPK_OBJECTIVE\\outer_once",
+    "best_checkpoint": "Experimental_WorkSpace\\candidates_H\\automation_runs\\TEST_H_SMOKE\\TEST_H1_TOPK_OBJECTIVE\\outer_once\\best_model.pth",
+    "last_checkpoint": "Experimental_WorkSpace\\candidates_H\\automation_runs\\TEST_H_SMOKE\\TEST_H1_TOPK_OBJECTIVE\\outer_once\\last_model.pth",
+    "checkpoint_metric": "val_stability_score",
+    "best_score": -0.007096256948889241,
+    "best_epoch": 2,
+    "epochs": 2,
+    "outer_evaluation_once": true,
+    "validation_evaluation_count": 1,
+    "split": {
+      "mode": "purged_walk_forward",
+      "fold_start": "2025-07-01",
+      "fold_end": "2025-09-30",
+      "label": "open(T+5) / open(T+1) - 1",
+      "train": {
+        "sample_count": 44,
+        "sample_start": "2025-04-10",
+        "sample_end": "2025-06-16",
+        "label_end_start": "2025-04-17",
+        "label_end_end": "2025-06-23"
+      },
+      "validation": {
+        "sample_count": 66,
+        "sample_start": "2025-07-01",
+        "sample_end": "2025-09-30",
+        "label_end_start": "2025-07-08",
+        "label_end_end": "2025-10-15"
+      },
+      "training_label_end_cap": "2025-06-23",
+      "train_label_end_before_val_start": true,
+      "materialized_label_date_count": 120,
+      "materialized_label_date_start": "2025-04-10",
+      "materialized_label_date_end": "2025-09-30",
+      "sealed_label_ranges_excluded": [
+        [
+          "2025-10-01",
+          "2025-12-31"
+        ],
+        [
+          "2026-04-03",
+          "2026-07-03"
+        ]
+      ]
+    },
+    "elapsed_minutes": 0.30889376799265544
+  },
+  "sealed_holdout_access_count": 0
+}

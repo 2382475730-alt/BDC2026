@@ -1,0 +1,69 @@
+{
+  "experiment_id": "TEST_G_CONTROL_INDUSTRY_FUTURES",
+  "seed": 20260726,
+  "data": {
+    "train_csv": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709/data/train.csv",
+    "industry_csv": "BaoStock_Datasets/data/fusion_research_20260726/industry/processed/csi300_industry_static.csv",
+    "futures_csv": "BaoStock_Datasets/data/fusion_research_20260726/cffex/processed/cffex_market_features.csv",
+    "financial_csv": "BaoStock_Datasets/data/fusion_research_20260726/financial/processed/financial_point_in_time.csv",
+    "date_col": "日期",
+    "stock_col": "股票代码",
+    "min_stocks_per_day": 10
+  },
+  "label": {
+    "horizon": 5,
+    "buy_offset": 1,
+    "sell_offset": 5
+  },
+  "features": {
+    "version": "g_control_industry_futures_v1",
+    "sequence_length": 60,
+    "enable_industry": true,
+    "enable_futures": true,
+    "enable_financial": false,
+    "industry_missing_label": "UNKNOWN",
+    "futures_lag_days": 0
+  },
+  "model": {
+    "d_model": 128,
+    "nhead": 4,
+    "num_layers": 2,
+    "dim_feedforward": 256,
+    "dropout": 0.1,
+    "use_factor_encoder": false
+  },
+  "loss": {
+    "temperature": 1.0,
+    "pairwise_weight": 0.25,
+    "pairwise_margin": 0.05,
+    "portfolio_return_weight": 0.05,
+    "portfolio_volatility_weight": 0.01
+  },
+  "portfolio": {
+    "top_k": 2,
+    "mode": "topk_equal",
+    "softmax_temperature": 1.0,
+    "max_weight": 1.0,
+    "min_weight": 0.0
+  },
+  "training": {
+    "batch_size": 4,
+    "num_epochs": 3,
+    "learning_rate": 0.00005,
+    "weight_decay": 0.00001,
+    "grad_clip": 5.0,
+    "num_workers": 0,
+    "early_stop_patience": 3,
+    "checkpoint_metric": "val_robust_final_score"
+  },
+  "validation": {
+    "mode": "purged_walk_forward",
+    "train_start": "2022-01-04",
+    "folds": [
+      ["G_FOLD_PLACEHOLDER", "2025-01-03", "2025-03-31"]
+    ]
+  },
+  "output": {
+    "run_dir": "Experimental_WorkSpace/candidates_G/automation_runs/TEST_G_CONTROL_PLACEHOLDER"
+  }
+}

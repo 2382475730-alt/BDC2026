@@ -1,0 +1,47 @@
+{
+  "schema_version": "e_data_manifest_v1",
+  "created_date": "2026-07-15",
+  "snapshot": {
+    "relative_path": "../candidates_D/data_snapshots/c0_train_plus_baostock_future_20260703.csv",
+    "bytes": 50670372,
+    "md5": "78759d892c95eb8ba547c2df9a8fca5a",
+    "sha256": "8e9cf37e5c53e4edafddc3f6f6b5843d4037376334e6f53cba068699095df1ad",
+    "row_count": 388452,
+    "trading_day_count": 1331,
+    "date_start": "2021-01-04",
+    "date_end": "2026-07-03",
+    "stock_count": 300,
+    "min_stocks_per_day": 272,
+    "max_stocks_per_day": 300,
+    "duplicate_date_stock_rows": 0,
+    "columns": ["股票代码", "日期", "开盘", "收盘", "最高", "最低", "成交量", "成交额", "振幅", "涨跌额", "换手率", "涨跌幅"],
+    "read_only": true,
+    "universe_semantics": "fixed_locked_competition_300",
+    "historical_membership_not_available": true,
+    "membership_feature_forbidden": true
+  },
+  "sources": [
+    {
+      "relative_path": "../candidates_C/C0_BaseModel/data/train.csv",
+      "md5": "5f389f4817dc1d33ebf53e7fed6425fd"
+    },
+    {
+      "relative_path": "../../BaoStock_Datasets/data/full_hfq_baostock_20260703/baostock_future_post_2026-03-20_2026-07-03.csv",
+      "md5": "289a5897b4e1e25b5bbc184faf6d6f8f"
+    }
+  ],
+  "development_view": {
+    "relative_path": "../data_snapshots/E_R1_DEVELOPMENT_THROUGH_20260327.csv",
+    "numeric_cutoff": "2026-03-27",
+    "status": "BUILT_AND_VERIFIED",
+    "filter_mode": "STREAM_DATE_FIELD_ONLY_NO_SEALED_NUMERIC_PARSE",
+    "md5": "4317396bd19364de7afc2a7fb87938ed",
+    "sha256": "534443dab2a6cd3a491913e4c7fe7103c05a068de6c24c6b7aed23716ba6f115",
+    "row_count": 368952,
+    "trading_date_count": 1266,
+    "stock_count": 300,
+    "manifest": "E_DEVELOPMENT_SNAPSHOT_MANIFEST.json"
+  },
+  "runtime_network_access": false,
+  "external_fundamental_news_industry_data": false
+}

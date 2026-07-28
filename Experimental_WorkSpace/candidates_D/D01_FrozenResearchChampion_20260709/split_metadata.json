@@ -1,0 +1,21 @@
+{
+  "mode": "purged_walk_forward",
+  "fold_start": "2025-01-03",
+  "fold_end": "2026-01-05",
+  "label": "open(T+5) / open(T+1) - 1",
+  "train": {
+    "sample_count": 722,
+    "sample_start": "2022-01-04",
+    "sample_end": "2024-12-25",
+    "label_end_start": "2022-01-11",
+    "label_end_end": "2025-01-02"
+  },
+  "validation": {
+    "sample_count": 243,
+    "sample_start": "2025-01-03",
+    "sample_end": "2026-01-05",
+    "label_end_start": "2025-01-10",
+    "label_end_end": "2026-01-12"
+  },
+  "train_label_end_before_val_start": true
+}

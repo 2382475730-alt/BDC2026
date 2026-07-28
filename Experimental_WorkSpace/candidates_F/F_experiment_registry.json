@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "lineage": "F-series",
+  "retained_model": null,
+  "experiments": [
+    {
+      "experiment_id": "F_QUICK_INDUSTRY_FUTURES_20260726",
+      "marker": "TEST",
+      "status": "REJECTED_AT_QUICK_GATE",
+      "positive_fold_count": 2,
+      "recent_fold_mean_excess": -0.00035938466052441216,
+      "summary": "automation_runs/F_QUICK_SUMMARY.json"
+    }
+  ]
+}

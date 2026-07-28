@@ -1,6 +1,6 @@
 # BaoStock_Datasets 目录说明
 
-更新时间：2026-07-07
+更新时间：2026-07-26
 
 `BaoStock_Datasets/` 是本项目的本地行情数据区。后续训练、评估、数据锁定和数据报备都应优先以这里的数据为准。
 
@@ -28,6 +28,14 @@ BaoStock_Datasets/
   小规模 BaoStock smoke test 数据，用于快速验证数据读取流程。
 - `data/smoke5_baostock_script/`
   smoke test 相关脚本或中间产物目录。
+- `data/fusion_research_20260726/`
+  F/G 系列研究专用冻结数据，包含行业静态映射、中金所 IF/IH/IC/IM 日行情与
+  点时财报指标。每类数据都有原始响应/压缩包、处理文件、`validation.json`
+  和 `SOURCE_MANIFEST.json`。这些数据尚未与 2026-07-18 赛务报备邮件逐项
+  核对，只能用于明确标记的 `TEST` 研究。
+- `data/prospective_d_stability_20260727/`
+  Candidate-D 8+4 窗口前瞻检验的因果行情前缀。每轮只能在决策日收盘后查询
+  至该决策日，禁止未来区间、历史覆盖和模型产物。
 
 ## scripts 子目录
 
@@ -41,6 +49,21 @@ BaoStock_Datasets/
   早期基于已有模型结果做 rerank 的辅助脚本。
 - `search_inference_controls.py`
   早期搜索推理控制参数的辅助脚本。
+- `download_csi300_industry_snapshot.py`
+  冻结东方财富公开沪深300成分与行业静态快照；不把当前价格字段写入训练文件。
+- `download_cffex_daily_futures.py`
+  下载并校验中金所公开月度日行情 ZIP，构造前一交易日持仓量选择的主力合约
+  与股指期货市场特征。
+- `download_eastmoney_financial_pit.py`
+  冻结东方财富主要财务指标，并以
+  `max(NOTICE_DATE, UPDATE_DATE)` 作为保守可得日，防止修订值回填。
+- `build_prospective_causal_prefix.py`
+  为 Candidate-D 前瞻窗口仅拉取上一冻结前缀之后、当前决策日及之前的
+  BaoStock 后复权增量，并生成带 SHA-256/MD5 来源清单的训练前缀。
+- `build_prospective_outcome_bundle.py`
+  只在窗口卖出日 09:31 后拉取该窗口买入日至卖出日的固定股池行情与同期
+  上证指数开盘价，并将带边界校验和哈希的 outcome bundle 写入工作区外
+  sealed vault；禁止写回训练前缀或 candidate 包。
 
 ## 使用边界
 

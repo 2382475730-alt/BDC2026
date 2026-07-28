@@ -1,0 +1,147 @@
+    1: """ define generic base classes for pandas objects """
+    1: from __future__ import annotations
+       
+    1: from typing import (
+           TYPE_CHECKING,
+           Type,
+           cast,
+       )
+       
+    1: if TYPE_CHECKING:
+>>>>>>     from pandas import (
+               Categorical,
+               CategoricalIndex,
+               DataFrame,
+               DatetimeIndex,
+               Index,
+               IntervalIndex,
+               MultiIndex,
+               PeriodIndex,
+               RangeIndex,
+               Series,
+               TimedeltaIndex,
+           )
+>>>>>>     from pandas.core.arrays import (
+               DatetimeArray,
+               ExtensionArray,
+               NumpyExtensionArray,
+               PeriodArray,
+               TimedeltaArray,
+           )
+>>>>>>     from pandas.core.generic import NDFrame
+       
+       
+       # define abstract base classes to enable isinstance type checking on our
+       # objects
+    1: def create_pandas_abc_type(name, attr, comp):
+   17:     def _check(inst) -> bool:
+ 2565:         return getattr(inst, attr, "_typ") in comp
+       
+           # https://github.com/python/mypy/issues/1006
+           # error: 'classmethod' used with a non-method
+   34:     @classmethod  # type: ignore[misc]
+   34:     def _instancecheck(cls, inst) -> bool:
+ 2565:         return _check(inst) and not isinstance(inst, type)
+       
+   34:     @classmethod  # type: ignore[misc]
+   34:     def _subclasscheck(cls, inst) -> bool:
+               # Raise instead of returning False
+               # This is consistent with default __subclasscheck__ behavior
+>>>>>>         if not isinstance(inst, type):
+>>>>>>             raise TypeError("issubclass() arg 1 must be a class")
+       
+>>>>>>         return _check(inst)
+       
+   17:     dct = {"__instancecheck__": _instancecheck, "__subclasscheck__": _subclasscheck}
+   17:     meta = type("ABCBase", (type,), dct)
+   17:     return meta(name, (), dct)
+       
+       
+    2: ABCRangeIndex = cast(
+    1:     "Type[RangeIndex]",
+    1:     create_pandas_abc_type("ABCRangeIndex", "_typ", ("rangeindex",)),
+       )
+    2: ABCMultiIndex = cast(
+    1:     "Type[MultiIndex]",
+    1:     create_pandas_abc_type("ABCMultiIndex", "_typ", ("multiindex",)),
+       )
+    2: ABCDatetimeIndex = cast(
+    1:     "Type[DatetimeIndex]",
+    1:     create_pandas_abc_type("ABCDatetimeIndex", "_typ", ("datetimeindex",)),
+       )
+    2: ABCTimedeltaIndex = cast(
+    1:     "Type[TimedeltaIndex]",
+    1:     create_pandas_abc_type("ABCTimedeltaIndex", "_typ", ("timedeltaindex",)),
+       )
+    2: ABCPeriodIndex = cast(
+    1:     "Type[PeriodIndex]",
+    1:     create_pandas_abc_type("ABCPeriodIndex", "_typ", ("periodindex",)),
+       )
+    2: ABCCategoricalIndex = cast(
+    1:     "Type[CategoricalIndex]",
+    1:     create_pandas_abc_type("ABCCategoricalIndex", "_typ", ("categoricalindex",)),
+       )
+    2: ABCIntervalIndex = cast(
+    1:     "Type[IntervalIndex]",
+    1:     create_pandas_abc_type("ABCIntervalIndex", "_typ", ("intervalindex",)),
+       )
+    2: ABCIndex = cast(
+    1:     "Type[Index]",
+    2:     create_pandas_abc_type(
+    1:         "ABCIndex",
+    1:         "_typ",
+    1:         {
+                   "index",
+                   "rangeindex",
+                   "multiindex",
+                   "datetimeindex",
+                   "timedeltaindex",
+                   "periodindex",
+                   "categoricalindex",
+                   "intervalindex",
+               },
+           ),
+       )
+       
+       
+    2: ABCNDFrame = cast(
+    1:     "Type[NDFrame]",
+    1:     create_pandas_abc_type("ABCNDFrame", "_typ", ("series", "dataframe")),
+       )
+    2: ABCSeries = cast(
+    1:     "Type[Series]",
+    1:     create_pandas_abc_type("ABCSeries", "_typ", ("series",)),
+       )
+    2: ABCDataFrame = cast(
+    1:     "Type[DataFrame]", create_pandas_abc_type("ABCDataFrame", "_typ", ("dataframe",))
+       )
+       
+    2: ABCCategorical = cast(
+    1:     "Type[Categorical]",
+    1:     create_pandas_abc_type("ABCCategorical", "_typ", ("categorical")),
+       )
+    2: ABCDatetimeArray = cast(
+    1:     "Type[DatetimeArray]",
+    1:     create_pandas_abc_type("ABCDatetimeArray", "_typ", ("datetimearray")),
+       )
+    2: ABCTimedeltaArray = cast(
+    1:     "Type[TimedeltaArray]",
+    1:     create_pandas_abc_type("ABCTimedeltaArray", "_typ", ("timedeltaarray")),
+       )
+    2: ABCPeriodArray = cast(
+    1:     "Type[PeriodArray]",
+    1:     create_pandas_abc_type("ABCPeriodArray", "_typ", ("periodarray",)),
+       )
+    2: ABCExtensionArray = cast(
+    1:     "Type[ExtensionArray]",
+    2:     create_pandas_abc_type(
+    1:         "ABCExtensionArray",
+    1:         "_typ",
+               # Note: IntervalArray and SparseArray are included bc they have _typ="extension"
+    1:         {"extension", "categorical", "periodarray", "datetimearray", "timedeltaarray"},
+           ),
+       )
+    2: ABCNumpyExtensionArray = cast(
+    1:     "Type[NumpyExtensionArray]",
+    1:     create_pandas_abc_type("ABCNumpyExtensionArray", "_typ", ("npy_extension",)),
+       )

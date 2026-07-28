@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "experiment_id": "TEST_H5_TWO_WEEK_RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "experiment_type": "RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "frozen_at_utc": "2026-07-27T02:30:09.563006+00:00",
+  "files": {
+    "Experimental_WorkSpace/candidates_H/configs/TEST_H_QUICK_BASE.json": {
+      "bytes": 2022,
+      "sha256": "D595B5E6CCD3094F6E7E59E922A17425E624A4921B3E0036C669F1AD0B1E29C0"
+    },
+    "Experimental_WorkSpace/candidates_H/code/run_h5_predicted_boundary.py": {
+      "bytes": 28461,
+      "sha256": "B86730EDB4E11BA66BDFE3B26F65BD2D90D77085F9A39BE810E71E1F5E720768"
+    },
+    "Experimental_WorkSpace/candidates_H/code/run_h5_two_week_retrospective.py": {
+      "bytes": 22184,
+      "sha256": "882D6BED56C5D8B2DDF5B9C9927DE2A87C75BFFA4675F44DBA37308D49BF6EA6"
+    },
+    "Experimental_WorkSpace/candidates_H/code/src/dataset.py": {
+      "bytes": 11930,
+      "sha256": "AB8972ED6A6AD80AC1F2A3499D65EBDB8EB3ED567A7CF06239A8B936EE2C4239"
+    },
+    "Experimental_WorkSpace/candidates_H/code/src/featurework.py": {
+      "bytes": 17038,
+      "sha256": "E4E5F1E433B90FAB914B7950F8A458E69748978F8B003EDFB9621ABC1A887058"
+    },
+    "Experimental_WorkSpace/candidates_H/code/src/loss.py": {
+      "bytes": 17005,
+      "sha256": "E0D40E7A7AAB8AB01F912BE725082E77D8024A5B90FEC312FC62B7FF45002BCE"
+    },
+    "Experimental_WorkSpace/candidates_H/code/src/model.py": {
+      "bytes": 7434,
+      "sha256": "BD36F4F23154497A1410AA6C66DBA6978BDAE0C161D60D03E43D5E1A68C70A20"
+    },
+    "Experimental_WorkSpace/candidates_H/code/src/production.py": {
+      "bytes": 27567,
+      "sha256": "D44FC1440E37616F1130334CB5E05D6F4D8330562A52E45A8D178BB376ED5E6C"
+    },
+    "Experimental_WorkSpace/candidates_H/code/src/train.py": {
+      "bytes": 35459,
+      "sha256": "9A5798E9E6FDDD3C92B3BA039BC34F331B36E59B75481515D14801C53E667035"
+    },
+    "Experimental_WorkSpace/candidates_H/tests/test_h5_two_week_diagnostic.py": {
+      "bytes": 15868,
+      "sha256": "809782DB6AE564CF63FA2D8FB35C27855439883472F5A7C5F0DFCDFB913FA8A5"
+    },
+    "Evaluation/scripts/walk_forward/score_test_h5_two_week_retrospective.py": {
+      "bytes": 15741,
+      "sha256": "1511F8EF38580CD540086F9CC3DF7ED3CE8EAF64B28632536ACAFF9DAA344F24"
+    },
+    "Evaluation/scripts/reporting/finalize_test_h5_two_week_retrospective.py": {
+      "bytes": 30890,
+      "sha256": "9FB60C6FD90007D329DC3592F0F81577E2A5BA8F1564027B29E062D6DB2A7F88"
+    }
+  }
+}

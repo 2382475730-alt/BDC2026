@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "experiment_id": "TEST_H5_TWO_WEEK_RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "experiment_type": "RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "status": "DIAGNOSTIC_ONLY",
+  "blind_test": false,
+  "independent_holdout": false,
+  "promotion_evidence": false,
+  "validation": {
+    "sha256": "B21FB1BEEFAE407729C305E01E274695FE083C718B695F06A2146D7512B6AFC9",
+    "sha256_verified_before_parse": true,
+    "parse_count": 1,
+    "rows": 3000,
+    "stocks": 300,
+    "date_start": "2026-07-06",
+    "date_end": "2026-07-17",
+    "raw_copy_created_in_workspace": false
+  },
+  "weekly": [
+    {
+      "round_id": "W1_20260703",
+      "candidate": "TEST-H5",
+      "decision_date": "2026-07-03",
+      "buy_date": "2026-07-06",
+      "sell_date": "2026-07-10",
+      "weekly_return_gross": 0.058793296874714594,
+      "weekly_return_net_0bps": 0.058793296874714594,
+      "weekly_return_net_10bps": 0.05679329687471459,
+      "weekly_return_net_20bps": 0.0547932968747146,
+      "benchmark_equal_weight_return": -0.009584329935595331,
+      "gross_excess_vs_benchmark": 0.06837762681030993,
+      "net_10bps_excess_vs_benchmark": 0.06637762681030993,
+      "weight_sum": 1.0,
+      "selected_count": 5,
+      "selected_stocks": "688126,688082,688183,688008,301308",
+      "max_weight": 0.2,
+      "hhi": 0.20000000000000004,
+      "effective_holdings": 4.999999999999999,
+      "worst_holding_return": -0.0762775387585245,
+      "holding_return_dispersion": 0.0794804104644202,
+      "result_sha256": "5B79731DF774826FB6C5613B12536FF2158D726ECD17E8A4A38C4136FC2ABF78",
+      "validation_ok": true,
+      "jaccard_prev_week": null,
+      "turnover_prev_week": null
+    },
+    {
+      "round_id": "W2_20260710",
+      "candidate": "TEST-H5",
+      "decision_date": "2026-07-10",
+      "buy_date": "2026-07-13",
+      "sell_date": "2026-07-17",
+      "weekly_return_gross": -0.16603512726195238,
+      "weekly_return_net_0bps": -0.16603512726195238,
+      "weekly_return_net_10bps": -0.16803512726195238,
+      "weekly_return_net_20bps": -0.17003512726195238,
+      "benchmark_equal_weight_return": -0.009384412339901541,
+      "gross_excess_vs_benchmark": -0.15665071492205085,
+      "net_10bps_excess_vs_benchmark": -0.15865071492205085,
+      "weight_sum": 1.0,
+      "selected_count": 5,
+      "selected_stocks": "688126,688082,600584,688521,688008",
+      "max_weight": 0.2,
+      "hhi": 0.20000000000000004,
+      "effective_holdings": 4.999999999999999,
+      "worst_holding_return": -0.2187633213998741,
+      "holding_return_dispersion": 0.035564215249090994,
+      "result_sha256": "876EE48797D62A8E443FCD10BB8BB7218391703B22485B6C3BADB9B789F24A74",
+      "validation_ok": true,
+      "jaccard_prev_week": 0.42857142857142855,
+      "turnover_prev_week": 0.4
+    }
+  ],
+  "two_week": {
+    "Candidate-C": {
+      "two_week_gross_compound": -0.0529830411860045,
+      "two_week_net_0bps_compound": -0.0529830411860045,
+      "two_week_net_10bps_compound": -0.05687163552185426,
+      "two_week_net_20bps_compound": -0.06075222985770401
+    },
+    "Candidate-D": {
+      "two_week_gross_compound": 0.09531770557951869,
+      "two_week_net_0bps_compound": 0.09531770557951869,
+      "two_week_net_10bps_compound": 0.09112948459136683,
+      "two_week_net_20bps_compound": 0.08694926360321475
+    },
+    "THU-BDC2026-main": {
+      "two_week_gross_compound": -0.06046030906075728,
+      "two_week_net_0bps_compound": -0.06046030906075728,
+      "two_week_net_10bps_compound": -0.0643336387742186,
+      "two_week_net_20bps_compound": -0.06819896848767981
+    },
+    "TEST-H5": {
+      "two_week_gross_compound": -0.11700358291598068,
+      "two_week_net_0bps_compound": -0.11700358291598068,
+      "two_week_net_10bps_compound": -0.1207850992552062,
+      "two_week_net_20bps_compound": -0.12455861559443171
+    },
+    "HS300_EQUAL_WEIGHT": {
+      "two_week_gross_compound": -0.018878798971379562,
+      "two_week_net_0bps_compound": -0.018878798971379562,
+      "two_week_net_10bps_compound": -0.022836861486828508,
+      "two_week_net_20bps_compound": -0.026786924002277557
+    }
+  },
+  "primary_metric": "two_week_net_10bps_compound",
+  "h5_primary": -0.1207850992552062,
+  "differences": {
+    "vs_official_reference": -0.05645146048098759,
+    "vs_candidate_c": -0.06391346373335194,
+    "vs_candidate_d": -0.21191458384657302,
+    "vs_hs300_equal_weight": -0.09794823776837769
+  },
+  "interpretation_constraints": {
+    "formal_stability_gate_active": false,
+    "cvar_reported": false,
+    "promotion_allowed": false,
+    "serious_allowed": false,
+    "h01_creation_allowed": false
+  }
+}

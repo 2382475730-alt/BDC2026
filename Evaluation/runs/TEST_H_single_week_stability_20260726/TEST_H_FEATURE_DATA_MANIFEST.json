@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "data": {
+    "path": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709/data/train.csv",
+    "md5": "78759d892c95eb8ba547c2df9a8fca5a",
+    "sha256": "8e9cf37e5c53e4edafddc3f6f6b5843d4037376334e6f53cba068699095df1ad",
+    "matches_d01_stage0": true
+  },
+  "label": {
+    "definition": "open(T+5) / open(T+1) - 1",
+    "decision_frequency": "one decision every five available trading dates",
+    "sealed_decision_ranges": [
+      [
+        "2025-10-01",
+        "2025-12-31"
+      ],
+      [
+        "2026-04-03",
+        "2026-07-03"
+      ]
+    ],
+    "sealed_holdout_access_count": 0
+  },
+  "features": {
+    "version": "d_market_v1",
+    "stock": [
+      "return_1",
+      "return_5",
+      "return_10",
+      "return_20",
+      "return_60",
+      "intraday_return",
+      "high_low_spread",
+      "open_close_spread",
+      "volume_change",
+      "volume_ratio_20",
+      "amount_ratio_20",
+      "turnover",
+      "volatility_5",
+      "volatility_20",
+      "downside_volatility_20",
+      "drawdown_20",
+      "atr_proxy_14",
+      "market_beta_20",
+      "market_corr_20"
+    ],
+    "factor": [
+      "factor_momentum_short",
+      "factor_momentum_medium",
+      "factor_momentum_long",
+      "factor_volatility",
+      "factor_drawdown",
+      "factor_liquidity",
+      "factor_volume_shock",
+      "factor_market_beta"
+    ],
+    "market": [
+      "market_return_5",
+      "market_return_20",
+      "market_return_60",
+      "market_volatility_20",
+      "market_downside_volatility_20",
+      "market_atr_proxy_20",
+      "market_breadth",
+      "market_advance_decline_ratio",
+      "market_new_high_ratio_60",
+      "market_volume_ratio_20",
+      "market_turnover_mean",
+      "market_return_dispersion_20"
+    ],
+    "dimensions": {
+      "stock": 19,
+      "factor": 8,
+      "market": 12
+    },
+    "industry_enabled": false,
+    "futures_enabled": false,
+    "financial_events_enabled": false,
+    "corporate_events_enabled": false
+  },
+  "blocked_external_branches": {
+    "TEST_H2_FUTURES_INDUSTRY_RESIDUAL": "BLOCKED_DATA_GATE",
+    "TEST_H3_FINANCIAL_EVENT_RESIDUAL": "BLOCKED_DATA_GATE",
+    "TEST_H4_CORPORATE_EVENT_RESIDUAL": "BLOCKED_DATA_GATE",
+    "audit": "Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_EXTERNAL_DATA_QUALITY_REPORT.md"
+  },
+  "code_and_protocol_hashes": [
+    {
+      "path": "Experimental_WorkSpace/candidates_H/H_PREREGISTRATION.md",
+      "bytes": 5004,
+      "sha256": "36bdc1110eb1db0b5cf100db8f6e7c5efe70b9c1c6159cc0d53c12101e295f1a"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/H_STAGE_PLAN.json",
+      "bytes": 1820,
+      "sha256": "2ef3dae532d46bf4a50769e648b6aa44094b3510895e2037947a9e696d1a40ba"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/configs/TEST_H_QUICK_BASE.json",
+      "bytes": 2022,
+      "sha256": "d595b5e6ccd3094f6e7e59e922a17425e624a4921b3e0036c669f1ad0b1e29c0"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/code/run_h_stability.py",
+      "bytes": 11712,
+      "sha256": "497fe0b82a7a176aa9925e7d8b46adf6685024c9ec968f44337b24cf809a5853"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/code/src/__init__.py",
+      "bytes": 44,
+      "sha256": "f97c0883bcf31b7eb92f802542ea03856ca4e00a67749a74ef280f11ead746fd"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/code/src/config.py",
+      "bytes": 3211,
+      "sha256": "abf13f3be64cc4c71f22befef37ea36998a5c521d7928f5fd0d612e6dd031ff7"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/code/src/dataset.py",
+      "bytes": 11930,
+      "sha256": "ab8972ed6a6ad80ac1f2a3499d65ebdb8eb3ed567a7cf06239a8b936ee2c4239"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/code/src/evaluator.py",
+      "bytes": 7694,
+      "sha256": "c3c061e1082a91f41224cbe45b458929bb364e1c52e515700a713dc559ba85f4"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/code/src/featurework.py",
+      "bytes": 17038,
+      "sha256": "e4e5f1e433b90fab914b7950f8a458e69748978f8b003edfb9621abc1a887058"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/code/src/loss.py",
+      "bytes": 11840,
+      "sha256": "def04c0d113aca04caa2d0f444c6793fc5e84a09b3f1d5f1a0954b7fca105c74"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/code/src/model.py",
+      "bytes": 7434,
+      "sha256": "bd36f4f23154497a1410aa6c66dba6978bdae0c161d60d03e43d5e1a68c70a20"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/code/src/protocol.py",
+      "bytes": 12536,
+      "sha256": "4231e0538c6448922a96f1873b43fa3fa13bd9c426817a7b3230fa1e0ea2134e"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_H/code/src/train.py",
+      "bytes": 29365,
+      "sha256": "cf483e18622c990026f0d0c40e49a9f3fce1c5478dcbd3ebabe9af32c48b3fe3"
+    }
+  ]
+}

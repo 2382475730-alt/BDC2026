@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "experiment_id": "TEST_H5_TWO_WEEK_RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+  "check": "historical_h5_checkpoint_unlabeled_inference_parity",
+  "historical_fold": "2026Q1_outer",
+  "historical_sample_date": "2026-03-27",
+  "historical_checkpoint_sha256": "98627A827A528535339EEC48BA498F7B7E878F1F3EE978B80B4E338D74FD0210",
+  "historical_scaler_sha256": "AFD3D268BEBD3C6E70318DCCBBAD8C7CDA6A98F9C107DD6D070C3BB7B0069F1C",
+  "stocks_compared": 300,
+  "max_abs_score_difference": 5.364422985820738e-07,
+  "historical_top5": [
+    "300418",
+    "688521",
+    "300442",
+    "688223",
+    "601872"
+  ],
+  "new_entrypoint_top5": [
+    "300418",
+    "688521",
+    "300442",
+    "688223",
+    "601872"
+  ],
+  "top5_identical": true,
+  "score_tolerance": 1e-06,
+  "passed": true,
+  "current_two_week_validation_access_increment": 0
+}

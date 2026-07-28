@@ -1,0 +1,90 @@
+{
+  "schema_version": "metrics_v2",
+  "experiment_id": "D_AUTO_CHAMPION_REF_20260709_110423",
+  "seed": 20260708,
+  "serious_challenger": false,
+  "split": {
+    "mode": "purged_walk_forward",
+    "fold_start": "2025-01-03",
+    "fold_end": "2026-01-05",
+    "label": "open(T+5) / open(T+1) - 1",
+    "train": {
+      "sample_count": 722,
+      "sample_start": "2022-01-04",
+      "sample_end": "2024-12-25",
+      "label_end_start": "2022-01-11",
+      "label_end_end": "2025-01-02"
+    },
+    "validation": {
+      "sample_count": 243,
+      "sample_start": "2025-01-03",
+      "sample_end": "2026-01-05",
+      "label_end_start": "2025-01-10",
+      "label_end_end": "2026-01-12"
+    },
+    "train_label_end_before_val_start": true
+  },
+  "leakage_audit": "pass",
+  "reproducibility_check": "pass",
+  "official_baseline_score": 0.012528499297343995,
+  "official_proxy": {
+    "sample_count": 243,
+    "date_start": "2025-01-03",
+    "date_end": "2026-01-05",
+    "official_proxy_final_score": 0.03711983576319238,
+    "mean_portfolio_return": 0.03711983576319238,
+    "median_portfolio_return": 0.0195012064650655,
+    "cumulative_return": 2565.9760393482347,
+    "mean_final_score": 0.10061039088775973,
+    "median_final_score": 0.06340361175988395,
+    "min_final_score": -1.067122531537657,
+    "hit_rate": 0.654320987654321
+  },
+  "weekly_backtest": {
+    "week_count": 53,
+    "date_start": "2025-01-06",
+    "date_end": "2026-01-05",
+    "mean_weekly_return_net": 0.02812305849117497,
+    "median_weekly_return_net": 0.011561056351378442,
+    "cumulative_return_net": 2.4696850615960635,
+    "geometric_mean_weekly_return_net": 0.023750559231902058,
+    "positive_week_rate": 0.5660377358490566,
+    "worst_week": -0.1384535469931582,
+    "worst_4_week_cumulative_return": -0.24041417700458556,
+    "max_drawdown_abs": 0.30052236067111693,
+    "max_drawdown_duration": 14,
+    "CVaR_95_loss_abs": 0.11100414457583074,
+    "downside_deviation": 0.036483705964461224,
+    "Sortino": 0.7708388648502331,
+    "Calmar": 8.217974383273317,
+    "average_weight_sum": 1.0,
+    "cash_ratio": 0.0,
+    "buy_turnover": 1.0,
+    "sell_turnover": 1.0,
+    "cost_drag": 0.07949999999999999,
+    "number_of_selected_stocks": 2.0,
+    "top5_jaccard_between_weeks": 0.391025641025641,
+    "up_market_return": 0.03329088284315515,
+    "down_market_return": -0.027702711005972894,
+    "high_vol_return": 0.03222137366812057,
+    "low_vol_return": 0.025639231111207948,
+    "skipped_missing_decision_prediction": 1,
+    "boundary_week_count": 2,
+    "planned_week_count": 54
+  },
+  "risk": {
+    "max_drawdown_abs": 0.30052236067111693,
+    "worst_week": -0.1384535469931582,
+    "CVaR_95_loss_abs": 0.11100414457583074,
+    "worst_4_week_cumulative_return": -0.24041417700458556,
+    "diff_without_best_2_weeks": null,
+    "best_2_weeks_contribution_ratio": null
+  },
+  "paired_vs_champion": {},
+  "champion_reference": {},
+  "trading": {
+    "cost_drag": 0.07949999999999999,
+    "gross_improvement": 0.024591336465848386,
+    "cost_drag_to_gross_improvement": 3.2328458483908302
+  }
+}

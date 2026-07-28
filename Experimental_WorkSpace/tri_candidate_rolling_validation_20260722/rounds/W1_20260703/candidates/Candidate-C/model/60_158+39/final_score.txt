@@ -1,0 +1,24 @@
+Best epoch: 3
+Best robust_val_score: 0.151536
+Best window_final_scores: [0.05975272439375325, 0.1259550438213522, 0.3869057211190632]
+Best mean_final_score: 0.190871
+Best min_final_score: 0.059753
+Second best epoch: 2
+Second best robust_val_score: 0.080734
+Second best window_final_scores: [0.009650598725495035, 0.021317201226797592, 0.3026291110951423]
+Second best mean_final_score: 0.111199
+Second best min_final_score: 0.009651
+Rerank robust_val_score: 0.001226
+Rerank window_scores: [0.014788317319471389, -0.014560793875716627, 0.023746664912323467]
+Rerank pool_size: 150
+Rerank inference_cross_sectional_norm: True
+Rerank ensemble_second_best: True
+Rerank return_5 weight: -3.0
+Rerank volume_change weight: 0.8
+Rerank volatility_10 weight: -0.3
+Rerank extra weights: {'atr_14': 1.0, 'open_close_spread': 1.5, 'volume_ratio': -1.0, '_gate_volume_ratio_5': 0.0}
+Rerank output_top_k: 5
+Rerank weight_mode: regime_volume_gate_c69_else_c4
+Rerank softmax_temperature: 0.03
+Rerank min_weight: 0.05
+Rerank max_weight: 0.5

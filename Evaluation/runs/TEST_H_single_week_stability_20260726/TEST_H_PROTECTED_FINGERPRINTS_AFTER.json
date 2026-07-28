@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "before": {
+    "candidate_root": {
+      "file_count": 120,
+      "sha256": "dd890c43fece312ec0a1cce2755599414207176940448458536d09271191d027"
+    },
+    "official_reference": {
+      "path": "candidate/THU-BDC2026-main",
+      "file_count": 58,
+      "sha256": "42f344993e3e169c7ea86e49104fa61e241fb4ba70938291229cdfad8cb6a71d"
+    },
+    "candidate_d": {
+      "path": "candidate/Candidate-D",
+      "file_count": 30,
+      "sha256": "9e948e97f4ff53adaeeae9d54f88ec38c6281c57f6ef72bdf83282cf70734451"
+    },
+    "d01_research_snapshot": {
+      "path": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709",
+      "file_count": 61,
+      "sha256": "6cf3b9d4a5024a1bb8708bcaa998982d0851ab7e8a00509314c6f03786062040"
+    }
+  },
+  "after": {
+    "candidate_root": {
+      "file_count": 120,
+      "sha256": "adc59ff8ab5100de7da2690b0ee96aa5efb2ed530ec8d98851f04be68b5f0e79"
+    },
+    "official_reference": {
+      "path": "candidate/THU-BDC2026-main",
+      "file_count": 58,
+      "sha256": "3d14783ed1154824dea763fd72995e070a8e99ac5e2b142ab947229fd0ad9e1a"
+    },
+    "candidate_d": {
+      "path": "candidate/Candidate-D",
+      "file_count": 30,
+      "sha256": "9e948e97f4ff53adaeeae9d54f88ec38c6281c57f6ef72bdf83282cf70734451"
+    },
+    "d01_research_snapshot": {
+      "path": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709",
+      "file_count": 61,
+      "sha256": "6cf3b9d4a5024a1bb8708bcaa998982d0851ab7e8a00509314c6f03786062040"
+    }
+  },
+  "unchanged_by_path": {
+    "candidate_root": false,
+    "official_reference": false,
+    "candidate_d": true,
+    "d01_research_snapshot": true
+  },
+  "unchanged": false,
+  "protected_controls_unchanged": true,
+  "official_reference_context": {
+    "file_count": 58,
+    "total_bytes": 48069050,
+    "matches_2026_07_20_file_count_and_bytes": true,
+    "stage0_aggregate_sha256_match": false,
+    "safe_disposition": "WARNING_ONLY_NO_REPAIR: no per-file Stage 0 baseline exists"
+  },
+  "candidate_modified_by_h_workflow": false,
+  "audit_status": "WARNING_OFFICIAL_DRIFT"
+}

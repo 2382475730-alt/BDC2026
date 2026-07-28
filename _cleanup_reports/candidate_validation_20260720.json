@@ -1,0 +1,196 @@
+{
+  "schema_version": 2,
+  "created_at_utc": "2026-07-20T04:01:40+00:00",
+  "finalized_at_local": "2026-07-20",
+  "status": "FINAL_VALIDATION_PASSED",
+  "candidate_C": {
+    "canonical_path": "candidate/Candidate-C",
+    "legacy_source": "candidate/C1_Submission_App_20260703",
+    "role": "C_FAMILY_SUBMISSION_FALLBACK",
+    "package": {
+      "bytes": 57561174,
+      "file_count": 32,
+      "source_manifest_file_count": 20,
+      "temp_is_empty": true
+    },
+    "compileall": "PASS",
+    "inference": "PASS",
+    "self_score": {
+      "status": "COMPLETED",
+      "weighted_open_return_score": -0.03812298792188259,
+      "interpretation": "Negative one-shot self-score; not improvement evidence."
+    },
+    "result": {
+      "columns": [
+        "stock_id",
+        "weight"
+      ],
+      "rows": 5,
+      "unique_stock_ids": 5,
+      "minimum_weight": 0.05,
+      "weight_sum": 1.0,
+      "sha256": "51b93cc89854b249f878199a5a1a2742c55af18777687c3bced0dbf6ec7549ac"
+    },
+    "validator": {
+      "ok": true,
+      "checks": {
+        "required_paths": true,
+        "readme_sections": true,
+        "offline_review_scripts": true,
+        "result_output_path": true,
+        "result_csv_format": true,
+        "submission_size_budget": true,
+        "source_manifest": true
+      },
+      "issues": []
+    },
+    "static_review": {
+      "absolute_workspace_paths": 0,
+      "runtime_network_calls": 0,
+      "note": "The legacy Dockerfile downloads TA-Lib while building the image; train/test runtime entrypoints are offline."
+    }
+  },
+  "candidate_D": {
+    "canonical_path": "candidate/Candidate-D",
+    "research_identity": "D01_FrozenResearchChampion_20260709",
+    "legacy_research_identity": "D02_FrozenResearchChampion_20260709",
+    "role": "D_FAMILY_SUBMISSION_CANDIDATE",
+    "status": "SUBMISSION_CANDIDATE_READY",
+    "training_program_changed": false,
+    "package": {
+      "bytes": 56161619,
+      "file_count": 29,
+      "source_manifest_file_count": 19,
+      "temp_is_empty": true
+    },
+    "compileall": "PASS",
+    "inference": {
+      "status": "PASS",
+      "device": "cuda",
+      "elapsed_seconds": 15.761943499994231,
+      "official_limit_seconds": 300,
+      "result_exact_source_match": true
+    },
+    "self_score": {
+      "status": "FORMAT_VALID",
+      "score": null,
+      "reason": "Decision date was not supplied to the diagnostic.",
+      "result_rows": 2,
+      "weight_sum": 1.0
+    },
+    "full_fixed_seed_reproduction": {
+      "status": "PASS",
+      "seed": 20260708,
+      "epochs": 12,
+      "training_elapsed_minutes": 3.781704548333558,
+      "official_limit_minutes": 480,
+      "train_sample_count": 1083,
+      "model_tensor_count": 59,
+      "state_keys_equal": true,
+      "parameters_exact": true,
+      "max_abs_parameter_diff": 0.0,
+      "source_model_state_sha256": "c22f866f4753d9deabdc900ad598a326497350b5b19c33972e25145dc3e87830",
+      "reproduced_model_state_sha256": "c22f866f4753d9deabdc900ad598a326497350b5b19c33972e25145dc3e87830",
+      "scalers_exact": true,
+      "result_exact": true
+    },
+    "source_artifact_comparison": {
+      "production_model": {
+        "sha256": "bd85f504599d1995bd19f254c78136be1cf42e74a349f32ed6bdec5ccb0ef86d",
+        "exact": true
+      },
+      "scalers": {
+        "sha256": "3d647f554d5e09c50e56488931deabd54ff08750edb645f265ff91d00bc62b38",
+        "exact": true
+      },
+      "training_data": {
+        "sha256": "8e9cf37e5c53e4edafddc3f6f6b5843d4037376334e6f53cba068699095df1ad",
+        "exact": true
+      },
+      "result": {
+        "sha256": "6a0a63f641317d5e41afa6c9fc2a7d627cac9dae444b4d086838c3d9315f1622",
+        "exact": true
+      }
+    },
+    "result": {
+      "columns": [
+        "stock_id",
+        "weight"
+      ],
+      "rows": 2,
+      "unique_stock_ids": 2,
+      "minimum_weight": 0.5,
+      "weight_sum": 1.0
+    },
+    "validator": {
+      "ok": true,
+      "checks": {
+        "required_paths": true,
+        "readme_sections": true,
+        "offline_review_scripts": true,
+        "result_output_path": true,
+        "result_csv_format": true,
+        "submission_size_budget": true,
+        "source_manifest": true
+      },
+      "issues": []
+    },
+    "static_review": {
+      "absolute_workspace_paths": 0,
+      "runtime_network_calls": 0
+    },
+    "same_protocol_research_evidence": {
+      "validation_sample_count": 243,
+      "validation_date_start": "2025-01-03",
+      "validation_date_end": "2026-01-05",
+      "d_top2_mean_portfolio_return": 0.03711983576319238,
+      "official_top5_mean_portfolio_return": 0.012528499297343995,
+      "mean_return_delta": 0.024591336465848386,
+      "official_finite_score_ratio": 0.16872427983539096,
+      "mean_return_baseline_check_passed": true,
+      "broader_research_gate": "REJECT",
+      "interpretation": "Packaging and exact reproduction passed. The broader research gate still rejected the evidence because robustness, multi-seed, and cost checks failed."
+    }
+  },
+  "shared_environment": {
+    "path": "Experimental_WorkSpace/shared_envs/pytorch-cu128-py311",
+    "python": "3.11.9",
+    "torch": "2.10.0+cu128",
+    "cuda_runtime": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "pandas": "2.3.2",
+    "numpy": "2.3.3",
+    "sklearn": "1.7.2",
+    "joblib": "1.5.2",
+    "tqdm": "4.67.1",
+    "pip_check": "PASS",
+    "root_venv_removed": true
+  },
+  "evaluation_tests": {
+    "command": "python -m unittest discover -s Evaluation/scripts/d_series -p test_*.py -v",
+    "status": "PASS",
+    "tests_run": 30,
+    "passed": 26,
+    "skipped": 4,
+    "failed": 0,
+    "skip_reason": "Four R5 source-level tests require intentionally retired run-local challenger code; locked R5 audits and reports remain."
+  },
+  "cleanup_integrity": {
+    "cache_directories_outside_shared_environment_and_official_reference": 0,
+    "pyc_files_outside_shared_environment_and_official_reference": 0,
+    "log_files_in_candidate_experiment_evaluation_scopes": 0,
+    "d_automation_child_directories": 0,
+    "e_automation_child_directories": 0,
+    "stale_active_canonical_paths": 0
+  },
+  "official_reference": {
+    "path": "candidate/THU-BDC2026-main",
+    "content_tree_sha256_before": "85a54a5f2cc04cccb2f90f8b2ee25e438e5a53b372fa3a5c192815a405ab44b9",
+    "content_tree_sha256_after_cleanup": "85a54a5f2cc04cccb2f90f8b2ee25e438e5a53b372fa3a5c192815a405ab44b9",
+    "bytes_final": 48069050,
+    "file_count_final": 58,
+    "final_git_status": "CLEAN",
+    "unchanged": true
+  }
+}

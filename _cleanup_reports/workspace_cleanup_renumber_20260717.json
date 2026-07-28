@@ -1,0 +1,3409 @@
+{
+  "schema_version": 1,
+  "operation_id": "workspace_cleanup_renumber_20260717",
+  "manifest_created_at_utc": "2026-07-20T03:07:13+00:00",
+  "execution_date_local": "2026-07-20",
+  "workspace_root": "D:\\Study\\Competitions\\2026年中国高校计算机大赛—大数据挑战赛-提交版本\\Improvement-THU",
+  "purpose": "Clean failed model artifacts and logs, renumber retained research snapshots, and create competition-shaped Candidate-C/Candidate-D packages.",
+  "authorization": {
+    "source": "explicit_user_request",
+    "destructive_cleanup_allowed_within_scope": true,
+    "new_training_search_allowed": false,
+    "candidate_promotion_requested": true
+  },
+  "protected_paths": [
+    {
+      "path": "candidate/THU-BDC2026-main",
+      "exists": true,
+      "bytes": 48069050,
+      "file_count": 58,
+      "metadata_tree_sha256": "16f8d36a9b50ecfbb487e6cc501f5ffc573106f01bfb8e6fccfd890d8b154809",
+      "content_tree_sha256": "85a54a5f2cc04cccb2f90f8b2ee25e438e5a53b372fa3a5c192815a405ab44b9",
+      "rule": "name and contents must remain byte-identical"
+    },
+    {
+      "path": "BaoStock_Datasets",
+      "exists": true,
+      "bytes": 272274520,
+      "file_count": 933,
+      "metadata_tree_sha256": "7c4ede2b6e8d35a77cb35836b654c58ca9976cd32586dbd2e14ffae71565c165",
+      "rule": "canonical local market data; do not delete"
+    },
+    {
+      "path": "Evaluation",
+      "exists": true,
+      "bytes": 3139855,
+      "file_count": 82,
+      "metadata_tree_sha256": "b7b25bbdbde7eb0dd230836aaac026ba660f84357cfdfabb74788bcbd256bff3",
+      "rule": "shared evaluation code and reports; do not delete"
+    },
+    {
+      "path": "_cleanup_reports",
+      "exists": true,
+      "bytes": 130629,
+      "file_count": 7,
+      "metadata_tree_sha256": "6bd047858f96f78d4da6a8ca33dfc256a6eb5630968d7ae4a5ed285368547c7f",
+      "rule": "historical provenance; do not rewrite prior reports"
+    },
+    {
+      "path": "Experimental_WorkSpace/shared_envs/pytorch-cu128-py311",
+      "exists": true,
+      "bytes": 5041811583,
+      "file_count": 28636,
+      "metadata_tree_sha256": "877a2dc37e53f827b62249c1ead4ddc0f087ccfbc964ce8028adb5d60487c7c7",
+      "rule": "canonical shared GPU environment; never delete"
+    }
+  ],
+  "renaming_map": [
+    {
+      "from": "Experimental_WorkSpace/candidates_D/D02_FrozenResearchChampion_20260709",
+      "to": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709",
+      "kind": "research_snapshot"
+    },
+    {
+      "from": "candidate/C1_Submission_App_20260703",
+      "to": "candidate/Candidate-C",
+      "kind": "submission_candidate"
+    },
+    {
+      "from": "Experimental_WorkSpace/candidates_D/D01_FrozenResearchChampion_20260709/production_refit_20260703",
+      "to": "candidate/Candidate-D",
+      "kind": "submission_package_derived_from_validated_production_refit"
+    }
+  ],
+  "retirement_map": [
+    {
+      "old_id": "D001",
+      "disposition": "delete superseded baseline package after Candidate-D validation"
+    },
+    {
+      "old_id": "D03",
+      "disposition": "delete failed research candidate after preserving conclusion in cleanup report"
+    },
+    {
+      "old_id": "D04",
+      "disposition": "delete weak-evidence research candidate after preserving conclusion in cleanup report"
+    },
+    {
+      "old_id": "E001",
+      "disposition": "retain lightweight program/registry/reports; delete failed weights and derived run snapshots"
+    }
+  ],
+  "before_state": {
+    "candidate": {
+      "path": "candidate",
+      "exists": true,
+      "bytes": 141189460,
+      "file_count": 127,
+      "metadata_tree_sha256": "1bbfe465bec39899191ab5d8c827585a63672ab0b4b32129dae0208847862b4c"
+    },
+    "experimental_workspace": {
+      "path": "Experimental_WorkSpace",
+      "exists": true,
+      "bytes": 20198648358,
+      "file_count": 49113,
+      "metadata_tree_sha256": "c8d6840bb64a064539d8c5b0417840173ae061a128f0375ed4d25d40ab44b880"
+    },
+    "candidates_C": {
+      "path": "Experimental_WorkSpace/candidates_C",
+      "exists": true,
+      "bytes": 270428097,
+      "file_count": 188,
+      "metadata_tree_sha256": "9eb11f59dc9dc42a78743fdf167f3b32ab54eaba5d7705e484b2b41bcf1556e8"
+    },
+    "candidates_D": {
+      "path": "Experimental_WorkSpace/candidates_D",
+      "exists": true,
+      "bytes": 12954710358,
+      "file_count": 15034,
+      "metadata_tree_sha256": "23f628b3f8098d531f3fb56d9df4018f416d8f698fea7ad18c7793149db2e010"
+    },
+    "candidates_E": {
+      "path": "Experimental_WorkSpace/candidates_E",
+      "exists": true,
+      "bytes": 1931689444,
+      "file_count": 5253,
+      "metadata_tree_sha256": "f21fc63a855a7fb3ebc32e2c3e95ed144bb41adaa45b93195d86700e9f2ddf80"
+    },
+    "root_venv": {
+      "path": ".venv",
+      "exists": true,
+      "bytes": 5048371063,
+      "file_count": 29181,
+      "metadata_tree_sha256": "a894341bd3fc5040451c38bfa0cda418707771427e2899c0681bff92851dbfd8"
+    }
+  },
+  "planned_cleanup_without_environment": [
+    {
+      "path": "candidate/Improvement_THU_original_candidate_20260705",
+      "exists": true,
+      "bytes": 35376574,
+      "file_count": 33,
+      "metadata_tree_sha256": "4e6b1f8c18b0b4e70ce84eb64b867ae0449cb678856d55adc9916f7794f5c1f6"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_C/C0_BaseModel",
+      "exists": true,
+      "bytes": 68248624,
+      "file_count": 59,
+      "metadata_tree_sha256": "592702d402cf2fd5eeb93ce4c055e6c0ae7caadbef1819bd097d647fd89d8f31"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_C/C1_Champion_RegimeGate",
+      "exists": true,
+      "bytes": 136398931,
+      "file_count": 87,
+      "metadata_tree_sha256": "1478eab423b387a86643910830265f1e545aca179729fc34ea5143f35a46f68e"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_C/C2_StrictClean_Baseline",
+      "exists": true,
+      "bytes": 65778160,
+      "file_count": 41,
+      "metadata_tree_sha256": "e593fc560d51b0d5b5857351701d5cb96b56ea4b7bb0f5c9eece02378df5c0ae"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/D001_MarketEncoder_Baseline",
+      "exists": true,
+      "bytes": 121303702,
+      "file_count": 218,
+      "metadata_tree_sha256": "0cc3dcf65cfa32806b7bfc832e504a7d541778c35adf35a5d3bc9d9728808beb"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/D03_R5_L1_F0_ResearchCandidate_20260711",
+      "exists": true,
+      "bytes": 37121722,
+      "file_count": 56,
+      "metadata_tree_sha256": "aa9b0b848e5d4e3e083745d8253e8dffe9d8d81ed272619ff690e1486955b252"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/D04_D001_P2_InverseVol_ResearchCandidate_20260713",
+      "exists": true,
+      "bytes": 52419631,
+      "file_count": 85,
+      "metadata_tree_sha256": "a6cc2b8b6a909da3e13dbc0208c558f53e1059476b5fdd40c5b109cbe3544310"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/data_snapshots",
+      "exists": true,
+      "bytes": 50674368,
+      "file_count": 4,
+      "metadata_tree_sha256": "667d75dc4a35a0392aaf8e47a2f449091ca9834d15d8626f127c3ae65d007cc7"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/__pycache__",
+      "exists": true,
+      "bytes": 588576,
+      "file_count": 8,
+      "metadata_tree_sha256": "27ad13d626320039126aa3a57aeb87db472b6915e4818d6fd888d0a65fe34d55"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/data_snapshots",
+      "exists": true,
+      "bytes": 47894456,
+      "file_count": 1,
+      "metadata_tree_sha256": "7d01768b749487a298983018cfe3830ebd93681aef9b9812f9cd30458a63c49f"
+    },
+    {
+      "path": "candidate/C1_Submission_App_20260703/code/src/__pycache__",
+      "exists": true,
+      "bytes": 5429,
+      "file_count": 2,
+      "metadata_tree_sha256": "f0214168125c934305e388a971140676d5fcd96a74cdfaf59da05cb8950223d2"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_CHAMPION_REF_20260709_110423",
+      "exists": true,
+      "bytes": 26760433,
+      "file_count": 47,
+      "metadata_tree_sha256": "cc3065736cf34c6d9bc9655850aa804785266069f0931e5cfa92f69a40bba770"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_FACTOR_FUSION_LIGHT_S20260708_20260709_112230",
+      "exists": true,
+      "bytes": 27620323,
+      "file_count": 47,
+      "metadata_tree_sha256": "de93c41bff72d5418fe68a93d2e023f4dedbaacc58491f5272d97858b5f79690"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_FACTOR_FUSION_LIGHT_S20260709_20260709_112557",
+      "exists": true,
+      "bytes": 27608025,
+      "file_count": 47,
+      "metadata_tree_sha256": "b8298f376e0cd4f29534255d01dc26c297128b073a917357adbad4f6dab2863f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_FACTOR_FUSION_LIGHT_S20260710_20260709_112951",
+      "exists": true,
+      "bytes": 27618170,
+      "file_count": 47,
+      "metadata_tree_sha256": "773654651daa23c90686a6a3855c85e28e1deec9213ae7da56eb3cb6b5e11c20"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R2_FAMILY_A_DOWNSIDE_CVAR_S20260708_20260709_123333",
+      "exists": true,
+      "bytes": 35140984,
+      "file_count": 48,
+      "metadata_tree_sha256": "d15f3974bda86c6a141d438eabbfbcb13944b3dcfe30e26cf125f4ae1d218659"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R2_FAMILY_A_DOWNSIDE_CVAR_S20260709_20260709_123911",
+      "exists": true,
+      "bytes": 35209142,
+      "file_count": 48,
+      "metadata_tree_sha256": "94115d94206f7872d2cc6f3d03cf7a52cbfbd77deffa09cedf1ca32271673902"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R2_FAMILY_A_DOWNSIDE_CVAR_S20260710_20260709_124240",
+      "exists": true,
+      "bytes": 35134924,
+      "file_count": 48,
+      "metadata_tree_sha256": "6473157970f59f6f9eefe7bf0c9ee40b943f2e0c27671af3621610d90d7834bc"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R2_FAMILY_A_DOWNSIDE_CVAR_SMOKE_20260709_122728",
+      "exists": true,
+      "bytes": 13977027,
+      "file_count": 48,
+      "metadata_tree_sha256": "5e48a5da52727ba382ed4a385bb52099b402ea4345db4c8de7b0233bb423b967"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R2_FAMILY_B_REGIME_HEAD_S20260708_20260709_124816",
+      "exists": true,
+      "bytes": 42844106,
+      "file_count": 48,
+      "metadata_tree_sha256": "0a9c7cbfa20a0bbf9ff4a3ee179745b94fdb971104747f787d88938a94959ff9"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R2_FAMILY_B_REGIME_HEAD_S20260709_20260709_125244",
+      "exists": true,
+      "bytes": 43042088,
+      "file_count": 48,
+      "metadata_tree_sha256": "3da5905c484f31958e22bc6927ca9eb508c46008a5f83c20a175a7a9902c3e01"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R2_FAMILY_B_REGIME_HEAD_S20260710_20260709_125822",
+      "exists": true,
+      "bytes": 42905999,
+      "file_count": 48,
+      "metadata_tree_sha256": "832e578a6d7ec98c8d51de0512fdc9380ba01d3264aec00f979c2e2422d9d0cf"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R2_FAMILY_B_REGIME_HEAD_SMOKE_20260709_122834",
+      "exists": true,
+      "bytes": 15266488,
+      "file_count": 48,
+      "metadata_tree_sha256": "9f80c9e8398d67a4c834f595abd96c0f55a129c7e67eeb351027bdb9845763e3"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R2_FAMILY_C_ROBUST_CKPT_S20260708_20260709_130400",
+      "exists": true,
+      "bytes": 35288004,
+      "file_count": 48,
+      "metadata_tree_sha256": "17b6fc7d9c5313b975b687ab7586339c0d858b29aafe69ecb998821e331e52af"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R2_FAMILY_C_ROBUST_CKPT_S20260709_20260709_130935",
+      "exists": true,
+      "bytes": 35320368,
+      "file_count": 48,
+      "metadata_tree_sha256": "b9a8ae010b927f11190b038d05d8b6e599c0e9996cd23251331c4796f37a69eb"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R2_FAMILY_C_ROBUST_CKPT_S20260710_20260709_131414",
+      "exists": true,
+      "bytes": 35273807,
+      "file_count": 48,
+      "metadata_tree_sha256": "5707e34c9f5948bc0b18479ca2ed611fb1be85e24fcc70c19f34de671ddd15d9"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R2_FAMILY_C_ROBUST_CKPT_SMOKE_20260709_122939",
+      "exists": true,
+      "bytes": 13977722,
+      "file_count": 48,
+      "metadata_tree_sha256": "370134bd4f0b0116d0b9b5fffda549d3fa99322b7466c5e9ace069085ea7a5e5"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_A3_WINRATE_01_Q_S20260708_20260709_135342",
+      "exists": true,
+      "bytes": 35079842,
+      "file_count": 48,
+      "metadata_tree_sha256": "11581ce6fd368574278970e2d656973645cad0134ec9e300d80d72f8c08fb082"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_A3_WINRATE_02_Q_S20260708_20260709_135637",
+      "exists": true,
+      "bytes": 35082711,
+      "file_count": 48,
+      "metadata_tree_sha256": "c6930f987d3dd257bc22ed7c350657982188798e996ee920bf16a2ca881103f2"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_A3_WINRATE_03_Q_S20260708_20260709_135931",
+      "exists": true,
+      "bytes": 35085887,
+      "file_count": 48,
+      "metadata_tree_sha256": "2c91edbd90dc6b08a07b65aaf27fadd711ed57ef557a654c8ab1f28fff48d336"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_A3_WINRATE_04_Q_S20260708_20260709_140225",
+      "exists": true,
+      "bytes": 35082761,
+      "file_count": 48,
+      "metadata_tree_sha256": "9bf9d68ecddad0b28c32873416dbd3d4476951bf6c2bbab044ac90f0915a9515"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_D_STABLE_COST_01_Q_S20260708_20260709_140518",
+      "exists": true,
+      "bytes": 41747380,
+      "file_count": 48,
+      "metadata_tree_sha256": "f2cf76aebb283a12207319012cf049069f4b1893af70380c42116b311a74ebf6"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_D_STABLE_COST_01_SMOKE_20260709_133805",
+      "exists": true,
+      "bytes": 98551,
+      "file_count": 18,
+      "metadata_tree_sha256": "17c376330e7f2ff07fcf14ed06387d7dcc9613b1e1034a15d8d79e0c7a1c8df7"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_D_STABLE_COST_01_SMOKE_20260709_134257",
+      "exists": true,
+      "bytes": 14963277,
+      "file_count": 48,
+      "metadata_tree_sha256": "6ee833c62a6e048920fb387fee2b2ca89275b994130e93ea4bc9db7d57373f86"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_D_STABLE_COST_02_Q_S20260708_20260709_140812",
+      "exists": true,
+      "bytes": 41784509,
+      "file_count": 48,
+      "metadata_tree_sha256": "392887a029100e011be58a0030b86dcebeace9a5d9826712a13a31694c7d2fc4"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_D_STABLE_COST_02_SMOKE_20260709_133830",
+      "exists": true,
+      "bytes": 98557,
+      "file_count": 18,
+      "metadata_tree_sha256": "8ae357f5ac361d40787467bbacf248e572cbc15bdd11f2aecba9d5981127a284"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_D_STABLE_COST_02_SMOKE_20260709_134406",
+      "exists": true,
+      "bytes": 14982027,
+      "file_count": 48,
+      "metadata_tree_sha256": "4a5ad99e1af624dd18c91dcb4862b0f195e2d38b6da3d21674b52dd075fb95f2"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_D_STABLE_COST_03_Q_S20260708_20260709_141101",
+      "exists": true,
+      "bytes": 41675720,
+      "file_count": 48,
+      "metadata_tree_sha256": "3a826fba51e64fa8e3b6ce73e9bbda2dcd1d0472a88c56e04cb4d819edf9137c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_D_STABLE_COST_03_SERIOUS_S20260708_20260709_143810",
+      "exists": true,
+      "bytes": 41681927,
+      "file_count": 48,
+      "metadata_tree_sha256": "98d351b96c7237ef63935d650dc4ff7f8d2a4e5e89f98a4d4379a4bb659fcbfa"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_D_STABLE_COST_03_SERIOUS_S20260709_20260709_144125",
+      "exists": true,
+      "bytes": 41694922,
+      "file_count": 48,
+      "metadata_tree_sha256": "a1cece6904119455e070f956c5548de621e8d7ad8785e31088d35a36c35733f4"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_D_STABLE_COST_03_SERIOUS_S20260710_20260709_144438",
+      "exists": true,
+      "bytes": 41759827,
+      "file_count": 48,
+      "metadata_tree_sha256": "36ff5d5401ad337d33c5a327789accfe0935cbb3090d9b0d2254e54c2f441e06"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_D_STABLE_COST_03_SMOKE_20260709_133854",
+      "exists": true,
+      "bytes": 98557,
+      "file_count": 18,
+      "metadata_tree_sha256": "9a00e81cef8d12d560abbf3e3316ba4f84697c5515c6ebac2c50f70936d74757"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_D_STABLE_COST_03_SMOKE_20260709_134513",
+      "exists": true,
+      "bytes": 14917324,
+      "file_count": 48,
+      "metadata_tree_sha256": "7442822a61a410d3c5c722202f81d3f2ad33c7bcc991273b4c7a67d9f5996bd1"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_D_STABLE_COST_04_Q_S20260708_20260709_141358",
+      "exists": true,
+      "bytes": 41667721,
+      "file_count": 48,
+      "metadata_tree_sha256": "8ce102e53877a7d4fcfa6a94d74ef107c5c62600a9ab53a38104536be9bdd9f3"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_D_STABLE_COST_04_SERIOUS_S20260708_20260709_142825",
+      "exists": true,
+      "bytes": 41673930,
+      "file_count": 48,
+      "metadata_tree_sha256": "876d47d148e43d6a23a8aa3ce60ff3e408f9517930bd250321644bd4e9b3246f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_D_STABLE_COST_04_SERIOUS_S20260709_20260709_143139",
+      "exists": true,
+      "bytes": 41677655,
+      "file_count": 48,
+      "metadata_tree_sha256": "8a25f1fbef66dcedee3defd7e68f3cf7f0d7ff7cd1d5e1fb142cf8917abfcb8f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_D_STABLE_COST_04_SERIOUS_S20260710_20260709_143452",
+      "exists": true,
+      "bytes": 41748762,
+      "file_count": 48,
+      "metadata_tree_sha256": "fc05a79636217cee8c54c605df71fc194b782d286d827e099f436e73c36eff22"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_D_STABLE_COST_04_SMOKE_20260709_133919",
+      "exists": true,
+      "bytes": 98557,
+      "file_count": 18,
+      "metadata_tree_sha256": "40b8cc73fca6fca366fe82f376eb24b579e266a0f13474e6e9323c0f62379da6"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_D_STABLE_COST_04_SMOKE_20260709_134618",
+      "exists": true,
+      "bytes": 14918438,
+      "file_count": 48,
+      "metadata_tree_sha256": "f90d3bef8445bb158d752069ec6d0ad8a1770f2436694837699894550d24685f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_E_DET_REGIME_01_Q_S20260708_20260709_141653",
+      "exists": true,
+      "bytes": 42323693,
+      "file_count": 48,
+      "metadata_tree_sha256": "a7875b1180f3ae2de3d298343320ac93d1dc5b9c3f830aa836d850cf463fb41a"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_E_DET_REGIME_01_SMOKE_20260709_133944",
+      "exists": true,
+      "bytes": 98564,
+      "file_count": 18,
+      "metadata_tree_sha256": "aa3e36e7516852e2d2f763a9e08a70735a877ee79d24fd8c740d55e51f01c35b"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_E_DET_REGIME_01_SMOKE_20260709_134725",
+      "exists": true,
+      "bytes": 15076154,
+      "file_count": 48,
+      "metadata_tree_sha256": "4af833ef0922088196844172d7c8c3585a993877316ba1321d464d02b9a5bcf6"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_E_DET_REGIME_02_Q_S20260708_20260709_141947",
+      "exists": true,
+      "bytes": 41709886,
+      "file_count": 48,
+      "metadata_tree_sha256": "670e8e5f74a32711ebb875465e4c4ceb87223a72444e5a3356554b9b7865016c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_E_DET_REGIME_02_SERIOUS_S20260708_20260709_144753",
+      "exists": true,
+      "bytes": 41716003,
+      "file_count": 48,
+      "metadata_tree_sha256": "0b1dfac623ac39d4b4bd72717d2810c6acc5b5893d1e774a2a102117b9893e88"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_E_DET_REGIME_02_SERIOUS_S20260709_20260709_145105",
+      "exists": true,
+      "bytes": 41711309,
+      "file_count": 48,
+      "metadata_tree_sha256": "e62e5ada4475e34471ca2eb95c17a62c0823f3e3f6858731e1182d92dd81539c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_E_DET_REGIME_02_SERIOUS_S20260710_20260709_145414",
+      "exists": true,
+      "bytes": 41780309,
+      "file_count": 48,
+      "metadata_tree_sha256": "15d2839d9d9449c27f7df1fa35b8122bcb1271ad261d22e6c14f548ce019422c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_E_DET_REGIME_02_SMOKE_20260709_134009",
+      "exists": true,
+      "bytes": 98564,
+      "file_count": 18,
+      "metadata_tree_sha256": "d558d5eb3b65a43b7c3fed4efdd46855e2e8f6e3e3047d380f52fbf6c6a21304"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_E_DET_REGIME_02_SMOKE_20260709_134832",
+      "exists": true,
+      "bytes": 14930142,
+      "file_count": 48,
+      "metadata_tree_sha256": "e6f52200451a7fef2b183698c1d5d02871f26516417f80ddde9a63aed1e01f1a"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_E_DET_REGIME_03_Q_S20260708_20260709_142238",
+      "exists": true,
+      "bytes": 42609367,
+      "file_count": 48,
+      "metadata_tree_sha256": "02aa7a6f2c6c488d594caa0892116ab66b3163344e69417662af10eddcdf2cfa"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_E_DET_REGIME_03_SMOKE_20260709_134034",
+      "exists": true,
+      "bytes": 98564,
+      "file_count": 18,
+      "metadata_tree_sha256": "d5d49484900e4b3e5dd6ce857b93f01288910ba86ae18f5c9b1affd8a0e4ea9c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_E_DET_REGIME_03_SMOKE_20260709_134938",
+      "exists": true,
+      "bytes": 15204782,
+      "file_count": 48,
+      "metadata_tree_sha256": "8e47e6a44bb104ffaaab73b9acfd20e18a74c1ab76bcfd0260c79329d2b86b6f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_E_DET_REGIME_04_Q_S20260708_20260709_142533",
+      "exists": true,
+      "bytes": 42473809,
+      "file_count": 48,
+      "metadata_tree_sha256": "41a700e55df509b08e3319706fc66b56c02de56633d17fb5a31d45b9c1b840b5"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_E_DET_REGIME_04_SMOKE_20260709_134058",
+      "exists": true,
+      "bytes": 98561,
+      "file_count": 18,
+      "metadata_tree_sha256": "f4081aff29137d0afcd38e0e3f1db3f0be0f4d0da7159f856876f9bdc0f36679"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_E_DET_REGIME_04_SMOKE_20260709_135045",
+      "exists": true,
+      "bytes": 15077422,
+      "file_count": 48,
+      "metadata_tree_sha256": "a05026119722384b88a9bb06419cde0f502fbeba7680515c296fd801aeeb31e9"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_F_PAIRED_CKPT_01_Q_S20260708_20260709_150140",
+      "exists": true,
+      "bytes": 41809296,
+      "file_count": 48,
+      "metadata_tree_sha256": "1245431b5d15d1936d529b6d7aa9601638c9ceda9f7fb625cac24cf6bc7b06ad"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_F_PAIRED_CKPT_01_SERIOUS_S20260708_20260709_151538",
+      "exists": true,
+      "bytes": 41793533,
+      "file_count": 48,
+      "metadata_tree_sha256": "b3a02c5bf2c13110771bafbdf5d72f4ec1f3262b1e3978d98d92194f23666daf"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_F_PAIRED_CKPT_01_SERIOUS_S20260709_20260709_152003",
+      "exists": true,
+      "bytes": 41581754,
+      "file_count": 48,
+      "metadata_tree_sha256": "8c24c1339e6cea483eaf9a46009541c6977751a575136582c041afc18f7122e2"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_F_PAIRED_CKPT_01_SERIOUS_S20260710_20260709_152504",
+      "exists": true,
+      "bytes": 41656439,
+      "file_count": 48,
+      "metadata_tree_sha256": "9424910d4d6996474586fd72f757d056cf90952172478b6c4c280821cdba05ac"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_F_PAIRED_CKPT_01_SMOKE_20260709_134123",
+      "exists": true,
+      "bytes": 98548,
+      "file_count": 18,
+      "metadata_tree_sha256": "0b54806890b8f25ba409a84a7bd75a569b7e1ced8f70ffb2960a50cdda00d9c1"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_F_PAIRED_CKPT_01_SMOKE_20260709_135152",
+      "exists": true,
+      "bytes": 14983127,
+      "file_count": 48,
+      "metadata_tree_sha256": "a4ecd46f6eb539603b281abc60ec09a794c0d721d3e7f8faa0256d08bd4188e0"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_F_PAIRED_CKPT_02_Q_S20260708_20260709_150511",
+      "exists": true,
+      "bytes": 42960048,
+      "file_count": 48,
+      "metadata_tree_sha256": "302fc6dd669d3125da4aed4d472731aa99789853e7c055fdaded28c41b544519"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_F_PAIRED_CKPT_03_Q_S20260708_20260709_150840",
+      "exists": true,
+      "bytes": 42371300,
+      "file_count": 48,
+      "metadata_tree_sha256": "a208e9b7f81391a2fa0bdaa640156f1d267cf78f9be516d061b854b9a853b1ed"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_F_PAIRED_CKPT_03_SERIOUS_S20260708_20260709_153002",
+      "exists": true,
+      "bytes": 42355527,
+      "file_count": 48,
+      "metadata_tree_sha256": "af24f99656c489ea7a8c879ee8bb23f612bbf5fedae466590dc03a53e8a2c4ac"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_F_PAIRED_CKPT_03_SERIOUS_S20260709_20260709_153432",
+      "exists": true,
+      "bytes": 42262389,
+      "file_count": 48,
+      "metadata_tree_sha256": "d96d4d321eaab88f416494ae83bc2e9a4515c5f17cba6f83a9adca6b0934ade1"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_F_PAIRED_CKPT_03_SERIOUS_S20260710_20260709_153937",
+      "exists": true,
+      "bytes": 42293658,
+      "file_count": 48,
+      "metadata_tree_sha256": "75da776770b2dc80f92a3e66c4bce37ff4ef09b3cd9a22fc1a9686a62e321493"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_F_PAIRED_CKPT_04_Q_S20260708_20260709_151209",
+      "exists": true,
+      "bytes": 41724103,
+      "file_count": 48,
+      "metadata_tree_sha256": "47e75cc73de1811bc8c755c51fbabaf67b1abe1c28c83050fde0f085316ff211"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_F_PAIRED_CKPT_04_SERIOUS_S20260708_20260709_154428",
+      "exists": true,
+      "bytes": 41708336,
+      "file_count": 48,
+      "metadata_tree_sha256": "e78edb6343356fd124771b207bbef75df67462935235de2d036e3bb645993acb"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_F_PAIRED_CKPT_04_SERIOUS_S20260709_20260709_154838",
+      "exists": true,
+      "bytes": 41645359,
+      "file_count": 48,
+      "metadata_tree_sha256": "eca3e9812f1d3403f13bca1ad1632606b59bb9f22966cf4bc843475707ba1256"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R3_F_PAIRED_CKPT_04_SERIOUS_S20260710_20260709_155323",
+      "exists": true,
+      "bytes": 41660760,
+      "file_count": 48,
+      "metadata_tree_sha256": "a6491e9b1c94c5be18d4c1119cf1cb317a43bc5cd6bd4d294a12ac95a73aa824"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_A_PDR_D02_LOSS_QUICK_S20260710_20260710_132347",
+      "exists": true,
+      "bytes": 79058886,
+      "file_count": 63,
+      "metadata_tree_sha256": "30183d90f3da7a7b12d3827ae994d12e07fa096bb5c3d4244146a30069bef2e6"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_A_PDR_D02_LOSS_SERIOUS_S20260710_20260710_133055",
+      "exists": true,
+      "bytes": 151796549,
+      "file_count": 84,
+      "metadata_tree_sha256": "b378b06a58157837a13e0fb98ff8787685ab0a0164bc77f617be7c1fe5831586"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_A_PDR_D02_LOSS_SERIOUS_S20260711_20260710_133540",
+      "exists": true,
+      "bytes": 151764956,
+      "file_count": 84,
+      "metadata_tree_sha256": "4626bce428e6dbddffa58ce02355e188c68432a4def0b9111dc6f9c2c8f50ffe"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_A_PDR_D02_LOSS_SERIOUS_S20260712_20260710_134017",
+      "exists": true,
+      "bytes": 151818913,
+      "file_count": 84,
+      "metadata_tree_sha256": "b12b0b7681477f0294ff6866faeea0f6e727938335615924d535f3bfd129290c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_A_PDR_D02_LOSS_SERIOUS_S20260713_20260710_134512",
+      "exists": true,
+      "bytes": 151837709,
+      "file_count": 84,
+      "metadata_tree_sha256": "174046cc1232c5ea571c3d215bfc4d512e3c94681bf01b4e0ff05431e2ad0cbd"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_A_PDR_D02_LOSS_SERIOUS_S20260714_20260710_134950",
+      "exists": true,
+      "bytes": 151783684,
+      "file_count": 84,
+      "metadata_tree_sha256": "1229f2f2298a8444c82ee0f7fbb2e87082140c1f204fce10da8f8c4a5a68a089"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_A_PDR_D02_LOSS_SMOKE_S20260710_20260710_132014",
+      "exists": true,
+      "bytes": 37315038,
+      "file_count": 51,
+      "metadata_tree_sha256": "51ed0676447b9da64c863c2490b86e68bfb53f45c007336c44eacb79803f7ae7"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_A_PDR_R2_DOWNSIDE_QUICK_S20260710_20260710_132559",
+      "exists": true,
+      "bytes": 78834551,
+      "file_count": 63,
+      "metadata_tree_sha256": "d01fbb206c3cd7e9c5e390dd80091a6ce564a94638b4695d6d51294da791d9c9"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_A_PDR_R2_DOWNSIDE_REPRO_S20260710_20260710_142326",
+      "exists": true,
+      "bytes": 151218849,
+      "file_count": 84,
+      "metadata_tree_sha256": "aa69a028a33a63b7e0725ca46b78ebb4a223cd9ea4ba5876009cde721ab6b8ab"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_A_PDR_R2_DOWNSIDE_SERIOUS_S20260710_20260710_135428",
+      "exists": true,
+      "bytes": 151261674,
+      "file_count": 85,
+      "metadata_tree_sha256": "4d3639a24a4f7efc702842330580e421716c131c6b86e903865109af2c409acc"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_A_PDR_R2_DOWNSIDE_SERIOUS_S20260711_20260710_135907",
+      "exists": true,
+      "bytes": 151073119,
+      "file_count": 85,
+      "metadata_tree_sha256": "45ea2b46fc9021ea46928e8c7ab915c2ef0b91169f695118665bf661dfa42417"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_A_PDR_R2_DOWNSIDE_SERIOUS_S20260712_20260710_140400",
+      "exists": true,
+      "bytes": 151251670,
+      "file_count": 85,
+      "metadata_tree_sha256": "2659f72075aded3d767e14369e8f90e6058eb559159163ab26da60e1ee9a5b03"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_A_PDR_R2_DOWNSIDE_SERIOUS_S20260713_20260710_140900",
+      "exists": true,
+      "bytes": 151372823,
+      "file_count": 85,
+      "metadata_tree_sha256": "28664d4afcd28b59dba63ab7d3809a523029e81a1e1860efe2f4d229b1d8b85a"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_A_PDR_R2_DOWNSIDE_SERIOUS_S20260714_20260710_141332",
+      "exists": true,
+      "bytes": 151502097,
+      "file_count": 85,
+      "metadata_tree_sha256": "9e7b296bafe8712304b0ef89b57c00f6bf9ee3b2144336e0c9834e0ac97b3fc7"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_A_PDR_R2_DOWNSIDE_SMOKE_S20260710_20260710_132116",
+      "exists": true,
+      "bytes": 37293018,
+      "file_count": 51,
+      "metadata_tree_sha256": "807ce6407031a577522f3b20baf66bd13d98f3577c443844cda5ec3a3130a5c8"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_A_PDR_R3_F1_QUICK_S20260710_20260710_132810",
+      "exists": true,
+      "bytes": 78896539,
+      "file_count": 63,
+      "metadata_tree_sha256": "626d5311f059925f77eda891c76606b92fe8d98a0e7e909d32d0eaaee0b4f5f0"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_A_PDR_R3_F1_SMOKE_S20260710_20260710_132210",
+      "exists": true,
+      "bytes": 37303763,
+      "file_count": 51,
+      "metadata_tree_sha256": "7ccb88766d6123708a259e090f0ad66061a33a994bfd39697534775cddeab45a"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_BASELINE_REPRO_20260710_125951",
+      "exists": true,
+      "bytes": 7511984,
+      "file_count": 17,
+      "metadata_tree_sha256": "4caa0778de6437519a661e425b5c478add3c525d1756fcacc1179af9c251d5a2"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_BC_PIPELINE_SMOKE_20260710_132310",
+      "exists": true,
+      "bytes": 1389,
+      "file_count": 2,
+      "metadata_tree_sha256": "7f50feb63e04cbd5138f2c7e5583e05537feaba4115bbf6838a6e58706f71564"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_BORDA_RANK_AVERAGE_C_DYNAMIC_GAP_LOOSE_A_PDR_D02_LOSS_20260710_141945",
+      "exists": true,
+      "bytes": 6531307,
+      "file_count": 24,
+      "metadata_tree_sha256": "1531a84fbfc3286d969beee201194afd58ea1671010eac23affd0a2d5940ea20"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_BORDA_RANK_AVERAGE_C_DYNAMIC_GAP_LOOSE_A_PDR_R2_DOWNSIDE_20260710_142119",
+      "exists": true,
+      "bytes": 6531917,
+      "file_count": 24,
+      "metadata_tree_sha256": "7821fb93dc4f8ac1218ca0e3cfc3c3fab498b1fb2af9a6360aacafa7da93c26b"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_BORDA_RANK_AVERAGE_C_DYNAMIC_GAP_STRICT_A_PDR_D02_LOSS_20260710_141948",
+      "exists": true,
+      "bytes": 6531257,
+      "file_count": 24,
+      "metadata_tree_sha256": "99c3d63ca0701322215bd674fd4cf99e6d29a180d4b6dc307b03c0a58673468d"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_BORDA_RANK_AVERAGE_C_DYNAMIC_GAP_STRICT_A_PDR_R2_DOWNSIDE_20260710_142121",
+      "exists": true,
+      "bytes": 6531813,
+      "file_count": 24,
+      "metadata_tree_sha256": "d7950063af385847b049012f72dd8ff93b7c2039ae337b2c4a9082256c203739"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_BORDA_RANK_AVERAGE_C_HYSTERESIS_NARROW_A_PDR_D02_LOSS_20260710_141955",
+      "exists": true,
+      "bytes": 6527902,
+      "file_count": 24,
+      "metadata_tree_sha256": "30df81e9b12b4a4574a2c94e49a26f7f9521f82fdab4a1e6e9b3ab954a51bdb0"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_BORDA_RANK_AVERAGE_C_HYSTERESIS_NARROW_A_PDR_R2_DOWNSIDE_20260710_142128",
+      "exists": true,
+      "bytes": 6528538,
+      "file_count": 24,
+      "metadata_tree_sha256": "b76704d55dd0883d6f5fe21646cfb18cb25b4bbbfb4e9e5857238ad43dde05a6"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_BORDA_RANK_AVERAGE_C_HYSTERESIS_WIDE_A_PDR_D02_LOSS_20260710_141957",
+      "exists": true,
+      "bytes": 6527818,
+      "file_count": 24,
+      "metadata_tree_sha256": "bd4519e9a0b8eca92f58f655e2477a33b8c4ef030a59077da79b502eb3fc921d"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_BORDA_RANK_AVERAGE_C_HYSTERESIS_WIDE_A_PDR_R2_DOWNSIDE_20260710_142131",
+      "exists": true,
+      "bytes": 6528517,
+      "file_count": 24,
+      "metadata_tree_sha256": "71aed5b6f75b4f56affb4d8f13f3c1a39828281ade1ec7614c16e2b04213a48f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_BORDA_RANK_AVERAGE_C_SOFTMAX_TOP3_A_PDR_D02_LOSS_20260710_141950",
+      "exists": true,
+      "bytes": 6538257,
+      "file_count": 24,
+      "metadata_tree_sha256": "d3f7e4021b59781b386c7f74c081b0c4b5dc0783bcfde3ebf24e779faa8b423c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_BORDA_RANK_AVERAGE_C_SOFTMAX_TOP3_A_PDR_R2_DOWNSIDE_20260710_142124",
+      "exists": true,
+      "bytes": 6538568,
+      "file_count": 24,
+      "metadata_tree_sha256": "c45e17b385bf3d9f9e8c303593483c58c088e4110fcd424f4cc3989a342d8892"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_BORDA_RANK_AVERAGE_C_SOFTMAX_TOP5_A_PDR_D02_LOSS_20260710_141952",
+      "exists": true,
+      "bytes": 6549965,
+      "file_count": 24,
+      "metadata_tree_sha256": "a927ab05efcee669797abf60599963a816f8a638f4fee4a7cf05caccd13a6d9c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_BORDA_RANK_AVERAGE_C_SOFTMAX_TOP5_A_PDR_R2_DOWNSIDE_20260710_142126",
+      "exists": true,
+      "bytes": 6550221,
+      "file_count": 24,
+      "metadata_tree_sha256": "1097a756c5f78c30f62431d9800d78cfa162f51f1df389f9d15667b60fbc21c1"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_BORDA_RANK_AVERAGE_C_TOP2_EQUAL_A_PDR_D02_LOSS_20260710_141942",
+      "exists": true,
+      "bytes": 6521871,
+      "file_count": 24,
+      "metadata_tree_sha256": "0eb3e36580061710c7ed45e0e40b09b8cf9c2dd0d607ce441f09ee5fd3c89e3c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_BORDA_RANK_AVERAGE_C_TOP2_EQUAL_A_PDR_R2_DOWNSIDE_20260710_142116",
+      "exists": true,
+      "bytes": 6522244,
+      "file_count": 24,
+      "metadata_tree_sha256": "314216d97dd3404cce4deb6c16429c9d407818c29b097dbf563e39ba719b251e"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_DISAGREEMENT_PENALIZED_CONSENSUS_C_DYNAMIC_GAP_LOOSE_A_PDR_D02_LOSS_20260710_142010",
+      "exists": true,
+      "bytes": 7278453,
+      "file_count": 24,
+      "metadata_tree_sha256": "fe711b1f32663c71a3f967e363803a268b85017197b311c51bc00f489a8d45b2"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_DISAGREEMENT_PENALIZED_CONSENSUS_C_DYNAMIC_GAP_LOOSE_A_PDR_R2_DOWNSIDE_20260710_142141",
+      "exists": true,
+      "bytes": 7278294,
+      "file_count": 24,
+      "metadata_tree_sha256": "a8980e768479bcc3c161fa7c23442c59f49620ad590e034aa0df9b9f7400336c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_DISAGREEMENT_PENALIZED_CONSENSUS_C_DYNAMIC_GAP_STRICT_A_PDR_D02_LOSS_20260710_142012",
+      "exists": true,
+      "bytes": 7278362,
+      "file_count": 24,
+      "metadata_tree_sha256": "9409ba9e0105800e29a50e6b32605c94defbeda16fbecee488310db69f63ea03"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_DISAGREEMENT_PENALIZED_CONSENSUS_C_DYNAMIC_GAP_STRICT_A_PDR_R2_DOWNSIDE_20260710_142144",
+      "exists": true,
+      "bytes": 7278186,
+      "file_count": 24,
+      "metadata_tree_sha256": "e02e8cb17560f6426ce44bef32ee05287cbdbbe198811946d0615b288cce6fdf"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_DISAGREEMENT_PENALIZED_CONSENSUS_C_HYSTERESIS_NARROW_A_PDR_D02_LOSS_20260710_142019",
+      "exists": true,
+      "bytes": 7274805,
+      "file_count": 24,
+      "metadata_tree_sha256": "5e2f764d3d33a52c2183d34e7956bb4466b89ccc2d3b749cda605d347cf84437"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_DISAGREEMENT_PENALIZED_CONSENSUS_C_HYSTERESIS_NARROW_A_PDR_R2_DOWNSIDE_20260710_142151",
+      "exists": true,
+      "bytes": 7274802,
+      "file_count": 24,
+      "metadata_tree_sha256": "6de4fb847e198d97021ab52fffa0438617a88a63feab0ef8cd36c9cd7b8a037d"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_DISAGREEMENT_PENALIZED_CONSENSUS_C_HYSTERESIS_WIDE_A_PDR_D02_LOSS_20260710_142021",
+      "exists": true,
+      "bytes": 7274861,
+      "file_count": 24,
+      "metadata_tree_sha256": "394994397346b2555067ff64b6e66097cb70aee5427fe8b01914e326dc6dd743"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_DISAGREEMENT_PENALIZED_CONSENSUS_C_HYSTERESIS_WIDE_A_PDR_R2_DOWNSIDE_20260710_142153",
+      "exists": true,
+      "bytes": 7274856,
+      "file_count": 24,
+      "metadata_tree_sha256": "35bb4d96d5cd33acb3a0ffe21144824de02ad210604258e93718123c87443b19"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_DISAGREEMENT_PENALIZED_CONSENSUS_C_SOFTMAX_TOP3_A_PDR_D02_LOSS_20260710_142014",
+      "exists": true,
+      "bytes": 7285543,
+      "file_count": 24,
+      "metadata_tree_sha256": "e51ef990a34b5e8438b0be786fdac73ea2b7087bfc67590c3aa1077fd6406b6c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_DISAGREEMENT_PENALIZED_CONSENSUS_C_SOFTMAX_TOP3_A_PDR_R2_DOWNSIDE_20260710_142146",
+      "exists": true,
+      "bytes": 7285001,
+      "file_count": 24,
+      "metadata_tree_sha256": "3c3472187b997c65a481dc2f2b23800d2a44bed842ac2754c5158b76004c4bf0"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_DISAGREEMENT_PENALIZED_CONSENSUS_C_SOFTMAX_TOP5_A_PDR_D02_LOSS_20260710_142016",
+      "exists": true,
+      "bytes": 7296660,
+      "file_count": 24,
+      "metadata_tree_sha256": "ecc92f1b1ddf073d132386a53cbb435e2f007bdf2f4dc958c70c19478937a98e"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_DISAGREEMENT_PENALIZED_CONSENSUS_C_SOFTMAX_TOP5_A_PDR_R2_DOWNSIDE_20260710_142148",
+      "exists": true,
+      "bytes": 7296723,
+      "file_count": 24,
+      "metadata_tree_sha256": "a98d0448c74468f12a8f975c9c257c706541ab39d1a3ccad8aacfc1d9cbf7725"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_DISAGREEMENT_PENALIZED_CONSENSUS_C_TOP2_EQUAL_A_PDR_D02_LOSS_20260710_142007",
+      "exists": true,
+      "bytes": 7268862,
+      "file_count": 24,
+      "metadata_tree_sha256": "278566828732ae7e411f891be5745092210c3a49243f3c0618ecc87b9f64d633"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_DISAGREEMENT_PENALIZED_CONSENSUS_C_TOP2_EQUAL_A_PDR_R2_DOWNSIDE_20260710_142139",
+      "exists": true,
+      "bytes": 7268659,
+      "file_count": 24,
+      "metadata_tree_sha256": "90c6f7d012eeb421ee8553924c3f4931381fd53bc76a1a7e47de9610fc07bf3d"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_MEAN_PERCENTILE_RANK_C_DYNAMIC_GAP_LOOSE_A_PDR_D02_LOSS_20260710_141855",
+      "exists": true,
+      "bytes": 6640214,
+      "file_count": 24,
+      "metadata_tree_sha256": "590e18fc6b72218ae953ead87a71f2fa9a18ab72dd75d66d191bc6c5ea534e59"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_MEAN_PERCENTILE_RANK_C_DYNAMIC_GAP_LOOSE_A_PDR_R2_DOWNSIDE_20260710_142031",
+      "exists": true,
+      "bytes": 6640348,
+      "file_count": 24,
+      "metadata_tree_sha256": "2044c7beee13b0513a507350ef6e9142ce6ae70f549bd148b0ae5415140c73a6"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_MEAN_PERCENTILE_RANK_C_DYNAMIC_GAP_STRICT_A_PDR_D02_LOSS_20260710_141857",
+      "exists": true,
+      "bytes": 6640166,
+      "file_count": 24,
+      "metadata_tree_sha256": "adc7931a7a276a9fa30a457b7b278616d68971e0b44f95e515cd8b131070644f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_MEAN_PERCENTILE_RANK_C_DYNAMIC_GAP_STRICT_A_PDR_R2_DOWNSIDE_20260710_142034",
+      "exists": true,
+      "bytes": 6640252,
+      "file_count": 24,
+      "metadata_tree_sha256": "5eec8a0d27e9e3a46417af9d514e8ce607e8994826594ec943ff64f20cfeacb9"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_MEAN_PERCENTILE_RANK_C_HYSTERESIS_NARROW_A_PDR_D02_LOSS_20260710_141904",
+      "exists": true,
+      "bytes": 6636742,
+      "file_count": 24,
+      "metadata_tree_sha256": "1482ac80617d77b9aab0bc9dfaf2b4bfc5b1956b3ec16843e32af199beeaf09f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_MEAN_PERCENTILE_RANK_C_HYSTERESIS_NARROW_A_PDR_R2_DOWNSIDE_20260710_142041",
+      "exists": true,
+      "bytes": 6636932,
+      "file_count": 24,
+      "metadata_tree_sha256": "d15e7f692b27f75dd8962fd27b8509dadad0d6f2dc2f67c6388d72f5100a3007"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_MEAN_PERCENTILE_RANK_C_HYSTERESIS_WIDE_A_PDR_D02_LOSS_20260710_141906",
+      "exists": true,
+      "bytes": 6636663,
+      "file_count": 24,
+      "metadata_tree_sha256": "c6447fbf95df5249df18444766ca829134fb45cddcadd5078de8ecccbe11e9a9"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_MEAN_PERCENTILE_RANK_C_HYSTERESIS_WIDE_A_PDR_R2_DOWNSIDE_20260710_142043",
+      "exists": true,
+      "bytes": 6636911,
+      "file_count": 24,
+      "metadata_tree_sha256": "e35e891b000c274f790686609b53e42bce25422e60baaea6719665b89b09e071"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_MEAN_PERCENTILE_RANK_C_SOFTMAX_TOP3_A_PDR_D02_LOSS_20260710_141859",
+      "exists": true,
+      "bytes": 6646815,
+      "file_count": 24,
+      "metadata_tree_sha256": "6322bd0516c46d7e2b5e9adcaed5a840aab5e828dd235efb311c66a91e20cba8"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_MEAN_PERCENTILE_RANK_C_SOFTMAX_TOP3_A_PDR_R2_DOWNSIDE_20260710_142036",
+      "exists": true,
+      "bytes": 6647461,
+      "file_count": 24,
+      "metadata_tree_sha256": "1a685859bffcf7dc46b3c8ba19c5286c38db6daf35b26d59e23f6eda2d4bef6d"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_MEAN_PERCENTILE_RANK_C_SOFTMAX_TOP5_A_PDR_D02_LOSS_20260710_141901",
+      "exists": true,
+      "bytes": 6658422,
+      "file_count": 24,
+      "metadata_tree_sha256": "a93d1ff33942f75ae24daa8c3da7622b5022e80a8901c8520d896940ab425393"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_MEAN_PERCENTILE_RANK_C_SOFTMAX_TOP5_A_PDR_R2_DOWNSIDE_20260710_142038",
+      "exists": true,
+      "bytes": 6658580,
+      "file_count": 24,
+      "metadata_tree_sha256": "9d3cc6f0f0ffa00875f7c9454c4f401ca150a0dea956229a88f5fe4815b36a71"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_MEAN_PERCENTILE_RANK_C_TOP2_EQUAL_A_PDR_D02_LOSS_20260710_141852",
+      "exists": true,
+      "bytes": 6630661,
+      "file_count": 24,
+      "metadata_tree_sha256": "fc5341476d9630b9700eed5648a777585ddd822aa28b220cbbceccc33c930050"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_MEAN_PERCENTILE_RANK_C_TOP2_EQUAL_A_PDR_R2_DOWNSIDE_20260710_142029",
+      "exists": true,
+      "bytes": 6630650,
+      "file_count": 24,
+      "metadata_tree_sha256": "546bdeb99db8fbd55fe87c6bdb0421978d5b332786fa094f9d1d6ed57d4535c0"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_TRIMMED_MEAN_STANDARDIZED_C_DYNAMIC_GAP_LOOSE_A_PDR_D02_LOSS_20260710_141917",
+      "exists": true,
+      "bytes": 6942704,
+      "file_count": 24,
+      "metadata_tree_sha256": "e7ddab94461817901ad1194aeaa1b4238952fc2de2d833e542663e2189790e4b"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_TRIMMED_MEAN_STANDARDIZED_C_DYNAMIC_GAP_LOOSE_A_PDR_R2_DOWNSIDE_20260710_142053",
+      "exists": true,
+      "bytes": 6942294,
+      "file_count": 24,
+      "metadata_tree_sha256": "1e30aa6f206a558c3c72a0fee18e479a1616b74024b31223aed115e00a283be4"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_TRIMMED_MEAN_STANDARDIZED_C_DYNAMIC_GAP_STRICT_A_PDR_D02_LOSS_20260710_141919",
+      "exists": true,
+      "bytes": 6944462,
+      "file_count": 24,
+      "metadata_tree_sha256": "feab052b0089894ea87e6ceeeb49324c018e0b2f733ae09ec6028793a143b55f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_TRIMMED_MEAN_STANDARDIZED_C_DYNAMIC_GAP_STRICT_A_PDR_R2_DOWNSIDE_20260710_142056",
+      "exists": true,
+      "bytes": 6944210,
+      "file_count": 24,
+      "metadata_tree_sha256": "03f79257a32fc14e3958eb19891144ed11c8da1ad0609ba2d7469b4c0cb6b3ab"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_TRIMMED_MEAN_STANDARDIZED_C_HYSTERESIS_NARROW_A_PDR_D02_LOSS_20260710_141926",
+      "exists": true,
+      "bytes": 6942529,
+      "file_count": 24,
+      "metadata_tree_sha256": "0ade91e920fb571da1f3e76c07f974fc1229ed83c5bbdc8042cde059f5317c00"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_TRIMMED_MEAN_STANDARDIZED_C_HYSTERESIS_NARROW_A_PDR_R2_DOWNSIDE_20260710_142103",
+      "exists": true,
+      "bytes": 6942464,
+      "file_count": 24,
+      "metadata_tree_sha256": "61781d578322bb7c983e7f45ddf47e1435396202ed9cdd5d2304780ec986a9f0"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_TRIMMED_MEAN_STANDARDIZED_C_HYSTERESIS_WIDE_A_PDR_D02_LOSS_20260710_141928",
+      "exists": true,
+      "bytes": 6942446,
+      "file_count": 24,
+      "metadata_tree_sha256": "df8d63af4ac7b643e01a818b8254bad30fcc0b68cd36d45abe0fbfda11635c62"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_TRIMMED_MEAN_STANDARDIZED_C_HYSTERESIS_WIDE_A_PDR_R2_DOWNSIDE_20260710_142105",
+      "exists": true,
+      "bytes": 6942357,
+      "file_count": 24,
+      "metadata_tree_sha256": "29b47dc8c38b5f21a85ca7429ac52006e9660d998effb52f0d5aa917f370ca57"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_TRIMMED_MEAN_STANDARDIZED_C_SOFTMAX_TOP3_A_PDR_D02_LOSS_20260710_141921",
+      "exists": true,
+      "bytes": 6951411,
+      "file_count": 24,
+      "metadata_tree_sha256": "528180d216c07b350f6502c46e657a5d3a6f4523b98c46df585d7039f2a4057d"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_TRIMMED_MEAN_STANDARDIZED_C_SOFTMAX_TOP3_A_PDR_R2_DOWNSIDE_20260710_142058",
+      "exists": true,
+      "bytes": 6950565,
+      "file_count": 24,
+      "metadata_tree_sha256": "f22c8093e3aa48da2e0f14d3d5fa28f98040bb55daa055884ac4e9a2643b7a4f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_TRIMMED_MEAN_STANDARDIZED_C_SOFTMAX_TOP5_A_PDR_D02_LOSS_20260710_141924",
+      "exists": true,
+      "bytes": 6962903,
+      "file_count": 24,
+      "metadata_tree_sha256": "384fd2400e4c11f8a0bd3174873925e9b6645eed726bc0fe450ed2a009695e12"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_TRIMMED_MEAN_STANDARDIZED_C_SOFTMAX_TOP5_A_PDR_R2_DOWNSIDE_20260710_142100",
+      "exists": true,
+      "bytes": 6962754,
+      "file_count": 24,
+      "metadata_tree_sha256": "7a227d97d3fe170f2c273e696329eb514b50eab05f772bb3e2f1ca93dddbb738"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_TRIMMED_MEAN_STANDARDIZED_C_TOP2_EQUAL_A_PDR_D02_LOSS_20260710_141914",
+      "exists": true,
+      "bytes": 6936777,
+      "file_count": 24,
+      "metadata_tree_sha256": "ea4b84be1c4a96675993649a151caa44357dd51076afa6d7ac44be266bf4ea52"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_B_TRIMMED_MEAN_STANDARDIZED_C_TOP2_EQUAL_A_PDR_R2_DOWNSIDE_20260710_142051",
+      "exists": true,
+      "bytes": 6936654,
+      "file_count": 24,
+      "metadata_tree_sha256": "cc4d000e4f47c561aa344d5f337efd0d15cdfe79e029be81182f46b06ffd30d1"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_CHAMPION_DEVELOPMENT_20260710_131821",
+      "exists": true,
+      "bytes": 5903356,
+      "file_count": 7,
+      "metadata_tree_sha256": "07165d0b140610ae052e255b81cb2f03857a2d276001741a1046251051a9628c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_CHAMPION_DEVELOPMENT_20260710_131943",
+      "exists": true,
+      "bytes": 5903131,
+      "file_count": 7,
+      "metadata_tree_sha256": "878a5ebf8f69c66e62c24cd9e7e77d824804569d4684c379db31b5f5a8f01239"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_FINALIST_BORDA_RANK_AVERAGE_C_HYSTERESIS_WIDE_20260710_143413",
+      "exists": true,
+      "bytes": 44528342,
+      "file_count": 48,
+      "metadata_tree_sha256": "3ea547fdb3bf562dbab6ba35da39a2b6f0bb96bb077056a9ec29339211cc41c6"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_FINALIST_DISAGREEMENT_PENALIZED_CONSENSUS_C_HYSTERESIS_WIDE_20260710_142756",
+      "exists": true,
+      "bytes": 45552739,
+      "file_count": 48,
+      "metadata_tree_sha256": "406ccd20ee2423df728f45ea41829cd8a05246c01f9e910ca83d7cb8996f0915"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R4_FINALIST_MEAN_PERCENTILE_RANK_C_HYSTERESIS_WIDE_20260710_143107",
+      "exists": true,
+      "bytes": 44676985,
+      "file_count": 48,
+      "metadata_tree_sha256": "3f0731158250c0942b33eb49f5edf3a1c2436eeee67f6397ebf3cb9315afdd7d"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_BASELINE_REPRO_20260710_195752",
+      "exists": true,
+      "bytes": 13320130,
+      "file_count": 18,
+      "metadata_tree_sha256": "7c42a0cc1bc6ed63b3504ebcf4f2efa3007b1337e4d37bcc11f84f457d0ae655"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_CHECKPOINT_RESUME_SMOKE_S20260720_20260710_202702",
+      "exists": true,
+      "bytes": 23061060,
+      "file_count": 49,
+      "metadata_tree_sha256": "0ce559cd4e8953fb17c1f8d8ab01dbd3294b3cb20eb871e066ba35742e66adf3"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_L0_F0_EXACT_REPRO_S20260708_20260710_201259",
+      "exists": true,
+      "bytes": 25173382,
+      "file_count": 46,
+      "metadata_tree_sha256": "1f7b37109c2e85cd24a8fa4da34d5b6ccd053b68e7451e7b62a33049238b832d"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_L0_F0_EXACT_REPRO_S20260708_20260710_201848",
+      "exists": true,
+      "bytes": 25195919,
+      "file_count": 49,
+      "metadata_tree_sha256": "c492954120ea8148fbea38ae7f10c3167bbcd2f69095d3b976b7a58427031147"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_L0_F0_REPRO_SMOKE_S20260720_20260710_202616",
+      "exists": true,
+      "bytes": 17613848,
+      "file_count": 49,
+      "metadata_tree_sha256": "5eeca9970d9660ddf3f134d3aa1eb9b7c8f8675cb6a2d08a7c4d9b6db6570bda"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_PROTOCOL_TESTS_20260710_201238",
+      "exists": true,
+      "bytes": 3343,
+      "file_count": 8,
+      "metadata_tree_sha256": "7ce3622efccc847c395952cf7c14adf4cd4c8451ca1a52ec8914465974966f03"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_PROTOCOL_TESTS_20260710_212004",
+      "exists": true,
+      "bytes": 3440,
+      "file_count": 8,
+      "metadata_tree_sha256": "64cb782fda076a9086908677cea39fc08d68fc06eb399416bd27324f20ba174d"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_INNER_R5_DEV_FOLD_01_2025_Q1_S20260720_20260710_203127",
+      "exists": true,
+      "bytes": 80629893,
+      "file_count": 81,
+      "metadata_tree_sha256": "13161a6b85ff8bc2e9d11cd009529a13976759945c78cd30161870f2cf5aecff"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_INNER_R5_DEV_FOLD_01_2025_Q1_S20260721_20260710_203523",
+      "exists": true,
+      "bytes": 80705076,
+      "file_count": 81,
+      "metadata_tree_sha256": "af225cadeb6097ee8b3c350d2c9791774e541fb927cbed3c4ec212630779b4f1"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_INNER_R5_DEV_FOLD_01_2025_Q1_S20260722_20260710_203916",
+      "exists": true,
+      "bytes": 80677297,
+      "file_count": 81,
+      "metadata_tree_sha256": "6fa42df8ff6cf7f3f049ee1f8da7d6d0d7679ccef8feab5b55048b91a9a70c56"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_INNER_R5_DEV_FOLD_02_2025_Q2_S20260720_20260710_204326",
+      "exists": true,
+      "bytes": 80655267,
+      "file_count": 81,
+      "metadata_tree_sha256": "45de1d54bd1cfce00bfd7628ed5f5a3663f397cf1c65313ca3c495640f2fdc48"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_INNER_R5_DEV_FOLD_02_2025_Q2_S20260721_20260710_204739",
+      "exists": true,
+      "bytes": 80694716,
+      "file_count": 81,
+      "metadata_tree_sha256": "fbdb698d3aa2a001f8116b8499464e695ff4fe5c241a414ff67ce8658ac5209c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_INNER_R5_DEV_FOLD_02_2025_Q2_S20260722_20260710_205210",
+      "exists": true,
+      "bytes": 80692386,
+      "file_count": 81,
+      "metadata_tree_sha256": "57e80192239905e35f97195dcb89b0bc7467ec0ee852559182aa76a915173dda"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_INNER_R5_DEV_FOLD_03_2025_Q3_S20260720_20260710_205642",
+      "exists": true,
+      "bytes": 80661591,
+      "file_count": 81,
+      "metadata_tree_sha256": "b50dca1169bd858adb0d1c3cc8e5c9e1731456b517913246c260c241ff921aad"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_INNER_R5_DEV_FOLD_03_2025_Q3_S20260721_20260710_210122",
+      "exists": true,
+      "bytes": 80679961,
+      "file_count": 81,
+      "metadata_tree_sha256": "4621f0d608765a3bca883cfd5b6ea38cda1f7b03efae31cf0b075e74583b6f1a"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_INNER_R5_DEV_FOLD_03_2025_Q3_S20260722_20260710_210535",
+      "exists": true,
+      "bytes": 80733270,
+      "file_count": 81,
+      "metadata_tree_sha256": "d6cd5b4317cf56ad5d5a36b59593139d417749126d61eab92626ee635b2bc4e0"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_INNER_R5_DEV_FOLD_04_2026_Q1_S20260720_20260710_210946",
+      "exists": true,
+      "bytes": 80757010,
+      "file_count": 82,
+      "metadata_tree_sha256": "9be94aaf3dc4a9188240a7627d18ada03ad463416edebdde9017ca3afc2b89c5"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_INNER_R5_DEV_FOLD_04_2026_Q1_S20260720_20260710_212020",
+      "exists": true,
+      "bytes": 80709605,
+      "file_count": 81,
+      "metadata_tree_sha256": "b704470382071ffd09a20abbd734b03abc30e2d29585565b06069624bbbc0ed3"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_INNER_R5_DEV_FOLD_04_2026_Q1_S20260721_20260710_211444",
+      "exists": true,
+      "bytes": 34897931,
+      "file_count": 54,
+      "metadata_tree_sha256": "d61c62fe758e334911940c76f078e936628d98d214b825a8ae2f8f6932a9157a"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_INNER_R5_DEV_FOLD_04_2026_Q1_S20260721_20260710_212455",
+      "exists": true,
+      "bytes": 80731333,
+      "file_count": 81,
+      "metadata_tree_sha256": "ecd6b83663d299020c947fe62f3034311651b4cc080fe2567967bac655c14a9a"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_INNER_R5_DEV_FOLD_04_2026_Q1_S20260722_20260710_212932",
+      "exists": true,
+      "bytes": 80725527,
+      "file_count": 81,
+      "metadata_tree_sha256": "837cc47794d170b4140ba06e773fa3c7b7cad11710c1a62737a64707ff454b64"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_OUTER_R5_DEV_FOLD_01_2025_Q1_S20260720_20260711_001141",
+      "exists": true,
+      "bytes": 93067687,
+      "file_count": 84,
+      "metadata_tree_sha256": "89d75ce4c644d46978502b4d6d2ef4e50d4489e21e966666ca4dd514c8f5a289"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_OUTER_R5_DEV_FOLD_01_2025_Q1_S20260721_20260711_001537",
+      "exists": true,
+      "bytes": 93137092,
+      "file_count": 84,
+      "metadata_tree_sha256": "ef523c9ae49470fb105a44cb789a6caa6c3b3065ced653b6c157a857ad01e8bb"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_OUTER_R5_DEV_FOLD_01_2025_Q1_S20260722_20260711_001947",
+      "exists": true,
+      "bytes": 93171524,
+      "file_count": 84,
+      "metadata_tree_sha256": "74d2fd7e651eb674997f6db23d5d2a482266cd813a9c222dce797fdaa309ce22"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_OUTER_R5_DEV_FOLD_02_2025_Q2_S20260720_20260711_002404",
+      "exists": true,
+      "bytes": 93884867,
+      "file_count": 84,
+      "metadata_tree_sha256": "69d2c60454ecd10ad9c536f796696c3f2e2a590b91e06b869c8ff642715a4bba"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_OUTER_R5_DEV_FOLD_02_2025_Q2_S20260721_20260711_002822",
+      "exists": true,
+      "bytes": 94134738,
+      "file_count": 84,
+      "metadata_tree_sha256": "2087792e6d90c78d18380fa4ab2f2617a241a3dd2bf7e4de29c1bab6e83e9a17"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_OUTER_R5_DEV_FOLD_02_2025_Q2_S20260722_20260711_003247",
+      "exists": true,
+      "bytes": 94085444,
+      "file_count": 84,
+      "metadata_tree_sha256": "ee1cb03332d835469ebc3cc6a43bb260b59ff55d4e6ef360a056bf980574a0bb"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_OUTER_R5_DEV_FOLD_03_2025_Q3_S20260720_20260711_003705",
+      "exists": true,
+      "bytes": 95592921,
+      "file_count": 84,
+      "metadata_tree_sha256": "4b8eeb14702fbd98435a85c161e7ef6fedc2ba0e6b127d3a638396ad5eef7600"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_OUTER_R5_DEV_FOLD_03_2025_Q3_S20260721_20260711_004137",
+      "exists": true,
+      "bytes": 95764088,
+      "file_count": 84,
+      "metadata_tree_sha256": "846066db0250c677f834d2d56b3b02ed8c0175b1aac55c2ace1a0955beaf52f8"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_OUTER_R5_DEV_FOLD_03_2025_Q3_S20260722_20260711_004610",
+      "exists": true,
+      "bytes": 95687172,
+      "file_count": 84,
+      "metadata_tree_sha256": "42524846cdbaf927f5787663e26d1cafaba703854e865742219081f316e5b1b5"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_OUTER_R5_DEV_FOLD_04_2026_Q1_S20260720_20260711_005041",
+      "exists": true,
+      "bytes": 93345574,
+      "file_count": 84,
+      "metadata_tree_sha256": "1769dab34b69e215f264b0bf8409ff7d0185b706b9a708e7a239c5e3cc14a5cf"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_OUTER_R5_DEV_FOLD_04_2026_Q1_S20260721_20260711_005539",
+      "exists": true,
+      "bytes": 93348090,
+      "file_count": 84,
+      "metadata_tree_sha256": "0ce64616ed31cd6a65be720160306e3729340f1082e5f8f29ed98d41618b811e"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_QUICK_OUTER_R5_DEV_FOLD_04_2026_Q1_S20260722_20260711_010120",
+      "exists": true,
+      "bytes": 93359019,
+      "file_count": 84,
+      "metadata_tree_sha256": "cbdaec79c4e68d1f4a2713eab46230c3850edd868695c0572e905ba759561e2c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F0_SMOKE_S20260720_20260710_202259",
+      "exists": true,
+      "bytes": 17613490,
+      "file_count": 48,
+      "metadata_tree_sha256": "96418b2815a65256be4d77a110bd72f560a917e7d2c5675b80f69bf53861f36e"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_INNER_R5_DEV_FOLD_01_2025_Q1_S20260720_20260710_222752",
+      "exists": true,
+      "bytes": 86542289,
+      "file_count": 81,
+      "metadata_tree_sha256": "5660f5826582f80e0bfacae1cba9e5df93dbbb6e6238f3436f9ea16cc21de32d"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_INNER_R5_DEV_FOLD_01_2025_Q1_S20260721_20260710_223146",
+      "exists": true,
+      "bytes": 86543986,
+      "file_count": 81,
+      "metadata_tree_sha256": "f1597ff1b61ade454135f884a7134bbc11ec75c5c6d1b8aea409bbf12c420906"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_INNER_R5_DEV_FOLD_01_2025_Q1_S20260722_20260710_223530",
+      "exists": true,
+      "bytes": 86570337,
+      "file_count": 81,
+      "metadata_tree_sha256": "566f94b7142f444cfe90219af568ea0737e4796b81bd7c6fda42bd12d2d670fa"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_INNER_R5_DEV_FOLD_02_2025_Q2_S20260720_20260710_223913",
+      "exists": true,
+      "bytes": 86550535,
+      "file_count": 81,
+      "metadata_tree_sha256": "becc5a027d7f784e7ef466cf8b01a241f2b966d4513e8f6c959f190806efd695"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_INNER_R5_DEV_FOLD_02_2025_Q2_S20260721_20260710_224311",
+      "exists": true,
+      "bytes": 86567997,
+      "file_count": 81,
+      "metadata_tree_sha256": "7689f471d6c69daa2d673021eb2c789a86e4f6ac2f867eb8cd4f0c3f83010fff"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_INNER_R5_DEV_FOLD_02_2025_Q2_S20260722_20260710_224716",
+      "exists": true,
+      "bytes": 86551763,
+      "file_count": 81,
+      "metadata_tree_sha256": "6b6c6f3687e1bbd6899ed23052de991f798903aba7aa71fe8e56354712399339"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_INNER_R5_DEV_FOLD_03_2025_Q3_S20260720_20260710_225120",
+      "exists": true,
+      "bytes": 86597292,
+      "file_count": 81,
+      "metadata_tree_sha256": "b3bf27001a8a3044dc49b2331b52853897207be92fabcf9db6c6fb515343e283"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_INNER_R5_DEV_FOLD_03_2025_Q3_S20260721_20260710_225631",
+      "exists": true,
+      "bytes": 86600698,
+      "file_count": 81,
+      "metadata_tree_sha256": "ba02ca244ca9b138bf4c91230528dd818af763f692f853ed7d93bf2536bf9164"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_INNER_R5_DEV_FOLD_03_2025_Q3_S20260722_20260710_230130",
+      "exists": true,
+      "bytes": 86585603,
+      "file_count": 81,
+      "metadata_tree_sha256": "43ba169811db715a7709f0dbf8d37a133977728705e43dc2a3fedcdcd0d9f54a"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_INNER_R5_DEV_FOLD_04_2026_Q1_S20260720_20260710_230548",
+      "exists": true,
+      "bytes": 86607429,
+      "file_count": 81,
+      "metadata_tree_sha256": "0942071f6df350478fe2185629dd0a69ca3708d4c505ced2a6cc020763a53a95"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_INNER_R5_DEV_FOLD_04_2026_Q1_S20260721_20260710_231029",
+      "exists": true,
+      "bytes": 86607330,
+      "file_count": 81,
+      "metadata_tree_sha256": "631d65af2bccb77e3970cef07c2c1b5a74e10473137a382a9782c57e8bf3188b"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_INNER_R5_DEV_FOLD_04_2026_Q1_S20260722_20260710_231512",
+      "exists": true,
+      "bytes": 86605064,
+      "file_count": 81,
+      "metadata_tree_sha256": "c9c54bce6664d1d9a4f9c5719a6ddf06ae9b5c84e778db7872e0c7391b9c420b"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_OUTER_R5_DEV_FOLD_01_2025_Q1_S20260720_20260711_014646",
+      "exists": true,
+      "bytes": 56795345,
+      "file_count": 66,
+      "metadata_tree_sha256": "38a0b473357faf9ca32a3c16197cd1e6fb2c3cc7bee7fdd7108100f45062c8a4"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_OUTER_R5_DEV_FOLD_01_2025_Q1_S20260721_20260711_014854",
+      "exists": true,
+      "bytes": 56829992,
+      "file_count": 66,
+      "metadata_tree_sha256": "e7f90265d752fb206ff249080a7a56a52a13606354b376125d6270499af2f247"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_OUTER_R5_DEV_FOLD_01_2025_Q1_S20260722_20260711_015103",
+      "exists": true,
+      "bytes": 56838628,
+      "file_count": 66,
+      "metadata_tree_sha256": "fbc8bc9372a5a9a8d8d862c35161cc251c84e866011ca41a5d9b4d24949bd5a8"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_OUTER_R5_DEV_FOLD_02_2025_Q2_S20260720_20260711_015311",
+      "exists": true,
+      "bytes": 57338997,
+      "file_count": 66,
+      "metadata_tree_sha256": "b2f92c0120cd07ec2a25b6cb7df6a3f074074275fa390ae79649f63db62b9e32"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_OUTER_R5_DEV_FOLD_02_2025_Q2_S20260721_20260711_015528",
+      "exists": true,
+      "bytes": 57373133,
+      "file_count": 66,
+      "metadata_tree_sha256": "620837e80061dfcac21e35392990958f60140cce6e2eb3d8c2421c9aa7614c36"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_OUTER_R5_DEV_FOLD_02_2025_Q2_S20260722_20260711_015744",
+      "exists": true,
+      "bytes": 57320123,
+      "file_count": 66,
+      "metadata_tree_sha256": "2b874280b3621e3a1e543a2dae47ef6576c7173c085d9f94cb502c95358136ce"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_OUTER_R5_DEV_FOLD_03_2025_Q3_S20260720_20260711_020002",
+      "exists": true,
+      "bytes": 58282766,
+      "file_count": 66,
+      "metadata_tree_sha256": "f6192dea8525408de2b6dd91c5462b378fdda8d5ec00768611e04187e30eff74"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_OUTER_R5_DEV_FOLD_03_2025_Q3_S20260721_20260711_020227",
+      "exists": true,
+      "bytes": 58349162,
+      "file_count": 66,
+      "metadata_tree_sha256": "550102c4b6c689340f1640fceee808ba3c630c660634a8d4d77628ec5c0bb290"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_OUTER_R5_DEV_FOLD_03_2025_Q3_S20260722_20260711_020451",
+      "exists": true,
+      "bytes": 58245066,
+      "file_count": 66,
+      "metadata_tree_sha256": "77c940fcab3309214765b38db6749615ada36f241db0a64458c2480b59226444"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_OUTER_R5_DEV_FOLD_04_2026_Q1_S20260720_20260711_020716",
+      "exists": true,
+      "bytes": 56944436,
+      "file_count": 66,
+      "metadata_tree_sha256": "1257846d798b721b9a2c82fcc722a1180ec8a38c0c1bc638e34116a34b47f2a1"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_OUTER_R5_DEV_FOLD_04_2026_Q1_S20260721_20260711_020957",
+      "exists": true,
+      "bytes": 56944484,
+      "file_count": 66,
+      "metadata_tree_sha256": "c6915dd14f9fde2d114e5318d97a4d8af62ef53038928acca069bf10a9869cbb"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_QUICK_OUTER_R5_DEV_FOLD_04_2026_Q1_S20260722_20260711_021240",
+      "exists": true,
+      "bytes": 56976956,
+      "file_count": 66,
+      "metadata_tree_sha256": "e659a34ad62be1c92d112b72f19e25945ad557eb424b6e2d85d58a485c68ec3a"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L0_F1_SMOKE_S20260720_20260710_202441",
+      "exists": true,
+      "bytes": 18889633,
+      "file_count": 48,
+      "metadata_tree_sha256": "effbba62e7b788d96bd65ff5905c8254a65b6a47ceeb5289eadcd7ca0d1a0019"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_INNER_R5_DEV_FOLD_01_2025_Q1_S20260720_20260710_213359",
+      "exists": true,
+      "bytes": 79639484,
+      "file_count": 81,
+      "metadata_tree_sha256": "497dd0909f7c2f216f8b66f342d01b0d267fc7bcc629c87f1bd37cccf292b1fb"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_INNER_R5_DEV_FOLD_01_2025_Q1_S20260721_20260710_213752",
+      "exists": true,
+      "bytes": 79753673,
+      "file_count": 81,
+      "metadata_tree_sha256": "a9e8eca40f48af97f3588a564765622e2506e124ae4634c855fc967de35f871e"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_INNER_R5_DEV_FOLD_01_2025_Q1_S20260722_20260710_214209",
+      "exists": true,
+      "bytes": 79714914,
+      "file_count": 81,
+      "metadata_tree_sha256": "34b1e90a265f25f6a6bee689e8b13bf52eaf6baee145f90f66d27add679e12c6"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_INNER_R5_DEV_FOLD_02_2025_Q2_S20260720_20260710_214702",
+      "exists": true,
+      "bytes": 79654800,
+      "file_count": 81,
+      "metadata_tree_sha256": "0ea86fb5889c28ec265119d2106bb8c7fb74f619ed1b9220758bc44beb1e1581"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_INNER_R5_DEV_FOLD_02_2025_Q2_S20260721_20260710_215126",
+      "exists": true,
+      "bytes": 79723261,
+      "file_count": 81,
+      "metadata_tree_sha256": "dd6641c3bfa846aadfc799c7df5be45fd9848465aa617b0fd072019b8143eb4d"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_INNER_R5_DEV_FOLD_02_2025_Q2_S20260722_20260710_215556",
+      "exists": true,
+      "bytes": 79751988,
+      "file_count": 81,
+      "metadata_tree_sha256": "447afa5409a58c5de4f33852d72f09fb94ff9310782697a7a177db3de45ca569"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_INNER_R5_DEV_FOLD_03_2025_Q3_S20260720_20260710_215956",
+      "exists": true,
+      "bytes": 79684151,
+      "file_count": 81,
+      "metadata_tree_sha256": "ebc45b27466042e39cb78957885a73be1fd52b9ff1458b0683eda4c1a70c7927"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_INNER_R5_DEV_FOLD_03_2025_Q3_S20260721_20260710_220413",
+      "exists": true,
+      "bytes": 79715539,
+      "file_count": 81,
+      "metadata_tree_sha256": "108ef5995cb7f34514216b9903afd49ce6605a39f3ec0c1d45b4355f150a4178"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_INNER_R5_DEV_FOLD_03_2025_Q3_S20260722_20260710_220830",
+      "exists": true,
+      "bytes": 79788680,
+      "file_count": 81,
+      "metadata_tree_sha256": "47eec3a0c61db940ed3d66cd5e391acfd51eec4daf3e1d976741dbfd4e491411"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_INNER_R5_DEV_FOLD_04_2026_Q1_S20260720_20260710_221251",
+      "exists": true,
+      "bytes": 79690520,
+      "file_count": 81,
+      "metadata_tree_sha256": "a0a30a82a6589a7c47e7160cf5bccb748014c851841f73a941e7f01845902863"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_INNER_R5_DEV_FOLD_04_2026_Q1_S20260721_20260710_221801",
+      "exists": true,
+      "bytes": 79741815,
+      "file_count": 81,
+      "metadata_tree_sha256": "4c01cfd6ea778ec0f7c266dec6d8b8a406d08a045ace6cf974d5ffb82ccd6397"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_INNER_R5_DEV_FOLD_04_2026_Q1_S20260722_20260710_222246",
+      "exists": true,
+      "bytes": 79765068,
+      "file_count": 81,
+      "metadata_tree_sha256": "9dc4cd81eed9b3b0a26452fcce9879103b9c48177d87df9c329f283b88192f06"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_OUTER_R5_DEV_FOLD_01_2025_Q1_S20260720_20260711_010614",
+      "exists": true,
+      "bytes": 72424594,
+      "file_count": 75,
+      "metadata_tree_sha256": "285bdc3e4d32b5b8e1968e4dfe753517e3cfb80201a7a06b61bd1c0ec44da47f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_OUTER_R5_DEV_FOLD_01_2025_Q1_S20260721_20260711_010917",
+      "exists": true,
+      "bytes": 72501681,
+      "file_count": 75,
+      "metadata_tree_sha256": "1b523a17ff254bd2d415fd514c78f81ad83437ebd22f113d56fdd99c0d6122bb"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_OUTER_R5_DEV_FOLD_01_2025_Q1_S20260722_20260711_011217",
+      "exists": true,
+      "bytes": 72506631,
+      "file_count": 75,
+      "metadata_tree_sha256": "409e945c6521defef70b73d1daafc34e165d992dee7973a048b6533cd9643616"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_OUTER_R5_DEV_FOLD_02_2025_Q2_S20260720_20260711_011519",
+      "exists": true,
+      "bytes": 73091854,
+      "file_count": 75,
+      "metadata_tree_sha256": "8a2d1fb7e43330ce0ec88d1b4c16d1f2887963b7b4a752d6f112b1ed4f680a49"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_OUTER_R5_DEV_FOLD_02_2025_Q2_S20260721_20260711_011833",
+      "exists": true,
+      "bytes": 73323935,
+      "file_count": 75,
+      "metadata_tree_sha256": "f952edece2752fd27aeb4ada15624f03a902411204592d8220037a8d71d04504"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_OUTER_R5_DEV_FOLD_02_2025_Q2_S20260722_20260711_012146",
+      "exists": true,
+      "bytes": 73324941,
+      "file_count": 75,
+      "metadata_tree_sha256": "abbcfba0a3ce04b4247b800e1c1c395fd9450e1af0e3961c11dab800f896a291"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_OUTER_R5_DEV_FOLD_03_2025_Q3_S20260720_20260711_012459",
+      "exists": true,
+      "bytes": 74430470,
+      "file_count": 75,
+      "metadata_tree_sha256": "35c65ba17fa2f669980711e033d1a3fe374e5bb046a92445abd1ce9152e47391"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_OUTER_R5_DEV_FOLD_03_2025_Q3_S20260721_20260711_012826",
+      "exists": true,
+      "bytes": 74610618,
+      "file_count": 75,
+      "metadata_tree_sha256": "5692c17b05dc692373c59b054b5c61469bd58b8e445bfeb8f870041e4be8ebea"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_OUTER_R5_DEV_FOLD_03_2025_Q3_S20260722_20260711_013152",
+      "exists": true,
+      "bytes": 74523467,
+      "file_count": 75,
+      "metadata_tree_sha256": "4c104e15c5dcd62da4d63b6081d50b0c507fd90bbed82c26773ba5fb1f028642"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_OUTER_R5_DEV_FOLD_04_2026_Q1_S20260720_20260711_013515",
+      "exists": true,
+      "bytes": 72598987,
+      "file_count": 75,
+      "metadata_tree_sha256": "1721a6150bd55d345757cd17b3ac22cb1376ee0c8c2692d969bfca6fc223d403"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_OUTER_R5_DEV_FOLD_04_2026_Q1_S20260721_20260711_013905",
+      "exists": true,
+      "bytes": 72684001,
+      "file_count": 75,
+      "metadata_tree_sha256": "547f047468965fbb9decb6c88a1aa21e8c2e9ee8d3ae07a0edb852439d83f7c7"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_QUICK_OUTER_R5_DEV_FOLD_04_2026_Q1_S20260722_20260711_014254",
+      "exists": true,
+      "bytes": 72752045,
+      "file_count": 75,
+      "metadata_tree_sha256": "3df52fa6ab3a7b84adbc623c9ddbd6aa02f266f3ff676030da85d28c0d4598f1"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F0_SMOKE_S20260720_20260710_202347",
+      "exists": true,
+      "bytes": 17403638,
+      "file_count": 48,
+      "metadata_tree_sha256": "20dc9e5a235707e7c0bdb8eaa52a8ad05b97656dcb160db7b62fb840559aeb97"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_INNER_R5_DEV_FOLD_01_2025_Q1_S20260720_20260710_231955",
+      "exists": true,
+      "bytes": 85547488,
+      "file_count": 81,
+      "metadata_tree_sha256": "157fe461c71bd18fed22da21f6ede2e3c5939d372e0bf21e064dc8cc0af9272f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_INNER_R5_DEV_FOLD_01_2025_Q1_S20260721_20260710_232351",
+      "exists": true,
+      "bytes": 85587880,
+      "file_count": 81,
+      "metadata_tree_sha256": "006c0456c955bdc17c3a9c649377d68fb41ffab74d97ac94a85573fb2ba05649"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_INNER_R5_DEV_FOLD_01_2025_Q1_S20260722_20260710_232740",
+      "exists": true,
+      "bytes": 85608276,
+      "file_count": 81,
+      "metadata_tree_sha256": "fb49881a623fcff1f9f604a6fbaa09176207054667bc300e48001f7e6a60e50e"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_INNER_R5_DEV_FOLD_02_2025_Q2_S20260720_20260710_233132",
+      "exists": true,
+      "bytes": 85538979,
+      "file_count": 81,
+      "metadata_tree_sha256": "267e33b2551b48236e2ebeefd5d64149c2d2c2af76bc20e77ab8a7bd3cc81444"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_INNER_R5_DEV_FOLD_02_2025_Q2_S20260721_20260710_233542",
+      "exists": true,
+      "bytes": 85614704,
+      "file_count": 81,
+      "metadata_tree_sha256": "2208ac27be54f3963a87411ba8850610bd7a5ab4a95a4db5ca568c8e908b3bc7"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_INNER_R5_DEV_FOLD_02_2025_Q2_S20260722_20260710_233941",
+      "exists": true,
+      "bytes": 85594814,
+      "file_count": 81,
+      "metadata_tree_sha256": "a9ab7255643242c45f5db6f06097f1ff83a409659ef697785af314c483cf2d73"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_INNER_R5_DEV_FOLD_03_2025_Q3_S20260720_20260710_234352",
+      "exists": true,
+      "bytes": 85638658,
+      "file_count": 81,
+      "metadata_tree_sha256": "298979ea22a686e5c43cbaf91ae4148d7d6e249b10b8d945531aa69db5ea1157"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_INNER_R5_DEV_FOLD_03_2025_Q3_S20260721_20260710_234825",
+      "exists": true,
+      "bytes": 85640147,
+      "file_count": 81,
+      "metadata_tree_sha256": "76dce72e463e1961b9b614bed00c829e8531a224876fab996db071ce228ac1ef"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_INNER_R5_DEV_FOLD_03_2025_Q3_S20260722_20260710_235256",
+      "exists": true,
+      "bytes": 85645042,
+      "file_count": 81,
+      "metadata_tree_sha256": "8b668cb21c58bff23a0aa31098868f5be1ae52c6788234b2fcab8ae7f565f728"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_INNER_R5_DEV_FOLD_04_2026_Q1_S20260720_20260710_235727",
+      "exists": true,
+      "bytes": 85623037,
+      "file_count": 81,
+      "metadata_tree_sha256": "60ab69a72b68f57847723d929887ba37d007626e12295664995af79711dca7b0"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_INNER_R5_DEV_FOLD_04_2026_Q1_S20260721_20260711_000211",
+      "exists": true,
+      "bytes": 85658773,
+      "file_count": 81,
+      "metadata_tree_sha256": "2b2c67e73c97857a794395e33dca875c52e88d065739b95e153ca1d7101c52b3"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_INNER_R5_DEV_FOLD_04_2026_Q1_S20260722_20260711_000700",
+      "exists": true,
+      "bytes": 85663134,
+      "file_count": 81,
+      "metadata_tree_sha256": "f8243f41c8377fff57fc27fadbb4747b8ab15682d29d124678bffd64059d6ec8"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_OUTER_R5_DEV_FOLD_01_2025_Q1_S20260720_20260711_021520",
+      "exists": true,
+      "bytes": 56199737,
+      "file_count": 66,
+      "metadata_tree_sha256": "ce66b2de896bc7156594cf4165848db1561dabf14803a4ce5be707c8af50bdf5"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_OUTER_R5_DEV_FOLD_01_2025_Q1_S20260721_20260711_021732",
+      "exists": true,
+      "bytes": 56289565,
+      "file_count": 66,
+      "metadata_tree_sha256": "704e77ff980c48d192260f7f8cfc6dfd2dcc523928c51173ebbfdb6724b57715"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_OUTER_R5_DEV_FOLD_01_2025_Q1_S20260722_20260711_021944",
+      "exists": true,
+      "bytes": 56284612,
+      "file_count": 66,
+      "metadata_tree_sha256": "3bdf74bf249f16193cff1ed6f07cc40981ee5534ef3d23aa55a04a743d51b378"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_OUTER_R5_DEV_FOLD_02_2025_Q2_S20260720_20260711_022156",
+      "exists": true,
+      "bytes": 56734465,
+      "file_count": 66,
+      "metadata_tree_sha256": "7c7f2cdcef81b65d84a81ff1dda5f6707a419e36204711418fd53dcf5034daf7"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_OUTER_R5_DEV_FOLD_02_2025_Q2_S20260721_20260711_022415",
+      "exists": true,
+      "bytes": 56818037,
+      "file_count": 66,
+      "metadata_tree_sha256": "09dd1fe6d47576d5815abdaf42dacf8979d890e7aad17b5bd67967ac7d334afb"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_OUTER_R5_DEV_FOLD_02_2025_Q2_S20260722_20260711_022635",
+      "exists": true,
+      "bytes": 56777094,
+      "file_count": 66,
+      "metadata_tree_sha256": "9e8dd25405707b9447827ba06406e6921c45b3577280779285e25c594fadec77"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_OUTER_R5_DEV_FOLD_03_2025_Q3_S20260720_20260711_022854",
+      "exists": true,
+      "bytes": 57684005,
+      "file_count": 66,
+      "metadata_tree_sha256": "afde326de8d8465f37e64a2a637c21a5a83f3f1ede00b5c11b003d1c169e5f88"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_OUTER_R5_DEV_FOLD_03_2025_Q3_S20260721_20260711_023122",
+      "exists": true,
+      "bytes": 57792774,
+      "file_count": 66,
+      "metadata_tree_sha256": "e8e7cf8d3b663a45318db567d9c898fb66cb5cbf6d97052bffcfe87ac28e9cb1"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_OUTER_R5_DEV_FOLD_03_2025_Q3_S20260722_20260711_023349",
+      "exists": true,
+      "bytes": 57751976,
+      "file_count": 66,
+      "metadata_tree_sha256": "83c23d8f95d929c3bf1e34755e16a2746fb50861bd4886ecd75c589cab4ca968"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_OUTER_R5_DEV_FOLD_04_2026_Q1_S20260720_20260711_023617",
+      "exists": true,
+      "bytes": 56346196,
+      "file_count": 66,
+      "metadata_tree_sha256": "74fac9119f67e12dbab363fa75a49bf79e800ebf894a692d8c354070c4deb1ab"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_OUTER_R5_DEV_FOLD_04_2026_Q1_S20260721_20260711_023901",
+      "exists": true,
+      "bytes": 56399800,
+      "file_count": 66,
+      "metadata_tree_sha256": "37efa7d1820f66fdd8a068d50beaf4ff20bde64f5579f2837112322755ee96af"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_QUICK_OUTER_R5_DEV_FOLD_04_2026_Q1_S20260722_20260711_024146",
+      "exists": true,
+      "bytes": 56418750,
+      "file_count": 66,
+      "metadata_tree_sha256": "63e444c8b9a71189cdd9ca4337487646fe1e7ab78ed625e7c61083700602078e"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_R5_R5_L1_F1_SMOKE_S20260720_20260710_202533",
+      "exists": true,
+      "bytes": 18679663,
+      "file_count": 48,
+      "metadata_tree_sha256": "bb6a00c2c3a729dea56fa3dd770b34a6114e9f823de7304d87a770ef54f69790"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_SMOKE_20260709_105435",
+      "exists": true,
+      "bytes": 11341201,
+      "file_count": 27,
+      "metadata_tree_sha256": "47319497c1804b7f351d888bcbd918db7cf6b73cb36105e33e2c0ffa0052b0b8"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_SMOKE_20260709_105526",
+      "exists": true,
+      "bytes": 12177517,
+      "file_count": 47,
+      "metadata_tree_sha256": "43a837b7d766ca942fa97be98b0188ee83947dea75f1a0401fe39589ecd68caa"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_SMOKE_20260709_105741",
+      "exists": true,
+      "bytes": 26802912,
+      "file_count": 47,
+      "metadata_tree_sha256": "80f89fdf8eb122f1979b466bce1b677d0bbdde4edc607079af109b0eeb2447a1"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_SMOKE_20260709_110117",
+      "exists": true,
+      "bytes": 26724480,
+      "file_count": 47,
+      "metadata_tree_sha256": "d4f0699baf937139e66e27087a387a4b24780f56e7b4b3784dc4c82ff544dbac"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_STABILITY_W04_S20260708_20260709_110947",
+      "exists": true,
+      "bytes": 26754791,
+      "file_count": 47,
+      "metadata_tree_sha256": "33f5399b73fb92c00d2d0df5aaf4efc72a698840557e77d75ddf0d5ef3bf8948"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_STABILITY_W04_S20260709_20260709_111311",
+      "exists": true,
+      "bytes": 26784730,
+      "file_count": 47,
+      "metadata_tree_sha256": "4c872d293c1e1a32ccb4bb1241dbc5cbf8e171fcf0ffae0787fe09f2cfd2ec31"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_STABILITY_W04_S20260710_20260709_111636",
+      "exists": true,
+      "bytes": 26777608,
+      "file_count": 47,
+      "metadata_tree_sha256": "33f6e6c34ee64ad7349ce42de05bbf177e66dac073d8bb6a74bf2484dba0912e"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_TOP3_BALANCED_S20260708_20260709_113319",
+      "exists": true,
+      "bytes": 26781196,
+      "file_count": 47,
+      "metadata_tree_sha256": "b48f10ff06005294aee93cc35dc58befe489bde147a4bbb7a39ddab0a63d1ab4"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_TOP3_BALANCED_S20260709_20260709_113838",
+      "exists": true,
+      "bytes": 26797574,
+      "file_count": 47,
+      "metadata_tree_sha256": "54e8b5f8bef6cb8268eb8e5d118d6b33395f94f1e06b1ff47fdf8321d7943e71"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_AUTO_TOP3_BALANCED_S20260710_20260709_114158",
+      "exists": true,
+      "bytes": 26776883,
+      "file_count": 47,
+      "metadata_tree_sha256": "54668f5fde2f70b09b116b88fcaf710330a90a5169ec1744e2911c44b8d85c3c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_DEFENSIVE_POSITION_R2_20260714_092957",
+      "exists": true,
+      "bytes": 5435748,
+      "file_count": 62,
+      "metadata_tree_sha256": "6bc2742ade9a91bcb78a845577b1c8844022e360db3fca2e39f3c91c63a2d0fa"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_DEFENSIVE_POSITION_R3B_20260716",
+      "exists": true,
+      "bytes": 473220,
+      "file_count": 21,
+      "metadata_tree_sha256": "9cd281cc22be4db88aa4589fae6cbf6a8e53723256496faeae7bd982efd17242"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_DEFENSIVE_POSITION_R3C_CONSENSUS_20260716",
+      "exists": true,
+      "bytes": 1310536,
+      "file_count": 38,
+      "metadata_tree_sha256": "4478b4e9f0c82a32e95f9e7dd5ef26376287335b8b4104247f4389e48bbc25a3"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_DEFENSIVE_POSITION_R3D_R4_ENSEMBLE_20260716",
+      "exists": true,
+      "bytes": 43495757,
+      "file_count": 50,
+      "metadata_tree_sha256": "f47f39cbbff1d7a9e0d5134e4fe21ed77be59952ec9c90de8f576d5b1f859661"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_DEFENSIVE_POSITION_R3_20260716",
+      "exists": true,
+      "bytes": 49868,
+      "file_count": 12,
+      "metadata_tree_sha256": "0d4b78b8a2962133cd150b12f117556809a29cbeb467f21562d4cab78d7bc0a0"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/D_POSITION_CONTROL_R1_20260713_093536",
+      "exists": true,
+      "bytes": 108349731,
+      "file_count": 185,
+      "metadata_tree_sha256": "cb2fb277f2c2b13aac8848d2754ddc653d89155377352f538ded7dbf7cc25363"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/automation_runs/runner_logs",
+      "exists": true,
+      "bytes": 0,
+      "file_count": 0,
+      "metadata_tree_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/E_POSITION_R2_20260716_104410",
+      "exists": true,
+      "bytes": 5876848,
+      "file_count": 57,
+      "metadata_tree_sha256": "c60dd4cbe31555075bc94a16b992d4af11dad2414ed5a86eea5e8132dec628b4"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/E_R1_INFERENCE_BENCHMARK",
+      "exists": true,
+      "bytes": 479,
+      "file_count": 4,
+      "metadata_tree_sha256": "72ca6fbc4a38d19a9e02459fee8a71fd17c4b858ecc9d0a516642b107c0af36d"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1A_DEDUP_ST60_F1_S20260720",
+      "exists": true,
+      "bytes": 8577046,
+      "file_count": 34,
+      "metadata_tree_sha256": "7dabbdf78b2fa49006afe1c5c0e427d6beb8cc710f15b6bfd41fe1758cc448f9"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1A_DEDUP_ST60_F1_S20260721",
+      "exists": true,
+      "bytes": 8586260,
+      "file_count": 34,
+      "metadata_tree_sha256": "450ece07d2b338351c53a0b09cbe0ce17d10715a9e70a8c2b2c00e0db8208c65"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1A_DEDUP_ST60_F1_S20260722",
+      "exists": true,
+      "bytes": 8585283,
+      "file_count": 34,
+      "metadata_tree_sha256": "cb15f09ddc3ae31c2b371498f1a14c8b3d1dd9aacbc3f310a4c8bb72cf738972"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1A_DEDUP_ST60_F2_S20260720",
+      "exists": true,
+      "bytes": 8591149,
+      "file_count": 34,
+      "metadata_tree_sha256": "f35290ab652fbfadfb89fe64114db664e8b9cccdf811667d45d866d9aca75f87"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1A_DEDUP_ST60_F2_S20260721",
+      "exists": true,
+      "bytes": 8586507,
+      "file_count": 34,
+      "metadata_tree_sha256": "a84d1013b5a233fb203df6c740621fdb5c9c1d735c39032466ffbfdd87415327"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1A_DEDUP_ST60_F2_S20260722",
+      "exists": true,
+      "bytes": 8584172,
+      "file_count": 34,
+      "metadata_tree_sha256": "5f8033193eed61273b1829a12eaed5adac6066db2d03a9f1767c8a5c79d0be29"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1A_DEDUP_ST60_F3_S20260720",
+      "exists": true,
+      "bytes": 8582983,
+      "file_count": 34,
+      "metadata_tree_sha256": "4247f52c4f613d32119044df73a2d8400070d5a093308c817132633c9630062d"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1A_DEDUP_ST60_F3_S20260721",
+      "exists": true,
+      "bytes": 8580346,
+      "file_count": 34,
+      "metadata_tree_sha256": "c39cb0e18486aab330c7273a23dad9cb572d295951930f5eb8a0b984608b736e"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1A_DEDUP_ST60_F3_S20260722",
+      "exists": true,
+      "bytes": 8596942,
+      "file_count": 34,
+      "metadata_tree_sha256": "6f7b36e4715024770de21bf199b6ec1fe51b6ced1ffc88c54f147045b3b49109"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1A_DEDUP_ST60_F4_S20260720",
+      "exists": true,
+      "bytes": 8591671,
+      "file_count": 34,
+      "metadata_tree_sha256": "c4dce5f5a57ae7f279e1e7303de34c255632c10eb2245fcd6419bd2dd62e8242"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1A_DEDUP_ST60_F4_S20260721",
+      "exists": true,
+      "bytes": 8587765,
+      "file_count": 34,
+      "metadata_tree_sha256": "743572936e53dbfaeb3c51ff0220cc999a6f84b631dbf43b9dcd9e9471a3a519"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1A_DEDUP_ST60_F4_S20260722",
+      "exists": true,
+      "bytes": 8588512,
+      "file_count": 34,
+      "metadata_tree_sha256": "33b1f2ea63d7b8d47def78d15bfa05d2d519031100ffea91bfdf4d843dedecb5"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1B_CAUSAL_SCALE_ST60_F1_S20260720",
+      "exists": true,
+      "bytes": 8577029,
+      "file_count": 34,
+      "metadata_tree_sha256": "6de2e8de3e2316264b4b724cb368ab617605968818ce7a67e6e96e4969739e76"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1B_CAUSAL_SCALE_ST60_F1_S20260721",
+      "exists": true,
+      "bytes": 8586687,
+      "file_count": 34,
+      "metadata_tree_sha256": "344534a671c9ef6d052fa03de9efa741e537000d25c179a191b485bedbaa26b6"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1B_CAUSAL_SCALE_ST60_F1_S20260722",
+      "exists": true,
+      "bytes": 8585508,
+      "file_count": 34,
+      "metadata_tree_sha256": "96ebc42450c0700edc67152b832eb3cfedc6cbc85a66e91f18d2f2cc2c966e56"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1B_CAUSAL_SCALE_ST60_F2_S20260720",
+      "exists": true,
+      "bytes": 8591215,
+      "file_count": 34,
+      "metadata_tree_sha256": "f886dcdc6163de2bb3879de241bece82b412ab11ebcfac619efdeac086b106a5"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1B_CAUSAL_SCALE_ST60_F2_S20260721",
+      "exists": true,
+      "bytes": 8586650,
+      "file_count": 34,
+      "metadata_tree_sha256": "c3f5e81a58afde507e74dfa78f301b6e1cd7d968867291e38552d749b0e463b8"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1B_CAUSAL_SCALE_ST60_F2_S20260722",
+      "exists": true,
+      "bytes": 8583919,
+      "file_count": 34,
+      "metadata_tree_sha256": "a4f03907f9861e1156a5b6ece658d445a3a0183102f461eb913f27b813c2f25f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1B_CAUSAL_SCALE_ST60_F3_S20260720",
+      "exists": true,
+      "bytes": 8582892,
+      "file_count": 34,
+      "metadata_tree_sha256": "7535f2016fcedb46b5b38c0cee39999097d0cfced5ac078a1c4a304c87713e55"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1B_CAUSAL_SCALE_ST60_F3_S20260721",
+      "exists": true,
+      "bytes": 8580373,
+      "file_count": 34,
+      "metadata_tree_sha256": "e7380b678575315d52f07a9fbb90d84dc3d5fe7706e033d717110a0ec40811d6"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1B_CAUSAL_SCALE_ST60_F3_S20260722",
+      "exists": true,
+      "bytes": 8597007,
+      "file_count": 34,
+      "metadata_tree_sha256": "32797bafa11c9e72c666f09d60d4e99ca586b5b8f2f5fee7f47068de020d36ee"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1B_CAUSAL_SCALE_ST60_F4_S20260720",
+      "exists": true,
+      "bytes": 8591477,
+      "file_count": 34,
+      "metadata_tree_sha256": "0fefcb77d890821ec590a97195b56b82058570a10b2f70ed39597d49a1aa72fb"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1B_CAUSAL_SCALE_ST60_F4_S20260721",
+      "exists": true,
+      "bytes": 8583904,
+      "file_count": 34,
+      "metadata_tree_sha256": "85b766843fc0067d608655fc23ecf56161fefefb47a9e71f4bfecf970024825e"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1B_CAUSAL_SCALE_ST60_F4_S20260722",
+      "exists": true,
+      "bytes": 8588624,
+      "file_count": 34,
+      "metadata_tree_sha256": "a9882677a99e403961e710b1004aaf2009796139b35eec69cec2ab72160f037b"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1C_FULL_CAUSAL_ST60_F1_S20260720",
+      "exists": true,
+      "bytes": 8658986,
+      "file_count": 34,
+      "metadata_tree_sha256": "af7ae254f6a65e7cff23291ca532338ce8201faad1d036f18e175bc3eb7159aa"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1C_FULL_CAUSAL_ST60_F1_S20260721",
+      "exists": true,
+      "bytes": 8662093,
+      "file_count": 34,
+      "metadata_tree_sha256": "ed13b851cd0aaddb67e83b03e4b3dfe2460c18b3a9863a9f0831196e38a5bf68"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1C_FULL_CAUSAL_ST60_F1_S20260722",
+      "exists": true,
+      "bytes": 8656312,
+      "file_count": 34,
+      "metadata_tree_sha256": "c26a4006c95c26cde0c268e2f28ec5fbeb08910b6ee7a1899acbcf8f0875186b"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1C_FULL_CAUSAL_ST60_F2_S20260720",
+      "exists": true,
+      "bytes": 8659303,
+      "file_count": 34,
+      "metadata_tree_sha256": "ed8c55f84bb1eedb07827eb072b6e67f19c01112725117dc51fcba3cad371564"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1C_FULL_CAUSAL_ST60_F2_S20260721",
+      "exists": true,
+      "bytes": 8658741,
+      "file_count": 34,
+      "metadata_tree_sha256": "4ac9a9f1de79aa82f694bc2f712c64a24fc63d194717a3ab03352f96860442e8"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1C_FULL_CAUSAL_ST60_F2_S20260722",
+      "exists": true,
+      "bytes": 8653629,
+      "file_count": 34,
+      "metadata_tree_sha256": "1c9e39faf0fcfe02bd04469a6f230bf3b81d757329efd96cdfd1ac677add3b7e"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1C_FULL_CAUSAL_ST60_F3_S20260720",
+      "exists": true,
+      "bytes": 8658769,
+      "file_count": 34,
+      "metadata_tree_sha256": "84d2f20d2536077475b39a07e0eb285b8fcea030c29f77bfb6e1e7e768f3be41"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1C_FULL_CAUSAL_ST60_F3_S20260721",
+      "exists": true,
+      "bytes": 8664777,
+      "file_count": 34,
+      "metadata_tree_sha256": "56a2f3a7ab767a0ee716273178a6f155aad38a6525560b4dcb5ca29e416b2fd0"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1C_FULL_CAUSAL_ST60_F3_S20260722",
+      "exists": true,
+      "bytes": 8658634,
+      "file_count": 34,
+      "metadata_tree_sha256": "7ce12a0e84ac38d5e45f95974f847f3e340c015887ffe208de70229a9554e2b4"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1C_FULL_CAUSAL_ST60_F4_S20260720",
+      "exists": true,
+      "bytes": 8660028,
+      "file_count": 34,
+      "metadata_tree_sha256": "7181aa62391e91531810516d91622c95a64a1cdfbb4d26d6cfdfd921cda8eb2a"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1C_FULL_CAUSAL_ST60_F4_S20260721",
+      "exists": true,
+      "bytes": 8665726,
+      "file_count": 34,
+      "metadata_tree_sha256": "2abe9c71d5ed758dcb6fad35c743c32be37e7507102715b8364d3d7738543a85"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E1C_FULL_CAUSAL_ST60_F4_S20260722",
+      "exists": true,
+      "bytes": 8656230,
+      "file_count": 34,
+      "metadata_tree_sha256": "9ded36fcb8a9fbbacfa3262615edb6df4ade0f7bdd967aa766e33321e2c7a10c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E2_MARKET_GRU60_F1_S20260720",
+      "exists": true,
+      "bytes": 9552893,
+      "file_count": 34,
+      "metadata_tree_sha256": "b5f68071c8a35409debcb37ced5538a51fcf6a4f9b397f1c9bc1fa892a4002c4"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E2_MARKET_GRU60_F1_S20260721",
+      "exists": true,
+      "bytes": 9546353,
+      "file_count": 34,
+      "metadata_tree_sha256": "f15b417d157016c7de1ecd164f9d690334964b58d04ac8196fb158ff0a43e992"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E2_MARKET_GRU60_F1_S20260722",
+      "exists": true,
+      "bytes": 9551259,
+      "file_count": 34,
+      "metadata_tree_sha256": "ef6a251d4a60d3636cb28a9d98d163a72ece60d968433934c2657443c9602bf5"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E2_MARKET_GRU60_F2_S20260720",
+      "exists": true,
+      "bytes": 9549685,
+      "file_count": 34,
+      "metadata_tree_sha256": "a7d8c2de15214036d7ba043bd591998ba84d0ba9dff7dec00799b86ccc8dba2d"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E2_MARKET_GRU60_F2_S20260721",
+      "exists": true,
+      "bytes": 9544700,
+      "file_count": 34,
+      "metadata_tree_sha256": "411dcdaf84bcee43e7f8635ba62feb5d3a2b8291947d9e340ab1bd996e4d6a0c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E2_MARKET_GRU60_F2_S20260722",
+      "exists": true,
+      "bytes": 9548115,
+      "file_count": 34,
+      "metadata_tree_sha256": "50edcae9734b72d748419bf3bb1c2778906074f650c029c44dfb812e23e33924"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E2_MARKET_GRU60_F3_S20260720",
+      "exists": true,
+      "bytes": 9548352,
+      "file_count": 34,
+      "metadata_tree_sha256": "0c88cc290cdd165c75f4bd4fb13ba7c52c7d103e2cffa77f92d50b5b2e5d3dc7"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E2_MARKET_GRU60_F3_S20260721",
+      "exists": true,
+      "bytes": 9539264,
+      "file_count": 34,
+      "metadata_tree_sha256": "c8ab7d78b80763391f0e295ff3699c2be8f9257cc2fe85b3536997a8e54ba6c7"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E2_MARKET_GRU60_F3_S20260722",
+      "exists": true,
+      "bytes": 9556301,
+      "file_count": 34,
+      "metadata_tree_sha256": "0952517efad84d20b5df0e28249761056ae979fed33505582a4aa8013e5b4643"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E2_MARKET_GRU60_F4_S20260720",
+      "exists": true,
+      "bytes": 9550736,
+      "file_count": 34,
+      "metadata_tree_sha256": "a34f8d65c79a7d7953085d35cf8ff94df753f1a663141fec7aa01d58bed2de8d"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E2_MARKET_GRU60_F4_S20260721",
+      "exists": true,
+      "bytes": 9549442,
+      "file_count": 34,
+      "metadata_tree_sha256": "e72fb37002c737d0e2252b3b9e5b40b2a28972c6c7cf952d9851edee8bc2fc71"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E2_MARKET_GRU60_F4_S20260722",
+      "exists": true,
+      "bytes": 9550848,
+      "file_count": 34,
+      "metadata_tree_sha256": "3d45781e5566f9a95f404047e86b768dde888d3f64152ec8d331f571c5575225"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL126_F1_S20260720",
+      "exists": true,
+      "bytes": 16186528,
+      "file_count": 34,
+      "metadata_tree_sha256": "d5e5d65c777004d3cbdae18c89d0877babadf48b7fbc1b48056eadf955ebc49f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL126_F1_S20260721",
+      "exists": true,
+      "bytes": 16183707,
+      "file_count": 34,
+      "metadata_tree_sha256": "075871849a47768aaa61592afb506af7f476fddcaf2e2f12c5db8a0173567b79"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL126_F1_S20260722",
+      "exists": true,
+      "bytes": 16186826,
+      "file_count": 34,
+      "metadata_tree_sha256": "efb0f564c9505fab2590f469716f05841a26356333780a6dd5fd291788e1224e"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL126_F2_S20260720",
+      "exists": true,
+      "bytes": 16188661,
+      "file_count": 34,
+      "metadata_tree_sha256": "8fa65fa2e3a2bd9dc5a34ba2d1b9859b8d2d2a6d06d91e748d3c037675fa84bb"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL126_F2_S20260721",
+      "exists": true,
+      "bytes": 16186611,
+      "file_count": 34,
+      "metadata_tree_sha256": "23bc59303c647572e1ee730b36bc37b73ee1f16dea960fa9e8d961727ce4f4ad"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL126_F2_S20260722",
+      "exists": true,
+      "bytes": 16188341,
+      "file_count": 34,
+      "metadata_tree_sha256": "8829ff4b7d60956987a683610a0751dde147202b36bd2e905c1302e9675dd029"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL126_F3_S20260720",
+      "exists": true,
+      "bytes": 16177296,
+      "file_count": 34,
+      "metadata_tree_sha256": "f9216c55b1d4a07ee430615bc956530fc6a1b8c17158e3cf210abd3ed61a580f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL126_F3_S20260721",
+      "exists": true,
+      "bytes": 16174745,
+      "file_count": 34,
+      "metadata_tree_sha256": "6ffd721cad175e5f05822d3ed469340fe5f706f1e5c0a0421f2b414643856ed3"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL126_F3_S20260722",
+      "exists": true,
+      "bytes": 16176735,
+      "file_count": 34,
+      "metadata_tree_sha256": "d74c203c78a65c1faeaed59588d67139d2deda96a9d917a1186014389c12ea0f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL126_F4_S20260720",
+      "exists": true,
+      "bytes": 16186200,
+      "file_count": 34,
+      "metadata_tree_sha256": "8c1ca0716e43b693bd85e01ea73bc4350503688b44cb0bffe38e929139f33414"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL126_F4_S20260721",
+      "exists": true,
+      "bytes": 16181535,
+      "file_count": 34,
+      "metadata_tree_sha256": "1568ef8eccd37405c26df913c2d588fa8a7de7ba95545a80396c10b9a94f1cc1"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL126_F4_S20260722",
+      "exists": true,
+      "bytes": 16184449,
+      "file_count": 34,
+      "metadata_tree_sha256": "aa86e0aed128893e00c9c6868ef64aa350267f75508ba0ee9da416ce692f9eec"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL252_F1_S20260720",
+      "exists": true,
+      "bytes": 16186146,
+      "file_count": 34,
+      "metadata_tree_sha256": "2cc058f20ed455f5713750eeed224c83fc2db303b88bc1d00cd090108b74c121"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL252_F1_S20260721",
+      "exists": true,
+      "bytes": 16184600,
+      "file_count": 34,
+      "metadata_tree_sha256": "08a9fe85faba413d09b2f34fe5f85de2ad8f9c5750965b24c2c44c0ec950ab61"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL252_F1_S20260722",
+      "exists": true,
+      "bytes": 16188160,
+      "file_count": 34,
+      "metadata_tree_sha256": "aca730db3761f23b2dcdbee61892b495e5359136b8309c7bb669c8eb0db856c3"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL252_F2_S20260720",
+      "exists": true,
+      "bytes": 16189499,
+      "file_count": 34,
+      "metadata_tree_sha256": "42242a78bda67a4970c467804ec85560824b090e97f70a11c53b7482c303c711"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL252_F2_S20260721",
+      "exists": true,
+      "bytes": 16187387,
+      "file_count": 34,
+      "metadata_tree_sha256": "ba94d0409971af8bc535f9333479c40e5a883930b95af8494cfe1264d07a8197"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL252_F2_S20260722",
+      "exists": true,
+      "bytes": 16189113,
+      "file_count": 34,
+      "metadata_tree_sha256": "f39d9c4dbfaa8b223e40ead092a461a8cca383ef84913d9dba1722581e95667f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL252_F3_S20260720",
+      "exists": true,
+      "bytes": 16176742,
+      "file_count": 34,
+      "metadata_tree_sha256": "81387941af8708f5dceeef5c7ec1f70ae50868165e179157fd4a0688fbd23e12"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL252_F3_S20260721",
+      "exists": true,
+      "bytes": 16169509,
+      "file_count": 34,
+      "metadata_tree_sha256": "f1b25fa1951fb976dcaac3258384b3966f90108e353c5913eb912cdd4c26ee6f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL252_F3_S20260722",
+      "exists": true,
+      "bytes": 16175848,
+      "file_count": 34,
+      "metadata_tree_sha256": "e5ca572c94efff3a4d7afebe44a5237bb81b4c99bbf849bba1d0b599d5ffb947"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL252_F4_S20260720",
+      "exists": true,
+      "bytes": 16186383,
+      "file_count": 34,
+      "metadata_tree_sha256": "305148dfa48826409f91091e8c00698d2a25b295fbdba730cfb2c84453711a9d"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL252_F4_S20260721",
+      "exists": true,
+      "bytes": 16180680,
+      "file_count": 34,
+      "metadata_tree_sha256": "9591013fc74067dd7366d7aca7c0384b98b89f6f218c12f47ae3278f3b15b7d4"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_INNER_E3_MIX_HL252_F4_S20260722",
+      "exists": true,
+      "bytes": 16184693,
+      "file_count": 34,
+      "metadata_tree_sha256": "618933bba4823c9094d1b5f111a03a96d25caa2f66b37fce70bec07c6a58caf6"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1A_DEDUP_ST60_F1_S20260720",
+      "exists": true,
+      "bytes": 10861307,
+      "file_count": 34,
+      "metadata_tree_sha256": "43522ac1b86b79d6e79ef388dd9d9d3971a386beaf821cb4a0a5f61f3c0a6a44"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1A_DEDUP_ST60_F1_S20260721",
+      "exists": true,
+      "bytes": 10870703,
+      "file_count": 34,
+      "metadata_tree_sha256": "fa846f138f34248f1ae6bc3fbfb3293de82e65f2141b710e67d13e468d9d6bd7"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1A_DEDUP_ST60_F1_S20260722",
+      "exists": true,
+      "bytes": 10873987,
+      "file_count": 34,
+      "metadata_tree_sha256": "2c19b4afb9253f62f6475bbab558dca8111282b540c9249fd9325e82bbba22d7"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1A_DEDUP_ST60_F2_S20260720",
+      "exists": true,
+      "bytes": 11049422,
+      "file_count": 34,
+      "metadata_tree_sha256": "e76e5dec30468976b4e673d869569022483f199459b3be3f8d2c2b2f748392b8"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1A_DEDUP_ST60_F2_S20260721",
+      "exists": true,
+      "bytes": 11023240,
+      "file_count": 34,
+      "metadata_tree_sha256": "220714abdc5224e46b39c34d3b3ec44aae52717e38ad25e34d5f02dfc35d9211"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1A_DEDUP_ST60_F2_S20260722",
+      "exists": true,
+      "bytes": 11023794,
+      "file_count": 34,
+      "metadata_tree_sha256": "268c7da23f9ddbf706ed85ce303f64233ea76debbc4cdbf9908f9db897c3c403"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1A_DEDUP_ST60_F3_S20260720",
+      "exists": true,
+      "bytes": 11280054,
+      "file_count": 34,
+      "metadata_tree_sha256": "28250067a86135f4abd2de410ede788b5680669efd952e16766a4f107988bd72"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1A_DEDUP_ST60_F3_S20260721",
+      "exists": true,
+      "bytes": 11317499,
+      "file_count": 34,
+      "metadata_tree_sha256": "be9a343808672d139b723bad96a36ea27f4255e1d1d224bb62b87d6a81c821b6"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1A_DEDUP_ST60_F3_S20260722",
+      "exists": true,
+      "bytes": 11342917,
+      "file_count": 34,
+      "metadata_tree_sha256": "a8be02337b11d4ddecc97a2a99e5541e24e344291fe345aca08a77edc8fb55e5"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1A_DEDUP_ST60_F4_S20260720",
+      "exists": true,
+      "bytes": 10912017,
+      "file_count": 34,
+      "metadata_tree_sha256": "84b537671bae63cb81cae66e758bc0960d14cc9591df107a46e9f7d0815767b0"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1A_DEDUP_ST60_F4_S20260721",
+      "exists": true,
+      "bytes": 10886507,
+      "file_count": 34,
+      "metadata_tree_sha256": "a8abf8c876533ff8ac17b1eacb71d2a7b1be97f0d95e71c82bb4b485a077aadf"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1A_DEDUP_ST60_F4_S20260722",
+      "exists": true,
+      "bytes": 10901584,
+      "file_count": 34,
+      "metadata_tree_sha256": "14e5ee0992c2d19da37f062072ef80700209a85f7115ea4e8089b4beb5d30ad4"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1B_CAUSAL_SCALE_ST60_F1_S20260720",
+      "exists": true,
+      "bytes": 10860829,
+      "file_count": 34,
+      "metadata_tree_sha256": "2e9a6322a64513741351c2116186352045ec5e6c435c131e9bc751b2d1b5812c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1B_CAUSAL_SCALE_ST60_F1_S20260721",
+      "exists": true,
+      "bytes": 10870931,
+      "file_count": 34,
+      "metadata_tree_sha256": "0ef9a69db0c23e4f2d099dcd444892896ac0f8c654b0d2e481e6e68d3318e48c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1B_CAUSAL_SCALE_ST60_F1_S20260722",
+      "exists": true,
+      "bytes": 10874118,
+      "file_count": 34,
+      "metadata_tree_sha256": "7f1f2cd1e58a3acc902e77a4991092bb4c3005f19f61003774628d716a1f06d8"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1B_CAUSAL_SCALE_ST60_F2_S20260720",
+      "exists": true,
+      "bytes": 11049233,
+      "file_count": 34,
+      "metadata_tree_sha256": "997e64cd9f47a6e1f8e4708310dc6e6f358fd62a97c06541d3baeae761f9ce17"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1B_CAUSAL_SCALE_ST60_F2_S20260721",
+      "exists": true,
+      "bytes": 11024513,
+      "file_count": 34,
+      "metadata_tree_sha256": "dd1667c5e912640fdeb7889ffb7822c8760a7de5c5cba88e8e0237060bf2c593"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1B_CAUSAL_SCALE_ST60_F2_S20260722",
+      "exists": true,
+      "bytes": 11023913,
+      "file_count": 34,
+      "metadata_tree_sha256": "b7e505a302541f0f03fcc05eef2f76ad6482ae4b810e473c1d68f653f298c5e7"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1B_CAUSAL_SCALE_ST60_F3_S20260720",
+      "exists": true,
+      "bytes": 11280937,
+      "file_count": 34,
+      "metadata_tree_sha256": "fff85a4528661cf12f4e5b94d6ea44607e176c326a675a5637f0cb80bc50b31c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1B_CAUSAL_SCALE_ST60_F3_S20260721",
+      "exists": true,
+      "bytes": 11316492,
+      "file_count": 34,
+      "metadata_tree_sha256": "d4a47b63b0553cefbb1f79ad494e40bab3b4bf59bb72ce42065a090a552a7d86"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1B_CAUSAL_SCALE_ST60_F3_S20260722",
+      "exists": true,
+      "bytes": 11343820,
+      "file_count": 34,
+      "metadata_tree_sha256": "e94a418d7790e03ada1f2790c1babe9736ecd92a9ddacbf0ed7ddaa2be1a2056"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1B_CAUSAL_SCALE_ST60_F4_S20260720",
+      "exists": true,
+      "bytes": 10911511,
+      "file_count": 34,
+      "metadata_tree_sha256": "2bcbc097a4732961b055cb6dac66d6c4a42e93ba249436bbf02fe71bcb468999"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1B_CAUSAL_SCALE_ST60_F4_S20260721",
+      "exists": true,
+      "bytes": 10883439,
+      "file_count": 34,
+      "metadata_tree_sha256": "63078bab7dc22028c629aefa16b804c300f7a46af49ab74a7d3ef912b4aec8e3"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1B_CAUSAL_SCALE_ST60_F4_S20260722",
+      "exists": true,
+      "bytes": 10901619,
+      "file_count": 34,
+      "metadata_tree_sha256": "1c71088fc617cb73898cb1dc82ed89064a30d4aab1ec50c1ce29620afa0dc749"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1C_FULL_CAUSAL_ST60_F1_S20260720",
+      "exists": true,
+      "bytes": 10952024,
+      "file_count": 34,
+      "metadata_tree_sha256": "d04ff51b8d4b0c5e8d266e5a1e0052261b22238dccd229c440956b97b3f1975e"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1C_FULL_CAUSAL_ST60_F1_S20260721",
+      "exists": true,
+      "bytes": 10951075,
+      "file_count": 34,
+      "metadata_tree_sha256": "455e55e4938f4ed46fa7ffb73ee833a01fa3fa6db53a8d9990c5e3745068c0a6"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1C_FULL_CAUSAL_ST60_F1_S20260722",
+      "exists": true,
+      "bytes": 10935277,
+      "file_count": 34,
+      "metadata_tree_sha256": "a3c2971cfc2edefa9eedd593f8b47a72b8085d963fe1b937110050ea1f57ee1a"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1C_FULL_CAUSAL_ST60_F2_S20260720",
+      "exists": true,
+      "bytes": 11112294,
+      "file_count": 34,
+      "metadata_tree_sha256": "a378e52641e39d030bef4dcf46130820ca68a029e23d18551db9972cce1f2302"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1C_FULL_CAUSAL_ST60_F2_S20260721",
+      "exists": true,
+      "bytes": 11119295,
+      "file_count": 34,
+      "metadata_tree_sha256": "17fdcc350e7799f9fab324e23c7addcc2161d3912955673260fadc6e1d22cae4"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1C_FULL_CAUSAL_ST60_F2_S20260722",
+      "exists": true,
+      "bytes": 11090152,
+      "file_count": 34,
+      "metadata_tree_sha256": "396df25b8957ff71854dd7fc2b32e71d270c200151c7327cefa3488b1020943c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1C_FULL_CAUSAL_ST60_F3_S20260720",
+      "exists": true,
+      "bytes": 11421403,
+      "file_count": 34,
+      "metadata_tree_sha256": "61b057254ee0c3fc55f28a7c6572f574c6ad958a2f3bd0963cfa9cf9b5d4be26"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1C_FULL_CAUSAL_ST60_F3_S20260721",
+      "exists": true,
+      "bytes": 11396123,
+      "file_count": 34,
+      "metadata_tree_sha256": "cd913e75d1b7b83f35afdeb0d40133284d11483c587b361a2f8197c815cb7c3f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1C_FULL_CAUSAL_ST60_F3_S20260722",
+      "exists": true,
+      "bytes": 11408136,
+      "file_count": 34,
+      "metadata_tree_sha256": "ba8f210461e9c351361545f52d721b80459eda56aea8b4b1bf0d37763910e85c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1C_FULL_CAUSAL_ST60_F4_S20260720",
+      "exists": true,
+      "bytes": 10970921,
+      "file_count": 34,
+      "metadata_tree_sha256": "d1b9ba4f7a6a4afaf7d890a487280d95b561e544e51adf59293279fdcd398751"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1C_FULL_CAUSAL_ST60_F4_S20260721",
+      "exists": true,
+      "bytes": 10964814,
+      "file_count": 34,
+      "metadata_tree_sha256": "aabcf6b5ec243c773bdc47e1a569cacd0fcb6aa4beccfaf29890bf0dfc33c060"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E1C_FULL_CAUSAL_ST60_F4_S20260722",
+      "exists": true,
+      "bytes": 10966213,
+      "file_count": 34,
+      "metadata_tree_sha256": "087071b829aeddff62b12e41658364ef6b55b2e870cee381a37e73704b61e96b"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E2_MARKET_GRU60_F1_S20260720",
+      "exists": true,
+      "bytes": 11830509,
+      "file_count": 34,
+      "metadata_tree_sha256": "844fb88a10ad977a9f6e287023f1f43bf1d47a466cb781e9ed27d96790cd2b92"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E2_MARKET_GRU60_F1_S20260721",
+      "exists": true,
+      "bytes": 11828785,
+      "file_count": 34,
+      "metadata_tree_sha256": "64c9e10b737d9e540a11e3ae1d6b07e60524a8b3d6b137dfb762a73635871052"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E2_MARKET_GRU60_F1_S20260722",
+      "exists": true,
+      "bytes": 11827007,
+      "file_count": 34,
+      "metadata_tree_sha256": "2614ba733fa42acfec9d8d2e00f96a97f3a1c6defcbf2d74cab22fb3f12e7719"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E2_MARKET_GRU60_F2_S20260720",
+      "exists": true,
+      "bytes": 12010411,
+      "file_count": 34,
+      "metadata_tree_sha256": "15a7bf54cce10b33897293cfe21a565a39e9b7c9513d65a297dd6e42ee5b9e35"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E2_MARKET_GRU60_F2_S20260721",
+      "exists": true,
+      "bytes": 11988547,
+      "file_count": 34,
+      "metadata_tree_sha256": "f886e52dfab74011943b68bee652a095a53bd5138ce2d7a417c247db39313260"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E2_MARKET_GRU60_F2_S20260722",
+      "exists": true,
+      "bytes": 11993174,
+      "file_count": 34,
+      "metadata_tree_sha256": "48807359d68e915c3621f37ba7b752ff4228d538eacdd98c065e643f6263500f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E2_MARKET_GRU60_F3_S20260720",
+      "exists": true,
+      "bytes": 12317906,
+      "file_count": 34,
+      "metadata_tree_sha256": "99e24b3121dc315cea3102bb416be7720fd89242dfe14d68bc2f7264f1dbd13c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E2_MARKET_GRU60_F3_S20260721",
+      "exists": true,
+      "bytes": 12318540,
+      "file_count": 34,
+      "metadata_tree_sha256": "afa2fe8786381d68dcd96357f1c110124b47605b71be26080b0127fc133d1950"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E2_MARKET_GRU60_F3_S20260722",
+      "exists": true,
+      "bytes": 12314368,
+      "file_count": 34,
+      "metadata_tree_sha256": "2c3b5f7492642b9e35b4c11f89e679cc03545bf5541887b88594ee4823e2eec2"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E2_MARKET_GRU60_F4_S20260720",
+      "exists": true,
+      "bytes": 11860333,
+      "file_count": 34,
+      "metadata_tree_sha256": "39387702819382a0b162bf1b21e5bb5bd1fa645ad6df081a01d2c093ba152bee"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E2_MARKET_GRU60_F4_S20260721",
+      "exists": true,
+      "bytes": 11853063,
+      "file_count": 34,
+      "metadata_tree_sha256": "ba68c81a535620ab46764206c2421774d95d07cd339c86be1b7b900d1ef60802"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E2_MARKET_GRU60_F4_S20260722",
+      "exists": true,
+      "bytes": 11861550,
+      "file_count": 34,
+      "metadata_tree_sha256": "73b4ae50041b23dcf7d827eb332796f70b646aa9109fbd4fb802d8bc1e15f3d8"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL126_F1_S20260720",
+      "exists": true,
+      "bytes": 19023878,
+      "file_count": 34,
+      "metadata_tree_sha256": "d84ad7e962b4b683641a734432b621eb49c6c7355d04023f6105306d2835a65c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL126_F1_S20260721",
+      "exists": true,
+      "bytes": 19042014,
+      "file_count": 34,
+      "metadata_tree_sha256": "a0d3d367fd99e729b089926f3feb6e489fdd5dee070ef4c953c6d4dee6070735"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL126_F1_S20260722",
+      "exists": true,
+      "bytes": 19035104,
+      "file_count": 34,
+      "metadata_tree_sha256": "11d451dc83fe5fa5387e9b9d63515bc473e8344bd84c4a2f731e07341e9e3ae5"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL126_F2_S20260720",
+      "exists": true,
+      "bytes": 19212696,
+      "file_count": 34,
+      "metadata_tree_sha256": "75954444d09ec30bd1684d485141d3dccb740f610786a0d77ec77fae1f104987"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL126_F2_S20260721",
+      "exists": true,
+      "bytes": 19186986,
+      "file_count": 34,
+      "metadata_tree_sha256": "bd3eea460313a6a236d14eef422cfce502fa4029005f0244663a17f738746eb4"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL126_F2_S20260722",
+      "exists": true,
+      "bytes": 19213922,
+      "file_count": 34,
+      "metadata_tree_sha256": "084d2883edcbca7d848def450646ba7ca7725ddcf290fa6dc6ff8071a6b41305"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL126_F3_S20260720",
+      "exists": true,
+      "bytes": 19612160,
+      "file_count": 34,
+      "metadata_tree_sha256": "96fc81307a7d3d93ba83a0617618333f6f52c818f97432e45d613dfe80426ccd"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL126_F3_S20260721",
+      "exists": true,
+      "bytes": 19595231,
+      "file_count": 34,
+      "metadata_tree_sha256": "862d5ecd753b7d306ac7212ebe355fbb953aa166b2c35725389d3486a5e62f05"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL126_F3_S20260722",
+      "exists": true,
+      "bytes": 19729804,
+      "file_count": 58,
+      "metadata_tree_sha256": "9b4ee6d3ac224cc8e12d046e340999b22d4f99c6f20400f07ac6ff3eb01f6445"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL126_F4_S20260720",
+      "exists": true,
+      "bytes": 19057255,
+      "file_count": 34,
+      "metadata_tree_sha256": "7a9c541f4007b981d5c0ab4be88cc790b840ae8c1a73e4a4484d501ee531b94d"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL126_F4_S20260721",
+      "exists": true,
+      "bytes": 19053648,
+      "file_count": 34,
+      "metadata_tree_sha256": "efb07fa34b52960a9d229d4c4b344dc49559e76fcc60dfbe43fb0e1288590a8f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL126_F4_S20260722",
+      "exists": true,
+      "bytes": 19048889,
+      "file_count": 34,
+      "metadata_tree_sha256": "f638ed2a98d297b6a3bcba09bcc30f3ff3f9fd7648f4d6b936f6ae0ff16e90cd"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL252_F1_S20260720",
+      "exists": true,
+      "bytes": 19024211,
+      "file_count": 34,
+      "metadata_tree_sha256": "80bddf82d76c49d269d47d9c80612f067345649c5422afccef43ead1f750082c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL252_F1_S20260721",
+      "exists": true,
+      "bytes": 19044045,
+      "file_count": 34,
+      "metadata_tree_sha256": "ac39bce4b15405f5b6b5ea17680e00d1b5e84775640323cb8a6516388aa91e48"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL252_F1_S20260722",
+      "exists": true,
+      "bytes": 19034242,
+      "file_count": 34,
+      "metadata_tree_sha256": "0b5bc44dc140e5380085bb61d143077e33dfc15d6f31386964c7f3b73b064ab7"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL252_F2_S20260720",
+      "exists": true,
+      "bytes": 19210562,
+      "file_count": 34,
+      "metadata_tree_sha256": "2e342f4fdecc5c784fc398acddbfffcd95d2b8260cd4f5e5add47c9ab51a9116"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL252_F2_S20260721",
+      "exists": true,
+      "bytes": 19188435,
+      "file_count": 34,
+      "metadata_tree_sha256": "e345abf3573451d3443c941aa8f88a648045c79f7391399b41042dbdaf1cb6cf"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL252_F2_S20260722",
+      "exists": true,
+      "bytes": 19210225,
+      "file_count": 34,
+      "metadata_tree_sha256": "6e70d3495301cdff8a63c691f5d6768aac89c1140d493f35701bdb052ad4fdb1"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL252_F3_S20260720",
+      "exists": true,
+      "bytes": 19609125,
+      "file_count": 34,
+      "metadata_tree_sha256": "06fba10c177e363bb39af13844c30a66f21a192bccec3ee97dbefa03aa134004"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL252_F3_S20260721",
+      "exists": true,
+      "bytes": 19575238,
+      "file_count": 34,
+      "metadata_tree_sha256": "327e16a85def03d5610b6386f3fbbdbfc5a883f832587acc4eee41888caa97a3"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL252_F3_S20260722",
+      "exists": true,
+      "bytes": 19583596,
+      "file_count": 34,
+      "metadata_tree_sha256": "6502da5ebe622e06e9afd970e55978a485082bef37c0a48b5a160608a8b9f051"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL252_F4_S20260720",
+      "exists": true,
+      "bytes": 19061911,
+      "file_count": 34,
+      "metadata_tree_sha256": "974043644f1ff52ea5108434b8fef1ca3fee5d1078ac07aba52076fcb66a34c4"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL252_F4_S20260721",
+      "exists": true,
+      "bytes": 19057742,
+      "file_count": 34,
+      "metadata_tree_sha256": "ff94826cbe191f38a2d2b5aba9684cdd945883484e07dded8469e26ec1109db9"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/QUICK_OUTER_E3_MIX_HL252_F4_S20260722",
+      "exists": true,
+      "bytes": 19045875,
+      "file_count": 34,
+      "metadata_tree_sha256": "6138133f928c5d15f1de1d5044cb0420d0cd63a33e818448b490f13d539707ea"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/SMOKE_E1A_DEDUP_ST60_S20260719",
+      "exists": true,
+      "bytes": 7512106,
+      "file_count": 35,
+      "metadata_tree_sha256": "a760ba61198d8d4af951edce073a0fd7d9c20f83d93a773e6aba5550d9e60903"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/SMOKE_E1B_CAUSAL_SCALE_ST60_S20260719",
+      "exists": true,
+      "bytes": 7511759,
+      "file_count": 35,
+      "metadata_tree_sha256": "45e1b3910afd95ebd10ccc6e6d03351850ec4db0e8aeac7493cd621503259147"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/SMOKE_E1C_FULL_CAUSAL_ST60_S20260719",
+      "exists": true,
+      "bytes": 7584721,
+      "file_count": 35,
+      "metadata_tree_sha256": "939de7d51ca7a76c7264ee6e4f4600aee8047a84eb29c534da72ca7bfa64fed3"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/SMOKE_E2_MARKET_GRU60_S20260719",
+      "exists": true,
+      "bytes": 8480664,
+      "file_count": 35,
+      "metadata_tree_sha256": "dafd1d5f4d8acccd8bda75e6012319b7a04965a5abd6685f1e91476f991571e7"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/SMOKE_E3_MIX_HL126_S20260719",
+      "exists": true,
+      "bytes": 14864179,
+      "file_count": 35,
+      "metadata_tree_sha256": "5b87f99f8085cf126bfb796c9de03c538045ffee476f8193f4dc0de8593eec27"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_E/automation_runs/SMOKE_E3_MIX_HL252_S20260719",
+      "exists": true,
+      "bytes": 14864040,
+      "file_count": 35,
+      "metadata_tree_sha256": "f76c8764ee141c0eea6f2be30069ef0ec78bf05092a14f7ae206e6145d2cb210"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/D02_FrozenResearchChampion_20260709/last_model.pth",
+      "exists": true,
+      "bytes": 5134893,
+      "file_count": 1,
+      "metadata_tree_sha256": "dd42e84ba5a8184ef10e00f8d22860e35b733a1d2586ec8e0d0a185f46b3b07d"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/D02_FrozenResearchChampion_20260709/best_val_predictions.csv",
+      "exists": true,
+      "bytes": 4318192,
+      "file_count": 1,
+      "metadata_tree_sha256": "1d553d949a2e21594cd254127cb5a079539d629de7a2870a74795cb0c652b6b4"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/D02_FrozenResearchChampion_20260709/latest_val_predictions.csv",
+      "exists": true,
+      "bytes": 4318192,
+      "file_count": 1,
+      "metadata_tree_sha256": "32d0e55b38de5efaa29491c3904ba55c629bcc37fe4ee902105f679ea30d2c27"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/D02_FrozenResearchChampion_20260709/official_baseline_comparison/D_aligned_predictions.csv",
+      "exists": true,
+      "bytes": 4187116,
+      "file_count": 1,
+      "metadata_tree_sha256": "e87d9385f074ca8d773def00b75c66237c08f79e07c9c1b62ed4d9d5742ba95f"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/D02_FrozenResearchChampion_20260709/official_baseline_comparison/official_baseline_predictions.csv",
+      "exists": true,
+      "bytes": 3059352,
+      "file_count": 1,
+      "metadata_tree_sha256": "fd59a3bf8e60341e75262d69b4f25eef037d7c852497c343d4c34deab4489f58"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/D02_FrozenResearchChampion_20260709/production_refit_20260703/latest_train_predictions.csv",
+      "exists": true,
+      "bytes": 19027150,
+      "file_count": 1,
+      "metadata_tree_sha256": "68a346b00ab34d49be8af23cd499adbebcf7c57edd6ce1a942435e0f5983f6b2"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/D02_FrozenResearchChampion_20260709/production_refit_20260703/final_prediction/ranked_scores.csv",
+      "exists": true,
+      "bytes": 46789,
+      "file_count": 1,
+      "metadata_tree_sha256": "7ad1a03baeec18401298ef0b159c6018935b01af1caa348f36e651fca17af42a"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/D02_FrozenResearchChampion_20260709/train_stdout.log",
+      "exists": true,
+      "bytes": 4491,
+      "file_count": 1,
+      "metadata_tree_sha256": "831119f057a1af37aaae32518d73a59633d837937f4a910b91525df25d7e6a43"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/D02_FrozenResearchChampion_20260709/train_stderr.log",
+      "exists": true,
+      "bytes": 0,
+      "file_count": 1,
+      "metadata_tree_sha256": "ba18723c87bc2a508b6d621e191a89f8cb90f225e2b611926edceea490c8560c"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/D02_FrozenResearchChampion_20260709/official_baseline_comparison/compare_stdout.log",
+      "exists": true,
+      "bytes": 2926,
+      "file_count": 1,
+      "metadata_tree_sha256": "e8de690e9d260cb9fabd7476f8af1c86ecb984e52d0954bc22461549df4846cb"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/D02_FrozenResearchChampion_20260709/official_baseline_comparison/compare_stderr.log",
+      "exists": true,
+      "bytes": 0,
+      "file_count": 1,
+      "metadata_tree_sha256": "a188023439f5eac3049f007d0397ca6113a55fbac653697addb644996ca3c268"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/D02_FrozenResearchChampion_20260709/production_refit_20260703/train_stdout.log",
+      "exists": true,
+      "bytes": 3832,
+      "file_count": 1,
+      "metadata_tree_sha256": "6b3f386471cd9959c7b48cd1d1588d4c51477150fe2afa8f761dca155110ab16"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/D02_FrozenResearchChampion_20260709/production_refit_20260703/train_stderr.log",
+      "exists": true,
+      "bytes": 0,
+      "file_count": 1,
+      "metadata_tree_sha256": "8b5ccbbfbefd84c72147896ebeb66b1c6cb3016f2bb46365d556262bb2f9d0fe"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/D02_FrozenResearchChampion_20260709/code_snapshot/src/__pycache__",
+      "exists": true,
+      "bytes": 129120,
+      "file_count": 8,
+      "metadata_tree_sha256": "92b4cd26a8356a7960b73f9241191dc514621616eae271363eaa81faabdcfb2a"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/D02_FrozenResearchChampion_20260709/production_refit_20260703/__pycache__",
+      "exists": true,
+      "bytes": 37764,
+      "file_count": 1,
+      "metadata_tree_sha256": "16313c7bfd216883b2660a46b019c986676ef31f2d16a9bf63205b40a0ed9cee"
+    }
+  ],
+  "planned_cleanup_without_environment_bytes": 15176507356,
+  "planned_cleanup_without_environment_gib": 14.134223904460669,
+  "conditional_environment_cleanup": {
+    "path": ".venv",
+    "exists": true,
+    "bytes": 5048371063,
+    "file_count": 29181,
+    "metadata_tree_sha256": "a894341bd3fc5040451c38bfa0cda418707771427e2899c0681bff92851dbfd8",
+    "condition": "delete only after shared environment import/CUDA checks and dependency-reference scan pass"
+  },
+  "estimated_total_cleanup_bytes": 20224878419,
+  "estimated_total_cleanup_gib": 18.83588584046811,
+  "critical_source_hashes": [
+    {
+      "path": "Experimental_WorkSpace/candidates_D/D02_FrozenResearchChampion_20260709/production_refit_20260703/final_model.pth",
+      "bytes": 5134957,
+      "sha256": "bd85f504599d1995bd19f254c78136be1cf42e74a349f32ed6bdec5ccb0ef86d"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/D02_FrozenResearchChampion_20260709/production_refit_20260703/scalers.json",
+      "bytes": 2192,
+      "sha256": "3d647f554d5e09c50e56488931deabd54ff08750edb645f265ff91d00bc62b38"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/D02_FrozenResearchChampion_20260709/production_refit_20260703/generated_config_production_refit.json",
+      "bytes": 1854,
+      "sha256": "f17c28866bbb389b8c849b54e4bc6f7ffaf8719d910f2bbcf0128c23f06da635"
+    },
+    {
+      "path": "Experimental_WorkSpace/candidates_D/data_snapshots/c0_train_plus_baostock_future_20260703.csv",
+      "bytes": 50670372,
+      "sha256": "8e9cf37e5c53e4edafddc3f6f6b5843d4037376334e6f53cba068699095df1ad"
+    },
+    {
+      "path": "candidate/C1_Submission_App_20260703/model/60_158+39/best_model.pth",
+      "bytes": 8231093,
+      "sha256": "cb6dd49094237894d9fd601df1d4f0758e5a1a9212ff53e777c2d8672c437113"
+    },
+    {
+      "path": "candidate/C1_Submission_App_20260703/data/train.csv",
+      "bytes": 40426724,
+      "sha256": "9318d24cbfbe3998cb7aa93ecfef818951b8cf5dab8aa1fcefbaf110c7190a95"
+    }
+  ],
+  "validation_gates": {
+    "candidate_C": [
+      "compileall",
+      "inference",
+      "self-score",
+      "submission validator ok=true"
+    ],
+    "candidate_D": [
+      "compileall",
+      "source-checkpoint inference match",
+      "full fixed-seed 12-epoch reproduction",
+      "reproduced checkpoint/result comparison",
+      "submission validator ok=true",
+      "offline/path/size/runtime checks"
+    ],
+    "cleanup": [
+      "Candidate-D must pass before deleting D01 source/data or D001",
+      "official reference content-tree hash unchanged",
+      "all recursive targets resolve under workspace root",
+      "shared GPU environment must remain intact"
+    ]
+  },
+  "git_status_before": [
+    " M AGENTS.md",
+    " M Evaluation/README.md",
+    " M Experimental_WorkSpace/PYTORCH_ENVIRONMENT.md",
+    " M Experimental_WorkSpace/README.md",
+    " M Experimental_WorkSpace/candidates_D/D001_MarketEncoder_Baseline/code/src/config.py",
+    " M Experimental_WorkSpace/candidates_D/D001_MarketEncoder_Baseline/code/src/evaluator.py",
+    " M Experimental_WorkSpace/candidates_D/D001_MarketEncoder_Baseline/code/src/featurework.py",
+    " M Experimental_WorkSpace/candidates_D/D001_MarketEncoder_Baseline/code/src/loss.py",
+    " M Experimental_WorkSpace/candidates_D/D001_MarketEncoder_Baseline/code/src/test.py",
+    " M Experimental_WorkSpace/candidates_D/D001_MarketEncoder_Baseline/code/src/train.py",
+    " M Experimental_WorkSpace/candidates_D/D_experiment_registry.json",
+    " M Experimental_WorkSpace/candidates_D/README.md",
+    " M WORKSPACE_LAYOUT_20260705.md",
+    "?? Evaluation/scripts/d_series/defensive_position_r3.py",
+    "?? Evaluation/scripts/d_series/position_control_oof_train.py",
+    "?? Evaluation/scripts/d_series/position_control_r1.py",
+    "?? Evaluation/scripts/d_series/r4_checkpoint_inference.py",
+    "?? Evaluation/scripts/d_series/r4_protocol.py",
+    "?? Evaluation/scripts/d_series/r5_protocol.py",
+    "?? Evaluation/scripts/d_series/test_defensive_position_r3.py",
+    "?? Evaluation/scripts/d_series/test_defensive_position_r3c.py",
+    "?? Evaluation/scripts/d_series/test_defensive_position_r3d.py",
+    "?? Evaluation/scripts/d_series/test_position_control_r1.py",
+    "?? Evaluation/scripts/d_series/test_r4_protocol.py",
+    "?? Evaluation/scripts/d_series/test_r5_protocol.py",
+    "?? Experimental_WorkSpace/candidates_C/C1_Champion_RegimeGate/production_refit_20260703/",
+    "?? Experimental_WorkSpace/candidates_D/D001_MarketEncoder_Baseline/code/src/score_contract.py",
+    "?? Experimental_WorkSpace/candidates_D/D02_FrozenResearchChampion_20260709/",
+    "?? Experimental_WorkSpace/candidates_D/D03_R5_L1_F0_ResearchCandidate_20260711/",
+    "?? Experimental_WorkSpace/candidates_D/D04_D001_P2_InverseVol_ResearchCandidate_20260713/",
+    "?? Experimental_WorkSpace/candidates_D/run_d_auto_r4.py",
+    "?? Experimental_WorkSpace/candidates_D/run_d_auto_r5.py",
+    "?? Experimental_WorkSpace/candidates_D/run_d_defensive_position_r3.py",
+    "?? Experimental_WorkSpace/candidates_D/run_d_defensive_position_r3b.py",
+    "?? Experimental_WorkSpace/candidates_D/run_d_defensive_position_r3c.py",
+    "?? Experimental_WorkSpace/candidates_D/run_d_defensive_position_r3d.py",
+    "?? Experimental_WorkSpace/candidates_D/run_d_position_control_r1.py",
+    "?? Experimental_WorkSpace/candidates_E/",
+    "?? tmp/"
+  ]
+}

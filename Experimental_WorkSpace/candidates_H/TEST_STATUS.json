@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "marker": "TEST",
+  "lineage": "H-series",
+  "status": "FINAL_REJECTED_AT_H5_SENTINEL",
+  "retained_model": null,
+  "submission_eligible": false,
+  "candidate_modified_by_h_workflow": false,
+  "sealed_holdout_access_count": 0,
+  "serious_run": false,
+  "finalist_lock_created": false,
+  "promotion_decision": "NO_PROMOTION",
+  "protection_audit_status": "PASS_TASK_RELATIVE_PER_FILE",
+  "historical_protection_warning": "WARNING_OFFICIAL_DRIFT_PREEXISTING_BEFORE_H5",
+  "protected_controls_unchanged": true,
+  "quick_result": {
+    "primary_policy": "TOP5_EQUAL",
+    "paired_five_day_decisions": 98,
+    "positive_folds_min_across_seeds": 1,
+    "seed_mean_excess": [
+      -0.0003614611733628777,
+      0.0008749812166681698
+    ],
+    "strict_weekly_win_rate": 0.09183673469387756,
+    "excess_sum_remove_best2": -0.11381443007849155,
+    "failed_checks": [
+      "positive_folds_at_least_3_of_4",
+      "both_seed_means_positive",
+      "strict_weekly_win_rate_at_least_55pct",
+      "excess_positive_after_best_two_removed"
+    ]
+  },
+  "h5_result": {
+    "experiment_id": "TEST_H5_PREDICTED_BOUNDARY_OBJECTIVE_V2",
+    "status": "REJECTED_AT_SENTINEL",
+    "seed": 20260726,
+    "sentinel_folds": [
+      "2025Q2",
+      "2026Q1"
+    ],
+    "paired_five_day_decisions": 23,
+    "changed_decisions": 22,
+    "decision_change_rate": 0.9565217391304348,
+    "changed_decision_strict_win_rate": 0.3181818181818182,
+    "pooled_mean_excess_return": 0.004877388738500685,
+    "recent_fold_mean_excess_return": 0.0014056880090555007,
+    "candidate_cvar20_minus_control": -0.000846556145697841,
+    "h5_minus_h1_normalized_rank5_rank6_margin": -0.10426853970972999,
+    "failed_checks": [
+      "changed_decision_strict_win_rate_above_50pct",
+      "cvar20_not_worse_than_control",
+      "normalized_rank5_rank6_margin_not_worse_than_h1"
+    ],
+    "full_quick_run": false,
+    "fresh_unconsumed_outer_windows_proven": 0
+  },
+  "eligible_quick_branches": [
+    "TEST_H0_CONTROL",
+    "TEST_H1_TOPK_OBJECTIVE"
+  ],
+  "blocked_branches": {
+    "TEST_H2_FUTURES_INDUSTRY_RESIDUAL": "BLOCKED_DATA_GATE",
+    "TEST_H3_FINANCIAL_EVENT_RESIDUAL": "BLOCKED_DATA_GATE",
+    "TEST_H4_CORPORATE_EVENT_RESIDUAL": "BLOCKED_DATA_GATE"
+  },
+  "data_quality_audit": "../../../Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_EXTERNAL_DATA_QUALITY_REPORT.md",
+  "h1_final_report": "../../../Evaluation/runs/TEST_H_single_week_stability_20260726/TEST_H_FINAL_REPORT.md",
+  "final_report": "../../../Evaluation/runs/TEST_H5_predicted_boundary_20260727/TEST_H5_FINAL_REPORT.md",
+  "two_week_retrospective_diagnostic": {
+    "experiment_id": "TEST_H5_TWO_WEEK_RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+    "experiment_type": "RETROSPECTIVE_EXPOSED_DIAGNOSTIC",
+    "status": "DIAGNOSTIC_ONLY",
+    "blind_test": false,
+    "independent_holdout": false,
+    "promotion_evidence": false,
+    "seed": 20260726,
+    "fixed_final_epoch": 1,
+    "weekly_gross_returns": [
+      0.058793296874714594,
+      -0.16603512726195238
+    ],
+    "two_week_gross_compound": -0.11700358291598068,
+    "two_week_net_10bps_compound": -0.1207850992552062,
+    "official_net_10bps_compound": -0.0643336387742186,
+    "candidate_d_net_10bps_compound": 0.09112948459136683,
+    "validation_parse_count": 1,
+    "serious_run": false,
+    "h01_created": false,
+    "promotion_decision": "NO_PROMOTION_DIAGNOSTIC_ONLY",
+    "score": "../../../Evaluation/runs/TEST_H5_two_week_retrospective_20260727/TEST_H5_TWO_WEEK_SCORE.json"
+  },
+  "warning": "TEST evidence only. Do not create H01 or copy artifacts to candidate/ without explicit user authorization."
+}

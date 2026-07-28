@@ -1,0 +1,26 @@
+{
+  "schema_version": "test_d_prospective_integrity_audit_v1",
+  "captured_at": "2026-07-28T01:28:00+00:00",
+  "status": "PASS",
+  "issues": [],
+  "source_checks": {
+    "THU-BDC2026-main": {
+      "expected_tree_sha256": "18124B043BF49567FE30E2A3B77AB27702F4A8597A7075C62C692B84E41C80B0",
+      "current_tree_sha256": "18124B043BF49567FE30E2A3B77AB27702F4A8597A7075C62C692B84E41C80B0",
+      "unchanged": true
+    },
+    "Candidate-D": {
+      "expected_tree_sha256": "9DE3A3AB2EE8E031397DF2227D83E2D5034F8852093D7D9ADCDFDA8F40EC6832",
+      "current_tree_sha256": "9DE3A3AB2EE8E031397DF2227D83E2D5034F8852093D7D9ADCDFDA8F40EC6832",
+      "unchanged": true
+    }
+  },
+  "audit_chain": {
+    "status": "PASS",
+    "event_count": 3,
+    "head_sha256": "9037500A5D1C89FD7BAAF006D2A2909992F0D109D8BA9DE14F5998634539C7FF"
+  },
+  "round_checks": {},
+  "state_performance_values_present": false,
+  "candidate_packages_modified": false
+}
