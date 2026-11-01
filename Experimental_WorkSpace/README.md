@@ -101,3 +101,10 @@ validator before receiving `SUBMISSION_CANDIDATE_READY`. A submission package
 is a packaging identity; it does not create a new training-program lineage.
 
 Cleanup provenance is recorded under `_cleanup_reports/`.
+
+## Overnight feature research TEST (2026-11-01)
+
+`Experimental_WorkSpace/candidates_D/TEST_overnight_gap_20261101/` is an
+untrained research-only lineage replacing D01's duplicate stock feature with
+an overnight return. It requires new scalers and weights; no candidate or
+champion has been promoted or modified.

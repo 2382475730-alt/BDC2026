@@ -102,3 +102,10 @@ hashes were preserved in:
 - `_cleanup_reports/workspace_cleanup_renumber_20260717.json`
 
 Historical reports keep their original IDs and are not bulk-renamed.
+
+## Overnight feature research TEST (2026-11-01)
+
+`Experimental_WorkSpace/candidates_D/TEST_overnight_gap_20261101/` is an
+untrained research-only lineage replacing D01's duplicate stock feature with
+an overnight return. It requires new scalers and weights; no candidate or
+champion has been promoted or modified.
